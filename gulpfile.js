@@ -46,10 +46,8 @@ gulp.task('sync', function(){
 	})
 });
 
-
-
 gulp.task('libcss', function(){
-	return gulp.src('./app/bower_components/**/*.css')
+	return gulp.src('../bower_components/**/*.css')
 		.pipe(concat('lib.css'))
 		.pipe(gulp.dest('./app/prod/css/'));
 });
