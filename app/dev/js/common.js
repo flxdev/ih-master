@@ -270,3 +270,4 @@ Menu.prototype.close = function (e) {
 		contentBlock: document.querySelector('.content__bg')
 	});
 }) ();
+
