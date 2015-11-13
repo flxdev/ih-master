@@ -251,6 +251,7 @@ $(document).ready(function(){
 		});
 	}) ();
 
+
 	//CUSTOM SCROLL
 	(function (){
 		var isTouchDevice = (function() {
