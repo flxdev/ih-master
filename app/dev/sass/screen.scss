@@ -1278,12 +1278,18 @@ a {
 		}
 	}
 }
-@media (max-device-height: 667px) and (orientation: landscape) {
+@media (max-height: 667px) and (orientation: landscape) {
 	.main__menu {
 		margin-top: 2.125em;
+		li {
+			& > a {
+				padding: 0.4em 0 0.4em 1.5em; //  8px 0 8px 30px / 20px
+				line-height: 1.3;
+			} 
+		}
 	}
 }
-@media (max-device-height: 568px) and (orientation: landscape) {
+@media (max-height: 568px) and (orientation: landscape) {
 	.main__menu {
 		margin-top: -0.425em;
 	}
