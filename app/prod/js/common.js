@@ -77,6 +77,11 @@ $(document).ready(function(){
 
 		this._fadeMenu = _eventMouseMenu.bind(this);
 
+		var over = this.over.bind(this),
+			out = this.out.bind(this),
+			close = this.close.bind(this),
+			tryAdd = undefined;
+
 		function _eventMouseMenu(item, e, callback) {
 			if (!item) {
 				console.info('Don\'t target');
@@ -106,9 +111,41 @@ $(document).ready(function(){
 			}
 		};
 
-		document.addEventListener('mouseover', this.over.bind(this));
-		document.addEventListener('mouseout', this.out.bind(this));
-		document.addEventListener('click', this.close.bind(this));
+		function _removeEventMenu() {
+			document.removeEventListener('mouseover', over);
+			document.removeEventListener('mouseout', out);
+			document.removeEventListener('click', close);
+
+			tryAdd = false;
+		}
+
+		function _addEventMenu() {
+			document.addEventListener('mouseover', over);
+			document.addEventListener('mouseout', out);
+			document.addEventListener('click', close);
+
+			tryAdd = true;
+		}
+
+		window.addEventListener('resize', function () {
+			if (window.innerWidth && parseInt(window.innerWidth) <= 780) {
+				_removeEventMenu();
+			} else if (!tryAdd) {
+				_addEventMenu();
+			} else {
+				return;
+			}
+		});
+
+		window.addEventListener('load', function () {
+			if (window.innerWidth && parseInt(window.innerWidth) <= 780) {
+				_removeEventMenu();
+			} else if (!tryAdd) {
+				_addEventMenu();
+			} else {
+				return;
+			}
+		});
 	}
 
 	Menu.prototype.over = function (e) {
