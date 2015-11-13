@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	//open menu
 	(function () {
-		var btn = $('.btn-menu'),
+		var btn = $('.btn-menu.desktop'),
 			cont = btn.parents('body').find('.nav__container'),
 			contBg = btn.parents('body').find('.nav__container-bg'),
 			close = $('.close__menu'),
@@ -203,6 +203,7 @@ $(document).ready(function(){
 			Array.prototype.forEach.call(this.block.children, function (item) {
 				item.classList.remove('visible');
 			});
+
 		}.bind(this));
 	};
 

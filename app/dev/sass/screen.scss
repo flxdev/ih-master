@@ -990,6 +990,10 @@ a {
 			width: 14.4375em;// 231px / 16px
 			height: 4.5625em;//73px / 16px
 		}
+		.subbox {
+			margin-left: 24.9%;
+			width: 75.1%;
+		}
 	}
 }
 @media screen and (max-width: 1279px) {
@@ -1155,6 +1159,9 @@ a {
 			}
 		}
 	}
+	.container {
+		//margin-bottom: -6.9%;
+	}
 	.sub__menu-item {
 		width: 48.5%;
 		display: inline-block;
@@ -1165,7 +1172,7 @@ a {
 			color: $white;
 			line-height: 1;
 			letter-spacing: 3px;
-			margin-bottom: 1.875em; // 30px / 16px
+			margin-bottom: 0.5em; // 30px / 60px
 		}
 		a {
 			font-size: 1em;
@@ -1181,6 +1188,28 @@ a {
 			}
 		}
 	}
+	.subbox{
+		.social {
+			padding-top: 5.125em; //82px / 16px
+			.soc__item {
+				margin-left: 0.55em; // 11px / 20px
+				.fill {
+					fill: $white;
+				}
+				.stroke {
+					stroke: $white;
+				}
+				&:hover {
+					.fill {
+						fill: $red;
+					}
+					.stroke {
+						stroke: $red;
+					}
+				}
+			}
+		}
+	}
 }
 @media screen and (max-width: 1599px) {
 	.main__menu {
@@ -1188,6 +1217,19 @@ a {
 			> a {
 				padding: 0.8em 0 0.8em 1.5em; // 16px 0 16px 30px / 20px
 			}
+		}
+		.sub__menu-item {
+			.title {
+				font-size: 2.375em; //38px / 16px
+			}
+		}
+		.subbox{
+			.social {
+				padding-top: 2.125em; //34 px / 16px
+			}
+		}
+		.search__row {
+			margin-bottom: 3.3125em; //53px / 16px
 		}
 	}
 }
@@ -1197,6 +1239,14 @@ a {
 		li {
 			> a {
 				padding: 0.7em 0 0.7em 1.15em; // 14px 0 14px 23px / 20px
+			}
+		}
+		.sub__menu-item {
+			.title {
+				font-size: 1.875em; //30px / 16px
+			}
+			a {
+				font-size: 0.875em; //14px / 16px 
 			}
 		}
 	}
@@ -1359,9 +1409,39 @@ a {
 		margin-top: 7.5%;
 	}
 }
+@media screen and (max-width: 1599px) {
+	.nav__container {
+		width: 75.1%;
+	}
+	.nav__container-bg {
+		width: 75.1%;
+	}
+}
+@media screen and (max-width: 1279px) {
+	.nav__container {
+		width: 75.6%;
+	}
+	.nav__container-bg {
+		width: 75.6%;
+	}
+}
+@media screen and (max-width: 1023px) {
+	.nav__container {
+		width: 72.2%;
+		&.opened{
+			transition-duration: 0.6s;
+		}
+	}
+	.nav__container-bg {
+		width: 752.2%;
+		&.opened{
+			transition-duration: 0.6s;
+		}
+	}
+}
 .close__menu {
 	position: absolute;	
-	right: 7.8125em; // 125px / 16px
+	right: 11.3%; // 125px / 16px
 	top: 4.125em; // 66px / 16px
 	.icon_close_svg {
 		width: 1.5em; // 24px / 16px
@@ -1384,7 +1464,7 @@ a {
 	}
 }
 .search__row {
-	margin-bottom: 8.0625em; // 129px / 16px
+	margin-bottom: 7.3125em; // 117px / 16px
 	max-width: 50%;
 	.actionInput {
 		width: 0;
