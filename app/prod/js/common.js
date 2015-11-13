@@ -251,8 +251,21 @@ $(document).ready(function(){
 		});
 	}) ();
 
-	//CUSTOM SCROLL
 
+	(function (){
+		var isTouchDevice = (function() {
+			try {
+				return ('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch;
+			} catch (e) {
+				return false;
+			}
+		}());
+		if(isTouchDevice){
+			jQuery('body').addClass('touch-device');
+		}
+	})();
+
+	//CUSTOM SCROLL
 	(function (){
 		var fix = $('.fixed');
 
