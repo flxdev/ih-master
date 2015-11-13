@@ -588,3 +588,13 @@ a[class*="btn__type"] {
         }
     }
 }
+@media screen and (max-width: 749px) {
+    body {
+        font-size: 70%;
+    }
+}
+@media screen and (max-width: 479px) {
+    body {
+        font-size: 50%;
+    }
+}

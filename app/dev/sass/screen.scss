@@ -65,12 +65,14 @@ $white: #fff;
 $blue: #003e7e;
 $hover: #0b549e;
 $active: #012e5b;
+$claret: #ab1128;
 $red: #e51836;
 $grey: #3c454e;
 $yellow: #fec601;
 $yellow2: #fecc1a;
 $yellow3: #ffdc5e;
 $yellow4: #e7b70e;
+
 svg:not(:root) {
 	overflow: visible;
 }
@@ -1276,6 +1278,16 @@ a {
 		}
 	}
 }
+@media (max-device-height: 667px) and (orientation: landscape) {
+	.main__menu {
+		margin-top: 2.125em;
+	}
+}
+@media (max-device-height: 568px) and (orientation: landscape) {
+	.main__menu {
+		margin-top: -0.425em;
+	}
+}
 .big_scroll {
 	.viewport {
 		position: relative;
@@ -1690,6 +1702,14 @@ h1 {
 					stroke: $red;
 				}
 			}
+			&:active {
+				.fill {
+					fill: $claret;
+				}
+				.stroke {
+					stroke: $claret;
+				}
+			}
 			.arrow_left {
 				width: 2.125em; // 34px / 16px
 			}
@@ -1707,6 +1727,14 @@ h1 {
 				}
 				.stroke {
 					stroke: $red;
+				}
+			}
+			&:active {
+				.fill {
+					fill: $claret;
+				}
+				.stroke {
+					stroke: $claret;
 				}
 			}
 			.arrow_right {
@@ -2062,6 +2090,20 @@ h1 {
 			span {
 				border-color: transparent;
 			}
+		}
+	}	
+	.polygon {
+		width: 0.45652em; //21px / 46px
+		height: 0.56521em; // 26px / 46px
+		display: inline-block;
+		position: relative;
+		.polygon__svg {
+			width: 0.45652em; //21px / 46px
+			height: 0.56521em; // 26px / 46px
+			position: absolute;
+			top: 0;
+			left: 0;
+			stroke: $white;
 		}
 	}
 	.touch-nav__back {
