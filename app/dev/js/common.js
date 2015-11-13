@@ -251,35 +251,36 @@ $(document).ready(function(){
 		});
 	}) ();
 
-
+	//CUSTOM SCROLL
 	(function (){
 		var isTouchDevice = (function() {
 			try {
-				return ('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch;
+				var hasTouch = ('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch;
+
+				if (window.innerWidth && parseInt(window.innerWidth) <= 780) {
+					return window.matchMedia('(pointer: coarse)').matches || hasTouch;
+				}
+
 			} catch (e) {
 				return false;
 			}
 		}());
-		if(isTouchDevice){
-			jQuery('body').addClass('touch-device');
+
+		if(!isTouchDevice){
+			return $('.fixed').niceScroll({
+				cursorwidth: 8,
+				cursoropacitymin: 1,
+				cursoropacitymax: 1,
+				cursorborderradius: '0px',
+				autohidemode: false,
+				background: '#e5e5e5',
+				cursorcolor: '#fec601',
+				cursorborder: 'none'
+			});
 		}
+
+		jQuery('body').addClass('touch-device');
 	})();
-
-	//CUSTOM SCROLL
-	(function (){
-		var fix = $('.fixed');
-
-		fix.niceScroll({
-			cursorwidth: 8,
-			cursoropacitymin: 1,
-			cursoropacitymax: 1,
-			cursorborderradius: '0px',
-			autohidemode: false,
-			background: '#e5e5e5',
-			cursorcolor: '#fec601',
-			cursorborder: 'none'
-		});
-	}) ();
 
 	//MOBILE MENU INIT
 	(function () {
