@@ -15,7 +15,7 @@ gulp.task('css', function(){
 	return gulp.src('./app/dev/sass/*.scss')
 		.pipe(sass())
 		.pipe(postcss([ autoprefixer({ 
-			browsers: ["not ie < 9", "ff >= 10", "ios_saf >= 4.1", "Safari >= 4", "Chrome > 15", "and_ff 41", "Opera 15", "not Android < 3"],
+			browsers: ["not ie < 9", "ff >= 10", "ios_saf >= 4.1", "Safari >= 4", "Chrome > 15", "and_ff 42", "and_chr 46", "Opera 15", "not Android < 3"],
 			cascade: true
 		}) ]))
 		.pipe(minifyCss({compatibility: 'ie8'}))
@@ -47,7 +47,7 @@ gulp.task('sync', function(){
 
 
 gulp.task('libcss', function(){
-	return gulp.src('./app/bower_components/**/*.css')
+	return gulp.src('./bower_components/**/*.css')
 		.pipe(concat('lib.css'))
 		.pipe(gulp.dest('./app/prod/css/'));
 });

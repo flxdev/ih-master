@@ -199,6 +199,10 @@ $(document).ready(function(){
 
 		this._fadeMenu(document, e, function (e) {
 			this.block.classList.remove('visible');
+
+			Array.prototype.forEach.call(this.block.children, function (item) {
+				item.classList.remove('visible');
+			});
 		}.bind(this));
 	};
 

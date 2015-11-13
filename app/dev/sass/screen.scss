@@ -1589,9 +1589,9 @@ h1 {
 	.cust__nav {
 		position: absolute;
 		left: 0;
-		bottom: 0;
+		bottom: -0.0625em;
 		max-width: 24.67%;
-		line-height: 3.5625em; // 57px / 16px
+		line-height: 3.625em; // 58px / 16px
 		display: inline-block;
 		width: 100%;
 		background-color: $yellow;
@@ -1633,6 +1633,40 @@ h1 {
 				width: 2.125em; // 34px / 16px
 			}
 		}		
+	}
+}
+@media screen and (max-width: 1023px) {
+	.slider .cust__nav {
+		max-width: 16.8777%;
+		.btn__right,
+		.btn__left {
+			width: 100%;
+		}
+	}
+}
+@media screen and (max-width: 479px) and (min-width: 320px) {
+	.slider .cust__nav {
+		max-width: 15.786%;
+	}
+}
+@media screen and (max-width: 769px) and (min-width: 480px) {
+	.slider .cust__nav {
+		max-width: 14.786%;
+	}
+}
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+	.slider .cust__nav {
+		max-width: 21%;
+	}
+}
+@media screen and (min-width: 1280px) and (max-width: 1599px) {
+	.slider .cust__nav {
+		max-width: 25.8555%;
+	}
+}
+@media screen and (min-width: 1600px) and (max-width: 1900px) {
+	.slider .cust__nav {
+		max-width: 24%;
 	}
 }
 .arrow_right {
