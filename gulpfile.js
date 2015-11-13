@@ -27,14 +27,12 @@ gulp.task('css', function(){
 
 gulp.task('js', function(){
 	return gulp.src('./app/dev/js/*.js')
-		.pipe(browserify({
-			insertGlobals : true,
-			debug : !gulp.env.production
-		}))
-		.pipe(uglify())
-		.pipe(rename({
-			suffix: '.min'
-		}))
+		// .pipe(gulp.dest('./app/prod/js/'))
+		// .pipe(gulp.src('./app/dev/js/*.js'))
+		// .pipe(uglify())
+		// .pipe(rename({
+		// 	suffix: '.min'
+		// }))
 		.pipe(gulp.dest('./app/prod/js/'));
 });
 
@@ -46,8 +44,10 @@ gulp.task('sync', function(){
 	})
 });
 
+
+
 gulp.task('libcss', function(){
-	return gulp.src('../bower_components/**/*.css')
+	return gulp.src('./app/bower_components/**/*.css')
 		.pipe(concat('lib.css'))
 		.pipe(gulp.dest('./app/prod/css/'));
 });
