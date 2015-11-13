@@ -280,7 +280,6 @@ $(document).ready(function(){
 			popupCont = btn.parents('.popup__menu');
 		
 		$('.btn-menu.mobile').on('click', function(event){
-			var popup = $(this).data('href');
 
 			frame.addClass('space');
 
