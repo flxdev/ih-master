@@ -2783,19 +2783,29 @@ h1 {
 	height: 100%;
 	background-color: rgba(254, 198, 1 , 0.98);
 	z-index: 99;
-	padding: 9.0625em 1.25em 0; // 145px 20px / 16px
+	padding: 1.25em; // 20px / 16px
 	text-align: center;
 	perspective: 600px;
     perspective-origin: 50% 50%;
+    &::after {
+    	content: '';
+    	display: inline-block;
+    	vertical-align: middle;
+    	height: 100%;
+    	width: 0;
+    }
 	.popup {
+		max-width: 757px; //757px / 16px = 47.9375em
 		width: 100%;
 		display: inline-block;
+		vertical-align: middle;
 		opacity: 0;
 		transform: rotateX(32deg) translate3d(0px, 0px, -100px) scale(0.8);
     	transform-origin: 50% 50% 0;
     	transform-style: preserve-3d;
     	transition: transform 0.3s ease, opacity 0.3s ease;
     	position: relative;
+    	margin-bottom: 1.25em;
     	> div[class*="popup__"] {
     		transition: transform 0.5s cubic-bezier(0.7, 0, 0.3, 1);
     	}
@@ -2825,11 +2835,11 @@ h1 {
 	}
 	.popup__form {
 		padding: 8px;
-		position: absolute;
+		position: relative;
 		top: 0;
 		width: 100%;
 		transform: translate3d(250%, 0px, 0px);
-		&.active {
+		&.is-active {
 			transform: translate3d(0px, 0px, 0px);
 		}
 	}
@@ -2840,7 +2850,7 @@ h1 {
 		width: 100%;
 		z-index: 10;
 		transform: translate3d(-250%, 0px, 0px);
-		&.active {
+		&.is-active {
 			transform: translate3d(0px, 0px, 0px);
 		}
 		.title__form {
@@ -2943,6 +2953,34 @@ h1 {
 			max-width: 757px; //757px / 16px = 47.9375em
 		}
 	}
+	&.ask {
+		.popup {
+			max-width: 757px; //757px / 16px = 47.9375em
+		}
+		textarea {
+			&.input__field {
+				& + .input__label {
+					&::before {
+						display: block!important;
+					}
+				}
+			}
+		}
+	}
+	&.review {
+		.popup {
+			max-width: 757px; //757px / 16px = 47.9375em
+		}
+		textarea {
+			&.input__field {
+				& + .input__label {
+					&::before {
+						display: block!important;
+					}
+				}
+			}
+		}
+	}
 	.form {
 		position: relative;	
 		z-index: 5;
@@ -2955,6 +2993,10 @@ h1 {
 		}
 		.help-block {
 			display: none!important;
+		}
+		.title__lvl-2 {
+			color: $blue;
+			margin: 20px 0;
 		}
 		.row {
 			width: 100%;
@@ -2981,7 +3023,20 @@ h1 {
 				display: inline-block;
 				z-index: 1;
 				vertical-align: top;
-				margin-bottom: 13px; //13px / 16px = 0.8125em
+				margin-bottom: 8px; //8px / 16px = 0.5em
+				.counter {
+					position: absolute;
+					bottom: 0;
+					right: 0;
+					span {
+						color: #416d98;
+						opacity: 0.5;
+						float: left;
+						&:nth-of-type(2){
+							margin: 0 2px;
+						}
+					}
+				}
 				&.has-error {
 					.input__field {
 						border-color: #ff7979;
