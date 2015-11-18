@@ -458,8 +458,8 @@ $(document).ready(function(){
 
 					},
 					onSuccess: function($form){
-						forms.removeClass('active');
-						success.addClass('active');
+						forms.removeClass('is-active');
+						success.addClass('is-active');
 						return false;
 					}
 				});
@@ -499,7 +499,7 @@ $(document).ready(function(){
 			event.stopPropagation();
 		});
 
-		$(".popup__close, .popup__wrap").on("click", function(){	
+		$("button.popup__close, .popup__wrap").on("click", function(){	
 			if(!popupSelector.hasClass('is-visible')) return;
 			
 			popupSelector
@@ -508,9 +508,45 @@ $(document).ready(function(){
 				.fadeOut({
 					duration: duration
 				});
-			forms.addClass('active');
-			success.removeClass('active');
+			setTimeout(function(){
+				forms.addClass('is-active');
+				success.removeClass('is-active');
+			},duration);
 	    });
+	})();
+
+	//TEXTAREA COUNTING
+
+	(function(){
+		var counter = $('.js-counter'),
+			max__current = counter.parent().find('.js-counter'),
+			i = 0;
+
+		var calculate = function (){
+			if (this && !this.context) {
+				this_ = $(this);
+			} else {
+				this_ = this;
+			}
+
+			var count = this_.val().length,
+				current = this_.parent().find('.current');
+
+			current.html(count);
+
+			console.log(count)
+		};
+
+		counter.each(function() {
+			var currentMax = $(this).attr('maxlength'),
+				currentMaxElem = $(this).parent().find('.max__current'),
+				current = $(this).parent().find('.current');
+
+			currentMaxElem.html(currentMax);
+			current.html(i);
+			$(this).keyup(calculate);
+		});
+
 	})();
 
 });

@@ -44,7 +44,7 @@
 								</svg>
 							</i>
 						</button>
-						<a data-href="callback" class="btn__enroll btn__type-1 js-popup-link">
+						<a data-href="interview__extended" class="btn__enroll btn__type-1 js-popup-link">
 							<span>Записаться на курсы</span>
 						</a>
 						<a href="" class="location">
@@ -1309,9 +1309,9 @@
 			</div>
 		</div>
 	</div>
-	<div class="popup__wrap callback is-visible">
+	<div class="popup__wrap callback">
 		<div class="popup">
-			<div class="popup__form border__effect active">
+			<div class="popup__form border__effect is-active">
 				<div class="popup__inner">
 					<button class="popup__close">
 						<i class="icon_close_svg">
@@ -1325,36 +1325,36 @@
 						<form action="" class="js-validate">
 							<div class="row columns">
 								<span class='field field-effect'>
-									<input data-validation="required" type="text" class="input__field input__field-effect" id="name" autocomplete='off'>
-									<label for="name" class="input__label input__label-effect">
+									<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+									<label class="input__label input__label-effect">
 										<span class="input__label-content input__label-content-effect">Имя</span>
 									</label>
 								</span>
 								<span class='field field-effect'>
-									<input data-validation="required" type="text" class="input__field input__field-effect" id="surname" autocomplete='off'>
-									<label for="surname" class="input__label input__label-effect">
+									<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+									<label class="input__label input__label-effect">
 										<span class="input__label-content input__label-content-effect">Фамилия</span>
 									</label>
 								</span>
 							</div>
 							<div class="row columns">
 								<span class='field field-effect'>
-									<input data-validation-regexp="^[-0-9()+ ]+$" data-validation="custom" type="text" class="input__field input__field-effect js-input-tel" id="phone" autocomplete='off'>
-									<label for="phone" class="input__label input__label-effect">
+									<input data-validation-regexp="^[-0-9()+ ]+$" data-validation="custom" type="text" class="input__field input__field-effect js-input-tel"autocomplete='off'>
+									<label class="input__label input__label-effect">
 										<span class="input__label-content input__label-content-effect">Телефон</span>
 									</label>
 								</span>
 								<span class='field field-effect'>
-									<input data-validation="email" type="text" class="input__field input__field-effect" id="mail" autocomplete='off'>
-									<label for="mail" class="input__label input__label-effect">
+									<input data-validation="email" type="text" class="input__field input__field-effect" autocomplete='off'>
+									<label class="input__label input__label-effect">
 										<span class="input__label-content input__label-content-effect">E-mail</span>
 									</label>
 								</span>
 							</div>
 							<div class="row">
 								<span class='field field-effect'>
-									<textarea rows="1" cols="30" class="input__field input__field-effect" id="text"></textarea>
-									<label for="text" class="input__label input__label-effect">
+									<textarea rows="1" cols="30" class="input__field input__field-effect"></textarea>
+									<label class="input__label input__label-effect">
 										<span class="input__label-content input__label-content-effect">Сообщение</span>
 									</label>
 								</span>
@@ -1379,6 +1379,314 @@
 						<div class="title__form">Благодарим вас!</div>
 						<p>Ваша форма успешно отправлена! Наши менеджеры свяжутся с вами в течении дня.</p>
 						<button type="button" class="popup__close"><span>закрыть</span></button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="popup__wrap ask">
+		<div class="popup">
+			<div class="popup__form border__effect is-active">
+				<div class="popup__inner">
+					<button class="popup__close">
+						<i class="icon_close_svg">
+							<svg viewBox="0 0 24 24" height="100%" class="close_icon" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+								<path d="m0,4l4,-4l8,8l8,-8l4,4l-8,8l8,8l-4,4l-8,-8l-8,8l-4,-4l8,-8l-8,-8z"/>
+							</svg>
+						</i>
+					</button>
+					<div class="form">
+						<div class="title__form">Задать вопрос</div>
+						<form action="" class="js-validate">
+							<div class="row columns">
+								<span class='field field-effect'>
+									<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+									<label class="input__label input__label-effect">
+										<span class="input__label-content input__label-content-effect">Имя</span>
+									</label>
+								</span>
+								<span class='field field-effect'>
+									<input data-validation="email" type="text" class="input__field input__field-effect" autocomplete='off'>
+									<label class="input__label input__label-effect">
+										<span class="input__label-content input__label-content-effect">E-mail</span>
+									</label>
+								</span>
+							</div>
+							<div class="row">
+								<span class='field field-effect'>
+									<textarea rows="1" cols="30" class="input__field input__field-effect" data-validation="length" data-validation-length="min20"></textarea>
+									<label class="input__label input__label-effect">
+										<span class="input__label-content input__label-content-effect">Ваш вопрос</span>
+									</label>
+								</span>
+							</div>
+							<div class="row">
+								<button class="btn__type-2" type="submit"><span>Спросить</span></button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="popup__success border__effect">
+				<div class="popup__inner">
+					<button class="popup__close">
+						<i class="icon_close_svg">
+							<svg viewBox="0 0 24 24" height="100%" class="close_icon" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+								<path d="m0,4l4,-4l8,8l8,-8l4,4l-8,8l8,8l-4,4l-8,-8l-8,8l-4,-4l8,-8l-8,-8z"/>
+							</svg>
+						</i>
+					</button>
+					<div class="form">
+						<div class="title__form">Благодарим за ваш вопрос!</div>
+						<p>Мы пришлем ответ на указанную вами почту в самое ближайшее время!</p>
+						<button type="button" class="popup__close"><span>закрыть</span></button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="popup__wrap review">
+		<div class="popup">
+			<div class="popup__form border__effect is-active">
+				<div class="popup__inner">
+					<button class="popup__close">
+						<i class="icon_close_svg">
+							<svg viewBox="0 0 24 24" height="100%" class="close_icon" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+								<path d="m0,4l4,-4l8,8l8,-8l4,4l-8,8l8,8l-4,4l-8,-8l-8,8l-4,-4l8,-8l-8,-8z"/>
+							</svg>
+						</i>
+					</button>
+					<div class="form">
+						<div class="title__form">Оставить отзыв</div>
+						<form action="" class="js-validate">
+							<div class="row columns">
+								<span class='field field-effect'>
+									<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+									<label class="input__label input__label-effect">
+										<span class="input__label-content input__label-content-effect">Имя</span>
+									</label>
+								</span>
+								<span class='field field-effect'>
+									<input data-validation="email" type="text" class="input__field input__field-effect" autocomplete='off'>
+									<label class="input__label input__label-effect">
+										<span class="input__label-content input__label-content-effect">E-mail</span>
+									</label>
+								</span>
+							</div>
+							<div class="row">
+								<span class='field field-effect'>
+									<textarea maxlength="420" rows="1" cols="30" class="input__field input__field-effect js-counter" data-validation="length" data-validation-length="min20"></textarea>
+									<label class="input__label input__label-effect">
+										<span class="input__label-content input__label-content-effect">Ваш отзыв</span>
+									</label>
+									<div class="counter">
+										<span class="current"></span>
+										<span>/</span>
+										<span class="max__current"></span>
+									</div>
+								</span>
+							</div>
+							<div class="row">
+								<button class="btn__type-2" type="submit"><span>Отправить</span></button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="popup__success border__effect">
+				<div class="popup__inner">
+					<button class="popup__close">
+						<i class="icon_close_svg">
+							<svg viewBox="0 0 24 24" height="100%" class="close_icon" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+								<path d="m0,4l4,-4l8,8l8,-8l4,4l-8,8l8,8l-4,4l-8,-8l-8,8l-4,-4l8,-8l-8,-8z"/>
+							</svg>
+						</i>
+					</button>
+					<div class="form">
+						<div class="title__form">Благодарим за отзыв о нашей работе!</div>
+						<p>Ваш отзыв успешно отправлен. Мы пришлем ответ на указанную вами почту в самое ближайшее время!</p>
+						<button type="button" class="popup__close"><span>закрыть</span></button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="popup__wrap interview is-visible">
+		<div class="popup">
+			<div class="popup__form border__effect is-active">
+				<div class="popup__inner">
+					<button class="popup__close">
+						<i class="icon_close_svg">
+							<svg viewBox="0 0 24 24" height="100%" class="close_icon" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+								<path d="m0,4l4,-4l8,8l8,-8l4,4l-8,8l8,8l-4,4l-8,-8l-8,8l-4,-4l8,-8l-8,-8z"/>
+							</svg>
+						</i>
+					</button>
+					<div class="form">
+						<div class="title__form">Запись на собеседование</div>
+						<form action="" class="js-validate">
+							<div class="row columns">
+								<span class='field field-effect'>
+									<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+									<label class="input__label input__label-effect">
+										<span class="input__label-content input__label-content-effect">Имя</span>
+									</label>
+								</span>
+								<span class='field field-effect'>
+									<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+									<label class="input__label input__label-effect">
+										<span class="input__label-content input__label-content-effect">Фамилия</span>
+									</label>
+								</span>
+							</div>
+							<div class="row columns">
+								<span class='field field-effect'>
+									<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+									<label class="input__label input__label-effect">
+										<span class="input__label-content input__label-content-effect">Отчество</span>
+									</label>
+								</span>
+								<span class='field field-effect'>
+									<input data-validation-regexp="^[-0-9()+ ]+$" data-validation="custom" type="text" class="input__field input__field-effect js-input-tel" autocomplete='off'>
+									<label class="input__label input__label-effect">
+										<span class="input__label-content input__label-content-effect">Телефон</span>
+									</label>
+								</span>
+							</div>
+							<div class="row">
+								<span class='field field-effect'>
+									<textarea rows="1" cols="30" class="input__field input__field-effect"></textarea>
+									<label class="input__label input__label-effect">
+										<span class="input__label-content input__label-content-effect">Комментарий</span>
+									</label>
+								</span>
+							</div>
+							<div class="row">
+								<button class="btn__type-2" type="submit"><span>Отправить</span></button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="popup__success border__effect">
+				<div class="popup__inner">
+					<button class="popup__close">
+						<i class="icon_close_svg">
+							<svg viewBox="0 0 24 24" height="100%" class="close_icon" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+								<path d="m0,4l4,-4l8,8l8,-8l4,4l-8,8l8,8l-4,4l-8,-8l-8,8l-4,-4l8,-8l-8,-8z"/>
+							</svg>
+						</i>
+					</button>
+					<div class="form">
+						<div class="title__form">Благодарим вас за проделанную работу!</div>
+						<p>Ваш успешно записались на собеседование. Мы свяжемся с вами в ближайшее время!</p>
+						<a href="/" class="popup__close"><span>На главную</span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="popup__wrap interview__extended">
+		<div class="popup">
+			<div class="popup__form border__effect is-active">
+				<div class="popup__inner">
+					<button class="popup__close">
+						<i class="icon_close_svg">
+							<svg viewBox="0 0 24 24" height="100%" class="close_icon" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+								<path d="m0,4l4,-4l8,8l8,-8l4,4l-8,8l8,8l-4,4l-8,-8l-8,8l-4,-4l8,-8l-8,-8z"/>
+							</svg>
+						</i>
+					</button>
+					<div class="form">
+						<div class="title__form">Запись на собеседование</div>
+						<form action="" class="js-validate">
+							<div class="row columns">
+								<span class='field field-effect'>
+									<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+									<label class="input__label input__label-effect">
+										<span class="input__label-content input__label-content-effect">Имя</span>
+									</label>
+								</span>
+								<span class='field field-effect'>
+									<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+									<label class="input__label input__label-effect">
+										<span class="input__label-content input__label-content-effect">Фамилия</span>
+									</label>
+								</span>
+							</div>
+							<div class="row columns">
+								<span class='field field-effect'>
+									<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+									<label class="input__label input__label-effect">
+										<span class="input__label-content input__label-content-effect">Отчество</span>
+									</label>
+								</span>
+								<span class='field field-effect'>
+									<input data-validation-regexp="^[-0-9()+ ]+$" data-validation="custom" type="text" class="input__field input__field-effect js-input-tel" autocomplete='off'>
+									<label class="input__label input__label-effect">
+										<span class="input__label-content input__label-content-effect">Телефон</span>
+									</label>
+								</span>
+							</div>
+							<div class="row">
+								<span class='field field-effect'>
+									<textarea rows="1" cols="30" class="input__field input__field-effect"></textarea>
+									<label class="input__label input__label-effect">
+										<span class="input__label-content input__label-content-effect">Комментарий</span>
+									</label>
+								</span>
+							</div>
+							<div class="row">
+								<div class="title__lvl-2">Контакты одного из родителей</div>
+							</div>
+							<div class="row columns">
+								<span class='field field-effect'>
+									<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+									<label class="input__label input__label-effect">
+										<span class="input__label-content input__label-content-effect">Имя</span>
+									</label>
+								</span>
+								<span class='field field-effect'>
+									<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+									<label class="input__label input__label-effect">
+										<span class="input__label-content input__label-content-effect">Фамилия</span>
+									</label>
+								</span>
+							</div>
+							<div class="row columns">
+								<span class='field field-effect'>
+									<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+									<label class="input__label input__label-effect">
+										<span class="input__label-content input__label-content-effect">Отчество</span>
+									</label>
+								</span>
+								<span class='field field-effect'>
+									<input data-validation-regexp="^[-0-9()+ ]+$" data-validation="custom" type="text" class="input__field input__field-effect js-input-tel" autocomplete='off'>
+									<label class="input__label input__label-effect">
+										<span class="input__label-content input__label-content-effect">Телефон</span>
+									</label>
+								</span>
+							</div>
+							<div class="row">
+								<button class="btn__type-2" type="submit"><span>Отправить</span></button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="popup__success border__effect">
+				<div class="popup__inner">
+					<button class="popup__close">
+						<i class="icon_close_svg">
+							<svg viewBox="0 0 24 24" height="100%" class="close_icon" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+								<path d="m0,4l4,-4l8,8l8,-8l4,4l-8,8l8,8l-4,4l-8,-8l-8,8l-4,-4l8,-8l-8,-8z"/>
+							</svg>
+						</i>
+					</button>
+					<div class="form">
+						<div class="title__form">Благодарим вас за проделанную работу!</div>
+						<p>Ваш успешно записались на собеседование. Мы свяжемся с вами в ближайшее время!</p>
+						<a href="/" class="popup__close"><span>На главную</span></a>
 					</div>
 				</div>
 			</div>

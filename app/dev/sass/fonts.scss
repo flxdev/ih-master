@@ -549,6 +549,12 @@ div[class*="col"] .title {
 }
 .form {
     .field {
+        .counter {
+            span {
+                font-family: $HelveticaMedium;
+                font-size: 13px; // 13px / 16px = 0.8125em
+            }
+        }
         .input__field {
             font-family: $HelveticaBold;
             font-size: 13px; // 13px / 16px = 0.8125em
@@ -567,6 +573,10 @@ div[class*="col"] .title {
     p {
         font-family: $HelveticaRoman;
         font-size: 16px; // 16px / 16px = 1em
+    }
+    .title__lvl-2 {
+        font-family: $AgoraProBlack;
+        font-size: 20px; // 20px / 16px = 1.25em
     }
 }
 .popup__success {
