@@ -292,7 +292,7 @@ $AgoraProMdeiumItalic: 'pf_agora_slab_proMdIt', Arial, sans-serif;
 $AgoraProMedium: 'pf_agora_slab_promedium', Arial, sans-serif;
 $AgoraPro: 'pf_agora_slab_proregular', Arial, sans-serif;
 $AgoraProThin: 'pf_agora_slab_prothin', Arial, sans-serif;
-$AgoraProBlackItalic: 'pf_agora_slab_proultraBlkIt', Arial, sans-serif;
+$AgoraProUltraBlackIt: 'pf_agora_slab_proultraBlkIt', Arial, sans-serif;
 $AgoraProUltraBlack: 'pf_agora_slab_proultrablack', Arial, sans-serif;
 $AgoraProExtraThin: 'pf_agora_slab_proextrathin', Arial, sans-serif;
 $AgoraProExtraThinItalic: 'pf_agora_slab_proXThIt', Arial, sans-serif;
@@ -484,6 +484,51 @@ a[class*="btn__type"] {
             font-size: 1.875em; //30px / 16px
             font-family: $HelveticaBold;
         }
+    }
+}
+.banner {
+    .banner-title {
+        font: 2.375em/1.2634 $AgoraProBlack;
+    }
+    .banner-slider {
+        .slide__bottom {
+            font: 1.25em/1.5 $AgoraProBold;
+        }
+    }
+}
+.blocks-links {
+    ul > li > a:not(.btn__enroll) {
+        font: 1.25em/1.5 $AgoraProBold;
+    }
+}
+.content__block {
+    .title {
+        font: 2.375em/1.2634 $AgoraProBlack;
+    }
+    .description {
+        font: 1.25em/1.5 $AgoraProBold;
+    }
+    .categories__change {
+        dd {
+            font: 1.125em/1.6667 $AgoraProBold;
+        }
+        dt {
+            font: 1.25em/1.5 $AgoraProUltraBlack;
+        }
+        a {
+            text-decoration: none;
+        }
+    }
+    .relation {
+        font: 1.25em/1.5 $AgoraProBold;
+    }
+    .result {
+        font: 1.75em/1.2857 $AgoraProBoldItalic;
+        text-align: center;
+        letter-spacing: 0.03em;
+    }
+    p {
+        font: 1em/1.625 $HelveticaRoman;
     }
 }
 @media screen and (max-width: 1599px) {
