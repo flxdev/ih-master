@@ -1998,12 +1998,21 @@ h1 {
 			a {
 				color: $white;
 				border-bottom: 0.1em solid $white; // 6px / 60px
+				transition: color 0.3s ease, border-color 0.3s ease;
+				&:hover {
+					color: $red;
+					border-color: transparent;
+				}
 			}
 			&.is-active {
 				a {
 					color: $yellow;
 					border-color: transparent;
-					pointer-events: none;
+					transition: color 0.3s ease, border-color 0.3s ease;
+					&:hover {
+						color: $red;
+						border-color: transparent;
+					}
 				}
 			}
 		}
@@ -2135,7 +2144,36 @@ h1 {
 			color: $blue;
 			border-bottom: 1px solid $blue;
 			text-transform: uppercase;
-			letter-spacing: 0.101666em; //3.05px / 30px 
+			letter-spacing: 0.101666em; //3.05px / 30px
+			transition: color 0.3s ease, border-color 0.3s ease;
+		}
+		&:hover {
+			span {
+				border-color: transparent;
+				color: $red;
+			}
+			.arrow_left {
+				.fill {
+					fill: $red;
+				}
+				.stroke {
+					stroke: $red;
+				}
+			}
+		}
+		.btn__back {
+			width: 3.25em; // 52px / 16px
+			height: 1.875em; //30px / 16px
+			display: inline-block;
+			position: relative;
+			vertical-align: middle;
+			margin-top: -0.5em; // 8px / 16px
+			margin-right: 1em; //16px / 16px
+			.arrow_left {
+				position: absolute;
+				left: 0;
+				top: -11px;
+			}
 		}
 	}
 }
