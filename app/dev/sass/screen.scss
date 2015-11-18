@@ -3337,7 +3337,7 @@ div[class*="col"] .title {
 		}
 	}
 	.section:first-of-type {
-		height: 330px;
+		max-height: 20.625em; /* 330px / 16px */
 		overflow: hidden;
 	}
 	.section {
