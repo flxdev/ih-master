@@ -195,7 +195,7 @@ $(document).ready(function(){
 		if (target.classList.contains('active')) {
 			return;
 		}
-
+		
 		this._fadeMenu(target, e, function (e) {
 			var id = target.getAttribute(this.item),
 				attr = this.content;
@@ -260,11 +260,14 @@ $(document).ready(function(){
 		}
 
 		this._fadeMenu(document, e, function (e) {
+			this.block.classList.remove('visible');
+
 			Array.prototype.forEach.call(this.block.children, function (item) {
 				item.classList.remove('visible');
 			});
 
 			this.block.classList.remove('visible');
+
 		}.bind(this));
 	};
 
@@ -406,6 +409,108 @@ $(document).ready(function(){
 			$(this).parents(".js-nav").find(".js-nav-main").fadeIn(duration);
 			return false;
 		});
+	})();
+
+
+	//FOCUS / BLUR POPUP INPUTS
+	(function(){
+		var input = $('.input__field'),
+			filled = 'field-filled',
+			field = $('field');
+
+		input.each(function(){
+			var this_ = $(this);
+
+			this_.on('focus', function(){
+				$(this).parent().addClass('field-filled');
+			});
+			this_.on( 'blur', function(){
+				if($(this).val() === ''){
+					$(this).parent().removeClass('field-filled');
+				}				
+			});
+
+		});
+	})();
+
+
+	//AUTO RESIZE TEXTAREA
+	(function(){
+		var textarea = $('.input__field');
+
+		autosize(textarea);
+
+	})();
+
+	//FORM VALIDATOR
+	(function(){
+		var form_validate = $('.js-validate'),
+			success = $('.popup__success'),
+			forms = $('.popup__form');
+		if (form_validate.length) {
+			form_validate.each(function () {
+				var form_this = $(this);
+				$.validate({
+					form : form_this,
+					borderColorOnError : true,
+					scrollToTopOnError : false,
+					onValidate: function($form){
+
+					},
+					onSuccess: function($form){
+						forms.removeClass('active');
+						success.addClass('active');
+						return false;
+					}
+				});
+			});
+		};
+	})();
+
+	//TEL MASK 
+	(function(){
+		if ($(".js-input-tel").length) {
+        	$(".js-input-tel").mask("+999 (99) 999 99 99");
+    	}
+	})();
+
+	//POPUP INIT
+
+	(function(){
+		var duration = 500,
+			popupSelector = $('.popup__wrap'),
+			innerSelector = $('.popup'),
+			success = $('.popup__success'),
+			forms = $('.popup__form');
+		
+		$('.js-popup-link').on('click', function(event){
+			var popup = $(this).data('href');
+
+			$('.'+popup).fadeIn({
+				duration: duration,
+				complete: function(){
+					$(this).addClass("is-visible");
+				}
+			});
+			event.stopPropagation();
+		});
+
+		$(".popup").on("click", function(event){
+			event.stopPropagation();
+		});
+
+		$(".popup__close, .popup__wrap").on("click", function(){	
+			if(!popupSelector.hasClass('is-visible')) return;
+			
+			popupSelector
+				.removeClass("is-visible")
+				.delay(duration)
+				.fadeOut({
+					duration: duration
+				});
+			forms.addClass('active');
+			success.removeClass('active');
+	    });
 	})();
 
 });

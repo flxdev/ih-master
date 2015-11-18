@@ -4,8 +4,11 @@
 
 /bower_components
 
-\!Design/
+/\!Design/
 
-Helvetica-Neue-Cyr/
+/Helvetica-Neue-Cyr/
 
-PFAgoraSlab/
+/PFAgoraSlab/
+
+/new/
+/IntHouse/
