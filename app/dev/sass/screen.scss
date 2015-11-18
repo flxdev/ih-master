@@ -918,14 +918,21 @@ a {
 		width: 72.2%;
 	}
 }
+@media screen and (max-width: 1023px) {
+	.touch-device .homepage {
+    	width: 73%;
+	}
+}
 @media screen and (max-width: 767px) {
 	.homepage {
 		width: 68.6%;
 	}
 }
-.touch-device {
-	.homepage {
-		width: 68.7%;
+@media screen and (max-width: 767px) {
+	.touch-device {
+		.homepage {
+			width: 68.7%;
+		}
 	}
 }
 // @media screen and (max-width: 749px) {
