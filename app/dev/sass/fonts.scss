@@ -608,6 +608,21 @@ div[class*="col"] .title {
         }
     }
 }
+.center__block {
+    .title-cb {
+        font: 1.25em/1.5 $AgoraProBlack;
+    }
+}
+.number {
+    font: 6.5797em/1 $AgoraProLightItalic;
+}
+.map__container {
+    .section {
+        p {
+            font: 1.25em/1.5 $AgoraProBold;
+        }
+    }
+}
 @media screen and (max-width: 1599px) {
     a[class*="btn__type"] {
         span {
