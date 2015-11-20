@@ -2167,7 +2167,6 @@ h1 {
 			border-bottom: 1px solid $blue;
 			text-transform: uppercase;
 			letter-spacing: 0.101666em; //3.05px / 30px
-<<<<<<< HEAD
 			line-height: 1.7;
 			transition: color 0.3s ease, border-color 0.3s ease;
 		}
@@ -2187,22 +2186,11 @@ h1 {
 				@include transition(fill);
 			}
 		}
-=======
-			transition: color 0.3s ease, border-color 0.3s ease;
-		}
->>>>>>> kashkan
 		&:hover {
 			span {
 				border-color: transparent;
 				color: $red;
 			}
-<<<<<<< HEAD
-			.stroke {
-				stroke: $red;
-			}
-			.fill {
-				fill: $red;
-=======
 			.arrow_left {
 				.fill {
 					fill: $red;
@@ -2224,7 +2212,6 @@ h1 {
 				position: absolute;
 				left: 0;
 				top: -11px;
->>>>>>> kashkan
 			}
 		}
 	}
