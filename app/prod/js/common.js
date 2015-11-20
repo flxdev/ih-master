@@ -1,4 +1,8 @@
-$(document).ready(function(){
+$(document).ready(function () {
+	var emitter = (function () {
+		var emitter = EventEmitter();
+	}) ();
+
 	//open menu
 	(function () {
 		var btn = $('.btn-menu.desktop'),
@@ -84,6 +88,7 @@ $(document).ready(function(){
 		});
 	}) ();
 
+<<<<<<< HEAD
 
 	//MENU FIXED BOX
 
@@ -281,6 +286,14 @@ $(document).ready(function(){
 			contentBlock: document.querySelector('.content__bg')
 		});
 	}) ();
+=======
+	// (function() {
+	// 	var hoverSection = new Menu({
+	// 		elem: document.querySelector('.main__menu'),
+	// 		contentBlock: document.querySelector('.content__bg')
+	// 	});
+	// }) ();
+>>>>>>> f02c801dee3aeec90d92fcb8ea960423a52c8347
 
 
 	//CUSTOM SCROLL
@@ -537,8 +550,6 @@ $(document).ready(function(){
 				current = this_.parent().find('.current');
 
 			current.html(count);
-
-			console.log(count)
 		};
 
 		counter.each(function() {
@@ -553,6 +564,7 @@ $(document).ready(function(){
 
 	})();
 
+<<<<<<< HEAD
 	//fancybox
 	(function(){
 		$("a[href$='.jpg'],a[href$='.jpeg'],a[href$='.png'],a[href$='.gif']").fancybox({
@@ -575,3 +587,409 @@ $(document).ready(function(){
 	})();
 
 });
+=======
+	(function () {
+		var maps = Map();
+
+		maps.init({
+			selector: '.map',
+			coord: 'data-coord'
+		});
+	}) ();
+});
+
+
+/**
+ * [Menu class]
+ * @param {[object]} config [description]
+ */
+function Menu (config) {
+	this.elem = config.elem;
+	this.block = config.contentBlock;
+	this.closeBtn = 'data-type-close';
+	this.item = 'data-item';
+	this.content = 'data-content-menu';
+	this.activeItem = null;
+
+	this._fadeMenu = _eventMouseMenu.bind(this);
+
+	var over = this.over.bind(this),
+		out = this.out.bind(this),
+		close = this.close.bind(this),
+		tryAdd = undefined;
+
+	function _eventMouseMenu(item, e, callback) {
+		if (!item) {
+			console.info('Don\'t target');
+			callback();
+		}
+
+		var siblingItem = this.elem.querySelectorAll('li.active');
+
+		Array.prototype.forEach.call(siblingItem, function (item) {
+			item.classList.remove('active');
+		});
+
+		if (e.type == 'mouseover') {
+			this.elem.classList.add('hovered');
+			item.classList.add('active');
+			this.block.classList.add('visible');
+			document.body.classList.add('animate-block');
+
+			callback(e);
+		} else if (e.type == 'mouseout') {
+			this.elem.classList.remove('hovered');
+			item.classList.remove('active');
+			this.block.classList.remove('visible');
+			document.body.classList.remove('animate-block');
+
+			callback(e);
+		} else {
+			this.elem.classList.remove('hovered');
+			document.body.classList.remove('animate-block');
+
+			callback();
+		}
+	};
+
+	function _removeEventMenu() {
+		document.removeEventListener('mouseover', over);
+		document.removeEventListener('mouseout', out);
+		document.removeEventListener('click', close);
+
+		tryAdd = false;
+	}
+
+	function _addEventMenu() {
+		document.addEventListener('mouseover', over);
+		document.addEventListener('mouseout', out);
+		document.addEventListener('click', close);
+
+		tryAdd = true;
+	}
+
+	window.addEventListener('resize', function () {
+		if (window.innerWidth && parseInt(window.innerWidth) <= 780) {
+			_removeEventMenu();
+		} else if (!tryAdd) {
+			_addEventMenu();
+		} else {
+			return;
+		}
+	});
+
+	window.addEventListener('load', function () {
+		if (window.innerWidth && parseInt(window.innerWidth) <= 780) {
+			_removeEventMenu();
+		} else if (!tryAdd) {
+			_addEventMenu();
+		} else {
+			return;
+		}
+	});
+}
+
+Menu.prototype.over = function (e) {
+	var e = e || window.event,
+		target = e.target || e.srcElement,
+		relatedTarget = e.relatedTarget || e.fromElement;
+
+	while (target != document) {
+		if (target.hasAttribute(this.item)) {
+			break;
+		}
+
+		target = target.parentNode;
+	}
+
+	if (target == document) {
+		return;
+	}
+
+	this.activeItem = target;
+
+	if (target.classList.contains('active')) {
+		return;
+	}
+	
+	this._fadeMenu(target, e, function (e) {
+		var id = target.getAttribute(this.item),
+			attr = this.content;
+
+		Array.prototype.forEach.call(this.block.children, function (item) {
+			if (item.getAttribute(attr) == id) {
+				item.classList.add('visible');
+			} else {
+				item.classList.remove('visible');
+			}
+		});
+	}.bind(this));
+};
+
+Menu.prototype.out = function (e) {
+	var e = e || window.event,
+		target = e.target || e.srcElement,
+		relatedTarget = e.relatedTarget || e.toElement;
+
+	if (!this.activeItem) {
+		return;
+	}
+
+	if (relatedTarget) {
+		while (relatedTarget != document) {
+			if (relatedTarget == this.activeItem || relatedTarget.hasAttribute(this.content)) {
+				return;
+			}
+
+			relatedTarget = relatedTarget.parentNode;
+		}
+	}
+
+	this._fadeMenu(target, e, function (e) {
+		var id = target.getAttribute(this.item),
+			attr = this.content;
+
+		Array.prototype.forEach.call(this.block.children, function (item) {
+			if (item.getAttribute(attr) == id) {
+				item.classList.add('visible');
+			} else {
+				item.classList.remove('visible');
+			}
+		});
+	}.bind(this));
+};
+
+Menu.prototype.close = function (e) {
+	var e = e || window.event,
+		target = e.target || e.srcElement;
+
+	while (target != document) {
+		if (target.hasAttribute(this.closeBtn)) {
+			break;
+		}
+
+		target = target.parentNode;
+	}
+
+	if (target == document) {
+		return;
+	}
+
+	this._fadeMenu(document, e, function (e) {
+		this.block.classList.remove('visible');
+
+		Array.prototype.forEach.call(this.block.children, function (item) {
+			item.classList.remove('visible');
+		});
+
+		this.block.classList.remove('visible');
+
+	}.bind(this));
+};
+
+/**
+ * [Map constructor]
+ */
+
+function Map () {
+	var markers = [],
+		center = {},
+		pathIMGMarker = ['./prod/img/map_marker.png', './prod/img/svg/map_marker.svg'],
+		result;
+
+    function configuration (config) {
+    	var elemMap = document.querySelectorAll(config.selector),
+        	_coord;
+
+	    if (!elemMap || elemMap.length <= 0) {
+	        return;
+	    }
+
+	    Array.prototype.forEach.call(elemMap, function(item, i) {
+	    	var lengthGroupCoords = undefined;
+
+	        if (!item.hasAttribute(config.coord)) {
+	            return;
+	        }
+
+	        _coord = item.getAttribute(config.coord).split(';');
+
+	        _createMarkerColl(_coord, _calcCenterMap);
+
+	       	_createMap(item, markers);
+	    });
+	}
+
+	function _customZoom (map) {
+		var container = document.createElement('div');
+
+	    container.innerHTML = "<div class='map__zoom-in'></div><div class='map__zoom-out'></div>";
+	    container.className = 'controlls__map';
+
+	    google.maps.event.addDomListener(container.querySelector('.map__zoom-in'), 'click', function () {
+	        map.setZoom(map.getZoom() + 1);
+	    });
+
+	    google.maps.event.addDomListener(container.querySelector('.map__zoom-out'), 'click', function () {
+	        map.setZoom(map.getZoom() - 1);
+	    });
+
+	    return container;
+	}
+
+	function _createMarkerColl (coord, callback) {
+		if (!markers && !(markers instanceof Array)) {
+			markers = [];
+		}
+
+		coord.forEach(function (item) {
+			markers.push(item.split(','));
+		});
+
+		markers.forEach(function (item, i, arr) {
+			if (item.length <= 1 || !item[0] || !item[1]) {
+				arr.splice(i, i + 1);
+			}
+		});
+
+		if (!callback) {
+			return;
+		}
+
+		callback();
+	}
+	
+	function _createLabel () {
+		var isSVGMarker = navigator.userAgent.toLowerCase().indexOf('trident') > -1,
+			pathPNG, pathSVG;
+
+		if (!pathIMGMarker) {
+			return;
+		}
+
+		pathIMGMarker.forEach(function (item) {
+			var _path = item.trim().slice(-3) || item.trim().split('.')[1];
+
+			if (_path === 'png') {
+				pathPNG = item;
+			} else if (_path === 'svg') {
+				if (pathPNG !== item) {
+					pathSVG = item;
+				}
+			}
+		});
+
+		return checkPathMarker = isSVGMarker ? pathPNG : pathSVG;
+	}
+
+	function _calcCenterMap () {
+		var tempX = 0, 
+			tempY = 0,
+			length = markers.length;
+
+		if (!result && !(result instanceof Object)) {
+			result = {};
+		}
+
+		markers.forEach(function (item, i) {
+			tempX += item[0] ? parseFloat(item[0]) : 0;
+			tempY += item[1] ? parseFloat(item[1]) : 0;
+		});
+
+		xCoordResult = (tempX / length).toFixed(6);
+		yCoordResult = (tempY / length).toFixed(6);
+
+		result = {
+			x: xCoordResult,
+			y: yCoordResult
+		}
+	}
+
+    function _createMap (elem, coord) {
+    	var style= [{featureType:"all",elementType:"geometry",stylers:[{visibility:"on"}]},{featureType:"all",elementType:"geometry.stroke",stylers:[{visibility:"off"}]},{featureType:"all",elementType:"labels.text.fill",stylers:[{lightness:100},{visibility:"on"},{color:"#000000"}]},{featureType:"all",elementType:"labels.text.stroke",stylers:[{color:"#000000"},{gamma:9.91},{visibility:"off"}]},{featureType:"all",elementType:"labels.icon",stylers:[{visibility:"off"},{color:"#ff0000"}]},{featureType:"administrative",elementType:"geometry",stylers:[{visibility:"off"},{color:"#ffffff"}]},{featureType:"administrative.country",elementType:"all",stylers:[{visibility:"off"}]},{featureType:"administrative.neighborhood",elementType:"all",stylers:[{visibility:"off"}]},{featureType:"administrative.land_parcel",elementType:"all",stylers:[{visibility:"off"}]},{featureType:"landscape.man_made",elementType:"all",stylers:[{visibility:"simplified"},{color:"#f2f2f2"}]},{featureType:"landscape.natural",elementType:"all",stylers:[{visibility:"on"},{color:"#f2f2f2"}]},{featureType:"landscape.natural.landcover",elementType:"all",stylers:[{visibility:"off"}]},{featureType:"landscape.natural.terrain",elementType:"all",stylers:[{visibility:"off"}]},{featureType:"poi",elementType:"all",stylers:[{visibility:"off"},{color:"#fecc1a"}]},{featureType:"poi.attraction",elementType:"all",stylers:[{visibility:"off"}]},{featureType:"poi.attraction",elementType:"labels",stylers:[{visibility:"off"}]},{featureType:"poi.business",elementType:"all",stylers:[{visibility:"off"}]},{featureType:"poi.business",elementType:"labels",stylers:[{visibility:"off"}]},{featureType:"poi.government",elementType:"all",stylers:[{visibility:"off"}]},{featureType:"poi.government",elementType:"labels",stylers:[{visibility:"off"}]},{featureType:"poi.medical",elementType:"all",stylers:[{visibility:"off"}]},{featureType:"poi.medical",elementType:"labels",stylers:[{visibility:"off"}]},{featureType:"poi.park",elementType:"all",stylers:[{visibility:"on"}]},{featureType:"poi.park",elementType:"labels",stylers:[{visibility:"off"}]},{featureType:"poi.place_of_worship",elementType:"all",stylers:[{visibility:"off"}]},{featureType:"poi.place_of_worship",elementType:"labels",stylers:[{visibility:"off"}]},{featureType:"poi.school",elementType:"all",stylers:[{visibility:"simplified"}]},{featureType:"poi.school",elementType:"labels",stylers:[{visibility:"off"}]},{featureType:"poi.sports_complex",elementType:"all",stylers:[{visibility:"off"}]},{featureType:"poi.sports_complex",elementType:"labels.text",stylers:[{visibility:"off"}]},{featureType:"road",elementType:"all",stylers:[{visibility:"simplified"},{color:"#fecc1a"}]},{featureType:"road.highway.controlled_access",elementType:"all",stylers:[{visibility:"simplified"}]},{featureType:"road.arterial",elementType:"all",stylers:[{visibility:"on"}]},{featureType:"road.local",elementType:"all",stylers:[{visibility:"off"}]},{featureType:"road.local",elementType:"labels.text.fill",stylers:[{visibility:"off"}]},{featureType:"road.local",elementType:"labels.text.stroke",stylers:[{visibility:"off"}]},{featureType:"transit",elementType:"all",stylers:[{visibility:"off"}]},{featureType:"transit.station",elementType:"all",stylers:[{visibility:"off"}]},{featureType:"water",elementType:"all",stylers:[{color:"#ffffff"}]}];
+
+    	var mapsOptions = {
+	            zoom: 12,
+	            scrollwheel: true,
+	            streetViewControl: false,
+	            zoomControl: false,
+	            scaleControl: false,
+	            panControl: false,
+	            mapTypeControl: false,
+	            mapTypeId: google.maps.MapTypeId.ROADMAP,
+	            center: new google.maps.LatLng(result.x, result.y),
+	            styles: style
+	        },
+	        map = new google.maps.Map(elem, mapsOptions), 
+	        controlls = _customZoom(map);
+
+		    map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(controlls);
+
+		    markers.forEach(function (item, i) {
+		    	var marker = new google.maps.Marker({
+			    	    position: {
+			    	    	lat: parseFloat(item[0]),
+			    	    	lng: parseFloat(item[1])
+			    	    },
+			    	    map: map,
+			    	    visible: true,
+			    	    zIndex: (i + 1),
+			    	    icon: _createLabel()
+			    	});
+		    });
+    }
+
+    return {
+    	init: configuration
+    }
+}
+/**
+ * [EventEmitter singleton]
+ */
+
+function EventEmitter() {
+    function on (event, handler) {
+        if (!this._listHandlers) {
+            this._listHandlers = {}
+        }
+
+        if (!this._listHandlers[event]) {
+            this._listHandlers[event] = [];
+        }
+
+        this._listHandlers[event].push(handler);
+    }
+
+    function off (event, handler) {
+        var handlers = this._listHandlers && this._listHandlers[event];
+
+        if (!handlers) {
+            return;
+        }
+
+        for (var i = 0; i <= handlers.length; i++) {
+            if (handlers[i] == handler) {
+                handlers.splice(i - 1, 1);
+            }
+        }
+    }
+
+    function emit (event) {
+        if (!this._listHandlers || !this._listHandlers[event]) {
+            return;
+        }
+
+        var handlers = this._listHandlers[event];
+
+        for (var i = handlers.length - 1; i >= 0; i--) {
+            handlers[i].apply(this, arguments);
+        }
+    }
+
+    return {
+    	"on": on,
+    	"off": off,
+    	"emit": emit
+    }
+}
+>>>>>>> f02c801dee3aeec90d92fcb8ea960423a52c8347

@@ -1516,8 +1516,7 @@ a {
 	}
 }
 .container__row {
-	margin-top: 4.375em; //70px  / 16px
-	margin-bottom: 13.875em; // 222px / 16px
+	margin: 3.4375em 0 4.875em 0;
 	@include clearfix;
 	h1 {
 		max-width: 80%;
@@ -1786,7 +1785,6 @@ h1 {
 }
 .test__box {
 	width: 100%;
-	height: 5em;
 	position: relative;
 	&:after {
 		content: '';
@@ -1832,6 +1830,7 @@ h1 {
 			background: $blue;
 		}
 		.container {
+			min-height: 16.9375em;
 			padding: 2.75em 2.45em; /* 44px / 16px, 40px / 16px */
 		}
 	}
@@ -1848,7 +1847,9 @@ h1 {
 		margin-bottom: 1.5625em; /* 25px / 20px */
 		color: $headbox;
 	}
-	.content__box {	
+	.content__box {
+		max-width: 370px;
+		margin: 0 auto;
 		margin-bottom: 1.1em; /* 22px / 20px */
 		color: #fff;
 	}
@@ -2572,7 +2573,7 @@ div[class*="col"] .title {
 }
 .content__block {
 	position: relative;
-	margin: 3.4375em 0 4.875em 16.7%; /* 55px / 16px, 78px / 16px */
+	margin: 0 0 0 16.7%; 
 	padding: 0 3.75em;
 	.content__row {
 		margin-bottom: 4.0625em; // 65px / 16px
@@ -3425,17 +3426,17 @@ div[class*="col"] .title {
 	}
 }
 .stack_container {
-	padding-top: 5.625em; /* 90px / 16px */
+	padding: 1.25em 0 3em; /* 90px / 16px, 48px / 16px */
 	position: relative;
 	&:before {
 		content: '';
 		position: absolute;
 		z-index: -1;
-		top: 5.625em;
 		right: 0;
 		background: $float;
 		width: 100%;
-		height: 100%;
+		top: 1.25em;
+		bottom: -4.75em; /* 76px / 16px */
 
 	}
 	&:after {
@@ -3458,7 +3459,8 @@ div[class*="col"] .title {
 		padding: 0 4.2312% 0 4.2312%; /* 41px / 419px */
 		margin-top: 1.25em; /* 20px / 16px */
 		.title {
-			margin-bottom: 0;
+			max-width: 8.3947em; /* 319px / 38px */
+			margin: 0 auto;
 		}
 	}
 	.title {
@@ -3493,7 +3495,7 @@ div[class*="col"] .title {
 		}
 	}
 	.section:first-of-type {
-		height: 330px;
+		max-height: 20.625em; /* 330px / 16px */
 		overflow: hidden;
 	}
 	.section {
@@ -3506,6 +3508,141 @@ div[class*="col"] .title {
 		& + .section {
 			margin-top: 3em; /* 48px / 16px */
 		}
+	}
+}
+.center__block {
+	max-width: 46.875em; /* 750px / 16px */
+	max-height: 8.875em; /* 142px / 16px */
+	margin-left: 6.875em; /* 110px / 16px */
+	padding: 40px 48px;
+	background: $red url('../img/banners-sale1.jpg') 0 0 no-repeat;
+	position: relative;
+	&:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		background: $red;
+		width: 100%;
+		height: 100%;
+		opacity: 0.95;
+		z-index: 0;
+	}
+	.container-cb {
+		position: relative;
+		z-index: 1;
+		display: table;
+		width: 100%;
+		&:after {
+			clear: both;
+			content: '';
+			display: table;
+		}
+	}
+	.title-cb {
+		width: 14.45em; /* 259px /20px */
+		display: table-cell;
+		color: #fff;
+	}
+	.preview-cb {
+		display: table-cell;
+		text-align: right;
+		vertical-align: middle;
+		letter-spacing: -0.36em;
+		.section {
+			letter-spacing: normal;
+			display: inline-block;
+			img {
+				display: block;
+				width: 100%;
+				max-width: 100%;
+			}
+			&:nth-of-type(n):not(:last-of-type) {
+				margin-right: 20px;
+			}
+		}
+	}
+}
+.map__container {
+	padding: 1.25em 6.8125em 5.25em 4.5em; 
+	position: relative;
+	&:before {
+		content: '';
+		position: absolute;
+		width: 62%;
+		height: 100%;
+		background: $float;
+		z-index: -1;
+		bottom: 0;
+		left: 0;
+	}
+	&:after {
+		clear: both;
+		content: '';
+		display: block;
+	}
+	.left-column {
+		position: relative;
+		float: left;
+		width: 23.5em;
+		padding-right: 1.25em; /* 20px / 16px */
+		position: relative;
+		z-index: 2;
+	}
+	.right-column {
+		left: 28em;
+		bottom: 5.25em;
+		height: 31.8125em; /* 509px / 16px */
+		position: absolute;
+		width: 25.7em;
+	}
+	.map {
+		min-width: 100%;
+		min-height: 100%;
+		background: $yellow2;
+		position: relative;
+		z-index: 0;
+		.gm-style-cc {
+		    display: none;
+		}
+	}
+	.title {
+		position: relative;
+		.number {
+			margin-right: 18px;
+			color: $red;
+		}
+		.text {
+			position: absolute;
+			width: 200px;
+			top: 50%;
+			transform: translateY(-30%);
+		}
+	}
+	.decorator__way {
+		width: 1.9211em;
+		height: 1.6316em;
+		svg {
+			top: 30%;
+			transform: translate3d(-50%, 0, 0);
+		}
+	}
+	.section {
+		.title {
+			margin-bottom: 0;
+		}
+		p {
+			display: block;
+			color: $grey;
+			width: 14.15em;
+			margin-left: 42.4157%; /*  151px / 356px */
+		}
+	}
+}
+.section {
+	p + a.btn__enroll {
+		margin-top: 20.2247%; /* 72px / 356px */
+		margin-left: 42.4157%;
 	}
 }
 .all__centres {
