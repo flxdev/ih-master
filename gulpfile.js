@@ -29,7 +29,7 @@ gulp.task('css', function () {
 
 gulp.task('svg', function () {
     return gulp.src('./app/prod/img/svg/*.svg')
-        .pipe(svgmin())
+        //.pipe(svgmin())
         .pipe(svgstore())
         .pipe(rename({
 			suffix: '.min'

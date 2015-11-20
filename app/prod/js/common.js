@@ -248,6 +248,10 @@ $(document).ready(function(){
 			target = e.target || e.srcElement;
 
 		while (target != document) {
+			if (isNaN(target)) {
+				return;
+			}
+
 			if (target.hasAttribute(this.closeBtn)) {
 				break;
 			}
@@ -547,6 +551,27 @@ $(document).ready(function(){
 			$(this).keyup(calculate);
 		});
 
+	})();
+
+	//fancybox
+	(function(){
+		$("a[href$='.jpg'],a[href$='.jpeg'],a[href$='.png'],a[href$='.gif']").fancybox({
+			padding: 0,
+			openEffect: 'elastic',
+			nextEffect: 'fade',
+			prevEffect: 'fade',
+			helpers: {
+				overlay: {
+					locked: true
+				}
+			},
+			tpl: {
+				closeBtn: '<a title="Close" class="fancybox-item fancybox-close" href="javascript:;"><svg viewBox="0 0 24 24" height="100%" class="close_icon" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="m0,4l4,-4l8,8l8,-8l4,4l-8,8l8,8l-4,4l-8,-8l-8,8l-4,-4l8,-8l-8,-8z"/></svg></a>',
+				next: '<a title="Next" class="fancybox-nav fancybox-next" href="javascript:;"><span><svg class="arrow_right" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 42.067 41.968"><g id=""><path class="fill" fill-rule="evenodd" clip-rule="evenodd" d="M0.097,20.971v-2h29.996v2H0.097"/><path class="stroke" fill="none" stroke-width="2" stroke-miterlimit="10" d="M40.093,19.97l-16.998,9.999V9.972L40.093,19.97z"/></g></svg></span></a>',
+				prev: '<a title="Previous" class="fancybox-nav fancybox-prev" href="javascript:;"><span><svg class="arrow_left" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 41.968 41.968"><g id=""><path class="fill" fill-rule="evenodd" clip-rule="evenodd" d="M41.968,19.969v2H11.972v-2H41.968"/><path class="stroke" fill="none" stroke-width="2" stroke-miterlimit="10" d="M1.972,20.97l16.998-9.999v19.997L1.972,20.97z"/></g></svg></span></a>'
+			},
+			margin: [90, 60, 90, 60]
+		});
 	})();
 
 });
