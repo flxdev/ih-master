@@ -2486,7 +2486,11 @@ h1 {
 		}
 	}
 }
-
+@media screen and (min-width: 1600px) {
+	.blocks-links {
+		margin-left: 16.37%;
+	}
+}
 @media screen and (max-width: 1599px) {
 	.blocks-links {
 		margin: 0 -1.875em 0 17.2%; 
@@ -3551,7 +3555,7 @@ div[class*="col"] .title {
 	}
 }
 .map__container {
-	padding: 1.25em 6.8125em 5.25em 4.5em; 
+	padding: 1.25em 6.25em 5.25em 7.303%; 
 	position: relative;
 	&:before {
 		content: '';
@@ -3573,15 +3577,14 @@ div[class*="col"] .title {
 		float: left;
 		width: 23.5em;
 		padding-right: 1.25em; /* 20px / 16px */
-		position: relative;
 		z-index: 2;
 	}
 	.right-column {
-		left: 28em;
-		bottom: 5.25em;
+		bottom: 3.3em;
 		height: 31.8125em; /* 509px / 16px */
-		position: absolute;
-		width: 25.7em;
+		position: relative;
+		float: left;
+		width: 53%;
 	}
 	.map {
 		min-width: 100%;
@@ -3623,6 +3626,75 @@ div[class*="col"] .title {
 			color: $grey;
 			width: 14.15em;
 			margin-left: 42.4157%; /*  151px / 356px */
+		}
+	}
+}
+@media screen and (max-width: 1599px) {
+	.map__container {
+		padding-left: 7.303%;
+	}
+}
+@media screen and (max-width: 1335px) {
+	.map__container {
+		padding-right: 6.303%;
+		.right-column {
+			width: 52.6%;
+		}
+	}
+}
+@media screen and (max-width: 1279px) {
+	.map__container {
+		padding-left: 1.303%;
+		padding-right: 3.75em;
+		.right-column {
+			width: 43.8%;
+		}
+	}
+}
+@media screen and (max-width: 1023px) {
+	.map__container {
+		padding-left: 0;
+		padding-right: 1.75em;
+		.right-column {
+			height: 30.8125em;
+			width: 41.8%;
+		}
+		div[class*=col] .title {
+			.text {
+				letter-spacing: -2.35px;
+			}
+			.number {
+				margin-right: 8px;
+			}
+		}
+		.left-column {
+			width: 21.5em;
+			z-index: 5;
+			margin-left: -2.8125em;
+		}
+
+	}
+}
+@media screen and (max-width: 767px) {
+	.map__container {
+		padding-right: 0;
+		.left-column {
+			width: 21.5em;
+			z-index: 5;
+			margin-left: -0.5125em;
+		}
+		.right-column {
+			bottom: auto;
+			margin-top: 4.0625em;
+			width: 100%;
+		}
+		.title .text {
+			width: 5em;
+		}
+		.section {
+			p + a.btn__enroll {
+				margin-top: 9.8315%; /* 35px / 356px */
+			}
 		}
 	}
 }
