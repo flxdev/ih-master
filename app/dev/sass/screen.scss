@@ -80,10 +80,42 @@ $black: #000000;
 $pink: #e51836;
 $pink-hover: #cd1530;
 $pink-active: #ab1128;
+$table-border: #e9e9e9;
 
 
 $color: (
 	pink: (
+		scroll: #e51836,
+		main-color: #e51836,
+		logo-circle: #000000,
+		logo-ih: #000000,
+		main-menu: #ffffff,
+		lang: #ffffff,
+		lang-hover: #003e7e,
+		pin-header: #e51836,
+		pin-footer: #e51836,
+		menu: #000000,
+		menu-hover: #003e7e,
+		header-border: #000000,
+		location: #000000,
+		location-hover: #003e7e,
+		btn-color: #e51836,
+		btn-color-hover: #cd1530,
+		btn-color-active: #ab1128,
+		title: #000000,
+		block-links: #e51836,
+		block-links-bg: #f5f5f5,
+		descr: #ffffff,
+		descr-min: #000000,
+		result: #000000,
+		numbers: #e51836,
+		border: #f8f7f7,
+		tr-border: #e51836,
+		table-tr-border: #e51836,
+		img-border: #e51836,
+		img-border-hover: #003e7e,
+		caption: #000000,
+		caption-hover: #003e7e,
 		pink: #e51836,
 		pink-hover: #cd1530,
 		pink-active: #ab1128,
@@ -91,6 +123,40 @@ $color: (
 		white: #ffffff,
 		grey: #f5f5f5,
 		blue: #003e7e
+	),
+	silver: (
+		scroll: #005d7c,
+		main-color: #eee7dd,
+		logo-circle: #000000,
+		logo-ih: #000000,
+		main-menu: #333333,
+		lang: #333333,
+		lang-hover: #b31426,
+		pin-header: #b31426,
+		pin-footer: #00a3da,
+		menu: #333333,
+		menu-hover: #b31426,
+		header-border: #333333,
+		location: #333333,
+		location-hover: #b31426,
+		btn-color: #b31426,
+		btn-color-hover: #a01222,
+		btn-color-active: #8c101e,
+		white: #ffffff,
+		title: #938048,
+		block-links: #ffffff,
+		block-links-bg: #005d7c,
+		descr: #4c4c4c,
+		descr-min: #4c4c4c,
+		result: #333333,
+		numbers: #b31426,
+		border: #005d7c,
+		tr-border: #005d7c,
+		table-tr-border: #b31426,
+		img-border: #005d7c,
+		img-border-hover: #b31426,
+		caption: #005d7c,
+		caption-hover: #b31426,
 	)
 );
 
@@ -3386,8 +3452,8 @@ div[class*="col"] .title {
 .btn__type-3 {
 	display: inline-block;
 	min-width: 11.25em; /* 180px / 16px */
-	border: 3px solid #fff;
-	line-height: 2.5; /* 40px / 16px */
+	border: 0.1875em solid #fff; // 3px / 16px
+	line-height: 2.5em; /* 40px / 16px */
 	height: 2.75em;
 	text-align: center;
 	color: #fff;
@@ -3667,20 +3733,20 @@ div[class*="col"] .title {
 		max-width: 190px;
 		img {
 			max-width: 100%;
-			border: 0.25em solid $red; // 4px / 16px
+			border: 0.25em solid $blue; // 4px / 16px
 			margin-bottom: 1.875em; //30px /16px
 			@include transition (border-color);
 		}
 		figcaption {
-			color: $black;
+			color: $blue;
 			@include transition (color);
 		}
 		&:hover {
 			img {
-				border-color: $blue;
+				border-color: $red;
 			}
 			figcaption {
-				color: $blue;
+				color: $red;
 			}
 		}
 	}
@@ -3751,42 +3817,427 @@ blockquote {
 		bottom: 0.375em; //6px / 16px
 	}
 }
+.table__cover {
+	margin-top: 1.75em; //28px / 16px
+	overflow-x: auto;
+	padding-bottom: 1.375em; //22px / 16px
+}
+.table__overlay {
+	border: 0.5em solid $table-border; // 8px / 16px
+	padding: 0 1.375em 1.6875em; // 0 22px 27px / 16px
+	width: 100%;
+	max-width: 640px;
+	display: inline-block;
+	min-width: 520px;
+	width: 100%;
+}
+.table__overlay.table {
+	border-color: $table-border;
+}
+table {
+	border-collapse: collapse;
+	width: 100%;
+	&.exams {
+		thead tr {
+			border-bottom: 0.1875em solid $blue; //3px / 16px
+			th {
+				padding: 1.5625em 0; // 25px / 16px
+				text-align: center;
+				&:first-child {
+					text-align: left; 
+					width: 20%;
+				}
+				&:last-child {
+					text-align: right;
+					width: 31%;
+				}
+			}
+		}
+		tbody tr {
+			&:first-child{
+				td {
+					padding-top: 1.875em; // 30px / 16px
+				}
+			}
+			td {
+				padding: 0.75em 0; // 12px / 16px
+				text-align: center;
+				&:first-child {
+					text-align: left; 
+					width: 20%;
+				}
+				&:last-child {
+					text-align: right;
+					width: 31%;
+				}
+			}
+		}
+	}
+}
+.content__block {
+	.categories__change {
+		.steps {
+			margin-right: 1.2em; //19px / 16px
+			dt {
+				padding-bottom: 13px;
+				border-bottom: 0.25em solid $red; // 4px / 16px			
+				margin-bottom: 0.75em; // 12px / 16px
+			}
+			.title {
+				line-height: 1.5;
+				margin-bottom: 0.65em; // 13px /20px
+			}
+			p {
+				margin-bottom: 0.765em; // 10px / 16px
+			}
+			a.rombs {
+				padding-left: 2em; // 32px / 16px
+				border-bottom: none;
+				position: relative;
+				span {
+					color: $red;
+					border-bottom: 1px solid $red;
+					transition: color 0.3s ease, border-color 0.3s ease;
+				}
+				&:hover {
+					span {
+						border-color: transparent;
+						color: $blue;
+					}
+				}
+				&::after {
+					content: '';
+					width: 1.125em; // 18px / 16px
+					height: 1.125em; //18px / 16px
+					border: 0.125em solid $red; // 2px / 16px
+					position: absolute;
+					top: 0.0625em; // 1px / 16px
+					left: 0.25em; // 4px / 16px
+				}
+				&::before {
+					content: '';
+					width: 1.125em; // 18px / 16px
+					height: 1.125em; //18px / 16px
+					border: 2px solid $red;
+					position: absolute;
+					top: 0.375em; // 6px / 16px
+					left: 0em;
+				}				
+			}
+			.btn__type-1 {
+				min-width: 11.25em; // 180px / 16px
+				border-bottom: none;
+			}
+		}			
+	}
+}
+.files__container {
+	padding-top: 0.6875em; //10px / 16px
+	.file__list {
+		li {
+			display: inline-block;
+			width: 31.3%;
+			vertical-align: top;
+			margin-bottom: 1em; // 16px / 16px
+		}
+		.file {
+			display: inline-block;
+			width: 100%;
+			max-width: 80%;
+			> div{
+				margin-bottom: 0.6875em; // 11px/ 16px
+				.icon__file {
+					display: inline-block;
+					width: 4.0625em; // 65px / 16px
+					height: 5.25em; //84px / 16px
+					fill: $black;
+					transition: fill 0.3s ease;
+				}
+			}
+			> span {
+				width: 100%;
+				color: $red;
+				border-bottom: 1px solid $red;
+			}
+		}
+	}
+}
+.tab__container {
+	.tabs__pagination {
+		li {
+			display: inline-block;
+			margin-right: 2.6875em; // 43px / 16px
+			margin-bottom: 1em; //16px / 16px
+			a {
+				color: $black;
+				@include transition(color);
+				&.is-visible {
+					color: $red;
+					pointer-events: none;
+				}
+				&:hover {
+					color: $red;
+				}
+			}
+		}
+	}
+	.tab__groups {
+		padding-left: 2px;
+		margin-bottom: 2.625em; // 42px / 16px
+		.tabs {
+			opacity: 0;
+			transform: translate3d(0, 3em, 0);
+			transition: transform 0.5s ease, opacity 0.5s ease;
+			display: none;
+			&.is-visible {
+				opacity: 1;
+				transform: translate3d(0, 0, 0);
+			}
+		}
+		.table__overlay {
+			max-width: 860px;
+			background-color: $white;
+			position: relative;
+			padding: 0 1.7em 1.6875em;
+			max-width: 860px;
+			min-width: 636px; 
+			width: 100%;
+			&::after {
+				content: '';
+				position: absolute;
+				width: 37.59999%;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				background-color: #f8f7f7;
+				z-index: 1;
+			}
+		}
+		table {
+			&.statistics {
+				position: relative;
+				z-index: 2;
+
+				width: 100%;
+				thead tr:first-child {
+					th {
+						padding: 1.6428em 0.5em; // 23px 7px / 14px
+						border-bottom: 1px solid $red;
+						&:first-child {
+							width: 26%;
+							border-color: transparent;
+						}
+					}
+				}
+				thead tr:last-child {
+					th {
+						padding: 1.21428em 0 1.5em; // 17px 0 21px / 14px
+						border-bottom: 3px solid $red;
+						&:first-child {
+							text-align: left;
+						}
+					}
+				}
+				tbody tr {
+					&:first-child {
+						td {
+							padding-top: 1.9285em; // 27px / 14px
+						}
+					}
+					td {
+						text-align: center;
+						padding: 1.07142em 0; // 15/14px
+					}
+				}
+			}
+		}
+	}
+}
+.img__test {
+	float: left;
+	max-width: 100%;
+	width: 12.5em; // 200px / 16px
+	margin: 0.8125em 3em 0.9375em 0; // 13px 48px 15px 0 / 16px
+}
+.content__block  {
+	.preview {
+		line-height: 1.5;
+	}
+}
+@media screen and (max-width: 1023px) {
+	.files__container {
+		.file__list {
+			li{
+				width: 32.8%;
+			}
+			.file {
+				max-width: 100%;
+			}
+		}
+	}
+}
+@media screen and (max-width: 980px) {
+	.files__container {
+		.file__list {
+			li{
+				width: 49%;
+			}
+		}
+	}
+}
+@media screen and (max-width: 817px) {
+	.table__overlay {
+		min-width: 480px;
+	}
+}
+@media screen and (max-width: 569px) {
+	.table__overlay {
+		min-width: 440px;
+	}
+}
+@media screen and (max-width: 522px) {
+	.table__overlay {
+		min-width: 350px;
+	}
+}
+@media screen and (max-width: 479px) {
+	.tab__container {
+		.tab__groups {
+			.table__overlay {
+				min-width: 295px;
+			}
+		}
+	}
+}
+.responsive__numbers {
+	counter-reset: count;
+	li {
+		width: 100%;
+		display: inline-block;
+		vertical-align: top;
+		position: relative;
+		margin-bottom: 1.4em; //28px / 20px
+		&::before {
+			counter-increment: count;
+			content:  counter(count) '.';
+			position: absolute;
+			left: -6.5em;
+			top: 0;
+			color: $white;
+		}
+		span {
+			display: inline-block;
+			margin-top: 1.1875em; //19px / 16px
+		}
+		a {
+			color: $red;
+			@include transition(color);
+			&:hover {
+				color: $blue;
+			}
+		}
+	}
+}
+@media screen and (max-width: 1365px) {
+	.responsive__numbers {
+		li {
+			&::before {
+				left: -5.5em;
+			}
+		}
+	}
+}
+@media screen and (max-width: 1279px) {
+	.responsive__numbers {
+		li {
+			&::before {
+				left: -4.5em;
+			}
+		}
+	}
+}
+@media screen and (max-width: 1023px) {
+	.responsive__numbers {
+		li {
+			padding-left: 3.5em;
+			&::before {
+				left: 0;
+				color: $black;
+			}
+		}
+	}
+}
 @each $name, $list in $color {
 	body.#{$name} {
 		.nicescroll-cursors {
-			background-color: map-get($list, pink)!important;
+			background-color: map-get($list, scroll)!important;
 		}
 		.btn__type-1 {
-			background-color: map-get($list, pink);
+			background-color: map-get($list, btn-color);
+			span {
+				color: map-get($list, white);
+			}
 			&:hover {
-				background-color: map-get($list, pink-hover);
+				background-color: map-get($list, btn-color-hover);
 			}
 			&:active {
-				background-color: map-get($list, pink-active);
+				background-color: map-get($list, btn-color-active);
+			}
+		}
+		.btn__type-2 {
+			background-color: map-get($list, btn-color);
+			span {
+				color: map-get($list, white);
+			}
+			&:hover {
+				background-color: map-get($list, btn-color-hover);
+			}
+			&:active {
+				background-color: map-get($list, btn-color-active);
+			}
+		}
+		.btn__type-3 {
+			border-color: map-get($list, btn-color);
+			span {
+				color: map-get($list, btn-color);
+			}
+			&:hover {
+				background-color: map-get($list, btn-color-hover);
+				border-color: map-get($list, btn-color-hover);
+				span {
+					color: map-get($list, white);
+				}
+			}
+			&:active {
+				background-color: map-get($list, btn-color-active);
+				border-color: map-get($list, btn-color-active);
+				span {
+					color: map-get($list, white);
+				}
 			}
 		}
 		h1 {
-			color: map-get($list, black);
+			color: map-get($list, title);
 		}
 		.header {
 			.header__content {
 				.btn__cart {
-					border-color: map-get($list, black);
+					border-color: map-get($list, header-border);
 					.btn-menu {
 						span {
-							color: map-get($list, black);
+							color: map-get($list, menu);
 						}
 						.menu__burger {
 							.burger__svg {
-								fill: map-get($list, black);
+								fill: map-get($list, menu);
 							}
 						}
 						&:hover {
 							span {
-								color: $blue;
+								color: map-get($list, menu-hover);
 							}
 							.burger__svg {
-								fill: $blue;
+								fill: map-get($list, menu-hover);
 							}
 						}
 					}					
@@ -3794,61 +4245,61 @@ blockquote {
 			}
 			.location {
 				span {
-					border-color: map-get($list, black);
-					color: map-get($list, black);
+					border-color: map-get($list, location);
+					color: map-get($list, location);
 				}
 				&:hover {
 					span {
-						color: $blue;
+						color: map-get($list, location-hover);
 						border-color: transparent;
 					}
 				}
 				#location {
-					fill: map-get($list, pink);
+					fill: map-get($list, pin-header);
 				}
 			}
 			.header__inner {
 				.lang {
 					a {
-						color: map-get($list, white);
+						color: map-get($list, lang);
 						&:hover {
-							color: $blue;
+							color: map-get($list, lang-hover);
 						}
 					}
 					span {
-						background-color: map-get($list, white);
+						background-color: map-get($list, lang);
 					}
 				}
 			}
 		}
 		.main {
-			background-color: map-get($list, pink);
+			background-color: map-get($list, main-color);
 			.logo {
 				.circle {
 					.fill {
-						fill: map-get($list, black);
+						fill: map-get($list, logo-circle);
 					}
 				}
 				.name {
 					.fill {
-						fill: map-get($list, black);
+						fill: map-get($list, logo-ih);
 					}
 				}
 			}
 		}
 		.main__menu {
 			&::after {
-				background-color: map-get($list, pink);
+				background-color: map-get($list, main-color);
 			}
 			&::before {
-				background-color: map-get($list, pink);
+				background-color: map-get($list, main-color);
 			}
 			li {
-				background-color: map-get($list, pink);
+				background-color: map-get($list, main-color);
 				> a {
 					span {
-						color: map-get($list, white);
-						border-color: map-get($list, white);
+						color: map-get($list, main-menu);
+						border-color: map-get($list, main-menu);
 					}
 				}
 				&:hover {
@@ -3861,7 +4312,7 @@ blockquote {
 		.big_scroll {
 			.overview {
 				&::after {
-					background-color: map-get($list, pink);
+					background-color: map-get($list, main-color);
 				}
 			}
 		}
@@ -3871,7 +4322,7 @@ blockquote {
 					a {
 						.marker__svg-centres {
 							#location {
-								fill: map-get($list, pink);
+								fill: map-get($list, pin-footer);
 							}
 						}
 						span {
@@ -3952,14 +4403,14 @@ blockquote {
 			}
 		}
 		.blocks-links {
-			background-color: map-get($list, grey);
+			background-color: map-get($list, block-links-bg);
 			ul > li > a:not(.btn__enroll) {
-				color: map-get($list, pink);
+				color: map-get($list, block-links);
 				&:hover {
 					color: $blue;
 				}
 				&.active__anchor {
-					border-color: map-get($list, pink);
+					border-color: map-get($list, block-links);
 					&:hover {
 						border-color: $blue;
 					}
@@ -3968,15 +4419,15 @@ blockquote {
 		}
 		div[class*="col"] {
 			.title {
-				color: map-get($list, black);
+				color: map-get($list, title);
 			}
 		}
 		.content__block {
 			.description {
-				color: map-get($list, white);
+				color: map-get($list, descr);
 			}
 			.result {
-				color: map-get($list, black);
+				color: map-get($list, result);
 				a {
 					color: $pink;
 					border-bottom: 1px solid $pink;
@@ -4000,10 +4451,10 @@ blockquote {
 		.numbers {
 			li {
 				&::before {
-					color: map-get($list, pink);
+					color: map-get($list, numbers);
 				}
 				.head {
-					color: map-get($list, pink);
+					color: map-get($list, numbers);
 				}
 			}
 		}
@@ -4011,6 +4462,44 @@ blockquote {
 			li {
 				&::after {
 					background-color:  map-get($list, pink);
+				}
+			}
+		}
+		.table__overlay {
+			border-color: map-get($list, border);
+			&.table {
+				border-color: $table-border;
+			}
+			table {
+				&.exams {
+					thead tr {
+						border-color: map-get($list, table-tr-border);
+					}
+				}
+			}
+		}
+		table {
+			&.exams {
+				thead tr {
+					border-color: map-get($list, tr-border);
+				}
+			}
+		}
+		.sertificate {
+			.sert__item {
+				img {
+					border-color: map-get($list, img-border);
+				}
+				figcaption {
+					color: map-get($list, caption);
+				}
+				&:hover {
+					img {
+						border-color: map-get($list, img-border-hover);
+					}
+					figcaption {
+						color: map-get($list, caption-hover);
+					}
 				}
 			}
 		}
@@ -4022,7 +4511,20 @@ blockquote {
 		body.#{$name} {
 			.content__block {
 				.description {
-					color: map-get($list, black);
+					color: map-get($list, desc-min);
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: 767px) {
+	@each $name, $list in $color {
+		body.#{$name} {
+			.header {
+				.header__content {
+					.btn__cart {
+						border-color: transparent;
+					}
 				}
 			}
 		}

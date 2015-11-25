@@ -393,6 +393,36 @@ $(document).ready(function () {
 			coord: 'data-coord'
 		});
 	}) ();
+
+	//TABS INIT
+	(function(){
+		$('.tab__container').each(function(){
+			var link = $(this).find('a'),
+				items = $(this).find('li'),
+				index = link.data("pagin"),
+				parents = $(this),
+				tabContent = $(this).find('.tabs');
+
+			link.on('click', function(){
+				var index = $(this).data('pagin'),
+					activeTab = $(this).parents('.tab__container').find('.'+index);
+				
+				$(this).addClass('is-visible').parent().siblings().find('a').removeClass('is-visible');
+				tabContent.fadeOut(0).removeClass('is-visible');
+				setTimeout(function(){
+					parents.find("."+index).addClass('is-visible');
+				},10);
+				parents.find("."+index).show();
+				return false;
+			});
+			items.first().find('a').addClass("is-visible");
+			parents.find("."+index).show();
+			setTimeout(function(){
+				parents.find("."+index).addClass('is-visible')
+			}, 10);
+
+		});
+	})();
 });
 
 
