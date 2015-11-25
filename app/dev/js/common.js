@@ -752,18 +752,18 @@ function Map () {
 
 		    map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(controlls);
 
-		    markers.forEach(function (item, i) {
-		    	var marker = new google.maps.Marker({
-			    	    position: {
-			    	    	lat: parseFloat(item[0]),
-			    	    	lng: parseFloat(item[1])
-			    	    },
-			    	    map: map,
-			    	    visible: true,
-			    	    zIndex: (i + 1),
-			    	    icon: _createLabel()
-			    	});
-		    });
+	    markers.forEach(function (item, i) {
+	    	var marker = new google.maps.Marker({
+	    	    position: {
+	    	    	lat: parseFloat(item[0]),
+	    	    	lng: parseFloat(item[1])
+	    	    },
+	    	    map: map,
+	    	    visible: true,
+	    	    zIndex: (i + 1),
+	    	    icon: _createLabel()
+	    	});
+	    });
     }
 
     return {

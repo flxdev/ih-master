@@ -54,21 +54,37 @@ $(document).ready(function () {
 	//SLICK SLIDER
 
 	(function () {
-		var sliderImg = $('.slider_img');
+		var sliderImg = $('.slider_img'),
+			btnLeft = undefined,
+			btnRight = undefined;
 
 		if (sliderImg.length) {
 
-			sliderImg.slick({
-				arrows: false,
-				dots: false
-			});
+			Array.prototype.forEach.call(sliderImg, function (item) {
+				var nameClass = item.parentNode.getAttribute('class').split(' ')[0];
 
-			$('.btn__left').on('click', function(){
-				sliderImg.slick('slickPrev');
-			});
+				if ($(item).hasClass('slider-pb')) {
+					$(item).slick({
+						arrows: false,
+						dots: false,
+						infinite: true,
+						slidesToShow: 2,
+						slidesToScroll: 1
+					});
+				} else {
+					$(item).slick({
+						arrows: false,
+						dots: false
+					});
 
-			$('.btn__right').on('click', function(){
-				sliderImg.slick('slickNext');
+					$(nameClass + ' .btn__left').on('click', function(){
+						sliderImg.slick('slickPrev');
+					});
+
+					$(nameClass + ' .btn__left').on('click', function(){
+						sliderImg.slick('slickNext');
+					});
+				}
 			});
 		}
 		window.addEventListener('resize', function () {
@@ -752,18 +768,18 @@ function Map () {
 
 		    map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(controlls);
 
-		    markers.forEach(function (item, i) {
-		    	var marker = new google.maps.Marker({
-			    	    position: {
-			    	    	lat: parseFloat(item[0]),
-			    	    	lng: parseFloat(item[1])
-			    	    },
-			    	    map: map,
-			    	    visible: true,
-			    	    zIndex: (i + 1),
-			    	    icon: _createLabel()
-			    	});
-		    });
+	    markers.forEach(function (item, i) {
+	    	var marker = new google.maps.Marker({
+	    	    position: {
+	    	    	lat: parseFloat(item[0]),
+	    	    	lng: parseFloat(item[1])
+	    	    },
+	    	    map: map,
+	    	    visible: true,
+	    	    zIndex: (i + 1),
+	    	    icon: _createLabel()
+	    	});
+	    });
     }
 
     return {

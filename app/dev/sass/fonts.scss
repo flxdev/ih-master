@@ -781,6 +781,39 @@ table {
         font-size: 1.25em; // 20px / 16px
     }
 }
+.prevslide-block {
+    .title-pb {
+        font: 2.375em/1.1579 $AgoraProBlack;
+    }
+    .descr_slide-pb {
+        font: 0.8125em/2.3077 $HelveticaMedium;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+    }
+    .title_slide-pb {
+        font: 1.25em/1.5 $AgoraProUltraBlack;
+    }
+    .price_slide-pb {
+        font: 1.25em/1.5 $AgoraProBold;
+    }
+    .info_slide-pb {
+        font: 1em/1.625 $HelveticaRoman;
+    }
+}
+.card-block {
+    .title-cb {
+        font: 1.125em/1.6667 $AgoraPro;
+    }
+    .descr-cb {
+        font: 1.25em/1.4 $AgoraProBoldItalic;
+        letter-spacing: 0.03em;
+    }
+}
+.link-svg-arrow {
+    font: 0.8125em/2.3077 $HelveticaBold;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
 @media screen and (max-width: 1599px) {
     a[class*="btn__type"] {
         span {
@@ -890,6 +923,11 @@ table {
         a {
             font-size: 1.25em; //20px / 16
             font-family: $AgoraProBlack;
+        }
+    }
+    .center__block {
+        .title-cb {
+            font-family: $AgoraProMedium;
         }
     }
 }
