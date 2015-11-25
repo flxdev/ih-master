@@ -54,21 +54,37 @@ $(document).ready(function () {
 	//SLICK SLIDER
 
 	(function () {
-		var sliderImg = $('.slider_img');
+		var sliderImg = $('.slider_img'),
+			btnLeft = undefined,
+			btnRight = undefined;
 
 		if (sliderImg.length) {
 
-			sliderImg.slick({
-				arrows: false,
-				dots: false
-			});
+			Array.prototype.forEach.call(sliderImg, function (item) {
+				var nameClass = item.parentNode.getAttribute('class').split(' ')[0];
 
-			$('.btn__left').on('click', function(){
-				sliderImg.slick('slickPrev');
-			});
+				if ($(item).hasClass('slider-pb')) {
+					$(item).slick({
+						arrows: false,
+						dots: false,
+						infinite: true,
+						slidesToShow: 2,
+						slidesToScroll: 1
+					});
+				} else {
+					$(item).slick({
+						arrows: false,
+						dots: false
+					});
 
-			$('.btn__right').on('click', function(){
-				sliderImg.slick('slickNext');
+					$(nameClass + ' .btn__left').on('click', function(){
+						sliderImg.slick('slickPrev');
+					});
+
+					$(nameClass + ' .btn__left').on('click', function(){
+						sliderImg.slick('slickNext');
+					});
+				}
 			});
 		}
 		window.addEventListener('resize', function () {
