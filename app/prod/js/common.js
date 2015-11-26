@@ -62,7 +62,7 @@ $(document).ready(function () {
 
 			Array.prototype.forEach.call(sliderImg, function (item) {
 				var nameClass = item.parentNode.getAttribute('class').split(' ')[0];
-
+			
 				if ($(item).hasClass('slider-pb')) {
 					$(item).slick({
 						arrows: false,
@@ -76,17 +76,18 @@ $(document).ready(function () {
 						arrows: false,
 						dots: false
 					});
-
+			
 					$(nameClass + ' .btn__left').on('click', function(){
 						sliderImg.slick('slickPrev');
 					});
-
+			
 					$(nameClass + ' .btn__left').on('click', function(){
 						sliderImg.slick('slickNext');
 					});
 				}
 			});
 		}
+
 		window.addEventListener('resize', function () {
 			if (window.innerWidth && parseInt(window.innerWidth) < 768) {
 				$('.banner-slider .slider_img').slick('init');
@@ -786,6 +787,7 @@ function Map () {
     	init: configuration
     }
 }
+
 /**
  * [EventEmitter singleton]
  */
