@@ -4522,12 +4522,12 @@ table {
 			overflow: hidden;
 		}
 		.fill {
-			transition: opacity 0.3s ease, color 0.3s ease-in;
+			transition: opacity 0.3s ease, fill 0.3s ease-in;
 			opacity: 0;
 			fill: $blue;
 		}
 		.stroke {
-			transition: color 0.3s ease-in;
+			transition: stroke 0.3s ease-in;
 			stroke: $blue;
 		}
 	}
