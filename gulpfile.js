@@ -79,6 +79,10 @@ gulp.task('libcss', function () {
 
 gulp.task('default', ['sync', 'libcss', 'templates'], function () {
 
+	gulp.watch('./app/prod/test/templates/*.html', ["templates"], browserSync.reload);
+
+	gulp.watch('./app/prod/test/js/*.js', browserSync.reload );
+
 	gulp.watch('./app/*.html', browserSync.reload );
 
 	gulp.watch('./app/dev/js/*.js', ['js'], browserSync.reload );

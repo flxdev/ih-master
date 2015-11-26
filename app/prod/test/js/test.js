@@ -631,7 +631,6 @@
 
 			this._load(function () {
 				self.animationOpenWindow(duration);
-				console.log('finish')
 			});
 		};
 
@@ -665,7 +664,6 @@
 
 		this._templating = function (data) {
 			document.body.insertAdjacentHTML('beforeEnd', Views.templates.view(data));
-			console.log('3')
 		};
 
 		this._load = function (callback) {
@@ -684,11 +682,12 @@
 					self.data = undefined;
 				}
 
-				console.log('')
 				return self.data = res;
 			})
 			.then(function (data) {
-				self._templating(data['A'][0]);
+				/*var variant = self._random(data.keys.splice(0, 2));*/
+
+				// self._templating(variant);
 			})
 			.then(function () {
 				if (!callback || !(callback instanceof Function)) {
@@ -701,6 +700,13 @@
 			return importData;
 
 		};
+
+		this._random = function (variants) {
+			var random = Math.floor(Math.random() * (variants.length)) + 1,
+				arr = Array.from(variants), count;
+
+			return arr[random];
+		}
 	}
 
 	var test = new Test({

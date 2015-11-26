@@ -1,32 +1,54 @@
 <div class="popup__wrap" data-test-window>
-    <div class="popup">
-        <div class="popup__form border__effect is-active">
-            <div class="popup__inner">
-                <button class="popup__close">
-                    <i class="icon_close_svg">
-                        <svg viewBox="0 0 24 24" height="100%" class="close_icon" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <path d="m0,4l4,-4l8,8l8,-8l4,4l-8,8l8,8l-4,4l-8,-8l-8,8l-4,-4l8,-8l-8,-8z"/>
-                        </svg>
-                    </i>
-                </button>
-				
-            </div>
-        </div>
-        <div class="popup__success border__effect">
-            <div class="popup__inner">
-                <button class="popup__close">
-                    <i class="icon_close_svg">
-                        <svg viewBox="0 0 24 24" height="100%" class="close_icon" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <path d="m0,4l4,-4l8,8l8,-8l4,4l-8,8l8,8l-4,4l-8,-8l-8,8l-4,-4l8,-8l-8,-8z"/>
-                        </svg>
-                    </i>
-                </button>
-                <div class="form">
-                    <div class="title__form">Благодарим вас за проделанную работу!</div>
-                    <p>Ваш успешно записались на собеседование. Мы свяжемся с вами в ближайшее время!</p>
-                    <a href="/" class="popup__close"><span>На главную</span></a>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div class="popup">
+		<div class="popup__form border__effect is-active">
+			<div class="popup__inner">
+				<div class="form">
+					<div class="form__head">
+						<div class="row">
+							<div class="title__level"><span>Уровень {{number}}:</span><span>{{level}}</span></div>
+							<div class="number-quest"><span class="current">15</span><span class="end">25</span></div>
+							<div class="timing">12:45</div>
+						</div>
+						<div class="row">
+							<div class="progress-bar">
+								<div class="line-bar__noactive"></div>
+								<div class="line-bar__active"></div>
+							</div>
+						</div>
+					</div>
+					<div class="form__container">
+						<div class="title-form">Выберите один варинат ответа</div>
+						<div class="question" id="{{id_question}}">{{quest}}</div>
+						<div class="answers">
+							<ul>
+								{{#each options}}
+									<li><input type="radio" name="option" id="answer_{{id_answer}}"><label for="answer_{{id_answer}}">{{answer}}</label></li>
+								{{/each}}
+									
+							</ul>
+						</div>
+					</div>
+					<div class="form__footer">
+						<div class="action__block"><a class="link-svg-arrow"><span>следующий вопрос</span></a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="popup__success border__effect">
+			<div class="popup__inner">
+				<button class="popup__close">
+					<i class="icon_close_svg">
+						<svg viewBox="0 0 24 24" height="100%" class="close_icon" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+							<path d="m0,4l4,-4l8,8l8,-8l4,4l-8,8l8,8l-4,4l-8,-8l-8,8l-4,-4l8,-8l-8,-8z"/>
+						</svg>
+					</i>
+				</button>
+				<div class="form">
+					<div class="title__form">Благодарим вас за проделанную работу!</div>
+					<p>Ваш успешно записались на собеседование. Мы свяжемся с вами в ближайшее время!</p>
+					<a href="/" class="popup__close"><span>На главную</span></a>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

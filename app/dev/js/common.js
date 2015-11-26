@@ -54,23 +54,40 @@ $(document).ready(function () {
 	//SLICK SLIDER
 
 	(function () {
-		var sliderImg = $('.slider_img');
+		var sliderImg = $('.slider_img'),
+			btnLeft = undefined,
+			btnRight = undefined;
 
 		if (sliderImg.length) {
 
-			sliderImg.slick({
-				arrows: false,
-				dots: false
-			});
-
-			$('.btn__left').on('click', function(){
-				sliderImg.slick('slickPrev');
-			});
-
-			$('.btn__right').on('click', function(){
-				sliderImg.slick('slickNext');
+			Array.prototype.forEach.call(sliderImg, function (item) {
+				var nameClass = item.parentNode.getAttribute('class').split(' ')[0];
+			
+				if ($(item).hasClass('slider-pb')) {
+					$(item).slick({
+						arrows: false,
+						dots: false,
+						infinite: true,
+						slidesToShow: 2,
+						slidesToScroll: 1
+					});
+				} else {
+					$(item).slick({
+						arrows: false,
+						dots: false
+					});
+			
+					$(nameClass + ' .btn__left').on('click', function(){
+						sliderImg.slick('slickPrev');
+					});
+			
+					$(nameClass + ' .btn__left').on('click', function(){
+						sliderImg.slick('slickNext');
+					});
+				}
 			});
 		}
+
 		window.addEventListener('resize', function () {
 			if (window.innerWidth && parseInt(window.innerWidth) < 768) {
 				$('.banner-slider .slider_img').slick('init');
