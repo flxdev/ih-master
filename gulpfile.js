@@ -11,7 +11,10 @@ var gulp = require('gulp'),
 	minifyCss = require('gulp-minify-css'),
 	svgmin = require('gulp-svgmin'),
 	svgstore = require('gulp-svgstore'),
-	sass = require('gulp-sass');
+	sass = require('gulp-sass'),
+	handlebars = require('gulp-handlebars'),
+	wrap = require('gulp-wrap'),
+	declare = require('gulp-declare');
 
 gulp.task('css', function () {
 	return gulp.src('./app/dev/sass/*.scss')
@@ -28,13 +31,25 @@ gulp.task('css', function () {
 });
 
 gulp.task('svg', function () {
-    return gulp.src('./app/prod/img/svg/*.svg')
-        //.pipe(svgmin())
-        .pipe(svgstore())
-        .pipe(rename({
+	return gulp.src('./app/prod/img/svg/*.svg')
+		//.pipe(svgmin())
+		.pipe(svgstore())
+		.pipe(rename({
 			suffix: '.min'
 		}))
-        .pipe(gulp.dest('./app/prod/img/'));
+		.pipe(gulp.dest('./app/prod/img/'));
+});
+
+gulp.task('templates', function(){
+	gulp.src('./app/prod/test/templates/*.html')
+		.pipe(handlebars())
+		.pipe(wrap('Handlebars.template(<%= contents %>)'))
+		.pipe(declare({
+			namespace: 'Views.templates',
+			noRedeclare: true
+		}))
+		.pipe(concat('templates.js'))
+		.pipe(gulp.dest('./app/prod/test/js/'));
 });
 
 gulp.task('js', function () {
@@ -62,7 +77,7 @@ gulp.task('libcss', function () {
 		.pipe(gulp.dest('./app/prod/css/'));
 });
 
-gulp.task('default', ['sync', 'libcss'], function () {
+gulp.task('default', ['sync', 'libcss', 'templates'], function () {
 
 	gulp.watch('./app/*.html', browserSync.reload );
 
