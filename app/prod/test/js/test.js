@@ -559,6 +559,8 @@
  */
 
 (function () {
+	'use strict';
+
 	function Test (config) {
 		this.url = config.url;
 		this.levels = config.levels;
@@ -592,12 +594,19 @@
 			});
 		};
 
-		this.animationOpenTest = function () {
-			var success = $('[data-test-window]'),
-				forms = $('[data-test-validation]');
+		this.animationOpenPage = function (elem, callback) {
+			var prevElem = $('[data-test]').find('.is-active');
 
-			forms.removeClass('is-active');
-			success.addClass('is-active');
+			if (!elem || !prevElem) {
+				return;
+			}
+
+			prevElem.removeClass('is-active');
+			elem.addClass('is-active');
+
+			if (callback && (callback instanceof Function)) {
+				return callback();
+			}
 		}
 
 		this.animationCloseWindow = function (duration) {
@@ -665,7 +674,7 @@
 		this.checkAge = function (e) {
 			var target = e.target,
 				self = this,
-				form, checked;
+				form, change;
 
 			if (!target.hasAttribute('data-test-valid')) {
 
@@ -690,12 +699,16 @@
 
 			if (form && change && change.length > 0) {
 				Array.prototype.forEach.call(change, function (item) {
+					var answer = +item.getAttribute('id').split('_')[0];
+
 					if (!item.checked) {
 						return;
 					}
 
-					if (+item.getAttribute('id').split('_')[0] >= 11) {
-						self.animationOpenTest();
+					if (answer >= 11) {
+						self.animationOpenPage($('[data-test-window]'));
+					} else if (answer < 11 && answer > 1) {
+						self.animationOpenPage($('[data-test-writebig]'));
 					};
 
 				});
@@ -707,7 +720,7 @@
 		this.nextQuest = function (e) {
 			var target = e.target,
 				self = this,
-				form, checked;
+				form, change;
 
 			if (!target.hasAttribute('data-test-next')) {
 
@@ -776,7 +789,7 @@
 				this.waiter = this.levels;
 			}
 
-			return this.url + this.waiter.reverse().pop().toString() + '.json';
+			return this.url + this.waiter.shift().toString() + '.json';
 		};
 
 		this._setTemplate = function (view, obj) {
@@ -803,7 +816,7 @@
 			} else {
 				setTimeout(function() {
 					--self.currentTime;
-				}, parseFloat(interval)*60*1000, interval);
+				}, parseFloat(interval) * 60 * 1000, interval);
 			}
 		};
 
@@ -823,10 +836,17 @@
 				return;
 			}
 
-			if (this.currentQuest == 24 && this.result[this.variant].length >= 13) {
-				this._successTempalte();
+			if (this.currentQuest == 24 && Object.keys(this.result[this.variant]).length >= 13) {
+				this._successTempalte({
+					"number": this.data.number, 
+					"level": this.data.level, 
+					"result": Object.keys(this.result[this.variant]).length
+				}, this.animationOpenPage);
 			} else if (this.currentQuest == 24) {
-				this._errorTempalte();
+				this._errorTempalte({ 
+					"level": this.data.level, 
+					"result": Object.keys(this.result[this.variant]).length
+				}, this.animationOpenPage);
 			}
 
 			this.currentQuest += 1;
@@ -834,12 +854,32 @@
 			workField.querySelector('.form__container').outerHTML = Views.templates.containerFormTest(data[this.variant][this.currentQuest]);
 		};
 
-		this._successTempalte = function () {
-			console.log(this.result.length);
+		this._successTempalte = function (data, callback) {
+			var success = document.querySelector('[data-test-onsucces]'),
+				content = Views.templates.success(data);
+
+			if (!success) {
+				return;
+			}
+
+			success.innerHTML = success.innerHTML.replace('{success}', content);
+			callback($(success), function () {
+				return data;
+			});
 		};
 
-		this._errorTempalte = function () {
-			console.log(this.result.length);
+		this._errorTempalte = function (data, callback) {
+			var error = document.querySelector('[data-test-onerror]'),
+				content = Views.templates.error(data);
+
+			if (!error) {
+				return;
+			}
+
+			error.innerHTML = error.innerHTML.replace('{error}', content);
+			callback($(error), function () {
+				return data;
+			});
 		};
 
 		this._load = function (callback) {
