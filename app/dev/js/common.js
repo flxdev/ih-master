@@ -770,6 +770,7 @@ function Map () {
     	init: configuration
     }
 }
+
 /**
  * [EventEmitter singleton]
  */
