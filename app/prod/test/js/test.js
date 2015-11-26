@@ -563,6 +563,11 @@
 		this.url = config.url;
 		this.levels = config.levels;
 		this.template = config.template;
+		this.timeFromStart = config.time;
+		this.currentTime = this.timeFromStart;
+		this.currentQuest = 0;
+		this.progress = 0;
+		this.result = 0;
 
 		this.init = function () {
 			document.addEventListener('click', this, false);
@@ -570,19 +575,30 @@
 
 		this.handleEvent = function (e) {
 			switch (e.type) {
-				case 'click': this.openWindow(e);
+				case 'click': 
+					this.openWindow(e);
+					this.checkAge(e);
+					this.nextQuest(e);
 				break;
 			}
 		};
 
 		this.animationOpenWindow = function (duration) {
-			$('[data-test-window]').fadeIn({
+			$('[data-test]').fadeIn({
 				duration: duration,
 				complete: function(){
 					$(this).addClass("is-visible");
 				}
 			});
 		};
+
+		this.animationOpenTest = function () {
+			var success = $('[data-test-window]'),
+				forms = $('[data-test-validation]');
+
+			forms.removeClass('is-active');
+			success.addClass('is-active');
+		}
 
 		this.animationCloseWindow = function (duration) {
 			var popupSelector = $('.popup__wrap'),
@@ -646,6 +662,107 @@
 			callback();
 		};
 
+		this.checkAge = function (e) {
+			var target = e.target,
+				self = this,
+				form, checked;
+
+			if (!target.hasAttribute('data-test-valid')) {
+
+				while (target != document) {
+					if (target.hasAttribute('data-test-valid')) {
+						break;
+					}
+
+					target = target.parentNode;
+				}
+			}
+
+			if (target == document) {
+				return;
+			}
+
+			e.stopPropagation();
+			e.preventDefault();
+
+			form = document.querySelector('[data-test-validation]');
+			change = form.querySelectorAll('input');
+
+			if (form && change && change.length > 0) {
+				Array.prototype.forEach.call(change, function (item) {
+					if (!item.checked) {
+						return;
+					}
+
+					if (+item.getAttribute('id').split('_')[0] >= 11) {
+						self.animationOpenTest();
+					};
+
+				});
+
+				return;
+			}
+		};
+
+		this.nextQuest = function (e) {
+			var target = e.target,
+				self = this,
+				form, checked;
+
+			if (!target.hasAttribute('data-test-next')) {
+
+				while (target != document) {
+					if (target.hasAttribute('data-test-next')) {
+						break;
+					}
+
+					target = target.parentNode;
+				}
+			}
+
+			if (target == document) {
+				return;
+			}
+
+			e.stopPropagation();
+			e.preventDefault();
+
+			form = document.querySelector('[data-test-window]');
+			change = form.querySelectorAll('input');
+
+			if (form && change && change.length > 0) {
+				Array.prototype.forEach.call(change, function (item, i) {
+					var answer = +item.getAttribute('id').split('_')[1],
+						check;
+
+					if (!item.checked) {
+						return;
+					}
+
+					if (answer) {
+						if (!self.result) {
+							self.result = {};
+						}
+
+						if (!self.result[self.variant]) {
+							self.result[self.variant] = {};
+						};
+
+						check = self.data[self.variant][self.currentQuest]['options'][answer-1]['correctly'];
+
+						if (check) {
+							self.result[self.variant][self.currentQuest + 1] = check;
+						}
+					};
+
+					self._nextTestTemplate(self.data);
+
+				});
+
+				return;
+			}
+		};
+
 		this._getUrlFile = function () {
 			if (!this.url || !(this.url.split('.')[0] === this.url)) {
 				return;
@@ -662,8 +779,67 @@
 			return this.url + this.waiter.reverse().pop().toString() + '.json';
 		};
 
+		this._setTemplate = function (view, obj) {
+			var view = view;
+
+			if (!view || (typeof view !== 'string')) {
+				return;
+			}
+
+			for (var key in obj) {
+				view = view.replace('{' + key + '}', obj[key]);
+			}
+
+			return view;
+		};
+
+		this.timing = function (callback) {
+			var interval = this.timeFromStart,
+				timeout,
+				self = this;
+
+			if (!interval) {
+				return '&#8734;';
+			} else {
+				setTimeout(function() {
+					--self.currentTime;
+				}, parseFloat(interval)*60*1000, interval);
+			}
+		};
+
 		this._templating = function (data) {
-			document.body.insertAdjacentHTML('beforeEnd', Views.templates.view(data));
+			var head = Views.templates.headFormTest(data),
+				content = Views.templates.containerFormTest(data[this.variant][this.currentQuest]),
+				view = Views.templates.view();
+
+			document.body.insertAdjacentHTML('beforeEnd', this._setTemplate(view, {"head": head, "content": content}));
+		};
+
+		this._nextTestTemplate = function (data) {
+			var workField = document.querySelector('[data-test-window]'),
+				content, test;
+
+			if (!workField) {
+				return;
+			}
+
+			if (this.currentQuest == 24 && this.result[this.variant].length >= 13) {
+				this._successTempalte();
+			} else if (this.currentQuest == 24) {
+				this._errorTempalte();
+			}
+
+			this.currentQuest += 1;
+
+			workField.querySelector('.form__container').outerHTML = Views.templates.containerFormTest(data[this.variant][this.currentQuest]);
+		};
+
+		this._successTempalte = function () {
+			console.log(this.result.length);
+		};
+
+		this._errorTempalte = function () {
+			console.log(this.result.length);
 		};
 
 		this._load = function (callback) {
@@ -685,9 +861,9 @@
 				return self.data = res;
 			})
 			.then(function (data) {
-				/*var variant = self._random(data.keys.splice(0, 2));*/
-
-				// self._templating(variant);
+				self.setTableData(data);
+				self._random();
+				self._templating(self._headsFormsTest);
 			})
 			.then(function () {
 				if (!callback || !(callback instanceof Function)) {
@@ -701,11 +877,44 @@
 
 		};
 
-		this._random = function (variants) {
-			var random = Math.floor(Math.random() * (variants.length)) + 1,
-				arr = Array.from(variants), count;
+		this.setTableData = function (data) {
+			if (!data || !(data instanceof Object)) {
+				return;
+			}
 
-			return arr[random];
+			if (!this._headsFormsTest) {
+				this._headsFormsTest = {};
+			}
+
+			for (var key in data) {
+				if (!data.hasOwnProperty(key.toString())) {
+					return;
+				}
+
+				this._headsFormsTest[key] = data[key];
+			}
+		};
+
+		this._random = function () {
+			var random = Math.floor(Math.random() * (4)) + 1,
+				value;
+
+			switch (random) {
+				case 1: value = 'B';
+				break;
+				case 2: value = 'A';
+				break;
+				case 3: value = 'C';
+				break;
+				case 4: value = 'D';
+				break;
+			}
+
+			if (!this.variant) {
+				this.variant = '';
+			}
+
+			this.variant = value;
 		}
 	}
 
@@ -717,7 +926,8 @@
 			'intermediate',
 			'upper-intermediate'
 		],
-		tempalte: '/prod/test/templates/view.html'
+		tempalte: '/prod/test/templates/view.html',
+		time: 12
 	});
 
 	test.init();
