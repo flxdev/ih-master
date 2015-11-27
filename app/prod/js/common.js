@@ -138,7 +138,8 @@ $(document).ready(function () {
 				background: '#e5e5e5',
 				cursorcolor: '#fec601',
 				cursorborder: 'none',
-				usetransition: false
+				usetransition: false,
+				zindex: '9'
 			});
 		}
 

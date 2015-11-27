@@ -510,6 +510,12 @@ button[class*="btn__type"] {
 			font: 1.25em/1.5 $AgoraProBold;
 		}
 	}
+    p {
+        font: 1.25em/1.5 $AgoraProBold;
+    }
+    .banner-phone {
+        font: 1.25em/1.5 $AgoraProBold;
+    }
 }
 .blocks-links {
 	ul > li > a:not(.btn__enroll) {
@@ -522,17 +528,6 @@ div[class*="col"] .title {
 .content__block {
 	.description {
 		font: 1.25em/1.5 $AgoraProBold;
-	}
-	.categories__change {
-		dd {
-			font: 1.125em/1.6667 $AgoraProBold;
-		}
-		dt {
-			font: 1.25em/1.5 $AgoraProUltraBlack;
-		}
-		a {
-			text-decoration: none;
-		}
 	}
 	.relation {
 		font: 1.25em/1.5 $AgoraProBold;
@@ -549,7 +544,18 @@ div[class*="col"] .title {
 		}
 	}
 }
+.categories__change {
+    dd {
+        font: 1.125em/1.6667 $AgoraProBold;
 
+    }
+    dt {
+        font: 1.25em/1.5 $AgoraProUltraBlack;
+    }
+    a {
+        text-decoration: none;
+    }
+}
 .title__form {
 	font-family: $AgoraProBlack;
 	font-size: 38px; // 38px / 16px = 2.375em
@@ -747,7 +753,7 @@ table {
 .steps_cover {
 	margin-bottom: 3.4375em; //55px / 16px
 }
-.content__block .categories__change dl.steps {
+.categories__change dl.steps {
 	dt {
 		font-family: $AgoraProBold;
 		font-size: 1.25em; //20px / 16px
@@ -759,11 +765,19 @@ table {
 	p {
 		font-family: $HelveticaRoman;
 		font-size: 0.88888em; //16px / 18px
+        letter-spacing: -0.015625em; // 0.25 px / 16px
 	}
 	a {
 		font-family: $AgoraProBold;
 		font-size: 0.8888em; // 16px / 18px
 	}
+}
+.table__overlay.columns {
+    .categories__change {
+        dt {
+            font-size: 1em; //16px / 16px
+        }
+    }
 }
 .files__container {
 	.file__list {
@@ -813,6 +827,15 @@ table {
 	font: 0.8125em/2.3077 $HelveticaBold;
 	letter-spacing: 0.05em;
 	text-transform: uppercase;
+}
+.rate {
+    li {
+        font-family: $AgoraProBold;
+        font-size: 1em; // 16px / 16px
+        span {
+            font-family: $AgoraProMedium;
+        }
+    }
 }
 @media screen and (max-width: 1599px) {
 	a[class*="btn__type"] {
