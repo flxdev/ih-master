@@ -12,14 +12,10 @@
 			</div>
 		</div>
 		<div class="popup__success border__effect" data-test-onsucces>
-			<div class="form">
-				{success}
-			</div>
+			<div class="form" data-id="success"></div>
 		</div>
 		<div class="popup__success border__effect" data-test-onerror>
-			<div class="form">
-				{error}
-			</div>
+			<div class="form" data-id="error"></div>
 		</div>
 		<div class="popup__success border__effect is-active" data-test-validation>
 			<div class="popup__inner">
@@ -32,13 +28,13 @@
 							<li><input type="radio" name="option" id="18_age"><label for="18_age">18 и более</label></li>
 						</ul>
 					</div>
-					<a href="" class="btn__enroll btn__type-2" data-test-valid>Продолжить</a>
+					<a href="" class="btn__enroll btn__type-2" data-test-valid><span>Продолжить</span></a>
 				</div>
 			</div>
 		</div>
 		<div class="popup__form border__effect" data-test-writebig>
 			<div class="popup__inner">
-				<button class="popup__close">
+				<button class="popup__close" data-test-close>
 					<i class="icon_close_svg">
 						<svg viewBox="0 0 24 24" height="100%" class="close_icon" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 							<path d="m0,4l4,-4l8,8l8,-8l4,4l-8,8l8,8l-4,4l-8,-8l-8,8l-4,-4l8,-8l-8,-8z"/>
@@ -124,7 +120,7 @@
 		</div>
 		<div class="popup__form border__effect" data-test-writesmall>
 			<div class="popup__inner">
-				<button class="popup__close">
+				<button class="popup__close" data-test-close>
 					<i class="icon_close_svg">
 						<svg viewBox="0 0 24 24" height="100%" class="close_icon" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 							<path d="m0,4l4,-4l8,8l8,-8l4,4l-8,8l8,8l-4,4l-8,-8l-8,8l-4,-4l8,-8l-8,-8z"/>
@@ -179,7 +175,7 @@
 		</div>
 		<div class="popup__success border__effect" data-test-error>
 			<div class="popup__inner">
-				<button class="popup__close">
+				<button class="popup__close" data-test-close>
 					<i class="icon_close_svg">
 						<svg viewBox="0 0 24 24" height="100%" class="close_icon" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 							<path d="m0,4l4,-4l8,8l8,-8l4,4l-8,8l8,8l-4,4l-8,-8l-8,8l-4,-4l8,-8l-8,-8z"/>
@@ -189,7 +185,7 @@
 				<div class="form">
 					<div class="title__form">Благодарим вас за проделанную работу!</div>
 					<p>Ваш успешно записались на собеседование. Мы свяжемся с вами в ближайшее время!</p>
-					<a href="/" class="popup__close"><span>На главную</span></a>
+					<a href="/" class="popup__close" data-test-close><span>На главную</span></a>
 				</div>
 			</div>
 		</div>

@@ -3719,6 +3719,26 @@ div[class*="col"] .title {
 		}
 	}
 }
+[data-test] {
+	.popup, 
+	&::after {
+		display: block;
+		height: auto;
+	}
+	.popup__form,
+	.popup__success {
+		position: absolute;
+	}
+	.popup {
+		left: 26.34375%;
+		height: 100%;
+		&:after {
+			clear: both;
+			display: table;
+			content: '';
+		}
+	}
+}
 @media screen and (max-width: 1599px) {
 	.center__block {
 		width: 81.5645%;

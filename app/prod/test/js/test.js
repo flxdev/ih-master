@@ -564,7 +564,6 @@
 	function Test (config) {
 		this.url = config.url;
 		this.levels = config.levels;
-		this.template = config.template;
 		this.timeFromStart = config.time;
 		this.currentTime = this.timeFromStart;
 		this.currentQuest = 0;
@@ -575,12 +574,28 @@
 			document.addEventListener('click', this, false);
 		};
 
+		this.statusTest = function (str) {
+			if (!this.status) {
+				this.status = 'pendding';
+			}
+
+			if (str && (typeof str) === 'string') {
+				this.status = str;
+			}
+
+			if (!str) {
+				return this.status;
+			}
+		};
+
 		this.handleEvent = function (e) {
 			switch (e.type) {
 				case 'click': 
 					this.openWindow(e);
 					this.checkAge(e);
 					this.nextQuest(e);
+					this.openFormWrite(e);
+					this.closeWindow(e);
 				break;
 			}
 		};
@@ -601,16 +616,21 @@
 				return;
 			}
 
+			if (elem[0].hasAttribute('data-test-window')) {
+
+				this._setTime();
+			}
+
 			prevElem.removeClass('is-active');
 			elem.addClass('is-active');
 
 			if (callback && (callback instanceof Function)) {
 				return callback();
 			}
-		}
+		}.bind(this);
 
 		this.animationCloseWindow = function (duration) {
-			var popupSelector = $('.popup__wrap'),
+			var popupSelector = $('[data-test]'),
 				success = $('.popup__success'),
 				forms = $('.popup__form');
 
@@ -629,7 +649,7 @@
 				forms.addClass('is-active');
 				success.removeClass('is-active');
 			}, duration);
-		}
+		};
 
 		this.openWindow = function (e) {
 			var target = e.target,
@@ -659,6 +679,43 @@
 			});
 		};
 
+		this.closeWindow = function (e) {
+			var target = e.target,
+				duration = 500,
+				self = this;
+
+			if (!target.hasAttribute('data-test-close') || !target.hasAttribute('data-test')) {
+
+				while (target != document) {
+					if (target.hasAttribute('data-test-close') || target.hasAttribute('data-test')) {
+						break;
+					}
+
+					if (target.classList.contains('popup') && target.parentNode.hasAttribute('data-test')) {
+						e.stopPropagation();
+						return;
+					}
+
+					target = target.parentNode;
+				}
+			}
+
+			if (target == document) {
+				return;
+			}
+
+			e.stopPropagation();
+			e.preventDefault();
+
+			this.animationCloseWindow();
+			this.resetTest();
+		};
+
+		this.resetTest = function () {
+			this.countLevels = this.result = this.variant = this.age = this.waiter = null;
+			this.statusTest('pendding');
+		};
+
 		this.setLevel = function (value, callback) {
 			if (!this.levels) {
 				this.levels = [];
@@ -669,6 +726,36 @@
 			}
 			
 			callback();
+		};
+
+		this.openFormWrite = function (e) {
+			var target = e.target,
+				self = this,
+				form, change;
+
+			if (!target.hasAttribute('data-test-review')) {
+
+				while (target != document) {
+					if (target.hasAttribute('data-test-review')) {
+						break;
+					}
+
+					target = target.parentNode;
+				}
+			}
+
+			if (target == document) {
+				return;
+			}
+
+			e.stopPropagation();
+			e.preventDefault();
+
+			if (self.age >= 11 && self.age < 18) {
+				self.animationOpenPage($('[data-test-writebig]'));
+			} else if (self.age >= 18) {
+				self.animationOpenPage($('[data-test-writesmall]'));
+			};
 		};
 
 		this.checkAge = function (e) {
@@ -699,21 +786,25 @@
 
 			if (form && change && change.length > 0) {
 				Array.prototype.forEach.call(change, function (item) {
-					var answer = +item.getAttribute('id').split('_')[0];
+					if (!self.age) {
+						self.age = 0;
+					}
+
+					self.age = +item.getAttribute('id').split('_')[0];
 
 					if (!item.checked) {
 						return;
 					}
 
-					if (answer >= 11) {
+					if (self.age >= 11) {
 						self.animationOpenPage($('[data-test-window]'));
-					} else if (answer < 11 && answer > 1) {
+					} else if (self.age < 11 && self.age > 1) {
 						self.animationOpenPage($('[data-test-writebig]'));
 					};
 
 				});
 
-				return;
+				return self.statusTest("resolve");
 			}
 		};
 
@@ -757,14 +848,18 @@
 							self.result = {};
 						}
 
-						if (!self.result[self.variant]) {
-							self.result[self.variant] = {};
+						if (!self.result[self.data.number]) {
+							self.result[self.data.number] = {};
+						};
+
+						if (!self.result[self.data.number][self.variant]) {
+							self.result[self.data.number][self.variant] = {};
 						};
 
 						check = self.data[self.variant][self.currentQuest]['options'][answer-1]['correctly'];
 
 						if (check) {
-							self.result[self.variant][self.currentQuest + 1] = check;
+							self.result[self.data.number][self.variant][self.currentQuest + 1] = check;
 						}
 					};
 
@@ -786,7 +881,11 @@
 			}
 
 			if (this.waiter.length <= 0) {
-				this.waiter = this.levels;
+				if (!this.countLevels || this.countLevels.length <= 0) {
+					this.countLevels = config.levels.slice();
+				}
+
+				this.waiter = this.countLevels;
 			}
 
 			return this.url + this.waiter.shift().toString() + '.json';
@@ -806,26 +905,85 @@
 			return view;
 		};
 
-		this.timing = function (callback) {
-			var interval = this.timeFromStart,
-				timeout,
-				self = this;
+		this.Timer = function (elm, tl) {
+			this.initialize = function(elm, tl) {
+				this.elem = elm;
+				this.tl = tl;
+			};
+			this.countDown = function() {
+				var timer = '';
+				var today = new Date();
+				var min = Math.floor(((this.tl - today) % (24 * 60 * 60 * 1000)) / (60 * 1000)) % 60;
+				var sec = Math.floor(((this.tl - today) % (24 * 60 * 60 * 1000)) / 1000) % 60 % 60;
+				var me = this;
 
-			if (!interval) {
-				return '&#8734;';
-			} else {
-				setTimeout(function() {
-					--self.currentTime;
-				}, parseFloat(interval) * 60 * 1000, interval);
+				if ((this.tl - today) > 0) {
+					timer = this.addZero(min) + ':' + this.addZero(sec);
+					this.currentTime = timer;
+					this.elem.innerHTML = timer;
+					this.tid = setTimeout(function() {
+						me.countDown();
+					}, 500);
+				} else {
+					this.elem.innerHTML = '&#8734;';
+					return;
+				}
+			};
+			this.addZero = function(num) {
+				return ('0' + num).slice(-2);
+			};
+			this.getTime = function () {
+				return this.currentTime;
 			}
+
+			this.initialize.apply(this, arguments);
+			this.currentTime;
+		};
+
+		this._setTime = function (self) {
+			var time = document.querySelector('[data-id="time"]'),
+				tlp = new Date(),
+				tl = +tlp + 12 * 60 * 1000,
+				timer = new this.Timer(time, tl);
+
+			if (!time) {
+				return;
+			}
+
+			timer.countDown();
+			this.currentTime = timer.getTime();
 		};
 
 		this._templating = function (data) {
 			var head = Views.templates.headFormTest(data),
 				content = Views.templates.containerFormTest(data[this.variant][this.currentQuest]),
-				view = Views.templates.view();
+				view = Views.templates.view(),
+				oldElem = document.querySelector('[data-test]');
 
-			document.body.insertAdjacentHTML('beforeEnd', this._setTemplate(view, {"head": head, "content": content}));
+			if (oldElem) {
+				document.body.replaceChild($.parseHTML(this._setTemplate(view, {"head": head, "content": content}))[0], oldElem)
+			} else {
+				document.body.insertAdjacentHTML('beforeEnd', this._setTemplate(view, {"head": head, "content": content}));
+			}
+		};
+
+		this._newTestTempalte = function (data, callback) {
+			var newTest = document.querySelector('[data-test-window]'),
+				head = newTest.querySelector('.form__head'),
+				container = newTest.querySelector('.form__container'),
+				headContent = Views.templates.headFormTest(data),
+				containerContent = Views.templates.containerFormTest(data[this.variant][this.currentQuest]);
+
+			if (!newTest) {
+				return;
+			}
+
+			head.outerHTML = headContent;
+			container.outerHTML = containerContent;
+
+			callback($(newTest), function () {
+				return data;
+			});
 		};
 
 		this._nextTestTemplate = function (data) {
@@ -836,16 +994,16 @@
 				return;
 			}
 
-			if (this.currentQuest == 24 && Object.keys(this.result[this.variant]).length >= 13) {
+			if (this.currentQuest == 24 && Object.keys(this.result[this.data.number][this.variant]).length >= 13) {
 				this._successTempalte({
 					"number": this.data.number, 
 					"level": this.data.level, 
-					"result": Object.keys(this.result[this.variant]).length
+					"result": Object.keys(this.result[this.data.number][this.variant]).length
 				}, this.animationOpenPage);
 			} else if (this.currentQuest == 24) {
 				this._errorTempalte({ 
 					"level": this.data.level, 
-					"result": Object.keys(this.result[this.variant]).length
+					"result": Object.keys(this.result[this.data.number][this.variant]).length
 				}, this.animationOpenPage);
 			}
 
@@ -862,10 +1020,25 @@
 				return;
 			}
 
-			success.innerHTML = success.innerHTML.replace('{success}', content);
+			success.querySelector('[data-id="success"]').innerHTML = content;
+
+			if (Object.keys(this.result).length === 4) {
+				this._replaceBtnSuccess($(success));
+			}
+
 			callback($(success), function () {
 				return data;
 			});
+		};
+
+		this._replaceBtnSuccess = function (elem) {
+			if (!elem) {
+				return;
+			}
+
+			elem.find('[data-test-open]')[0].outerHTML = '<a href="" class="btn__enroll btn__type-2" data-test-review><span>Запись на собеседование</span></a>';
+
+			return elem;
 		};
 
 		this._errorTempalte = function (data, callback) {
@@ -876,7 +1049,7 @@
 				return;
 			}
 
-			error.innerHTML = error.innerHTML.replace('{error}', content);
+			error.querySelector('[data-id="error"]').innerHTML = content;
 			callback($(error), function () {
 				return data;
 			});
@@ -903,7 +1076,16 @@
 			.then(function (data) {
 				self.setTableData(data);
 				self._random();
-				self._templating(self._headsFormsTest);
+
+				if (!self.currentQuest || self.currentQuest >= 1) {
+					self.currentQuest = 0;
+				}
+
+				if (self.statusTest() === 'resolve') {
+					self._newTestTempalte(self._headsFormsTest, self.animationOpenPage);
+				} else {
+					self._templating(self._headsFormsTest);
+				}
 			})
 			.then(function () {
 				if (!callback || !(callback instanceof Function)) {
