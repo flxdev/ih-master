@@ -6,7 +6,14 @@
 					{head}
 					{content}
 					<div class="form__footer">
-						<div class="action__block"><a class="link-svg-arrow" data-test-next><span>следующий вопрос</span></a></div>
+						<div class="action__block"><a class="link-svg-arrow" data-test-next>
+							<span>следующий вопрос <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="39" height="20" viewBox="0 0 43 24" xml:space="preserve">
+								<g>
+									<path class="fill" d="m0.382714,12.971001l0,-2l29.996001,0l0,2l-29.996001,0" clip-rule="evenodd" fill-rule="evenodd"></path>
+									<path class="stroke" d="m40.378712,11.969999l-16.997997,9.999001l0,-19.997l16.997997,9.997999z" stroke-miterlimit="10" stroke-width="2" stroke="#000000" fill="none"></path>
+								</g>
+							</svg></span>
+						</a></div>
 					</div>
 				</div>
 			</div>
@@ -19,13 +26,20 @@
 		</div>
 		<div class="popup__success border__effect is-active" data-test-validation>
 			<div class="popup__inner">
+				<button class="popup__close" data-test-close>
+					<i class="icon_close_svg">
+						<svg viewBox="0 0 24 24" height="100%" class="close_icon" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+							<path d="m0,4l4,-4l8,8l8,-8l4,4l-8,8l8,8l-4,4l-8,-8l-8,8l-4,-4l8,-8l-8,-8z"/>
+						</svg>
+					</i>
+				</button>
 				<div class="form">
 					<div class="title__form">Выберите ваш возраст</div>
 					<div class="form-column">
 						<ul>
-							<li><input type="radio" name="option" id="10_age"><label for="10_age">До 10</label></li>
-							<li><input type="radio" name="option" id="11_age"><label for="11_age">11 - 17</label></li>
-							<li><input type="radio" name="option" id="18_age"><label for="18_age">18 и более</label></li>
+							<li><input type="radio" name="option" id="10_age"><label for="10_age"><span>До 10</span></label></li>
+							<li><input type="radio" name="option" id="11_age"><label for="11_age"><span>11 - 17</span></label></li>
+							<li><input type="radio" name="option" id="18_age"><label for="18_age"><span>18 и более</span></label></li>
 						</ul>
 					</div>
 					<a href="" class="btn__enroll btn__type-2" data-test-valid><span>Продолжить</span></a>

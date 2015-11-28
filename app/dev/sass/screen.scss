@@ -3871,26 +3871,6 @@ div[class*="col"] .title {
 		}
 	}
 }
-[data-test] {
-	.popup, 
-	&::after {
-		display: block;
-		height: auto;
-	}
-	.popup__form,
-	.popup__success {
-		position: absolute;
-	}
-	.popup {
-		left: 26.34375%;
-		height: 100%;
-		&:after {
-			clear: both;
-			display: table;
-			content: '';
-		}
-	}
-}
 @media screen and (max-width: 1599px) {
 	.center__block {
 		width: 81.5645%;
@@ -4787,9 +4767,6 @@ table {
 	.descr-cb {
 		margin: 0.25em 0 2.1875em;
 	}
-	.link-svg-arrow {
-
-	}
 }
 .link-svg-arrow {
 	color: $blue;
@@ -4830,14 +4807,16 @@ table {
 			overflow: hidden;
 		}
 		.fill {
-			transition: opacity 0.3s ease, color 0.3s ease-in;
 			opacity: 0;
-			fill: $blue;
 		}
-		.stroke {
-			transition: color 0.3s ease-in;
-			stroke: $blue;
-		}
+	}
+	.fill {
+		transition: opacity 0.3s ease, fill 0.3s ease-in;
+		fill: $blue;
+	}
+	.stroke {
+		transition: stroke 0.3s ease-in;
+		stroke: $blue;
 	}
 }
 .prevslide-block {
@@ -5575,16 +5554,27 @@ table {
 	ul {
 		list-style: none;
 		padding: 0;
-		margin: 0;
-		max-width: 220px;
+		margin: 0 auto;
+		max-width: 220px; /* 220px / 16px */
 		& > li {
 			user-select: none;
 			position: relative;
-			padding: 0 0 0 1.875em;
-			margin-bottom: 1em;
-			line-height: 52px;
+			border-top: 1px dashed #e1e5eb;
+			&:last-of-type {
+				border-bottom: 1px dashed #e1e5eb;
+			}
+			label {
+				position: relative;
+				color: $grey;
+				display: block;
+				text-align: left;
+				min-height: 52px;
+				padding: 13px 0 13px 76px; /* 76px / 20px */
+			}
+			input[type="radio"]:checked + label {
+				background: #f4f8fc;
+			}
 		}
-
 	}
 	input[type="radio"] {
 		position: absolute;
@@ -5601,8 +5591,8 @@ table {
 	    & + label:after {
 	    	content: '';
     	    position: absolute;
-    	    left: 0;
-    	    top: 50%;
+    	    left: 31px; /* 31px / 20px */
+    	    top: 29px;
     	    border-radius: 100%;
     	    animation: cd-bounce 0.3s;
 	    }
@@ -5626,6 +5616,166 @@ table {
 	    }
 		&:checked + label:after {
 			display: block;
+		}
+	}
+	.btn__enroll {
+		min-width: 100%;
+		height: 48px;
+		line-height: 48px;
+		span {
+			font-size: 13px;
+		}
+	}
+	.form-column {
+		margin-bottom: 40px; /* 40px / 16px */
+	}
+	[data-test-onsucces],
+	[data-test-onerror] {
+		padding: 0;
+		&:before,
+		&:after {
+			display: none;
+		}
+		.popup__inner {
+			padding: 0;
+			&:before,
+			&:after {
+				display: none;
+			}
+		}
+		.form {
+			text-align: left;
+			color: #fff;
+			p {
+				margin: 0 0 36px;
+			}
+		}
+		.btn__enroll {
+			min-width: auto;
+		}
+	}
+	[data-test-window] {
+		margin: 0 -92.5px;
+		padding: 0;
+		width: auto;
+		&:before,
+		&:after {
+			display: none;
+		}
+		.popup__inner {
+			padding: 0;
+			&:before,
+			&:after {
+				display: none;
+			}
+		}
+		ul {
+			max-width: 500px;
+		}
+		.title-form {
+			color: $grey;
+			margin-bottom: 26px;
+		}
+		.form__head {
+			margin-bottom: 34px;
+			.row {
+				display: table;
+				height: 60px;
+				padding: 0 45px;
+				& + .row {
+					padding: 0;
+				}
+			}
+			.progress-bar {
+				background: #f4f8fc;
+				padding: 0 90px 0 45px;
+				display: table-cell;
+				vertical-align: middle;
+				&:after {
+					clear: both;
+					display: table;
+					content: '';
+				}
+				.line-bar__noactive {
+					height: 5px;
+					width: 100%;
+					background: #dfe4ea;
+					.line-bar__active {
+						height: 100%;
+						width: 20%;
+						background: #0bac39;
+					}
+				}
+			}
+			.title__level,
+			.number-quest,
+			.timing {
+				width: 33.333%;
+				display: table-cell;
+				vertical-align: middle;
+			}
+			.title__level {
+				text-align: left;
+				color: $grey;
+			}
+			.number-quest {
+				text-align: center;
+				.current {
+					color: $blue;
+				}
+				.end {
+					color: $grey;
+				}
+			}
+			.timing {
+				text-align: right;
+				color: #c1c7cf;
+			}
+		}
+		.form__container {
+			padding: 0 11.25em; /* 180px / 16px */
+			margin-bottom: 76px;
+			transition: height 0.3s ease;
+		}
+		.question {
+			color: $blue;
+			margin-bottom: 40px;
+		}
+		.action__block {
+			height: 124px;
+			a {
+				height: 100%;
+				width: 100%;
+				background: $blue;
+				display: table;
+				color: #fff;
+				transition: background 0.15s ease-in;
+				&:hover {
+					background-color: $hover;
+				}
+				&:active {
+					background-color: $active;
+				}
+				span {
+					vertical-align: middle;
+					text-align: center;
+					display: table-cell;
+					border: none;
+					margin-right: 0;
+					height: auto;
+				}
+				svg {
+					display: inline;
+					vertical-align: middle;
+					margin: 0 0 3px 20px;
+				}
+				.fill {
+					fill: #fff;
+				}
+				.stroke {
+					stroke: #fff;
+				}
+			}
 		}
 	}
 }

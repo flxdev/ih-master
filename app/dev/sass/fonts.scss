@@ -968,3 +968,36 @@ table {
 		font-size: 45%;
 	}
 }
+[data-test] {
+	ul li label > span {
+		font: 20px/1.6 $AgoraProBold;
+	}
+	.question {
+		font: 38px/1 $AgoraProBlack;
+	}
+	.title__level {
+		span {
+			font: 16px/1.75 $HelveticaRoman;
+			& + span {
+				font-family: $HelveticaBold;
+			}
+		}
+	}
+	.number-quest {
+		.current {
+			font: 24px/1.25 $HelveticaBold;
+			letter-spacing: 0.05em;
+			& + .end {
+				font: 18px/1.6667 $HelveticaRoman;
+				letter-spacing: 0.05em;
+			}
+		}
+	}
+	.timing {
+		font: 30px/1 $HelveticaBold;
+		letter-spacing: 0.05em;
+	}
+	.title-form {
+		font: 16px/1.625 $HelveticaRoman;
+	}
+}
