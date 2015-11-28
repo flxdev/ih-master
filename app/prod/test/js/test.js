@@ -568,7 +568,7 @@
 		this.currentTime = this.timeFromStart;
 		this.currentQuest = 0;
 		this.progress = 0;
-		this.result = 0;
+		this.result = {};
 
 		this.init = function () {
 			document.addEventListener('click', this, false);
@@ -712,7 +712,8 @@
 		};
 
 		this.resetTest = function () {
-			this.countLevels = this.result = this.variant = this.age = this.waiter = null;
+			this.countLevels = this.variant = this.age = this.waiter = null;
+			this.result = {};
 			this.statusTest('pendding');
 		};
 
@@ -905,8 +906,8 @@
 			return view;
 		};
 
-		this.Timer = function (elm, tl) {
-			this.initialize = function(elm, tl) {
+		this.Timer = function (elm, tl, callback) {
+			this.initialize = function(elm, tl, callback) {
 				this.elem = elm;
 				this.tl = tl;
 			};
@@ -925,7 +926,7 @@
 						me.countDown();
 					}, 500);
 				} else {
-					this.elem.innerHTML = '&#8734;';
+					callback();
 					return;
 				}
 			};
@@ -934,24 +935,50 @@
 			};
 			this.getTime = function () {
 				return this.currentTime;
-			}
+			};
 
 			this.initialize.apply(this, arguments);
 			this.currentTime;
 		};
 
+		this._redirect = function () {
+			if (this.currentQuest == 24 && Object.keys(this.result).length && Object.keys(this.result[this.data.number][this.variant]).length >= 13) {
+				this._successTempalte({
+					"number": this.data.number, 
+					"level": this.data.level, 
+					"result": Object.keys(this.result[this.data.number][this.variant]).length
+				}, this.animationOpenPage);
+			} else if (this.currentQuest == 24 || this.testTimer.getTime() == '00:00') {
+				this._errorTempalte({ 
+					"level": this.data.level, 
+					"result": Object.keys(this.result).length <= 0 ? 0 : Object.keys(this.result[this.data.number][this.variant]).length
+				}, this.animationOpenPage);
+			} 
+		};
+
+		this._setCurrentQuest = function () {
+			var curQuest = document.querySelector('[data-id="current"]');
+
+			if (!curQuest || !isFinite(this.currentQuest)) {
+				return;
+			}
+
+			curQuest.innerHTML = this.currentQuest + 1;
+
+		};
+
 		this._setTime = function (self) {
 			var time = document.querySelector('[data-id="time"]'),
 				tlp = new Date(),
-				tl = +tlp + 12 * 60 * 1000,
-				timer = new this.Timer(time, tl);
+				tl = +tlp + this.timeFromStart * 60 * 1000;
+
+			this.testTimer = new this.Timer(time, tl, this._redirect.bind(this));
 
 			if (!time) {
 				return;
 			}
 
-			timer.countDown();
-			this.currentTime = timer.getTime();
+			this.testTimer.countDown();
 		};
 
 		this._templating = function (data) {
@@ -994,20 +1021,14 @@
 				return;
 			}
 
-			if (this.currentQuest == 24 && Object.keys(this.result[this.data.number][this.variant]).length >= 13) {
-				this._successTempalte({
-					"number": this.data.number, 
-					"level": this.data.level, 
-					"result": Object.keys(this.result[this.data.number][this.variant]).length
-				}, this.animationOpenPage);
-			} else if (this.currentQuest == 24) {
-				this._errorTempalte({ 
-					"level": this.data.level, 
-					"result": Object.keys(this.result[this.data.number][this.variant]).length
-				}, this.animationOpenPage);
-			}
+			this._redirect();
+
+			if (this.currentQuest == 24) {
+				return;
+			} 
 
 			this.currentQuest += 1;
+			this._setCurrentQuest();
 
 			workField.querySelector('.form__container').outerHTML = Views.templates.containerFormTest(data[this.variant][this.currentQuest]);
 		};
