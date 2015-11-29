@@ -610,18 +610,29 @@
 		};
 
 		this.animationOpenPage = function (elem, callback) {
-			var prevElem = $('[data-test]').find('.is-active');
+			var test = $('[data-test]'),
+				prevElem = test.find('.is-active'),
+				check;
 
 			if (!elem || !prevElem) {
 				return;
 			}
 
 			if (elem[0].hasAttribute('data-test-window')) {
-
 				this._setTime();
 			}
 
 			prevElem.removeClass('is-active');
+			check = elem[0].hasAttribute('data-test-onsuccess') || elem[0].hasAttribute('data-test-onerror');
+
+			if (check) {
+				test[0].classList.add('active-success');
+			}
+
+			if (test[0].classList.contains('active-success') && !check) {
+				test[0].classList.remove('active-success');
+			}
+
 			elem.addClass('is-active');
 
 			if (callback && (callback instanceof Function)) {
@@ -924,7 +935,7 @@
 					this.elem.innerHTML = timer;
 					this.tid = setTimeout(function() {
 						me.countDown();
-					}, 500);
+					}, 999);
 				} else {
 					callback();
 					return;
@@ -1023,6 +1034,8 @@
 
 			this._redirect();
 
+			this._changeProgress();
+
 			if (this.currentQuest == 24) {
 				return;
 			} 
@@ -1050,6 +1063,28 @@
 			callback($(success), function () {
 				return data;
 			});
+		};
+
+		this._changeProgress = function () {
+			var progress = 0;
+
+			if (typeof this.progress !== 'number' && !this.currentQuest) {
+				return;
+			}
+
+			this.progress = ((this.currentQuest + 1) * 100) / 25;
+
+			this._setProgress();
+		};
+
+		this._setProgress = function () {
+			var elemProgres = document.querySelector('[data-id="progress"]');
+
+			if (this.progress <= 0 && !elemProgres) {
+				return;
+			}
+
+			elemProgres.style.width = this.progress + '%';
 		};
 
 		this._replaceBtnSuccess = function (elem) {
@@ -1169,8 +1204,7 @@
 			'intermediate',
 			'upper-intermediate'
 		],
-		tempalte: '/prod/test/templates/view.html',
-		time: 12
+		time: 15
 	});
 
 	test.init();
