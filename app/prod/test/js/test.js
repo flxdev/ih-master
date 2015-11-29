@@ -623,7 +623,7 @@
 			}
 
 			prevElem.removeClass('is-active');
-			check = elem[0].hasAttribute('data-test-onsuccess') || elem[0].hasAttribute('data-test-onerror');
+			check = elem[0].hasAttribute('data-test-onsucces') || elem[0].hasAttribute('data-test-onerror');
 
 			if (check) {
 				test[0].classList.add('active-success');
@@ -802,11 +802,11 @@
 						self.age = 0;
 					}
 
-					self.age = +item.getAttribute('id').split('_')[0];
-
 					if (!item.checked) {
 						return;
 					}
+
+					self.age = +item.getAttribute('id').split('_')[0];
 
 					if (self.age >= 11) {
 						self.animationOpenPage($('[data-test-window]'));
@@ -1204,7 +1204,7 @@
 			'intermediate',
 			'upper-intermediate'
 		],
-		time: 15
+		time: 0.1
 	});
 
 	test.init();
