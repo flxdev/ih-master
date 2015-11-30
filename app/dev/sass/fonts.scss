@@ -837,6 +837,24 @@ table {
         }
     }
 }
+.c-blockquote__text {
+    p {
+        font-family: $AgoraProBoldItalic;
+        font-size: 1.5em; // 24px / 16px
+    }
+    span {
+        font-family: $AgoraProMedium;
+        font-size: 1.25em; // 20px / 16px
+    }
+}
+.content__block p {
+    a.link_location {
+        span {
+           font-family: $HelveticaRoman;
+           font-size: 1em; // 16px / 16px
+        }
+    }
+}
 @media screen and (max-width: 1599px) {
 	a[class*="btn__type"] {
 		span {
