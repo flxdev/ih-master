@@ -307,17 +307,65 @@ body {
 	text-rendering: optimizeLegibility;
 	font-kerning: normal;
 }
+.ui-widget {
+	font: 12px/1.5 $HelveticaMedium;
+	letter-spacing: 0.01em;
+}
 .content {
 	table.write-interview {
 		tr.header {
 			th {
-				font: 12px/0.6667 $HelveticaBold;
+				font: 12px/1.5 $HelveticaBold;
 				text-transform: uppercase;
+				text-align: left;
 			}
 		}
 		tr {
 			td:first-of-type {
 				font: 30px/2.8 $HelveticaMedium;
+				text-transform: uppercase;
+			}
+		}
+		.time-list {
+			.minute {
+				font: 18px/1 $HelveticaRoman;
+				text-transform: uppercase;
+				letter-spacing: 0.01em;
+			}
+			.count {
+				font: 12px/1.5 $HelveticaMedium;
+				text-transform: uppercase;
+				letter-spacing: 0.01em;
+				text-align: center;
+			}
+		}
+	}
+}
+.row {
+	nav.tabs-menu {
+		li {
+			a {
+				font: 18px/0.6667em $HelveticaRoman;
+				letter-spacing: 0.01em;
+				&.is-active-tab {
+					font-family: $HelveticaMedium;
+				}
+			}
+		}
+	}
+	.user-profile {
+		.user-name {
+			font: 14px/2.1429 $HelveticaRoman;
+		}
+	}
+	nav.tabs-category-menu {
+		li {
+			a {
+				font: 16px/0.75 $HelveticaRoman;
+				letter-spacing: 0.01em;
+			}
+			.is-active-tab {
+				font-family: $HelveticaMedium;
 			}
 		}
 	}
