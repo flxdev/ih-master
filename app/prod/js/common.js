@@ -139,6 +139,7 @@ $(document).ready(function () {
 				cursorcolor: '#fec601',
 				cursorborder: 'none',
 				usetransition: false,
+				horizrailenabled: true,
 				zindex: '9'
 			});
 		}

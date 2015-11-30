@@ -144,7 +144,12 @@ $color: (
 		file: #000000,
 		file-captipon: #e51836,
 		file-captipon-hover: #e51836,
-		dash: #e51836
+		dash: #e51836,
+		c-map: #e51836,		
+		p-a: #e51836,
+		p-a-hover: #003e7e,
+		pin-locate: #e51836,
+		pin-locate-hover: #e51836
 	),
 	silver: (
 		scroll: #005d7c,
@@ -207,7 +212,12 @@ $color: (
 		file: #b31426,
 		file-captipon: #b31426,
 		file-captipon-hover: #b31426,
-		dash: #b31426
+		dash: #b31426,
+		c-map: #b31426,
+		p-a: #b31426,
+		p-a-hover: #b31426,
+		pin-locate: #b31426,
+		pin-locate-hover: #b31426
 	),
 	blue: (
 		scroll: #00a3da,
@@ -270,7 +280,12 @@ $color: (
 		file: #2b2968,
 		file-captipon: #00a3da,
 		file-captipon-hover: #00a3da,
-		dash: #2b2968
+		dash: #2b2968,
+		c-map: #2b2968,
+		p-a: #00a3da,
+		p-a-hover: #e51836,
+		pin-locate: #00a3da,
+		pin-locate-hover: #e51836
 	)
 );
 
@@ -283,7 +298,8 @@ svg:not(:root) {
 	right: 0;
 	width: 100%;
 	height: 100%;
-	padding-right: 8px;
+	padding-right: 8px;	
+	overflow: hidden!important;
 }
 .touch-device {
 	.fixed {
@@ -3145,10 +3161,18 @@ div[class*="col"] .title {
 		z-index: 1;
 		transition: transform 0.3s ease-in-out 0.1s, z-index 0.3s ease 0.3s;
  	}
+ 	.c-blockquote__img {
+		transform: translateX(15%);
+		z-index: 1;
+		transition: transform 0.3s ease-in-out 0.1s, z-index 0.3s ease 0.3s;
+ 	}
 }
 @media screen and (max-width: 1023px) {
 	.animate-block {
 		.description {
+			transform: translateX(0);
+		}
+		.c-blockquote__img {
 			transform: translateX(0);
 		}
 	}
@@ -4197,6 +4221,9 @@ div[class*="col"] .title {
 			color: $blue;
 		}
 	}
+	& + blockquote {
+		margin-top: 3.125em;
+	}
 }
 @media screen and(max-width: 980px) {
 	.numbers {
@@ -4208,6 +4235,9 @@ div[class*="col"] .title {
 .dashed {
 	max-width: 560px;
 	margin-bottom: 1.25em; //20px / 16px
+	&.dashed-big {
+		max-width: 680px;
+	}
 	li {
 		padding-left: 3.125em; //50px / 16px
 		position: relative;
@@ -4239,6 +4269,15 @@ blockquote {
 		background-size: contain;
 		width: 0.685em; // 11px / 16px
 		bottom: 0.375em; //6px / 16px
+	}
+	a {
+		color: $blue;
+		border-bottom: 1px solid $blue;
+		transition: border-color 0.3s ease, color 0.3s ease;
+		&:hover {
+			color: $red;
+			border-color: transparent;
+		}
 	}
 }
 .pink {
@@ -4413,9 +4452,30 @@ table {
 				}
 			}
 		}
+		&.two__columns {
+			thead tr {
+				th {
+					&:first-child {
+						width: 60%;
+					}
+					&:last-child {
+						width: 40%;
+					}
+				}
+			}
+			tbody tr {
+				td {
+					&:first-child { 
+						width: 60%;
+					}
+					&:last-child {
+						width: 40%;
+					}
+				}
+			}
+		}
 	}
 }
-
 .categories__change {
 	.steps {
 		margin-right: 1.2em; //19px / 16px
@@ -4984,6 +5044,94 @@ table {
 		}
 	}
 }
+.c-blockquote__img {
+	width: 8.4375em; // 135px / 16px
+	height: 8.4375em; // 135px / 16px
+	position: relative;
+	left: -10.1875em; // 163px / 16px
+    position: absolute;
+    text-align: right;
+    transform: translateX(0px);
+    transition: transform 0.3s ease-in-out 0.2s, z-index 0.3s ease 0s;
+    z-index: 5;
+	.grayscale-box {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 2;		
+		filter: url(#grayscale);
+		-webkit-filter: grayscale(100%);
+		filter: grayscale(100%);
+		img {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+	}
+	.mask {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 5;
+		path {
+			fill: $yellow;
+		}
+	}
+}
+.c-blockquote__text {
+	p {
+		color: $blue;
+		line-height: 1.5;
+		margin-bottom: 1,642857142857143em; // 23px / 24px
+	}
+	span {
+		color: $blue;
+	}
+}
+@media screen and (max-width: 1279px){
+	.c-blockquote__img {
+		left: auto;
+		margin-bottom: 1.625em; // 26px / 16px
+		margin-right: 1.625em; // 26px / 16px
+		float: left;
+		position: relative;
+		text-align: left;
+		z-index: 0;
+		.mask {
+			path {
+				fill: $white!important;
+			}
+		}
+	}
+}
+.content__block p {
+	a.link_location {
+		border-bottom: none!important;
+		.marker__svg-centres {
+			display: inline-block;
+			height: 1.875em;
+			width: 0.625em;
+			path {
+				fill: $blue;
+			}
+		}
+		span {
+			border-bottom: 1px dotted $blue;
+			color: $blue;
+			transition: border-color 0.3s ease, color 0.3s ease;
+		}
+		&:hover {
+			span {
+				border-color: transparent;
+				color: $red;
+			}
+		}
+	}
+}
 @each $name, $list in $color {
 	body.#{$name} {
 		.nicescroll-cursors {
@@ -5296,10 +5444,10 @@ table {
 			p {
 				color: map-get($list, p);
 				a {
-					color: map-get($list, pink);
-					border-bottom: 1px solid map-get($list, pink);
+					color: map-get($list, p-a);
+					border-bottom: 1px solid map-get($list, p-a);
 					&:hover {
-						color: map-get($list, blue);
+						color: map-get($list, p-a-hover);
 						border-color: transparent;
 					}
 				}
@@ -5522,6 +5670,49 @@ table {
 						}
 					}
 				}				
+			}
+		}
+		.mask {
+			path {
+				fill: map-get($list, scroll);
+			}
+		}
+		.c-blockquote__text {
+			p {
+				color: map-get($list, c-map);
+			}
+			span {
+				color: map-get($list, c-map);
+			}
+		}
+		.content__block p {
+			a.link_location {
+				border-bottom: none!important;
+				.marker__svg-centres {
+					path {
+						fill: map-get($list, pin-header);
+					}
+				}
+				span {
+					color: map-get($list, pin-locate);
+					border-color: map-get($list, pin-locate);
+				}
+				&:hover {
+					span {
+						color: map-get($list, pin-locate-hover);
+						border-color: transparent;
+					}
+				}
+			}
+		}
+		blockquote {
+			a {
+				color: map-get($list, pin-locate);
+				border-color: map-get($list, pin-locate);
+				&:hover {
+					color: map-get($list, pin-locate-hover);
+					border-color: transparent;
+				}
 			}
 		}
 	}
