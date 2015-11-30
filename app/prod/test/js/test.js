@@ -1084,6 +1084,10 @@
 				return;
 			}
 
+			if (this.currentQuest == 24) {
+				elemProgres.classList.add('finished');
+			}
+			
 			elemProgres.style.width = this.progress + '%';
 		};
 
@@ -1196,7 +1200,7 @@
 		}
 	}
 
-	var test = new Test({
+	window.test = new Test({
 		url: '/prod/test/data/',
 		levels: [
 			'elementary',
@@ -1204,7 +1208,7 @@
 			'intermediate',
 			'upper-intermediate'
 		],
-		time: 0.1
+		time: 15
 	});
 
 	test.init();

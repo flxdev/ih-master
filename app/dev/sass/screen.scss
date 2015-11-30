@@ -5727,6 +5727,9 @@ table {
 		}
 	}
 	[data-test-window] {
+		&[class*=popup__] {
+			position: relative;
+		}
 		margin: 0 -92.5px;
 		padding: 0;
 		width: auto;
@@ -5763,6 +5766,23 @@ table {
 				padding: 0 90px 0 45px;
 				display: table-cell;
 				vertical-align: middle;
+				position: relative;
+				&.finished {
+					&:before {
+						background: url('../img/flag-finish-end.png') 0 50% no-repeat;
+					}
+				}
+				&:before {
+					content: '';
+					display: block;
+					width: 27px;
+					height: 100%;
+					position: absolute;
+					top: 0;
+					right: 48px;
+					background: url('../img/flag-finish.png') 0 50% no-repeat;
+					transition: background 0.2s ease 0.2s;
+				}
 				&:after {
 					clear: both;
 					display: table;
