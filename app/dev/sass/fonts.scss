@@ -685,6 +685,23 @@ blockquote {
 			font-size: 1em; //20px / 20px
 		}
 	}
+    &.levels {
+        li {
+            .levels__item {
+                .title {
+                    font-family: $AgoraProBold;
+                    font-size: 1em; // 20px / 20px
+                }
+                p {
+                    font-family: $HelveticaRoman;
+                    font-size: 0.75em;
+                }
+            }
+            &::before {
+                font-size: 1.5em; //30px / 20px
+            }
+        }
+    }
 }
 .tabs__pagination {
 	a {
@@ -776,6 +793,19 @@ table {
     .categories__change {
         dt {
             font-size: 1em; //16px / 16px
+        }
+    }
+    &.columns-big {
+        .categories__change {
+            dt {
+                font-family: $AgoraProBlack;
+                font-size: 1.75em; //28px / 16px
+            }
+            dd {
+                p {
+                    font-family: $AgoraProMedium;
+                }
+            }
         }
     }
 }
