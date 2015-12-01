@@ -71,10 +71,9 @@ $(document).ready(function () {
 						slidesToShow: 2,
 						slidesToScroll: 1
 					});
-				} 
-				if ($(item).hasClass('sertificate')) {
+				} else if ($(item).hasClass('sertificate')) {
 					$(item).slick({
-						arrows: true,
+						arrows: false,
 						dots: false,
 						infinite: true,
 						slidesToShow: 3,
@@ -114,12 +113,12 @@ $(document).ready(function () {
 						dots: false
 					});
 			
-					$(nameClass + ' .btn__left').on('click', function(){
-						sliderImg.slick('slickPrev');
+					$('.' + nameClass + ' .btn__left').on('click', function(){
+						$(item).slick('slickPrev');
 					});
 			
-					$(nameClass + ' .btn__left').on('click', function(){
-						sliderImg.slick('slickNext');
+					$('.' + nameClass + ' .btn__right').on('click', function(){
+						$(item).slick('slickNext');
 					});
 				}
 			});
