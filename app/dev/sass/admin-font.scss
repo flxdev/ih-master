@@ -340,6 +340,37 @@ body {
 			}
 		}
 	}
+	table.report {
+		tr.header {
+			th {
+				font: 13px/1 $HelveticaMedium;
+				text-align: left;
+			}
+		}
+		tr:not(.header) {
+			td {
+				font: 14px/2.1429 $HelveticaRoman;
+				a:not(.btn) {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}
+.btn-inline {
+	font: 14px/1 $HelveticaRoman;
+	letter-spacing: 0.01em;
+}
+.searcher {
+	input[type="text"],
+	label {
+		font: 13px/1.5385 $HelveticaRoman;
+	}
+}
+.btn-type1 span {
+	font: 10px/3.2 $HelveticaBold;
+	text-transform: uppercase;
+	letter-spacing: 0.2em;
 }
 .row {
 	nav.tabs-menu {
@@ -369,4 +400,44 @@ body {
 			}
 		}
 	}
+}
+.ui-selectmenu-button {
+	.ui-selectmenu-text {
+		font: 14px/1 $HelveticaRoman;
+		letter-spacing: 0.01em;
+	}
+}
+.btn-setting {
+	font: 14px/1 $HelveticaRoman;
+	text-decoration: underline;
+}
+.page-group {
+	.btn {
+		span {
+			font: 15px/1 $HelveticaMedium;
+			letter-spacing: 0.01em;
+		}
+	}
+	.select-page {
+		span {
+			font: 14px/1 $HelveticaRoman;
+		}
+	}
+}
+.title {
+	font: 24px/1 $HelveticaMedium;
+}
+.guid {
+	font: 14px/1 $HelveticaRoman;
+	letter-spacing: 0.02em;
+	list-style: decimal;
+	& > li {
+		.btn-with-ico {
+			text-decoration: underline;
+		}
+	}
+}
+.file-upload-input {
+	font: 13px/1.8462 $HelveticaRoman;
+	letter-spacing: 0.02em;
 }
