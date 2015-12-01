@@ -953,13 +953,19 @@
 		};
 
 		this._redirect = function () {
-			if (this.currentQuest == 24 && Object.keys(this.result).length && Object.keys(this.result[this.data.number][this.variant]).length >= 13) {
+			var checkPlus = this.currentQuest == 24;
+
+			if (this.testTimer.getTime() === '00:00') {
+				checkPlus = true;
+			}
+
+			if (checkPlus && Object.keys(this.result).length && Object.keys(this.result[this.data.number][this.variant]).length >= 13) {
 				this._successTempalte({
 					"number": this.data.number, 
 					"level": this.data.level, 
 					"result": Object.keys(this.result[this.data.number][this.variant]).length
 				}, this.animationOpenPage);
-			} else if (this.currentQuest == 24 || this.testTimer.getTime() == '00:00') {
+			} else if (checkPlus || this.testTimer.getTime() == '00:00') {
 				this._errorTempalte({ 
 					"level": this.data.level, 
 					"result": Object.keys(this.result).length <= 0 ? 0 : Object.keys(this.result[this.data.number][this.variant]).length
