@@ -360,7 +360,7 @@ body {
 		tr:not(.header) {
 			td {
 				font: 14px/2.1429 $HelveticaRoman;
-				a:not(.btn) {
+				a:not(.btn):not(.aria) {
 					text-decoration: underline;
 				}
 			}
@@ -458,4 +458,16 @@ body {
 	.info {
 		font: 16px/1.875 $HelveticaRoman;
 	}
+}
+.btn-groupe {
+	.dropdown-menu {
+		& > li {
+			a {
+				font: 10px $HelveticaBold;
+				text-decoration: none;
+				letter-spacing: 0.2em;
+				text-transform: uppercase;
+			}
+		}
+	}	
 }

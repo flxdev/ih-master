@@ -148,87 +148,123 @@
 				</div>
 				<table class="report">
 					<tr class="header sort-tool-table">
-						<th class="check-elem"><input type="checkbox" id="00"><label for="00"></label></th>
+						<th class="check-elem"><input type="checkbox" class="checkbox-general" id="00"><label for="00"></label></th>
 						<th><a href=""><span>Фамилия</span><span class="arrow-sort"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><use xlink:href="prod/img/svg.min.svg#arrow-sort"></use></svg></span></a></th>
 						<th><a href=""><span>Имя</span><span class="arrow-sort"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><use xlink:href="prod/img/svg.min.svg#arrow-sort"></use></svg></span></a></th>
 						<th><a href=""><span>Отчество</span><span class="arrow-sort"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><use xlink:href="prod/img/svg.min.svg#arrow-sort"></use></svg></span></a></th>
 						<th><a href=""><span>Группа</span><span class="arrow-sort"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><use xlink:href="prod/img/svg.min.svg#arrow-sort"></use></svg></span></a></th>
 					</tr>
 					<tr>
-						<td><input type="checkbox" id="01"><label for="01"></label></td>
-						<td><span class="age"></span><a href="">Константинопольский</a></td>
+						<td><input type="checkbox" class="elem-checkbox" id="01"><label for="01"></label></td>
+						<td><span class="age" title="Взрослый"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#person"></use></svg></span><a href="">Константинопольский</a></td>
 						<td>Константин</td>
 						<td>Владимирович</td>
 						<td>
 							<span class="group">K2A Машерова</span>
 							<a href="" class="btn btn-type1"><span>Cоздать отчет</span></a>
 							<span class="tools-list">
-								<a href="" class="btn-ico btn-edite"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+								<span class="btn-groupe">
+									<a href="" class="btn-ico btn-edite" id="dLabel" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Скачать отчет"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+									<ul class="dropdown-menu" aria-labelledby="dLabel">
+										<li><a href="#" class="aria">Редактирова</a></li>
+										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target="#delete">Удалить</a></li>
+									</ul>
+								</span>
 							</span>
 						</td>
 					</tr>
 					<tr>
-						<td><input type="checkbox" id="02"><label for="02"></label></td>
-						<td><span class="age"></span><a href="">Константинопольский</a></td>
+						<td><input type="checkbox" class="elem-checkbox" id="02"><label for="02"></label></td>
+						<td><span class="age" title="Ребенок"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#child"></use></svg></span><a href="">Константинопольский</a></td>
 						<td>Константин</td>
 						<td>Владимирович</td>
 						<td>
 							<span class="group">K2A Машерова</span>
 							<a href="" class="btn btn-type1"><span>Cоздать отчет</span></a>
 							<span class="tools-list">
-								<a href="" class="btn-ico btn-edite"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+								<span class="btn-groupe">
+									<a href="" class="btn-ico btn-edite" id="dLabel" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Скачать отчет"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+									<ul class="dropdown-menu" aria-labelledby="dLabel">
+										<li><a href="#" class="aria">Редактирова</a></li>
+										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target="#delete">Удалить</a></li>
+									</ul>
+								</span>
 							</span>
 						</td>
 					</tr>
 					<tr>
-						<td><input type="checkbox" id="03"><label for="03"></label></td>
-						<td><span class="age"></span><a href="">Константинопольский</a></td>
+						<td><input type="checkbox" class="elem-checkbox" id="03"><label for="03"></label></td>
+						<td><span class="age" title="Ребенок"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#child"></use></svg></span><a href="">Константинопольский</a></td>
 						<td>Константин</td>
 						<td>Владимирович</td>
 						<td>
 							<span class="group">K2A Машерова</span>
 							<a href="" class="btn btn-type1"><span>Cоздать отчет</span></a>
 							<span class="tools-list">
-								<a href="" class="btn-ico btn-edite"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+								<span class="btn-groupe">
+									<a href="" class="btn-ico btn-edite" id="dLabel" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Скачать отчет"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+									<ul class="dropdown-menu" aria-labelledby="dLabel">
+										<li><a href="#" class="aria">Редактирова</a></li>
+										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target="#delete">Удалить</a></li>
+									</ul>
+								</span>
 							</span>
 						</td>
 					</tr>
 					<tr>
-						<td><input type="checkbox" id="04"><label for="04"></label></td>
-						<td><span class="age"></span><a href="">Константинопольский</a></td>
+						<td><input type="checkbox" class="elem-checkbox" id="04"><label for="04"></label></td>
+						<td><span class="age" title="Ребенок"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#child"></use></svg></span><a href="">Константинопольский</a></td>
 						<td>Константин</td>
 						<td>Владимирович</td>
 						<td>
 							<span class="group">K2A Машерова</span>
 							<a href="" class="btn btn-type1"><span>Cоздать отчет</span></a>
 							<span class="tools-list">
-								<a href="" class="btn-ico btn-edite"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+								<span class="btn-groupe">
+									<a href="" class="btn-ico btn-edite" id="dLabel" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Скачать отчет"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+									<ul class="dropdown-menu" aria-labelledby="dLabel">
+										<li><a href="#" class="aria">Редактирова</a></li>
+										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target="#delete">Удалить</a></li>
+									</ul>
+								</span>
 							</span>
 						</td>
 					</tr>
 					<tr>
-						<td><input type="checkbox" id="05"><label for="05"></label></td>
-						<td><span class="age"></span><a href="">Константинопольский</a></td>
+						<td><input type="checkbox" class="elem-checkbox" id="05"><label for="05"></label></td>
+						<td><span class="age" title="Ребенок"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#child"></use></svg></span><a href="">Константинопольский</a></td>
 						<td>Константин</td>
 						<td>Владимирович</td>
 						<td>
 							<span class="group">K2A Машерова</span>
 							<a href="" class="btn btn-type1"><span>Cоздать отчет</span></a>
 							<span class="tools-list">
-								<a href="" class="btn-ico btn-edite"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+								<span class="btn-groupe">
+									<a href="" class="btn-ico btn-edite" id="dLabel" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Скачать отчет"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+									<ul class="dropdown-menu" aria-labelledby="dLabel">
+										<li><a href="#" class="aria">Редактирова</a></li>
+										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target="#delete">Удалить</a></li>
+									</ul>
+								</span>
 							</span>
 						</td>
 					</tr>
 					<tr>
-						<td><input type="checkbox" id="06"><label for="06"></label></td>
-						<td><span class="age"></span><a href="">Константинопольский</a></td>
+						<td><input type="checkbox" class="elem-checkbox" id="06"><label for="06"></label></td>
+						<td><span class="age" title="Ребенок"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#child"></use></svg></span><a href="">Константинопольский</a></td>
 						<td>Константин</td>
 						<td>Владимирович</td>
 						<td>
 							<span class="group">K2A Машерова</span>
 							<a href="" class="btn btn-type1"><span>Cоздать отчет</span></a>
 							<span class="tools-list">
-								<a href="" class="btn-ico btn-edite"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+								<span class="btn-groupe">
+									<a href="" class="btn-ico btn-edite" id="dLabel" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Скачать отчет"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+									<ul class="dropdown-menu" aria-labelledby="dLabel">
+										<li><a href="#" class="aria">Редактирова</a></li>
+										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target="#delete">Удалить</a></li>
+									</ul>
+								</span>
 							</span>
 						</td>
 					</tr>
@@ -284,93 +320,129 @@
 				</div>
 				<table class="report report-archive">
 					<tr class="header sort-tool-table">
-						<th class="check-elem"><input type="checkbox" id="00"><label for="00"></label></th>
+						<th class="check-elem"><input type="checkbox" class="checkbox-general" id="00"><label for="00"></label></th>
 						<th><a href=""><span>Студенты</span><span class="arrow-sort"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><use xlink:href="prod/img/svg.min.svg#arrow-sort"></use></svg></span></a></th>
 						<th><a href=""><span>Группа</span><span class="arrow-sort"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><use xlink:href="prod/img/svg.min.svg#arrow-sort"></use></svg></span></a></th>
 						<th><a href=""><span>Четверть</span><span class="arrow-sort"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><use xlink:href="prod/img/svg.min.svg#arrow-sort"></use></svg></span></a></th>
 						<th><a href=""><span>Дата создания</span><span class="arrow-sort"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><use xlink:href="prod/img/svg.min.svg#arrow-sort"></use></svg></span></a></th>
 					</tr>
 					<tr>
-						<td><input type="checkbox" id="01"><label for="01"></label></td>
-						<td><span class="age"></span><span class="student">Константинопольский Константин Владимирович</span></td>
+						<td><input type="checkbox" class="elem-checkbox" id="01"><label for="01"></label></td>
+						<td><span class="age" title="Ребенок"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#child"></use></svg></span><span class="student">Константинопольский Константин Владимирович</span></td>
 						<td>K2A Машерова</td>
 						<td>3-4 четверть (2015)</td>
 						<td>
 							<span class="date">01.01.2014</span>
 							<span class="tools-list">
 								<a href="" class="btn-ico btn-save" title="Скачать отчет"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#load"></use></svg></span></a>
-								<a href="" class="btn-ico btn-preview"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
-								<a href="" class="btn-ico btn-edite"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+								<a href="" class="btn-ico btn-preview" title="Просмотреть отчет"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#eye"></use></svg></span></a>
+								<span class="btn-groupe">
+									<a href="" class="btn-ico btn-edite" id="dLabel" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Скачать отчет"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+									<ul class="dropdown-menu" aria-labelledby="dLabel">
+										<li><a href="#" class="aria">Редактирова</a></li>
+										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target="#delete">Удалить</a></li>
+									</ul>
+								</span>
 							</span>
 						</td>
 					</tr>
 					<tr>
-						<td><input type="checkbox" id="02"><label for="02"></label></td>
-						<td><span class="age"></span><span class="student">Константинопольский Константин Владимирович</span></td>
+						<td><input type="checkbox" class="elem-checkbox" id="02"><label for="02"></label></td>
+						<td><span class="age" title="Взрослый"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#person"></use></svg></span><span class="student">Константинопольский Константин Владимирович</span></td>
 						<td>K2A Машерова</td>
 						<td>3-4 четверть (2015)</td>
 						<td>
 							<span class="date">01.01.2014</span>
 							<span class="tools-list">
 								<a href="" class="btn-ico btn-save" title="Скачать отчет"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#load"></use></svg></span></a>
-								<a href="" class="btn-ico btn-preview"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
-								<a href="" class="btn-ico btn-edite"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+								<a href="" class="btn-ico btn-preview" title="Просмотреть отчет"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#eye"></use></svg></span></a>
+								<span class="btn-groupe">
+									<a href="" class="btn-ico btn-edite" id="dLabel" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Скачать отчет"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+									<ul class="dropdown-menu" aria-labelledby="dLabel">
+										<li><a href="#" class="aria">Редактирова</a></li>
+										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target="#delete">Удалить</a></li>
+									</ul>
+								</span>
 							</span>
 						</td>
 					</tr>
 					<tr>
-						<td><input type="checkbox" id="03"><label for="03"></label></td>
-						<td><span class="age"></span><span class="student">Константинопольский Константин Владимирович</span></td>
+						<td><input type="checkbox" class="elem-checkbox" id="03"><label for="03"></label></td>
+						<td><span class="age" title="Ребенок"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#child"></use></svg></span><span class="student">Константинопольский Константин Владимирович</span></td>
 						<td>K2A Машерова</td>
 						<td>3-4 четверть (2015)</td>
 						<td>
 							<span class="date">01.01.2014</span>
 							<span class="tools-list">
 								<a href="" class="btn-ico btn-save" title="Скачать отчет"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#load"></use></svg></span></a>
-								<a href="" class="btn-ico btn-preview"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
-								<a href="" class="btn-ico btn-edite"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+								<a href="" class="btn-ico btn-preview" title="Просмотреть отчет"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#eye"></use></svg></span></a>
+								<span class="btn-groupe">
+									<a href="" class="btn-ico btn-edite" id="dLabel" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Скачать отчет"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+									<ul class="dropdown-menu" aria-labelledby="dLabel">
+										<li><a href="#" class="aria">Редактирова</a></li>
+										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target="#delete">Удалить</a></li>
+									</ul>
+								</span>
 							</span>
 						</td>
 					</tr>
 					<tr>
-						<td><input type="checkbox" id="04"><label for="04"></label></td>
-						<td><span class="age"></span><span class="student">Константинопольский Константин Владимирович</span></td>
+						<td><input type="checkbox" class="elem-checkbox" id="04"><label for="04"></label></td>
+						<td><span class="age" title="Ребенок"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#child"></use></svg></span><span class="student">Константинопольский Константин Владимирович</span></td>
 						<td>K2A Машерова</td>
 						<td>3-4 четверть (2015)</td>
 						<td>
 							<span class="date">01.01.2014</span>
 							<span class="tools-list">
 								<a href="" class="btn-ico btn-save" title="Скачать отчет"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#load"></use></svg></span></a>
-								<a href="" class="btn-ico btn-preview"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
-								<a href="" class="btn-ico btn-edite"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+								<a href="" class="btn-ico btn-preview" title="Просмотреть отчет"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#eye"></use></svg></span></a>
+								<span class="btn-groupe">
+									<a href="" class="btn-ico btn-edite" id="dLabel" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Скачать отчет"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+									<ul class="dropdown-menu" aria-labelledby="dLabel">
+										<li><a href="#" class="aria">Редактирова</a></li>
+										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target="#delete">Удалить</a></li>
+									</ul>
+								</span>
 							</span>
 						</td>
 					</tr>
 					<tr>
-						<td><input type="checkbox" id="05"><label for="05"></label></td>
-						<td><span class="age"></span><span class="student">Константинопольский Константин Владимирович</span></td>
+						<td><input type="checkbox" class="elem-checkbox" id="05"><label for="05"></label></td>
+						<td><span class="age" title="Ребенок"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#child"></use></svg></span><span class="student">Константинопольский Константин Владимирович</span></td>
 						<td>K2A Машерова</td>
 						<td>3-4 четверть (2015)</td>
 						<td>
 							<span class="date">01.01.2014</span>
 							<span class="tools-list">
 								<a href="" class="btn-ico btn-save" title="Скачать отчет"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#load"></use></svg></span></a>
-								<a href="" class="btn-ico btn-preview"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
-								<a href="" class="btn-ico btn-edite"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+								<a href="" class="btn-ico btn-preview" title="Просмотреть отчет"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#eye"></use></svg></span></a>
+								<span class="btn-groupe">
+									<a href="" class="btn-ico btn-edite" id="dLabel" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Скачать отчет"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+									<ul class="dropdown-menu" aria-labelledby="dLabel">
+										<li><a href="#" class="aria">Редактирова</a></li>
+										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target="#delete">Удалить</a></li>
+									</ul>
+								</span>
 							</span>
 						</td>
 					</tr>
 					<tr>
-						<td><input type="checkbox" id="06"><label for="06"></label></td>
-						<td><span class="age"></span><span class="student">Константинопольский Константин Владимирович</span></td>
+						<td><input type="checkbox" class="elem-checkbox" id="06"><label for="06"></label></td>
+						<td><span class="age" title="Ребенок"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#child"></use></svg></span><span class="student">Константинопольский Константин Владимирович</span></td>
 						<td>K2A Машерова</td>
 						<td>3-4 четверть (2015)</td>
 						<td>
 							<span class="date">01.01.2014</span>
 							<span class="tools-list">
 								<a href="" class="btn-ico btn-save" title="Скачать отчет"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#load"></use></svg></span></a>
-								<a href="" class="btn-ico btn-preview"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
-								<a href="" class="btn-ico btn-edite"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+								<a href="" class="btn-ico btn-preview" title="Просмотреть отчет"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#eye"></use></svg></span></a>
+								<span class="btn-groupe">
+									<a href="" class="btn-ico btn-edite" id="dLabel" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Скачать отчет"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+									<ul class="dropdown-menu" aria-labelledby="dLabel">
+										<li><a href="#" class="aria">Редактирова</a></li>
+										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target="#delete">Удалить</a></li>
+									</ul>
+								</span>
 							</span>
 						</td>
 					</tr>
@@ -400,25 +472,28 @@
 				</div>		
 			</div>
 		</div>
-		<div class="popup-tooltip">
-			<div class="popup-inner">
-				<div class="form">
-					<button class="popup-close">
-						<i class="icon_close_svg">
-							<svg viewBox="0 0 24 24" height="100%" class="close_icon" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-								<path d="m0,4l4,-4l8,8l8,-8l4,4l-8,8l8,8l-4,4l-8,-8l-8,8l-4,-4l8,-8l-8,-8z"/>
-							</svg>
-						</i>
-					</button>
-					<div class="row">
-						<span class="info">Вы действительно хотите удалить выбранных студентов?</span>
-						<a href="" class="btn btn-type1"><span>Отменить</span></a><a href="" class="btn btn-type2"><span>Удалить</span></a>
+		<div class="popup-tooltip fade" tabindex="-1" role="dialog" id="delete">
+			<div class="popup-wrapper">
+				<div class="popup-inner">
+					<div class="form">
+						<button class="popup-close" data-dismiss="modal" aria-label="Close">
+							<i class="icon_close_svg">
+								<svg viewBox="0 0 24 24" height="100%" class="close_icon" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+									<path d="m0,4l4,-4l8,8l8,-8l4,4l-8,8l8,8l-4,4l-8,-8l-8,8l-4,-4l8,-8l-8,-8z"/>
+								</svg>
+							</i>
+						</button>
+						<div class="row">
+							<span class="info">Вы действительно хотите удалить выбранных студентов?</span>
+							<a href="" class="btn btn-type1" data-dismiss="modal"><span>Отменить</span></a><a href="" data-dismiss="modal" class="btn btn-type2"><span>Удалить</span></a>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 	<script src="prod/js/lib/jquery-2.1.4.min.js"></script>
+	<script src="prod/js/lib/bootstrap.js"></script>
 	<script src="prod/js/lib/jquery-ui.min.js"></script>
 	<script src="prod/js/admin-common.js"></script>
 </body>
