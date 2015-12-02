@@ -2921,12 +2921,38 @@ div[class*="col"] .title {
 	}
 	dl {
 		a {
-			color: $blue;
-			border-bottom: 1px solid $blue;
-			transition: color .3s ease 0s, border-color .3s ease 0s;
+			transform: translate3d(0, 0, 0);
+			span {
+				color: $blue;
+				border-bottom: 1px solid $blue;
+				transition: color .3s ease 0s, border-color .3s ease 0s;
+			}
 			&:hover {
-				border-color: transparent;
-				color: #e51836;
+				span {
+					border-color: transparent;
+					color: #e51836;
+				}
+				.icon__triangle {
+					transform: translate3d(50%, 0, 0);
+					use {
+						stroke: $red;
+					}
+				}
+			}
+			.icon__triangle {
+				width: 0.85em; // 17px / 20px
+				height: 1em; // 20px / 20px
+				display: inline-block;
+				position: relative;
+				top: -0.05em; // 1px / 20px
+				right: -0.5em; // 10px / 20px
+				vertical-align: middle;
+				transform: translate3d(0, 0, 0);
+				@include transition(transform);
+				use {
+					stroke: $blue;
+					transition: stroke 0.3s ease;
+				}
 			}
 		}
 		dd {
@@ -2947,7 +2973,8 @@ div[class*="col"] .title {
 			display: block;
 			position: absolute;
 			width: 36.875em; /* 590px / 16px */
-			height: 28.75em; /* 460px / 16px */
+			//height: 28.75em; /* 460px / 16px */
+			bottom: 2.3125em; // 37px / 16px
 			top: 1.6875em; /* 27px / 16px */
 			left: 0;
 			z-index: -1;
@@ -3024,7 +3051,8 @@ div[class*="col"] .title {
 			margin-bottom: 1.625em; /* 26px / 16px */
 		}
 		&.content-area:before {
-			height: 33.3em;
+			//height: 33.3em;
+			bottom: 4.375em; // 70px / 16px
 		}
 		.float-block .float-block_img {
 			width: 39.2125%;
@@ -3056,7 +3084,8 @@ div[class*="col"] .title {
 		}
 		&.content-area:before {
 			width: 25.875em;
-			height: 42.6em;
+			//height: 42.6em;
+			bottom: 3em; // 48px / 16px
 		}
 	} 
 	.categories__change {
