@@ -113,6 +113,15 @@ body {
 			}
 		}
 	}
+	&.btn-save {
+		span {
+			svg {
+				width: 14px;
+				height: 14px;
+				margin: 17.5px auto;
+			}
+		}
+	}
 	span {
 		width: 100%;
 		height: 100%;
@@ -120,7 +129,6 @@ body {
 		vertical-align: middle;
 	    text-align: center;
 	    svg {
-
 	    	width: 22px;
 	    	height: 22px;
 	    	margin: 14px auto;
@@ -295,6 +303,11 @@ body {
 			background: #f2f2f2;
 		}
 	}
+	.searcher + .select-group {
+		.ui-widget {
+			min-width: 230px;
+		}
+	}
 	.sidebar {
 		float: left;
 		width: 165px;
@@ -411,6 +424,9 @@ body {
 			}
 			td, th {
 				text-align: left;
+				&:nth-of-type(n+2):not(:last-of-type) {
+					padding-right: 20px;
+				}
 				&:first-of-type {
 					width: 71px;
 					position: relative;
@@ -419,7 +435,9 @@ body {
 					padding-left: 26px;
 				}
 				&:last-of-type {
-					width: 569px;
+					&:not(:nth-of-type(2)) {
+						width: 569px;
+					}
 				}
 			}
 			td {
@@ -437,13 +455,15 @@ body {
 			}
 		}
 		&.report-archive {
-			td, th {
-				&:nth-of-type(2) {
-					width: 414px;
-				}
-				&:last-of-type {
-					width: 339px;
-					padding-right: 150px;
+			tr {
+				td, th {
+					&:nth-of-type(2) {
+						width: 414px;
+					}
+					&:last-of-type {
+						width: 339px;
+						padding-right: 150px;
+					}
 				}
 			}
 		}
@@ -451,6 +471,22 @@ body {
 	table.setting {
 		float: right;
 		width: 976px;
+		&.comments {
+			tr {
+				td, th {
+					&:last-of-type {
+						width: 290px;
+					}
+				}
+			}
+		}
+		tr {
+			td, th {
+				&:nth-of-type(2) {
+					padding-left: 0;
+				}
+			}
+		}
 	}
 	.sort-tool-table {
 		th:not(.check-elem) {
@@ -908,5 +944,60 @@ body {
 	}
 	.btn:not(.file-upload-button) {
 		float: right;
+	}
+}
+.popup-tooltip {
+	width: 100%;
+	background: #fff;
+	box-shadow: 0px 0px 46px 0px rgba(#000, 0.2);
+	position: fixed;
+	bottom: 0;
+	min-height: 115px;
+	display: table;
+	padding: 20px 0;
+	.popup-inner {
+		display: table-cell;
+		vertical-align: middle;
+		.form {
+			position: relative;
+			width: 1280px;
+			margin: 0 auto;
+			.row:first-of-type:last-of-type {
+				display: table-cell;
+				vertical-align: middle;
+				text-align: center;
+				width: 1280px;
+				.info {
+					margin-right: 30px;
+				}
+				a + a {
+					margin-left: 20px;
+				}
+			}		
+		}
+		.popup-close {
+			cursor: pointer;
+			width: 25px;
+			height: 25px; 
+			top: -10px;
+			right: 64px;
+			position: absolute;
+			z-index: 5;
+			border: 1px solid #dbdbdb;
+			border-radius: 50%;
+		}
+		.icon_close_svg {
+			width: 6px;
+			height: 6px;
+			margin-top: -2px;
+			display: inline-block;
+			vertical-align: middle;
+			.close_icon {
+				width: 6px;
+				height: 6px;
+				fill: $grey;
+				transition: fill 0.3s ease;
+			}
+		}
 	}
 }
