@@ -311,6 +311,15 @@ body {
 	font: 12px/1.5 $HelveticaMedium;
 	letter-spacing: 0.01em;
 }
+.sidebar {
+	.sidebar-menu {
+		font: 14px $HelveticaRoman;
+		letter-spacing: 0.01em;
+		a {
+			text-decoration: none;
+		}
+	}
+}
 .content {
 	table.write-interview {
 		tr.header {
@@ -340,7 +349,8 @@ body {
 			}
 		}
 	}
-	table.report {
+	table.report,
+	table.setting {
 		tr.header {
 			th {
 				font: 13px/1 $HelveticaMedium;
@@ -367,10 +377,13 @@ body {
 		font: 13px/1.5385 $HelveticaRoman;
 	}
 }
-.btn-type1 span {
-	font: 10px/3.2 $HelveticaBold;
-	text-transform: uppercase;
-	letter-spacing: 0.2em;
+.btn-type1,
+.btn-type2 {
+	span {
+		font: 10px/3.3 $HelveticaBold;
+		text-transform: uppercase;
+		letter-spacing: 0.2em;
+	}
 }
 .row {
 	nav.tabs-menu {
