@@ -360,7 +360,7 @@ body {
 		tr:not(.header) {
 			td {
 				font: 14px/2.1429 $HelveticaRoman;
-				a:not(.btn) {
+				a:not(.btn):not(.aria) {
 					text-decoration: underline;
 				}
 			}
@@ -420,6 +420,12 @@ body {
 		letter-spacing: 0.01em;
 	}
 }
+.ui-selectmenu-menu {
+	font: 14px/2 $HelveticaRoman;
+	.ui-state-focus {
+		font-family: $HelveticaBold;
+	}
+}
 .btn-setting {
 	font: 14px/1 $HelveticaRoman;
 	text-decoration: underline;
@@ -453,4 +459,21 @@ body {
 .file-upload-input {
 	font: 13px/1.8462 $HelveticaRoman;
 	letter-spacing: 0.02em;
+}
+.popup-inner > .form > .row {
+	.info {
+		font: 16px/1.875 $HelveticaRoman;
+	}
+}
+.btn-groupe {
+	.dropdown-menu {
+		& > li {
+			a {
+				font: 10px $HelveticaBold;
+				text-decoration: none;
+				letter-spacing: 0.2em;
+				text-transform: uppercase;
+			}
+		}
+	}	
 }

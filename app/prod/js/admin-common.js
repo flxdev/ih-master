@@ -1,5 +1,3 @@
-//toolstip
-
 $(function() {
 	$(document).tooltip({
 		position: {
@@ -9,6 +7,18 @@ $(function() {
 	});
 
 	$('.dropdown').selectmenu();
+
+    $('.dropdown-toggle').dropdown();
+
+    $('.checkbox-general').click(function () {
+        if (!$('.checkbox-general').is(':checked')) {
+            $('.elem-checkbox').removeAttr('checked');
+        } else {
+            $('.elem-checkbox').prop('checked', 'checked');
+        }
+    });
+
+    $('input[type=file]').customFile();
 
 	(function($) {
 		var multipleSupport = typeof $('<input/>')[0].multiple !== 'undefined',
@@ -115,6 +125,4 @@ $(function() {
 			});
 		}
 	}(jQuery));
-
-	$('input[type=file]').customFile();
 });
