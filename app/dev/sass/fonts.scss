@@ -656,6 +656,12 @@ div[class*="col"] .title {
 blockquote {
 	font-family: $HelveticaRoman;
 	font-size: 1em; //16px / 16px
+    a {
+        &.bold {
+            font-family: $AgoraProBold;
+            font-size: 1.25em; //20px /16px
+        }
+    }
 }
 .center__block {
 	.title-cb {
@@ -911,6 +917,14 @@ table {
 .line {
     font-family: $AgoraProBold;
     font-size: 1em; // 16px / 16px
+}
+.accordion {
+    .head {
+        span {
+            font-family: $AgoraProBold;
+            font-size: 1.25em; // 20px / 16px
+        }
+    }
 }
 @media screen and (max-width: 1599px) {
 	a[class*="btn__type"] {

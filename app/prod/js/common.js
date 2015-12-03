@@ -495,6 +495,14 @@ $(document).ready(function () {
 
 		});
 	})();
+
+	$('.accordion').accordion({
+		header: '.head',
+		collapsible: true,
+		active: false,
+		heightStyle: 'content'
+	});
+
 });
 
 
