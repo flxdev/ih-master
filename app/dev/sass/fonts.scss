@@ -656,6 +656,12 @@ div[class*="col"] .title {
 blockquote {
 	font-family: $HelveticaRoman;
 	font-size: 1em; //16px / 16px
+    a {
+        &.bold {
+            font-family: $AgoraProBold;
+            font-size: 1.25em; //20px /16px
+        }
+    }
 }
 .center__block {
 	.title-cb {
@@ -883,6 +889,40 @@ table {
         span {
            font-family: $HelveticaRoman;
            font-size: 1em; // 16px / 16px
+        }
+    }
+}
+.slider__caption {
+    .caption {
+        .capt {
+            font-family: $AgoraProMdeiumItalic;
+            font-size: 1.25em; // 20px / 16px
+        }
+    }
+}
+.teachers__block {
+    .figure {
+        figcaption {
+            .name {
+                font-family: $AgoraProBold;
+                font-size: 1.25em; // 20px / 16px
+            }
+            .prof {
+                font-family: $HelveticaRoman;
+                font-size: 1em; // 16px / 16px
+            }
+        }
+    }
+}
+.line {
+    font-family: $AgoraProBold;
+    font-size: 1em; // 16px / 16px
+}
+.accordion {
+    .head {
+        span {
+            font-family: $AgoraProBold;
+            font-size: 1.25em; // 20px / 16px
         }
     }
 }
