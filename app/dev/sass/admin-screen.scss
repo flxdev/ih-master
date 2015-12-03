@@ -756,8 +756,22 @@ body {
     &:focus {
     	outline: none;
     }
+    &[aria-expanded="true"] {
+    	span.ui-icon {
+    		transform: rotate(180deg);
+        	transform-origin: 50% 50%;
+    	}
+    }
     span.ui-icon {
         position: absolute;
+        top: 50%;
+        right: 10px;
+        background: url('../img/svg/down.svg') 0 0 no-repeat;
+        width: 12px;
+        height: 7px;
+        margin-top: -3.5px;
+        background-size: contain;
+        transition: transform 0.3s ease;
     }
     span.ui-selectmenu-text {
     	height: 32px;
@@ -777,15 +791,15 @@ body {
     left: 0;
     display: none;
     .ui-menu {
+    	padding: 13px 30px;
     	box-shadow: 1px 1.73px 10px 0 rgba(35,38,39,.14);
         overflow: auto;
-        overflow-x: hidden;
-        padding-bottom: 1px;
-        padding: 0;
-        margin: 5px 0 0;
+        overflow-x: hidden;;
+        margin: 7px 0 0;
         display: block;
         outline: 0;
         .ui-menu-item {
+        	line-height: 28px;
             position: relative;
             margin: 0;
             padding: 3px 1em 3px .4em;

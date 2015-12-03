@@ -420,6 +420,12 @@ body {
 		letter-spacing: 0.01em;
 	}
 }
+.ui-selectmenu-menu {
+	font: 14px/2 $HelveticaRoman;
+	.ui-state-focus {
+		font-family: $HelveticaBold;
+	}
+}
 .btn-setting {
 	font: 14px/1 $HelveticaRoman;
 	text-decoration: underline;
