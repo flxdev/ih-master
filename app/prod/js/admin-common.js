@@ -1,25 +1,4 @@
 $(function() {
-	$(document).tooltip({
-		position: {
-			my: "left-4 bottom-10",
-			at: "right bottom"
-		}
-	});
-
-	$('.dropdown').selectmenu();
-
-    $('.dropdown-toggle').dropdown();
-
-    $('.checkbox-general').click(function () {
-        if (!$('.checkbox-general').is(':checked')) {
-            $('.elem-checkbox').removeAttr('checked');
-        } else {
-            $('.elem-checkbox').prop('checked', 'checked');
-        }
-    });
-
-    $('input[type=file]').customFile();
-
 	(function($) {
 		var multipleSupport = typeof $('<input/>')[0].multiple !== 'undefined',
 			isIE = /msie/i.test(navigator.userAgent);
@@ -71,6 +50,13 @@ $(function() {
 					$input.html('<span>' + filename + '</span>')
 						.attr('title', filename)
 						.focus();
+
+					if (filename) {
+						$('.active-field').addClass('changed');
+					} else {
+						$('.active-field').removeClass('changed');
+					}
+					
 
 				});
 
@@ -125,4 +111,65 @@ $(function() {
 			});
 		}
 	}(jQuery));
+
+	(function(){
+		var form_validate = $('.js-validate');
+
+		if (form_validate.length) {
+			form_validate.each(function () {
+
+				var form_this = $(this);
+
+				$.validate({
+					form: form_this,
+					borderColorOnError: true,
+					scrollToTopOnError: false,
+					onValidate: function ($form){
+
+					},
+					onSuccess: function ($form) {
+						if ($form.hasClass('form-create-person')) {
+							$('.add-person').modal('hide');
+							$('.popup.success-create-person').modal('show');
+						}
+
+						return false;
+					}
+				});
+			});
+		};
+	})();
+
+	$(document).tooltip({
+		position: {
+			my: "left-4 bottom-10",
+			at: "right bottom"
+		}
+	});
+
+	if ($('.dropdown')) {
+		$('.dropdown').selectmenu({
+			position: {
+				collision: "fit flip"
+			}
+		});
+	}
+
+	if ($('.dropdown-toggle')) {
+		$('.dropdown-toggle').dropdown();
+	}
+    
+
+    $('.checkbox-general').click(function () {
+        if (!$('.checkbox-general').is(':checked')) {
+            $('.elem-checkbox').removeAttr('checked');
+        } else {
+            $('.elem-checkbox').prop('checked', 'checked');
+        }
+    });
+
+    if ($('input[type=file]')) {
+    	$('input[type=file]').customFile();
+    }
+    
 });
