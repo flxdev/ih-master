@@ -73,7 +73,7 @@ $(document).ready(function () {
 					});
 				} else if ($(item).hasClass('sertificate')) {
 					$(item).slick({
-						arrows: false,
+						arrows: true,
 						dots: false,
 						infinite: true,
 						slidesToShow: 3,
@@ -107,20 +107,37 @@ $(document).ready(function () {
 							}
 						]
 					});
+				} else if ($(item).hasClass('slider-caption')) {
+					$(item).slick({
+						arrows: false,
+						dots: false,
+						infinite: true,
+						slidesToShow: 1,
+						slidesToScroll: 1,
+						asNavFor: '.caption'
+					});
+					$('.caption').slick({
+						arrows: false,
+						dots: false,
+						infinite: true,
+						slidesToShow: 1,
+						slidesToScroll: 1,
+						asNavFor: '.slider-caption',
+						fade: true
+					})
 				} else {
 					$(item).slick({
 						arrows: false,
 						dots: false
 					});
-			
-					$('.' + nameClass + ' .btn__left').on('click', function(){
-						$(item).slick('slickPrev');
-					});
-			
-					$('.' + nameClass + ' .btn__right').on('click', function(){
-						$(item).slick('slickNext');
-					});
 				}
+				$('.' + nameClass + ' .btn__left').on('click', function(){
+					$(item).slick('slickPrev');
+				});
+		
+				$('.' + nameClass + ' .btn__right').on('click', function(){
+					$(item).slick('slickNext');
+				});
 			});
 		}
 

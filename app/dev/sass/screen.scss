@@ -1722,6 +1722,7 @@ a {
 }
 .container__row {
 	margin: 3.4375em 0 4.875em 0;
+	position: relative;
 	@include clearfix;
 	h1 {
 		max-width: 81%;
@@ -4376,13 +4377,15 @@ div[class*="col"] .title {
 .numbers {
 	counter-reset: count;
 	margin-bottom: -3.125em; //50px / 16px
+	margin-left: -5%;
 	li {
-		width: 47.3%;
+		width: 42.3%;
 		display: inline-block;
 		vertical-align: top;
 		position: relative;
 		padding-left: 4.6875em; //75px /16px
 		margin-bottom: 3.125em; //50px / 16px
+		margin-left: 5%;
 		&::before {
 			counter-increment: count;
 			content:  counter(count) '.';
@@ -5437,6 +5440,86 @@ table {
 				border-color: transparent;
 				color: $red;
 			}
+		}
+	}
+}
+.slider__caption {
+	max-width: 32%;
+	width: 100%;
+	float: right;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	.caption {
+		max-width: 71%;
+		width: 100%;
+		float: left;
+		color: $blue;
+	}
+}
+@media screen and (max-width: 1279px){
+	.slider__caption {
+		max-width: 35%;
+		.caption {
+			max-width: 100%;
+		}
+	}
+}
+@media screen and (max-width: 767px){
+	.slider__caption {
+		max-width: 100%;
+		position: relative;
+		margin-top: -9px;
+		.caption {
+			max-width: 100%;
+		}
+		.decorator__way {
+			margin: 0 auto;
+		}
+	}
+}
+.teachers__block {
+	margin-left: -1.5em; // 24px/ 16px
+	.figure {
+		margin: 0 0 3.25em 1.625em; // 52px 26px/ 16px
+		max-width: 11.975em; // 190px / 16px
+		display: inline-block;
+		vertical-align: top;
+		img {
+			margin-bottom: 1.0625em; // 17px / 16px
+			width: 100%;
+		}
+		figcaption {
+			.name {
+				color: $blue;
+				letter-spacing: -0.015em; // 0.3px / 20px
+				line-height: 1.5em; // 30px / 20px
+				margin-bottom: 0.55em; // 11px / 20px
+			}
+			.prof {
+				color: $grey;
+				line-height: 1.5625em; // 25px / 16px
+			}
+		}
+	}
+}
+.line {
+	display: inline-block;
+	vertical-align: middle;
+	&.phone {
+		border-color: transparent;
+		margin-left: 0.625em; // 10px / 16px
+	}
+	&.mail {
+		margin-right: 0.625em; // 10px / 16px
+		position: relative;
+		&::after {
+			position: absolute;
+			border-right: 1px solid #9ba5b0;
+			right: -0.625em; //10px / 16px
+			top: 0;
+			bottom: 0;
+			content: '';
 		}
 	}
 }
