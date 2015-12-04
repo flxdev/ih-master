@@ -1,7 +1,6 @@
 $(document).ready(function () {
-	var emitter = (function () {
-		var emitter = EventEmitter();
-	}) ();
+	
+	var emitter = EventEmitter();
 
 	//open menu
 	(function () {
@@ -464,6 +463,7 @@ $(document).ready(function () {
 			selector: '.map',
 			coord: 'data-coord'
 		});
+
 	}) ();
 
 	//TABS INIT
@@ -730,7 +730,7 @@ function Map () {
 	function _customZoom (map) {
 		var container = document.createElement('div');
 
-	    container.innerHTML = "<div class='map__zoom-in'></div><div class='map__zoom-out'></div>";
+	    container.innerHTML = "<div class='map__zoom-in'><svg viewBox='0 0 34.958 33.5' xmlns='http://www.w3.org/2000/svg'><g><g class='stroke'><path d='m1.532,1.523l31.996,0l0,63.991999l-31.996,0l0,-63.991999z' stroke-miterlimit='10' stroke-width='3' fill='none' clip-rule='evenodd' fill-rule='evenodd'/></g><g class='fill'><path d='m16.030001,13.538l2,0l0,9.997999l-2,0l0,-9.997999z' clip-rule='evenodd' fill-rule='evenodd'/><path d='m12.03,17.537001l9.999,0l0,2l-9.999,0l0,-2z' clip-rule='evenodd' fill-rule='evenodd'/><path d='m12.03,48.533001l9.999,0l0,2l-9.999,0l0,-2z' clip-rule='evenodd' fill-rule='evenodd'/><path d='m1.032,32.535l31.996,0l0,3l-31.996,0l0,-3z' clip-rule='evenodd' fill-rule='evenodd'/></g></g></svg></div><div class='map__zoom-out'><svg viewBox='0 0 34.958 33.5' xmlns='http://www.w3.org/2000/svg'><g><g class='stroke'><path d='m1.532,-31.989063l31.996,0l0,63.992001l-31.996,0l0,-63.992001z' stroke-miterlimit='10' stroke-width='3' fill='none' clip-rule='evenodd' fill-rule='evenodd'/></g><g class='fill'><path d='m16.030001,-19.974062l2,0l0,9.997999l-2,0l0,-9.997999z' clip-rule='evenodd' fill-rule='evenodd'/><path d='m12.03,-15.975061l9.999,0l0,2l-9.999,0l0,-2z' clip-rule='evenodd' fill-rule='evenodd'/><path d='m12.03,15.020939l9.999,0l0,2l-9.999,0l0,-2z' clip-rule='evenodd' fill-rule='evenodd'/><path d='m1.032,-0.977063l31.996,0l0,3l-31.996,0l0,-3z' clip-rule='evenodd' fill-rule='evenodd'/></g></g></svg></div>";
 	    container.className = 'controlls__map';
 
 	    google.maps.event.addDomListener(container.querySelector('.map__zoom-in'), 'click', function () {
@@ -900,4 +900,18 @@ function EventEmitter() {
     	"emit": emit
     }
 }
+var school = [];
+(function(){	
+	var maping = $('.accordion.contacts').find('.map');
 
+	maping.each(function(index){
+		var data = [];
+			data[0] = $(this).parents('.content').prev().find('.js-address').html();
+			data[1] = $(this).parents('.content').prev().find('.js-tel').html();
+			data[2] = $(this).parents('.content').prev().find('.js-time').html();
+			school[index] = data;
+	});
+
+	console.log(school[0]);
+
+})();

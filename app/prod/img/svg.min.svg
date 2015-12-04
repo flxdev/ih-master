@@ -341,15 +341,6 @@
 		c2.4,11.9,9.2,12,9.2,12s3.6,23.1,6.9,31.5c3.3,8.5,9.4,18,9.4,18s2,36.9-1.3,40.9s-13.2,7.7-20,9.2c-11.9,2.6-30.3,4.3-43.2,8.9
 		S96,384,96,416h160h160C416,384,376.2,368.5,363.3,363.9z"/>
 </g>
-</symbol><symbol id="pin 16" viewBox="0 0 101.754 139.273">
-<g id="Livello_110">
-	<path d="M75.361,50.645c0,13.98-11.389,25.322-25.438,25.322c-14.051,0-25.438-11.342-25.438-25.322
-		c0-13.984,11.389-25.322,25.438-25.322C63.975,25.322,75.361,36.66,75.361,50.645 M101.754,50.645
-		C101.754,22.674,78.977,0,50.877,0C22.779,0,0,22.674,0,50.645C0,62.943,4.408,74.219,11.733,82.99l39.188,56.283l39.761-57.104
-		c1.428-1.779,2.736-3.654,3.916-5.625L95,75.97h-0.066C99.264,68.516,101.754,59.874,101.754,50.645"/>
-</g>
-<g id="Livello_1_1_">
-</g>
 </symbol><symbol id="pin 24" viewBox="0 0 101.754 139.273">
 <g id="Livello_110">
 	<path d="M75.361,50.645c0,13.98-11.389,25.322-25.438,25.322c-14.051,0-25.438-11.342-25.438-25.322
@@ -359,6 +350,13 @@
 </g>
 <g id="Livello_1_1_">
 </g>
+</symbol><symbol id="pin-16" viewBox="0 0 101.754 139.273">
+	<g id="Livello_110">
+		<path fill="#fec601" d="M75.361,50.645c0,13.98-11.389,25.322-25.438,25.322c-14.051,0-25.438-11.342-25.438-25.322
+			c0-13.984,11.389-25.322,25.438-25.322C63.975,25.322,75.361,36.66,75.361,50.645 M101.754,50.645
+			C101.754,22.674,78.977,0,50.877,0C22.779,0,0,22.674,0,50.645C0,62.943,4.408,74.219,11.733,82.99l39.188,56.283l39.761-57.104
+			c1.428-1.779,2.736-3.654,3.916-5.625L95,75.97h-0.066C99.264,68.516,101.754,59.874,101.754,50.645"/>
+	</g>
 </symbol><symbol id="pin" viewBox="0 0 60 60">
 	<g fill="none" fill-rule="evenodd" id="black" stroke="none" stroke-width="1">
 	<g id="slice" transform="translate(-401.000000, -601.000000)"/>
@@ -505,6 +503,10 @@
 </g>
 <g id="Livello_1_1_">
 </g>
+</symbol><symbol id="triangle-accord" viewBox="0 0 16 10">
+   <g transform="rotate(-180, 8, 5.0625)" id="Group" fill="#003e7e">
+    <path id="Triangle 155 copy" d="m7.999984,0.091695l7.999985,9.945148l-15.99997,0l7.999985,-9.945148zm0,1.243143l-5.999989,8.080433l11.999977,0l-5.999988,-8.080433zm0,0"/>
+   </g>
 </symbol><symbol id="triangle" viewBox="0 0 18.484 21.746">
 	<path fill="none" stroke-width="2" stroke-miterlimit="1" d="M17.498,10.873L0.5,0.874v19.997L17.498,10.873z"/>
 </symbol><symbol id="user" viewBox="0 0 50 50">
@@ -607,4 +609,4 @@
 	<path d="M43.07,20.496l-8.289,8.732l-1.45-1.377l8.289-8.732L43.07,20.496"/>
 	<path d="M33.332,27.84l1.45-1.377l8.289,8.732l-1.45,1.377L33.332,27.84"/>
 	<path d="M43.07,35.174l-8.289,8.732l-1.45-1.377l8.289-8.732L43.07,35.174"/>
-</symbol></svg>
+</symbol><symbol id="zoom-in" viewBox="0 0 34.958 33.5"><g><g clas="stroke"><path d="m1.532,1.523l31.996,0l0,63.991999l-31.996,0l0,-63.991999z" stroke-miterlimit="10" stroke-width="3" fill="none" clip-rule="evenodd" fill-rule="evenodd"/></g><g class="fill"><path d="m16.030001,13.538l2,0l0,9.997999l-2,0l0,-9.997999z" clip-rule="evenodd" fill-rule="evenodd"/><path d="m12.03,17.537001l9.999,0l0,2l-9.999,0l0,-2z" clip-rule="evenodd" fill-rule="evenodd"/><path d="m12.03,48.533001l9.999,0l0,2l-9.999,0l0,-2z" clip-rule="evenodd" fill-rule="evenodd"/><path d="m1.032,32.535l31.996,0l0,3l-31.996,0l0,-3z" clip-rule="evenodd" fill-rule="evenodd"/></g></g></symbol><symbol id="zoom-out" viewBox="0 0 34.958 33.5"><g><g class="stroke"><path d="m1.532,-31.989063l31.996,0l0,63.992001l-31.996,0l0,-63.992001z" stroke-miterlimit="10" stroke-width="3" fill="none" clip-rule="evenodd" fill-rule="evenodd"/></g><g class="fill"><path d="m16.030001,-19.974062l2,0l0,9.997999l-2,0l0,-9.997999z" clip-rule="evenodd" fill-rule="evenodd"/><path d="m12.03,-15.975061l9.999,0l0,2l-9.999,0l0,-2z" clip-rule="evenodd" fill-rule="evenodd"/><path d="m12.03,15.020939l9.999,0l0,2l-9.999,0l0,-2z" clip-rule="evenodd" fill-rule="evenodd"/><path d="m1.032,-0.977063l31.996,0l0,3l-31.996,0l0,-3z" clip-rule="evenodd" fill-rule="evenodd"/></g></g></symbol></svg>

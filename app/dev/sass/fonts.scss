@@ -925,6 +925,65 @@ table {
             font-size: 1.25em; // 20px / 16px
         }
     }
+    &.contacts {
+        .head {
+            font-family: $HelveticaRoman;
+            font-size: 1em; // 16px / 16px
+            .address {
+                p {
+                    font-family: $HelveticaBold;
+                }
+            }
+        }
+    }
+}
+.content__block .col50 {
+    p {
+        font-family: $AgoraProMedium;
+        font-size: 1.25em; // 20px / 16px
+    }
+}
+.content__block .col50 {
+    p.head {
+        font-family: $AgoraProMedium;        
+    }
+    
+}
+.content__block .col50 {
+    p {
+        font-family: $AgoraPro;
+        font-size: 1.25em; // 20px / 16px
+    }
+}
+.phone__list {
+    li {
+        font-family: $AgoraPro;
+        font-size: 1.25em; // 20px / 16px
+    }
+}
+.work__mail {
+    .mail {
+        font-family: $AgoraPro;
+    }
+}
+.accordion__head {
+    .col_30 {
+        span {
+            font-family: $AgoraProMedium;
+            font-size: 1em; // 16px / 16px
+        }
+    }
+}
+.accordion {
+    &.contacts {
+        i {
+            font-family: $HelveticaItalic;
+            font-style: normal;
+        }
+    }
+}
+.gm-style {
+    font-size: inherit;
 }
 @media screen and (max-width: 1599px) {
 	a[class*="btn__type"] {
@@ -1011,6 +1070,20 @@ table {
 			font-size: 1em; //16px / 16
 		}
 	}
+    .accordion__head {
+        .col_30 {
+            span {
+                font-size: 0.75em; // 12px / 16px
+            }
+        }
+    }
+    .accordion {
+        &.contacts {
+            .head {
+                font-size: 0.75em; // 12px / 16px
+            }
+        }
+    }
 	
 }
 @media screen and (max-width: 767px) {
@@ -1042,6 +1115,20 @@ table {
 			font-family: $AgoraProMedium;
 		}
 	}
+    .accordion__head {
+        .col_30 {
+            span {
+                font-size: 1em; // 16px / 16px
+            }
+        }
+    }
+    .accordion {
+        &.contacts {
+            .head {
+                font-size: 1em; // 16px / 16px
+            }
+        }
+    }
 }
 @media screen and (max-width: 749px) {
 	body {
