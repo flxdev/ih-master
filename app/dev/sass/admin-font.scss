@@ -320,6 +320,33 @@ body {
 		}
 	}
 }
+.time-list {
+	.minute {
+		font: 18px/1 $HelveticaRoman;
+		text-transform: uppercase;
+		letter-spacing: 0.01em;
+	}
+	.count {
+		font: 12px/1.5 $HelveticaMedium;
+		text-transform: uppercase;
+		letter-spacing: 0.01em;
+		text-align: center;
+	}
+}
+.card-interview {
+	.column {
+		.left-side {
+			font: 30px/2.8 $HelveticaMedium;
+			text-transform: uppercase;
+		}
+	}
+	.header {
+		font: 12px/1.5 $HelveticaBold;
+		text-transform: uppercase;
+		letter-spacing: 0.01em;
+		text-align: center;
+	}
+}
 .content {
 	table.write-interview {
 		tr.header {
@@ -333,19 +360,6 @@ body {
 			td:first-of-type {
 				font: 30px/2.8 $HelveticaMedium;
 				text-transform: uppercase;
-			}
-		}
-		.time-list {
-			.minute {
-				font: 18px/1 $HelveticaRoman;
-				text-transform: uppercase;
-				letter-spacing: 0.01em;
-			}
-			.count {
-				font: 12px/1.5 $HelveticaMedium;
-				text-transform: uppercase;
-				letter-spacing: 0.01em;
-				text-align: center;
 			}
 		}
 	}
@@ -402,15 +416,15 @@ body {
 			font: 14px/2.1429 $HelveticaRoman;
 		}
 	}
-	nav.tabs-category-menu {
-		li {
-			a {
-				font: 16px/0.75 $HelveticaRoman;
-				letter-spacing: 0.01em;
-			}
-			.is-active-tab {
-				font-family: $HelveticaMedium;
-			}
+}
+nav.tabs-category-menu {
+	li {
+		a {
+			font: 16px/0.75 $HelveticaRoman;
+			letter-spacing: 0.01em;
+		}
+		&.active a {
+			font-family: $HelveticaMedium;
 		}
 	}
 }
@@ -421,12 +435,14 @@ body {
 	}
 }
 .ui-selectmenu-menu {
-	font: 14px/2 $HelveticaRoman;
-	.ui-state-focus {
+	.ui-menu-item {
+		font: 14px/2 $HelveticaRoman;
+	} 
+	.ui-select-item {
 		font-family: $HelveticaBold;
 	}
 }
-.btn-setting {
+.btn-with-ico:not([class*="btn-type"]) {
 	font: 14px/1 $HelveticaRoman;
 	text-decoration: underline;
 }
@@ -460,9 +476,73 @@ body {
 	font: 13px/1.8462 $HelveticaRoman;
 	letter-spacing: 0.02em;
 }
-.popup-inner > .form > .row {
-	.info {
-		font: 16px/1.875 $HelveticaRoman;
+.popup-inner {
+	& > .form > .row {
+		.info {
+			font: 16px/1.875 $HelveticaRoman;
+		}
+	}
+	.form {
+		.title-form {
+			font: 42px $HelveticaRoman;
+			letter-spacing: -0.02em;
+		}
+		.title__lvl-2 {
+			font: 24px $HelveticaRoman;
+			letter-spacing: -0.02em;
+		}
+	}
+	.btn-type3 {
+		font: 12px/1.2 $HelveticaBold;
+		letter-spacing: 0.2em;
+		text-transform: uppercase;
+	}
+	.title-tooltip {
+		font: 14px $HelveticaBold;
+		letter-spacing: 0.01em;
+		text-transform: uppercase;
+	}
+	.row {
+		.name {
+			font: 14px $HelveticaMedium;
+		}
+		.groupe {
+			font: 14px $HelveticaRoman;
+			text-align: center;
+		}
+		.number {
+			font: 14px $HelveticaRoman;
+		}
+		.email {
+			a {
+				font: 14px $HelveticaRoman;
+				text-decoration: underline;
+			}
+		}
+		.row-footer {
+			.info {
+				font: 13px $HelveticaRoman;
+			}
+			.value {
+				font: 13px $HelveticaRoman;
+			}
+		}
+	}
+	.input__label-content {
+		font: 13px/1 $HelveticaRoman;
+		letter-spacing: 0.05em;
+	}
+	.input__field {
+		font: 14px $HelveticaRoman;
+	}
+	.active-field {
+		.left-column {
+			&:after {
+				font: 18px $HelveticaRoman;
+				letter-spacing: 0.01em;
+				text-transform: uppercase;
+			}
+		}
 	}
 }
 .btn-groupe {
