@@ -133,6 +133,11 @@ $(function() {
 							$('.popup.success-create-person').modal('show');
 						}
 
+                        if ($form.hasClass('form-edite-person')) {
+                            $('.edite-interview').modal('hide');
+                            $('.popup.success-edite-interview').modal('show');
+                        }
+
 						return false;
 					}
 				});
@@ -140,18 +145,26 @@ $(function() {
 		};
 	})();
 
-	$(document).tooltip({
-		position: {
-			my: "left-4 bottom-10",
-			at: "right bottom"
-		}
-	});
+    if ($.tooltip) {
+        $(document).tooltip({
+            position: {
+                my: "left-4 bottom-10",
+                at: "right bottom"
+            }
+        });
+    }
+	
 
 	if ($('.dropdown')) {
 		$('.dropdown').selectmenu({
 			position: {
 				collision: "fit flip"
-			}
+			},
+            open: function () {
+                $('.ui-selectmenu-open .ui-menu-item').on('click', function (e) {
+                   $(e.target).addClass('ui-select-item').siblings().removeClass('ui-select-item');
+                });
+            }
 		});
 	}
 
