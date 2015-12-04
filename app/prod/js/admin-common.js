@@ -145,7 +145,7 @@ $(function() {
 		};
 	})();
 
-    if ($.tooltip) {
+    if ($(document)) {
         $(document).tooltip({
             position: {
                 my: "left-4 bottom-10",
@@ -153,8 +153,142 @@ $(function() {
             }
         });
     }
-	
 
+    if($('.groupe-btn-active')) {
+    	Array.prototype.forEach.call(document.querySelectorAll('.groupe-btn-active'), function (item) {
+    		item.addEventListener('click', function (e) {
+    			var target = e.target;
+
+    			while(target != this) {
+    				if (target.classList.contains('btn-ico')) {
+    					break;
+    				}
+
+    				target = target.parentNode;
+    			}
+
+    			if (target == this) {
+    				return;
+    			}
+
+    			e.preventDefault();
+
+    			if (target.classList.contains('btn-plus')) {
+    				var elem = undefined;
+    				var parent = target.parentNode;
+
+    				while (!parent.classList.contains('row')) {
+    					parent = parent.parentNode;
+    				}
+
+    				parent.parentNode.insertBefore(parent.cloneNode(true), parent);
+    			}
+    		});
+    	});	
+    }
+
+    document.addEventListener('click', function (e) {
+    	var target = e.target;
+
+    	while(target != this) {
+    		if (target.classList.contains('remove')) {
+    			break;
+    		}
+
+    		target = target.parentNode;
+    	}
+
+    	if (target == this) {
+    		return;
+    	}
+
+    	e.preventDefault();
+
+    	var col = $(target).parents('th'),
+    		inline = $(target).parents('td').prev('td'),
+    		count = undefined;
+
+    	if ($(target).parents('th')[0] && $(target).parents('th')[0].contains(target)) {
+    		col.parents('tr').children().each(function (i, item) {
+    			if (col[0] === item) {
+    				count = i;
+    			}
+    		});
+
+    		col.parents('table').find('tr').each(function (i, item) {
+    			$(item).children().each(function (i, item) {
+    				if (i === count) {
+    					$(item).addClass('is-deactive');
+    					if ($(item).children('.is-deactive')) {
+    						$(item).children('.is-deactive').each(function (i, item) {
+    							$(item).removeClass('is-deactive');
+    						});
+    					}
+    				}
+    			});
+    		});
+    	} else if ($(target).parents('.time-list')[0] && $(target).parents('.time-list')[0].contains(target)) {
+    		var x = $(target).parents('tr').hasClass('is-deactive') || $(target).parents('td').hasClass('is-deactive') || $(target).parents('th').hasClass('is-deactive') || $(target).parents('li').hasClass('is-deactive');
+
+    		if (x) {
+    			return;
+    		}
+
+    		$(target).parents('li').addClass('is-deactive');
+    	} else if ($(target).parents('td:first-of-type')[0] && $(target).parents('td:first-of-type')[0].contains(target)) {
+    		$(target).parents('td:first-of-type').parents('tr').children('td').each(function (i, item) {
+    			if ($(item).hasClass('is-deactive')) {
+    				return;
+    			}
+    			$(item).addClass('is-deactive');
+
+    			$(item).children('.is-deactive').each(function (i, item) {
+    				$(item).removeClass('is-deactive');
+    			});
+    		});
+    	}
+    });
+	
+	document.addEventListener('click', function (e) {
+		var target = e.target;
+
+		while(target != this) {
+			if (target.getAttribute('data-target') === '.success-edite') {
+				break;
+			}
+
+			target = target.parentNode;
+		}
+
+		if (target == this) {
+			return;
+		}
+
+		e.preventDefault();
+
+		document.body.classList.toggle('editer');
+	});
+
+	document.addEventListener('click', function (e) {
+		var target = e.target;
+
+		while(target != this) {
+			if (target.hasAttribute('data-event-modal')) {
+				break;
+			}
+
+			target = target.parentNode;
+		}
+
+		if (target == this) {
+			return;
+		}
+
+		e.preventDefault();
+
+		document.body.classList.remove('editer');
+	});
+	
 	if ($('.dropdown')) {
 		$('.dropdown').selectmenu({
 			position: {

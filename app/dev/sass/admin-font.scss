@@ -435,7 +435,9 @@ nav.tabs-category-menu {
 	}
 }
 .ui-selectmenu-menu {
-	font: 14px/2 $HelveticaRoman;
+	.ui-menu-item {
+		font: 14px/2 $HelveticaRoman;
+	} 
 	.ui-select-item {
 		font-family: $HelveticaBold;
 	}
@@ -494,6 +496,37 @@ nav.tabs-category-menu {
 		font: 12px/1.2 $HelveticaBold;
 		letter-spacing: 0.2em;
 		text-transform: uppercase;
+	}
+	.title-tooltip {
+		font: 14px $HelveticaBold;
+		letter-spacing: 0.01em;
+		text-transform: uppercase;
+	}
+	.row {
+		.name {
+			font: 14px $HelveticaMedium;
+		}
+		.groupe {
+			font: 14px $HelveticaRoman;
+			text-align: center;
+		}
+		.number {
+			font: 14px $HelveticaRoman;
+		}
+		.email {
+			a {
+				font: 14px $HelveticaRoman;
+				text-decoration: underline;
+			}
+		}
+		.row-footer {
+			.info {
+				font: 13px $HelveticaRoman;
+			}
+			.value {
+				font: 13px $HelveticaRoman;
+			}
+		}
 	}
 	.input__label-content {
 		font: 13px/1 $HelveticaRoman;
