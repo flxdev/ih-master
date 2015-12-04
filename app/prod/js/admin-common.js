@@ -307,11 +307,25 @@ $(function() {
 	}
     
 
-    $('.checkbox-general').click(function () {
-        if (!$('.checkbox-general').is(':checked')) {
-            $('.elem-checkbox').removeAttr('checked');
+    $('.checkbox-general').click(function (e) {
+    	var target = e.target;
+
+		while(target) {
+			if (target.classList.contains('checkbox-general')) {
+				break;
+			}
+
+			target = target.parentNode;
+		}
+
+		if (!target) {
+			return;
+		}
+
+        if (!$(target).is(':checked')) {
+        	$(target).parents('.content').find('.elem-checkbox').removeAttr('checked');
         } else {
-            $('.elem-checkbox').prop('checked', 'checked');
+           	$(target).parents('.content').find('.elem-checkbox').prop('checked', 'checked');
         }
     });
 

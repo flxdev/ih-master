@@ -677,6 +677,9 @@ input[type="checkbox"] {
 			.fill {
 				fill: $blue;
 			}
+			svg {
+				height: 100%;
+			}
 			a {
 				display: table-cell;
 				vertical-align: middle;
@@ -951,7 +954,7 @@ nav.tabs-category-menu {
     display: none;
     z-index: 999;
     .ui-menu {
-    	padding: 13px 15px;
+    	padding: 13px 30px;
     	box-shadow: 1px 1.73px 10px 0 rgba(35,38,39,.14);
         overflow: auto;
         overflow-x: hidden;;
