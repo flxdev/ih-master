@@ -111,7 +111,6 @@
 					</div>
 					<nav class="tabs-menu">
 						<ul>
-							<li><a href="" >Запись на курсы</a></li>
 							<li><a href="" class="is-active-tab">Отчеты</a></li>
 						</ul>
 					</nav>
@@ -127,7 +126,6 @@
 							<li><a href="#tab2" aria-controls="messages" aria-expanded="false" role="tab" data-toggle="tab">Архив с отчетами</a></li>
 						</ul>
 					</nav>
-					<div class="active-block"><a href="" class="btn btn-setting btn-with-ico"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><use xlink:href="prod/img/svg.min.svg#settings"></use></svg></span><span>Настройки</span></a></div>
 				</div>
 			</div>
 		</div>
@@ -141,20 +139,13 @@
 					</div>
 					<div class="select select-group">
 						<select name="" class="dropdown">
-							<option value="">К2А Машерова</option>
-							<option value="">К2А Машерова</option>
-							<option value="">К2А Машерова</option>
-							<option value="">К2А Машерова</option>
+							<option value="К2А Машерова">К2А Машерова</option>
+							<option value="К2А Машерова">К2А Машерова</option>
+							<option value="К2А Машерова">К2А Машерова</option>
+							<option value="К2А Машерова">К2А Машерова</option>
 						</select>
 					</div>
 					<div class="searcher"><span><input type="text" placeholder="Поиск по студентам"></span></div>
-					<div class="active-block btn-groupe">
-						<a href="" class="btn btn-type1 btn-add btn-with-ico" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><use xlink:href="prod/img/svg.min.svg#add"></use></svg></span><span>Добавить</span></a>
-						<ul class="dropdown-menu" aria-labelledby="add">
-							<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".add-person">Студента</a></li>
-							<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">загрузка / выгрузка</a></li>
-						</ul>
-					</div>
 				</div>
 				<table class="report">
 					<tr class="header sort-tool-table">
@@ -295,9 +286,9 @@
 						<div class="select-page">
 							<span>Показывать по</span>
 							<select name="" class="dropdown">
-								<option value="">25</option>
-								<option value="">50</option>
-								<option value="">100</option>
+								<option value="25">25</option>
+								<option value="50">50</option>
+								<option value="100">100</option>
 							</select>
 						</div>
 					</div>
@@ -312,18 +303,18 @@
 					</div>
 					<div class="select select-group">
 						<select name="" class="dropdown">
-							<option value="">К2А Машерова</option>
-							<option value="">К2А Машерова</option>
-							<option value="">К2А Машерова</option>
-							<option value="">К2А Машерова</option>
+							<option value="К2А Машерова">К2А Машерова</option>
+							<option value="К2А Машерова">К2А Машерова</option>
+							<option value="К2А Машерова">К2А Машерова</option>
+							<option value="К2А Машерова">К2А Машерова</option>
 						</select>
 					</div>
 					<div class="select select-group">
 						<select name="" class="dropdown">
-							<option value="">К2А Машерова</option>
-							<option value="">К2А Машерова</option>
-							<option value="">К2А Машерова</option>
-							<option value="">К2А Машерова</option>
+							<option value="К2А Машерова">К2А Машерова</option>
+							<option value="К2А Машерова">К2А Машерова</option>
+							<option value="К2А Машерова">К2А Машерова</option>
+							<option value="К2А Машерова">К2А Машерова</option>
 						</select>
 					</div>
 					<div class="searcher"><span><input type="text" placeholder="Поиск по студентам"></span></div>
@@ -473,9 +464,9 @@
 						<div class="select-page">
 							<span>Показывать по</span>
 							<select name="" class="dropdown">
-								<option value="">25</option>
-								<option value="">50</option>
-								<option value="">100</option>
+								<option value="25">25</option>
+								<option value="50">50</option>
+								<option value="100">100</option>
 							</select>
 						</div>
 					</div>
@@ -644,6 +635,555 @@
 										<span class="input__label-content">Телефон</span>
 									</label>
 									<input data-validation-regexp="^[-0-9()+ ]+$" data-validation="custom" type="text" class="input__field input__field-effect js-input-tel" autocomplete='off'>
+								</span>
+							</div>
+							<div class="row btn-fullwidth">
+								<button class="btn-type3" data-dismiss="modal" data-toogle="modal" data-href="" data-target="#success-newperson" type="submit"><span>добавить пользователя</span></button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+<!-- 		<div class="popup popup-form create-repert" tabindex="-1" role="dialog">
+			<div class="popup-wrapper">
+				<div class="popup-inner">
+					<div class="form">
+						<button class="popup-close" data-dismiss="modal" aria-label="Close">
+							<i class="icon_close_svg">
+								<svg viewBox="0 0 24 24" height="100%" class="close_icon" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+									<path d="m0,4l4,-4l8,8l8,-8l4,4l-8,8l8,8l-4,4l-8,-8l-8,8l-4,-4l8,-8l-8,-8z"/>
+								</svg>
+							</i>
+						</button>
+						<div class="title-form">Редактирование отчета</div>
+						<form action="" class="js-validate">
+							<div class="row columns">
+								<span class='field field-effect'>
+									<label class="input__label">
+										<span class="input__label-content">Имя</span>
+									</label>
+									<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+								</span>
+								<span class='field field-effect'>
+									<label class="input__label">
+										<span class="input__label-content">Фамилия</span>
+									</label>
+									<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+								</span>
+							</div>
+							<div class="row columns">
+								<span class='field field-effect'>
+									<label class="input__label">
+										<span class="input__label-content">Отчество</span>
+									</label>
+									<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+								</span>
+								<span class='field field-effect'>
+									<label class="input__label">
+										<span class="input__label-content">Учитель</span>
+									</label>
+									<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+								</span>
+							</div>
+							<div class="row columns-side-right ">
+								<span class='field field-effect'>
+									<span class="left-column">
+										<label class="input__label"><span class="input__label-content">Четверть</span></label>
+										<div class="select select-group">
+											<select name="" class="dropdown" data-validation="required">
+												<option value="9">9</option>
+												<option value="10">10</option>
+												<option value="11">11</option>
+												<option value="12">12</option>
+											</select>
+										</div>
+									</span>
+									<span class="right-column double-column">
+										<span class="column">
+											<label class="input__label"><span class="input__label-content">Понимание</span></label>
+											<div class="select select-group">
+												<select name="" class="dropdown" data-validation="required">
+													<option value="9">9</option>
+													<option value="10">10</option>
+													<option value="11">11</option>
+													<option value="12">12</option>
+												</select>
+											</div>
+										</span>
+										<span class="column">
+											<label class="input__label"><span class="input__label-content">Воспроиз-ние</span></label>
+											<div class="select select-group">
+												<select name="" class="dropdown" data-validation="required">
+													<option value="9">9</option>
+													<option value="10">10</option>
+													<option value="11">11</option>
+													<option value="12">12</option>
+												</select>
+											</div>
+										</span>
+									</span>
+								</span>
+							</div>
+							<div class="row list">
+								<span class='field field-effect'>
+									<label class="input__label"><span class="input__label-content">Произношение</span></label>
+									<div class="select select-group">
+										<select name="" class="dropdown" data-validation="required">
+											<option value="9">9</option>
+											<option value="10">10</option>
+											<option value="11">11</option>
+											<option value="12">12</option>
+										</select>
+									</div>
+								</span>
+								<span class='field field-effect'>
+									<label class="input__label"><span class="input__label-content">Работа в парах</span></label>
+									<div class="select select-group">
+										<select name="" class="dropdown" data-validation="required">
+											<option value="9">9</option>
+											<option value="10">10</option>
+											<option value="11">11</option>
+											<option value="12">12</option>
+										</select>
+									</div>
+								</span>
+								<span class='field field-effect'>
+									<label class="input__label"><span class="input__label-content">Помощь другим детям</span></label>
+									<div class="select select-group">
+										<select name="" class="dropdown" data-validation="required">
+											<option value="9">9</option>
+											<option value="10">10</option>
+											<option value="11">11</option>
+											<option value="12">12</option>
+										</select>
+									</div>
+								</span>
+							</div>
+							<div class="row columns">
+								<span class='field field-effect'>
+									<label class="input__label"><span class="input__label-content">Соблюдение правил урока</span></label>
+									<div class="select select-group">
+										<select name="" class="dropdown" data-validation="required">
+											<option value="9">9</option>
+											<option value="10">10</option>
+											<option value="11">11</option>
+											<option value="12">12</option>
+										</select>
+									</div>
+								</span>
+								<span class='field field-effect'>
+									<label class="input__label"><span class="input__label-content">Выполнение домашних работ</span></label>
+									<div class="select select-group">
+										<select name="" class="dropdown" data-validation="required">
+											<option value="9">9</option>
+											<option value="10">10</option>
+											<option value="11">11</option>
+											<option value="12">12</option>
+										</select>
+									</div>
+								</span>
+							</div>
+							<div class="row list list-therd">
+								<span class='field field-effect'>
+									<label class="input__label"><span class="input__label-content">Кол-во письм.раб.</span></label>
+									<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+								</span>
+								<span class='field field-effect'>
+									<label class="input__label"><span class="input__label-content">Выполнено письм.</span></label>
+									<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+								</span>
+								<span class='field field-effect'>
+									<label class="input__label"><span class="input__label-content">Средняя оценка</span></label>
+									<div class="select select-group">
+										<select name="" class="dropdown" data-validation="required">
+											<option value="9">9</option>
+											<option value="10">10</option>
+											<option value="11">11</option>
+											<option value="12">12</option>
+										</select>
+									</div>
+								</span>
+							</div>
+							<div class="row list list-fourth">
+								<span class='field field-effect'>
+									<label class="input__label"><span class="input__label-content">Умение фокус.внимание</span></label>
+									<div class="select select-group">
+										<select name="" class="dropdown" data-validation="required">
+											<option value="9">9</option>
+											<option value="10">10</option>
+											<option value="11">11</option>
+											<option value="12">12</option>
+										</select>
+									</div>
+								</span>
+								<span class='field field-effect double-input-field'>
+									<label class="input__label"><span class="input__label-content">Лексико-грам. тест</span></label>
+									<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+									<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+								</span>
+								<span class='field field-effect'>
+									<label class="input__label"><span class="input__label-content">Кол-во пропущ.зан.</span></label>
+									<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+								</span>
+							</div>
+							<div class="row no-btn-modal">
+								<span class='field field-effect'>
+									<label class="input__label">
+										<span class="input__label-content">Сильные стороны</span>
+									</label>
+									<div class="groupe-btn-active">
+										<a href="" class="btn btn-with-ico" data-toggle="modal" data-href="#" data-target=".add-teg"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><use xlink:href="prod/img/svg.min.svg#plus"></use></svg></span><span>Добавить из списка</span></a>
+									</div>
+									<textarea rows="1" required  data-validation="length" data-validation-length="min1" class="input__field input__field-effect"></textarea>
+								</span>
+							</div>
+							<div class="row no-btn-modal">
+								<span class='field field-effect'>
+									<label class="input__label">
+										<span class="input__label-content">На что обратить внимание</span>
+									</label>
+									<div class="groupe-btn-active">
+										<a href="" class="btn btn-with-ico" data-toggle="modal" data-href="#" data-target=".add-teg"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><use xlink:href="prod/img/svg.min.svg#plus"></use></svg></span><span>Добавить из списка</span></a>
+									</div>
+									<textarea rows="1" required  data-validation="length" data-validation-length="min1" class="input__field input__field-effect"></textarea>
+								</span>
+							</div>
+							<div class="row btn-fullwidth">
+								<button class="btn-type3" data-dismiss="modal" data-toogle="modal" data-href="" data-target="#success-newperson" type="submit"><span>добавить пользователя</span></button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div> -->
+		<div class="popup popup-form add-teg" tabindex="-1" role="dialog">
+			<div class="popup-wrapper">
+				<div class="popup-inner">
+					<div class="form">
+						<button class="popup-close" data-dismiss="modal" aria-label="Close">
+							<i class="icon_close_svg">
+								<svg viewBox="0 0 24 24" height="100%" class="close_icon" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+									<path d="m0,4l4,-4l8,8l8,-8l4,4l-8,8l8,8l-4,4l-8,-8l-8,8l-4,-4l8,-8l-8,-8z"/>
+								</svg>
+							</i>
+						</button>
+						<div class="title-form">Добавить пользователя</div>
+						<nav class="tabs-category-menu">
+							<ul role="tablist">
+								<li class="active"><a href=".form-total" aria-controls="messages" aria-expanded="false" role="tab" data-toggle="tab">Общее</a></li>
+								<li><a href=".form-gram" aria-controls="messages" aria-expanded="false" role="tab" data-toggle="tab">Грамматика и лексика</a></li>
+								<li><a href=".form-say" aria-controls="messages" aria-expanded="false" role="tab" data-toggle="tab">Устная речь и письмо</a></li>
+								<li><a href=".form-read" aria-controls="messages" aria-expanded="false" role="tab" data-toggle="tab">Аудирование и чтение</a></li>
+								<li><a href=".form-buid" aria-controls="messages" aria-expanded="false" role="tab" data-toggle="tab">Поведение</a></li>
+							</ul>
+						</nav>
+						<div class="form-wrap form-total active" role="tabpanel">
+							<form action="" class="js-validate form-create-person">
+								<div class="row inline-row">
+									<span class='field field-effect'>
+										<input type="checkbox" class="elem-checkbox" id="1"><label for="1"><span class="input__label-content">Деактивировать выбранный адрес на все время</span></label>
+									</span>
+								</div>
+								<div class="row inline-row">
+									<span class='field field-effect'>
+										<input type="checkbox" class="elem-checkbox" id="2"><label for="2"><span class="input__label-content">Деактивировать выбранный адрес на все время</span></label>
+									</span>
+								</div>
+								<div class="row inline-row">
+									<span class='field field-effect'>
+										<input type="checkbox" class="elem-checkbox" id="3"><label for="3"><span class="input__label-content">Деактивировать выбранный адрес на все время</span></label>
+									</span>
+								</div>
+								<div class="row inline-row">
+									<span class='field field-effect'>
+										<input type="checkbox" class="elem-checkbox" id="4"><label for="4"><span class="input__label-content">Деактивировать выбранный адрес на все время</span></label>
+									</span>
+								</div>
+								<div class="row btn-fullwidth">
+									<button class="btn-type3" type="submit"><span>добавить в комментарии</span></button>
+								</div>
+							</form>
+						</div>
+						<div class="form-wrap form-gram" role="tabpanel">
+							<form action="" class="js-validate form-create-person">
+								<div class="row inline-row">
+									<span class='field field-effect'>
+										<input type="checkbox" class="elem-checkbox" id="5"><label for="5"><span class="input__label-content">Деактивировать выбранный адрес на все время</span></label>
+									</span>
+								</div>
+								<div class="row inline-row">
+									<span class='field field-effect'>
+										<input type="checkbox" class="elem-checkbox" id="6"><label for="6"><span class="input__label-content">Деактивировать выбранный адрес на все время</span></label>
+									</span>
+								</div>
+								<div class="row inline-row">
+									<span class='field field-effect'>
+										<input type="checkbox" class="elem-checkbox" id="7"><label for="7"><span class="input__label-content">Деактивировать выбранный адрес на все время</span></label>
+									</span>
+								</div>
+								<div class="row inline-row">
+									<span class='field field-effect'>
+										<input type="checkbox" class="elem-checkbox" id="8"><label for="8"><span class="input__label-content">Деактивировать выбранный адрес на все время</span></label>
+									</span>
+								</div>
+								<div class="row btn-fullwidth">
+									<button class="btn-type3" type="submit"><span>добавить в комментарии</span></button>
+								</div>
+							</form>
+						</div>
+						<div class="form-wrap form-say" role="tabpanel">
+							<form action="" class="js-validate form-create-person">
+								<div class="row inline-row">
+									<span class='field field-effect'>
+										<input type="checkbox" class="elem-checkbox" id="9"><label for="9"><span class="input__label-content">Деактивировать выбранный адрес на все время</span></label>
+									</span>
+								</div>
+								<div class="row inline-row">
+									<span class='field field-effect'>
+										<input type="checkbox" class="elem-checkbox" id="10"><label for="10"><span class="input__label-content">Деактивировать выбранный адрес на все время</span></label>
+									</span>
+								</div>
+								<div class="row inline-row">
+									<span class='field field-effect'>
+										<input type="checkbox" class="elem-checkbox" id="11"><label for="11"><span class="input__label-content">Деактивировать выбранный адрес на все время</span></label>
+									</span>
+								</div>
+								<div class="row inline-row">
+									<span class='field field-effect'>
+										<input type="checkbox" class="elem-checkbox" id="12"><label for="12"><span class="input__label-content">Деактивировать выбранный адрес на все время</span></label>
+									</span>
+								</div>
+								<div class="row btn-fullwidth">
+									<button class="btn-type3" type="submit"><span>добавить в комментарии</span></button>
+								</div>
+							</form>
+						</div>
+						<div class="form-wrap form-read" role="tabpanel">
+							<form action="" class="js-validate form-create-person">
+								<div class="row inline-row">
+									<span class='field field-effect'>
+										<input type="checkbox" class="elem-checkbox" id="13"><label for="13"><span class="input__label-content">Деактивировать выбранный адрес на все время</span></label>
+									</span>
+								</div>
+								<div class="row inline-row">
+									<span class='field field-effect'>
+										<input type="checkbox" class="elem-checkbox" id="14"><label for="14"><span class="input__label-content">Деактивировать выбранный адрес на все время</span></label>
+									</span>
+								</div>
+								<div class="row inline-row">
+									<span class='field field-effect'>
+										<input type="checkbox" class="elem-checkbox" id="15"><label for="15"><span class="input__label-content">Деактивировать выбранный адрес на все время</span></label>
+									</span>
+								</div>
+								<div class="row inline-row">
+									<span class='field field-effect'>
+										<input type="checkbox" class="elem-checkbox" id="16"><label for="16"><span class="input__label-content">Деактивировать выбранный адрес на все время</span></label>
+									</span>
+								</div>
+								<div class="row btn-fullwidth">
+									<button class="btn-type3" type="submit"><span>добавить в комментарии</span></button>
+								</div>
+							</form>
+						</div>
+						<div class="form-wrap form-buid" role="tabpanel">
+							<form action="" class="js-validate form-create-person">
+								<div class="row inline-row">
+									<span class='field field-effect'>
+										<input type="checkbox" class="elem-checkbox" id="17"><label for="17"><span class="input__label-content">Деактивировать выбранный адрес на все время</span></label>
+									</span>
+								</div>
+								<div class="row inline-row">
+									<span class='field field-effect'>
+										<input type="checkbox" class="elem-checkbox" id="18"><label for="18"><span class="input__label-content">Деактивировать выбранный адрес на все время</span></label>
+									</span>
+								</div>
+								<div class="row inline-row">
+									<span class='field field-effect'>
+										<input type="checkbox" class="elem-checkbox" id="19"><label for="19"><span class="input__label-content">Деактивировать выбранный адрес на все время</span></label>
+									</span>
+								</div>
+								<div class="row inline-row">
+									<span class='field field-effect'>
+										<input type="checkbox" class="elem-checkbox" id="20"><label for="20"><span class="input__label-content">Деактивировать выбранный адрес на все время</span></label>
+									</span>
+								</div>
+								<div class="row btn-fullwidth">
+									<button class="btn-type3" type="submit"><span>добавить в комментарии</span></button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="popup popup-form create-repert" tabindex="-1" role="dialog">
+			<div class="popup-wrapper">
+				<div class="popup-inner">
+					<div class="form">
+						<button class="popup-close" data-dismiss="modal" aria-label="Close">
+							<i class="icon_close_svg">
+								<svg viewBox="0 0 24 24" height="100%" class="close_icon" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+									<path d="m0,4l4,-4l8,8l8,-8l4,4l-8,8l8,8l-4,4l-8,-8l-8,8l-4,-4l8,-8l-8,-8z"/>
+								</svg>
+							</i>
+						</button>
+						<div class="title-form">Редактирование отчета</div>
+						<form action="" class="js-validate">
+							<div class="row columns">
+								<span class='field field-effect'>
+									<label class="input__label">
+										<span class="input__label-content">Имя</span>
+									</label>
+									<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+								</span>
+								<span class='field field-effect'>
+									<label class="input__label">
+										<span class="input__label-content">Фамилия</span>
+									</label>
+									<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+								</span>
+							</div>
+							<div class="row columns">
+								<span class='field field-effect'>
+									<label class="input__label">
+										<span class="input__label-content">Отчество</span>
+									</label>
+									<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+								</span>
+								<span class='field field-effect'>
+									<label class="input__label">
+										<span class="input__label-content">Учитель</span>
+									</label>
+									<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+								</span>
+							</div>
+							<div class="row columns-side-right ">
+								<span class='field field-effect'>
+									<span class="left-column">
+										<label class="input__label"><span class="input__label-content">Четверть</span></label>
+										<div class="select select-group">
+											<select name="" class="dropdown" data-validation="required">
+												<option value="9">9</option>
+												<option value="10">10</option>
+												<option value="11">11</option>
+												<option value="12">12</option>
+											</select>
+										</div>
+									</span>
+									<span class="right-column double-column">
+										<span class="column">
+											<label class="input__label"><span class="input__label-content">Беглость</span></label>
+											<div class="select select-group">
+												<select name="" class="dropdown" data-validation="required">
+													<option value="9">9</option>
+													<option value="10">10</option>
+													<option value="11">11</option>
+													<option value="12">12</option>
+												</select>
+											</div>
+										</span>
+										<span class="column">
+											<label class="input__label"><span class="input__label-content">Грамматика</span></label>
+											<div class="select select-group">
+												<select name="" class="dropdown" data-validation="required">
+													<option value="9">9</option>
+													<option value="10">10</option>
+													<option value="11">11</option>
+													<option value="12">12</option>
+												</select>
+											</div>
+										</span>
+									</span>
+								</span>
+							</div>
+							<div class="row list">
+								<span class='field field-effect'>
+									<label class="input__label"><span class="input__label-content">Произношение</span></label>
+									<div class="select select-group">
+										<select name="" class="dropdown" data-validation="required">
+											<option value="9">9</option>
+											<option value="10">10</option>
+											<option value="11">11</option>
+											<option value="12">12</option>
+										</select>
+									</div>
+								</span>
+								<span class='field field-effect long-field'>
+									<label class="input__label"><span class="input__label-content">Выполнение дом. раб.</span></label>
+									<div class="select select-group">
+										<select name="" class="dropdown" data-validation="required">
+											<option value="9">9</option>
+											<option value="10">10</option>
+											<option value="11">11</option>
+											<option value="12">12</option>
+										</select>
+									</div>
+								</span>
+								<span class='field field-effect'>
+									<label class="input__label"><span class="input__label-content">Кол-во письм. раб.</span></label>
+									<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+								</span>
+							</div>
+							<div class="row list list-fourth">
+								<span class='field field-effect'>
+									<label class="input__label"><span class="input__label-content">Выполнено письм.раб.</span></label>
+									<div class="select select-group">
+										<select name="" class="dropdown" data-validation="required">
+											<option value="9">9</option>
+											<option value="10">10</option>
+											<option value="11">11</option>
+											<option value="12">12</option>
+										</select>
+									</div>
+								</span>
+								<span class='field field-effect double-input-field'>
+									<label class="input__label"><span class="input__label-content">Лексико-грам. тест</span></label>
+									<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+									<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+								</span>
+								<span class='field field-effect'>
+									<label class="input__label"><span class="input__label-content">Средняя оценка</span></label>
+									<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+								</span>
+							</div>
+							<div class="row columns">
+								<span class='field field-effect'>
+									<label class="input__label"><span class="input__label-content">Умение фокусировать внимание</span></label>
+									<div class="select select-group">
+										<select name="" class="dropdown" data-validation="required">
+											<option value="9">9</option>
+											<option value="10">10</option>
+											<option value="11">11</option>
+											<option value="12">12</option>
+										</select>
+									</div>
+								</span>
+								<span class='field field-effect'>
+									<label class="input__label"><span class="input__label-content">Кол-во пропущенных занятий</span></label>
+									<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+								</span>
+							</div>
+							<div class="row no-btn-modal">
+								<span class='field field-effect'>
+									<label class="input__label">
+										<span class="input__label-content">Сильные стороны</span>
+									</label>
+									<div class="groupe-btn-active">
+										<a href="" class="btn btn-with-ico" data-toggle="modal" data-href="#" data-target=".add-teg"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><use xlink:href="prod/img/svg.min.svg#plus"></use></svg></span><span>Добавить из списка</span></a>
+									</div>
+									<textarea rows="1" required  data-validation="length" data-validation-length="min1" class="input__field input__field-effect"></textarea>
+								</span>
+							</div>
+							<div class="row no-btn-modal">
+								<span class='field field-effect'>
+									<label class="input__label">
+										<span class="input__label-content">На что обратить внимание</span>
+									</label>
+									<div class="groupe-btn-active">
+										<a href="" class="btn btn-with-ico" data-toggle="modal" data-href="#" data-target=".add-teg"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><use xlink:href="prod/img/svg.min.svg#plus"></use></svg></span><span>Добавить из списка</span></a>
+									</div>
+									<textarea rows="1" required  data-validation="length" data-validation-length="min1" class="input__field input__field-effect"></textarea>
 								</span>
 							</div>
 							<div class="row btn-fullwidth">
@@ -896,6 +1436,7 @@
 	<script src="prod/js/lib/jquery-2.1.4.min.js"></script>
 	<script src="prod/js/lib/bootstrap.js"></script>
 	<script src="prod/js/lib/jquery-ui.min.js"></script>
+	<script src="prod/js/lib/fancySelect.js"></script>
 	<script src="prod/js/lib/jquery.form-validator.min.js"></script>
 	<script src="prod/js/admin-common.js"></script>
 </body>

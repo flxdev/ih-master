@@ -288,19 +288,10 @@ $(function() {
 
 		document.body.classList.remove('editer');
 	});
-	
-	if ($('.dropdown')) {
-		$('.dropdown').selectmenu({
-			position: {
-				collision: "fit flip"
-			},
-            open: function () {
-                $('.ui-selectmenu-open .ui-menu-item').on('click', function (e) {
-                   $(e.target).addClass('ui-select-item').siblings().removeClass('ui-select-item');
-                });
-            }
-		});
-	}
+
+    if ($('.dropdown')) {
+        $('.dropdown').fancySelect();
+    }
 
 	if ($('.dropdown-toggle')) {
 		$('.dropdown-toggle').dropdown();
