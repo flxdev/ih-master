@@ -750,7 +750,7 @@
 										<div class="title">Места проведения занятий</div>
 										<div class="description">На карте</div>
 										<div class="maps__contact">
-											<div class="map contacts" data-coord="53.906947, 27.524089; 53.908862, 27.573621; 53.914069, 27.539433; 53.915641, 27.584462; 53.878986, 27.608310"></div>
+											<div id="map_groups" class="map_groups"></div>
 										</div>
 									</div>
 									<div class="content__row">
@@ -793,7 +793,7 @@
 														</div>
 													</div>
 													<div class="maps__contact">
-														<div class="map" data-coord="53.906947, 27.524089;"></div>
+														<div id="map-1" class="maps" data-latitude="21.9932470322" data-longitude="51.4624160046"></div>
 													</div>
 												</div>
 												<div class="head">
@@ -823,7 +823,7 @@
 														</div>
 													</div>
 													<div class="maps__contact">
-														<div class="map" data-coord="53.906947, 27.524089;"></div>
+														<div id="map-2" class="maps" data-latitude="22.9932470322" data-longitude="52.4624160046"></div>
 													</div>
 												</div>
 												<div class="head">
@@ -853,7 +853,7 @@
 														</div>
 													</div>
 													<div class="maps__contact">
-														<div class="map" data-coord="53.906947, 27.524089;"></div>
+														<div id="map-3" class="maps" data-latitude="23.9932470322" data-longitude="53.4624160046"></div>
 													</div>
 												</div>
 												<div class="head">
@@ -891,7 +891,7 @@
 														</div>
 													</div>
 													<div class="maps__contact">
-														<div class="map" data-coord="53.906947, 27.524089;"></div>
+														<div id="map-4" class="maps" data-latitude="24.9932470322" data-longitude="54.4624160046"></div>
 													</div>
 												</div>
 											</div>
@@ -2030,7 +2030,9 @@
 		</div>
 	</div>
 <script src="https://maps.googleapis.com/maps/api/js"></script>
+<script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox.js"></script>
 <script src="prod/js/lib/jquery-2.1.4.min.js"></script>
+<script src="prod/js/lib/map.js"></script>
 <script src="prod/js/lib/slick.min.js"></script>
 <script src="prod/js/lib/jquery.nicescroll.js"></script>
 <script src="prod/js/lib/autosize.min.js"></script>

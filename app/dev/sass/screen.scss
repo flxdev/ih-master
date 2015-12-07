@@ -6356,59 +6356,59 @@ table {
 		width: 100%;
 		height: 100%;
 	}
-	.controlls__map {
-		position: absolute;
-		top: 1.5454em!important; // 17px / 11px
-		right: 1.7272em!important; // 19px / 11px
-		z-index: 10;
-		width: 2.9090em; // 32px / 11px
-		height: 5.6363em; //61px / 11px
-		.map__zoom-in {
-			height: 2.7272em; // 30px / 11px
-			width: 100%;
-			overflow: hidden;
-			cursor: pointer;			
+}
+.controlls__map {
+	position: absolute;
+	top: 1.5454em!important; // 17px / 11px
+	right: 1.7272em!important; // 19px / 11px
+	z-index: 10;
+	width: 2.9090em; // 32px / 11px
+	height: 5.6363em; //61px / 11px
+	.map__zoom-in {
+		height: 2.7272em; // 30px / 11px
+		width: 100%;
+		overflow: hidden;
+		cursor: pointer;			
+		.fill {
+			fill: $blue;
+			transition: fill 0.3s ease;
+		}
+		.stroke {
+			stroke: $blue;
+			transition: stroke 0.3s ease;
+		}
+		&:hover {
 			.fill {
-				fill: $blue;
+				fill: $red;
 				transition: fill 0.3s ease;
 			}
 			.stroke {
-				stroke: $blue;
+				stroke: $red;
 				transition: stroke 0.3s ease;
-			}
-			&:hover {
-				.fill {
-					fill: $red;
-					transition: fill 0.3s ease;
-				}
-				.stroke {
-					stroke: $red;
-					transition: stroke 0.3s ease;
-				}
 			}
 		}
-		.map__zoom-out {
-			height: 2.7272em; // 30px / 11px
-			width: 100%;
-			overflow: hidden;
-			cursor: pointer;
+	}
+	.map__zoom-out {
+		height: 2.7272em; // 30px / 11px
+		width: 100%;
+		overflow: hidden;
+		cursor: pointer;
+		.fill {
+			fill: $blue;
+			transition: fill 0.3s ease;
+		}
+		.stroke {
+			stroke: $blue;
+			transition: stroke 0.3s ease;
+		}
+		&:hover {
 			.fill {
-				fill: $blue;
+				fill: $red;
 				transition: fill 0.3s ease;
 			}
 			.stroke {
-				stroke: $blue;
+				stroke: $red;
 				transition: stroke 0.3s ease;
-			}
-			&:hover {
-				.fill {
-					fill: $red;
-					transition: fill 0.3s ease;
-				}
-				.stroke {
-					stroke: $red;
-					transition: stroke 0.3s ease;
-				}
 			}
 		}
 	}
@@ -6456,8 +6456,21 @@ table {
 		position: absolute;
 	}
 }
+.map_groups {
+	width: 100%;
+	height: 100%;
+}
 .accordion {
 	&.contacts {
+		.maps__contact {
+			height: 28.125em; // 450px / 16px
+			width: 100%;
+			position: relative;
+			.maps {
+				width: 100%;
+				height: 100%;
+			}
+		}
 		.col_30 {
 			width: 36%;
 		}

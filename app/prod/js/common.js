@@ -900,18 +900,3 @@ function EventEmitter() {
     	"emit": emit
     }
 }
-var school = [];
-(function(){	
-	var maping = $('.accordion.contacts').find('.map');
-
-	maping.each(function(index){
-		var data = [];
-			data[0] = $(this).parents('.content').prev().find('.js-address').html();
-			data[1] = $(this).parents('.content').prev().find('.js-tel').html();
-			data[2] = $(this).parents('.content').prev().find('.js-time').html();
-			school[index] = data;
-	});
-
-	console.log(school[0]);
-
-})();
