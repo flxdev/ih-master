@@ -388,7 +388,7 @@ body {
 .searcher {
 	input[type="text"],
 	label {
-		font: 13px/1.5385 $HelveticaRoman;
+		font: 13px $HelveticaRoman;
 	}
 }
 .btn-type1,
@@ -428,18 +428,28 @@ nav.tabs-category-menu {
 		}
 	}
 }
-.ui-selectmenu-button {
-	.ui-selectmenu-text {
-		font: 14px/1 $HelveticaRoman;
-		letter-spacing: 0.01em;
+.fancy-select .trigger {
+	font: 14px/1 $HelveticaRoman;
+	letter-spacing: 0.01em;
+	& + ul.options li {
+		font: 14px/2 $HelveticaRoman;
+		&.selected{
+			font-family: $HelveticaBold;
+		}
 	}
 }
-.ui-selectmenu-menu {
-	.ui-menu-item {
-		font: 14px/2 $HelveticaRoman;
-	} 
-	.ui-select-item {
-		font-family: $HelveticaBold;
+.add-teg {
+	.row {
+		&.inline-row {
+			.field {
+				label {
+					span {
+						font: 14px $HelveticaRoman;
+						letter-spacing: 0.01em;
+					}
+				}
+			}
+		}
 	}
 }
 .btn-with-ico:not([class*="btn-type"]) {
