@@ -9,8 +9,8 @@ function googleMapFunc(googleMap){
         var at = googleMap.attr('id');
 
         var myOptions = {
-            zoom: 12,
-            center: new google.maps.LatLng(53.894717, 27.562312),
+            zoom: 9,
+            center: latlng,
             streetViewControl: false,
             zoomControl: false,
             scaleControl: false,
@@ -29,7 +29,7 @@ function googleMapFunc(googleMap){
         map.setMapTypeId('tehgrayz');
 
         var companyImage = new google.maps.MarkerImage();
-        var companyPos = new google.maps.LatLng(53.894717, 27.562312);
+        var companyPos = latlng;
         var companyMarker = new google.maps.Marker({
             position: companyPos
         });
