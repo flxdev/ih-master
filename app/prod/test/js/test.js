@@ -1186,6 +1186,20 @@
 
 		};
 
+		this.setEmail = function (email) {
+			var email = email;
+
+			if (!this.email) {
+				this.email = '';
+			}
+
+			if (email instanceof String) {
+				email = email.trim().toLowerCase();
+			}
+
+			this.email = email;
+		}
+
 		this.setTableData = function(data) {
 			if (!data || !(data instanceof Object)) {
 				return;
@@ -1202,6 +1216,10 @@
 
 				this._headsFormsTest[key] = data[key];
 			}
+		};
+
+		this.getResult = function () {
+			return this.result;
 		};
 
 		this._random = function() {
@@ -1239,7 +1257,9 @@
 			'intermediate',
 			'upper-intermediate'
 		],
-		time: 15
+		time: 15,
+		email: setEmail,
+		result: getResult
 	});
 
 	test.init();
