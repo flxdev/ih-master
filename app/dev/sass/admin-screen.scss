@@ -660,6 +660,10 @@ input[type="checkbox"] {
 }
 .content .container.container-setting {
 	background: transparent;
+	.page-group {
+		width: 976px;
+		margin-left: auto;
+	}
 }
 .add-teg {
 	nav.tabs-category-menu {
@@ -1065,6 +1069,7 @@ nav.tabs-category-menu {
 		    	span {
 			    	display: table;
 			    	width: 100%;
+			    	text-align: center;
 			    	svg {
 			    		transition: fill 0.3s ease;
 			    		width: 14px;
@@ -1560,7 +1565,7 @@ nav.tabs-category-menu {
 						}
 						.input__field-effect {
 							background: #fff;
-							border: 1px solid transparent;
+							border: 1px solid #dadada;
 							box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.1);
 						}
 					}
@@ -1676,7 +1681,7 @@ nav.tabs-category-menu {
 					}
 					&.selected {
 						background: #fff;
-						border: 1px solid transparent;
+						border: 1px solid #dadada;
 						box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.1);
 					}
 
@@ -1697,6 +1702,29 @@ nav.tabs-category-menu {
 					background: #fff;
 					border: 1px solid $blue;
 					box-shadow: inset 0 3px 7px rgba($blue, 0.1);
+				}
+				.left-column,
+				.right-column {
+					&.has-error {
+						.input__field-effect {
+							background: #fff;
+							border: 1px solid $red;
+							color: $red;
+							box-shadow: inset 0 3px 7px rgba($red, 0.1);
+						} 
+					}
+					&.has-success {
+						.input__field-effect:focus  {
+							background: #fff;
+							border: 1px solid $blue;
+							box-shadow: inset 0 3px 7px rgba($blue, 0.1);
+						}
+						.input__field-effect {
+							background: #fff;
+							border: 1px solid #dadada;
+							box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.1);
+						}
+					}
 				}
 				textarea {
 					&.input__field {
@@ -1770,6 +1798,11 @@ nav.tabs-category-menu {
 				position: absolute;
 				top: -34px;
 				left: 64px;
+				& + .row {
+					.row-header {
+						padding-top: 8px;
+					}
+				}
 			}
 			.row {
 				height: auto;
@@ -1798,17 +1831,30 @@ nav.tabs-category-menu {
 				}
 				.email + .active-btn-groupe {
 					width: 105px;
-					.btn-comment {
-
+				}
+				.active-btn-groupe {
+					height: 38px;
+				}
+				.btn-ico {
+					height: 38px;
+					svg {
+						margin: 12.5px auto;
+					}
+					&.btn-comment {
+						svg {
+							width: 18px;
+							height: 18px;
+							margin: 11px auto;
+						}
 					}
 				}
 				.row-footer {
-					height: 38px;
+					height: 28px;
 					display: table;
 					@include clearfix;
 					span {
 						display: table-cell;
-						vertical-align: middle;
+						vertical-align: top;
 						height: 100%;
 					}
 				}
@@ -1913,8 +1959,10 @@ body.editer {
 			position: relative;
 			display: block;
 			background: #fff;
+			border-bottom: 1px solid #f2f2f2;
 			transition: background 0.3s ease;
 			&:last-of-type {
+				border-bottom: none;
 				&:after,
 				&:before {
 					position: absolute;

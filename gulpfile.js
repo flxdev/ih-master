@@ -77,7 +77,7 @@ gulp.task('libcss', function () {
 		.pipe(gulp.dest('./app/prod/css/'));
 });
 
-gulp.task('default', ['sync', 'libcss'/*, 'templates'*/], function () {
+gulp.task('default', ['sync', 'libcss', /*'templates'*/], function () {
 
 	//gulp.watch('./app/prod/test/templates/*.html', ["templates"], browserSync.reload);
 
