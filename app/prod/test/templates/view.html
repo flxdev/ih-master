@@ -57,7 +57,7 @@
 				</button>
 				<div class="form">
 					<div class="title__form">Запись на собеседование</div>
-					<form action="" class="js-validate">
+					<form action="" class="validation">
 						<div class="row columns">
 							<span class='field field-effect'>
 								<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
@@ -200,6 +200,39 @@
 					<div class="title__form">Благодарим вас за проделанную работу!</div>
 					<p>Ваш успешно записались на собеседование. Мы свяжемся с вами в ближайшее время!</p>
 					<a href="/" class="popup__close" data-test-close><span>На главную</span></a>
+				</div>
+			</div>
+		</div>
+		<div class="popup__form border__effect" data-test-email>
+			<div class="popup__inner">
+				<button class="popup__close" data-test-close>
+					<i class="icon_close_svg">
+						<svg viewBox="0 0 24 24" height="100%" class="close_icon" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+							<path d="m0,4l4,-4l8,8l8,-8l4,4l-8,8l8,8l-4,4l-8,-8l-8,8l-4,-4l8,-8l-8,-8z"/>
+						</svg>
+					</i>
+				</button>
+				<div class="form">
+					<div class="title__form">Начать тестирование</div>
+					<form action="" class="validation">
+						<div class="row">
+							<span class='field field-effect field-info'>Вам будет предложено 4 уровня по 25 вопросов<br/> в каждом начиная с Elementary. Правильно ответив<br/> на 13 вопросов вы проходите на следующий уровень.</span>
+						</div>
+						<div class="row">
+							<span class='field field-effect field-sub-info'>После прохождения онлайн-тестирования, вы получите приблизительную оценку вашего уровня для прохождения собеседования.</span>
+						</div>
+						<div class="row columns">
+							<span class='field field-effect'>
+								<input data-validation="email" type="text" class="input__field input__field-effect" autocomplete='off'>
+								<label class="input__label input__label-effect">
+									<span class="input__label-content input__label-content-effect">E-mail</span>
+								</label>
+							</span>
+							<span class='field field-effect'>
+								<button class="btn__type-2" type="submit"><span>начать тестирование</span></button>
+							</span>
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>
