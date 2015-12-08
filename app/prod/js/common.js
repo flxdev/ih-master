@@ -503,6 +503,21 @@ $(document).ready(function () {
 		heightStyle: 'content'
 	});
 
+	$('.js-show').on('click', function(e){
+		e.preventDefault();
+		var data = $(this).data('show');
+
+		var top = $('.' + data).offset().top + $('.fixed').scrollTop() - 70;
+
+		console.log(data, top)
+
+		$('.fixed').getNiceScroll(0).doScrollTop(top, 200);
+
+		setTimeout(function(){
+			$('.' + data).trigger('click');
+		},500)
+	})
+
 });
 
 
@@ -900,18 +915,3 @@ function EventEmitter() {
     	"emit": emit
     }
 }
-var school = [];
-(function(){	
-	var maping = $('.accordion.contacts').find('.map');
-
-	maping.each(function(index){
-		var data = [];
-			data[0] = $(this).parents('.content').prev().find('.js-address').html();
-			data[1] = $(this).parents('.content').prev().find('.js-tel').html();
-			data[2] = $(this).parents('.content').prev().find('.js-time').html();
-			school[index] = data;
-	});
-
-	console.log(school[0]);
-
-})();

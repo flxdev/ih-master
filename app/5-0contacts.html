@@ -681,68 +681,68 @@
 		<article class="homepage big_scroll">
 			<div class="overview">
 				<section class="content__scroll">
-					<div class="container__row">
-						<div class="col100">
-							<h1>Где находится наш центральный офис</h1>
-							<div class="content__block">
-								<div class="content__row">
-									<div class="description">Наш адрес</div>
-									<div class="address__section">
-										<div class="col50">
-											<div class="address">
-												<p class="head">Ул. Смолячкова, 9 – 430, 220005, РБ, Минск</p>
+					<div class="content_container">
+						<div class="container__row">
+							<div class="col100">
+								<h1>Где находится наш центральный офис</h1>
+								<div class="content__block">
+									<div class="content__row">
+										<div class="description">Наш адрес</div>
+										<div class="address__section">
+											<div class="col50">
+												<div class="address">
+													<p class="head">Ул. Смолячкова, 9 – 430, 220005, РБ, Минск</p>
+												</div>
+											</div>
+											<div class="col50">
+												<a class="btn btn__type-2 js-popup-link" data-href="callback">
+													<span>форма обратной связи</span>
+												</a>
 											</div>
 										</div>
-										<div class="col50">
-											<a class="btn btn__type-2 js-popup-link" data-href="callback">
-												<span>форма обратной связи</span>
-											</a>
+									</div>
+									<div class="content__row">
+										<div class="description">Телефоны</div>
+										<ul class="phone__list">
+											<li>+375 (17) 293-65-55</li>
+											<li>+375 (25) 777-73-18</li>
+											<li>+375 (17) 293-06-68</li>
+											<li>+375 (29) 777-73-18</li>
+											<li>+375 (44) 777-73-18</li>
+										</ul>
+									</div>
+									<div class="content__row">
+										<div class="description">Графики работы</div>
+										<div class="work__time">
+											<div class="col50">
+												<p class="head">Офис</p>
+												<p>Пн-пт: 9:00–20:00</p>
+											</div>
+											<div class="col50">
+												<p class="head">Касса</p>
+												<p>Пн-пт: 12:00–20:00</p>
+											</div>
 										</div>
 									</div>
-								</div>
-								<div class="content__row">
-									<div class="description">Телефоны</div>
-									<ul class="phone__list">
-										<li>+375 (17) 293-65-55</li>
-										<li>+375 (25) 777-73-18</li>
-										<li>+375 (17) 293-06-68</li>										
-										<li>+375 (29) 777-73-18</li>
-										<li>+375 (44) 777-73-18</li>
-									</ul>
-								</div>
-								<div class="content__row">
-									<div class="description">Графики работы</div>
-									<div class="work__time">
-										<div class="col50">
-											<p class="head">Офис</p>
-											<p>Пн-пт: 9:00–20:00</p>
+									<div class="content__row">
+										<div class="description">E-mail</div>
+										<div class="work__mail">
+											<div class="col50">
+												<p><a class="mail" href="">office@ih.by</a></p>
+											</div>
 										</div>
-										<div class="col50">
-											<p class="head">Касса</p>
-											<p>Пн-пт: 12:00–20:00</p>
-										</div>
-									</div>
+									</div>								
 								</div>
-								<div class="content__row">
-									<div class="description">E-mail</div>
-									<div class="work__mail">
-										<div class="col50">
-											<p><a class="mail" href="">office@ih.by</a></p>
-										</div>
-									</div>
-								</div>								
-							</div>
-							<div class="btn__seen">
-								<a href="" class="btn btn__type-1">
-									<span>Посмотреть на карте</span>
-									<i class="icon__arrow">
-										<svg viewBox="0 0 42.067 41.968" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" class="arrow_right"><path d="M0.097,20.971v-2h29.996v2H0.097" clip-rule="evenodd" fill-rule="evenodd" class="fill"/><path d="M40.093,19.97l-16.998,9.999V9.972L40.093,19.97z" stroke-miterlimit="10" stroke-width="2" fill="none" class="stroke"/></svg>
-									</i>
-								</a>
+								<div class="btn__seen">
+									<a href="#" data-show='main__office' class="btn btn__type-1 js-show">
+										<span>Посмотреть на карте</span>
+										<i class="icon__arrow">
+											<svg viewBox="0 0 42.067 41.968" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" class="arrow_right"><path d="M0.097,20.971v-2h29.996v2H0.097" clip-rule="evenodd" fill-rule="evenodd" class="fill"/><path d="M40.093,19.97l-16.998,9.999V9.972L40.093,19.97z" stroke-miterlimit="10" stroke-width="2" fill="none" class="stroke"/></svg>
+										</i>
+									</a>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="content_container">
 						<div class="container__row">
 							<div class="col100">
 								<div class="content__block">
@@ -750,7 +750,7 @@
 										<div class="title">Места проведения занятий</div>
 										<div class="description">На карте</div>
 										<div class="maps__contact">
-											<div class="map contacts" data-coord="53.906947, 27.524089; 53.908862, 27.573621; 53.914069, 27.539433; 53.915641, 27.584462; 53.878986, 27.608310"></div>
+											<div id="map_groups" class="map_groups"></div>
 										</div>
 									</div>
 									<div class="content__row">
@@ -770,6 +770,36 @@
 												</div>
 											</div>
 											<div class="accordion contacts">
+												<div class="head main__office">
+													<div class="col_30">
+														<div class="address js-address"><p>Ул. Смолячкова, 9 – 430</p></div>
+													</div>
+													<div class="col_60 original">
+														<div class="col_30 js-tel">
+															<p>+375 (17) 293-65-55</p>
+															<p>+375 (17) 293-06-68</p>
+															<p>+375 (44) 777-73-18</p>
+														</div>
+														<div class="col_30 js-time">
+															<p>Пн-пт: 12:00–20:00</p>
+															<p>Пн-пт: 9:00–20:00</p>
+														</div>
+													</div>
+												</div>
+												<div class="content">
+													<div class="dubbing">
+														<div class="col_60">
+															<div class="col_30">
+															</div>
+															<div class="col_30">
+																<p>пн-пт: 14.00 – 20.00</p>
+															</div>
+														</div>
+													</div>
+													<div class="maps__contact">
+														<div id="map-0" class="maps" data-latitude="20.9932470322" data-longitude="50.4624160046"></div>
+													</div>
+												</div>
 												<div class="head">
 													<div class="col_30">
 														<div class="address js-address"><p>ул. Ежи Гедройца, 20</p><p>школа № 9</p></div>
@@ -793,7 +823,7 @@
 														</div>
 													</div>
 													<div class="maps__contact">
-														<div class="map" data-coord="53.906947, 27.524089;"></div>
+														<div id="map-1" class="maps" data-latitude="21.9932470322" data-longitude="51.4624160046"></div>
 													</div>
 												</div>
 												<div class="head">
@@ -823,7 +853,7 @@
 														</div>
 													</div>
 													<div class="maps__contact">
-														<div class="map" data-coord="53.906947, 27.524089;"></div>
+														<div id="map-2" class="maps" data-latitude="22.9932470322" data-longitude="52.4624160046"></div>
 													</div>
 												</div>
 												<div class="head">
@@ -853,7 +883,7 @@
 														</div>
 													</div>
 													<div class="maps__contact">
-														<div class="map" data-coord="53.906947, 27.524089;"></div>
+														<div id="map-3" class="maps" data-latitude="23.9932470322" data-longitude="53.4624160046"></div>
 													</div>
 												</div>
 												<div class="head">
@@ -891,7 +921,7 @@
 														</div>
 													</div>
 													<div class="maps__contact">
-														<div class="map" data-coord="53.906947, 27.524089;"></div>
+														<div id="map-4" class="maps" data-latitude="24.9932470322" data-longitude="54.4624160046"></div>
 													</div>
 												</div>
 											</div>
@@ -2030,7 +2060,9 @@
 		</div>
 	</div>
 <script src="https://maps.googleapis.com/maps/api/js"></script>
+<script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox.js"></script>
 <script src="prod/js/lib/jquery-2.1.4.min.js"></script>
+<script src="prod/js/lib/map.js"></script>
 <script src="prod/js/lib/slick.min.js"></script>
 <script src="prod/js/lib/jquery.nicescroll.js"></script>
 <script src="prod/js/lib/autosize.min.js"></script>
