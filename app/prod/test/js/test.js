@@ -730,6 +730,10 @@
 				return;
 			}
 
+			if (document.querySelector('[data-test-window]').classList.contains('is-active')) {
+				return;
+			}
+
 			e.stopPropagation();
 			e.preventDefault();
 
@@ -779,9 +783,15 @@
 			e.preventDefault();
 
 			if (self.age >= 11 && self.age < 18) {
-				self.animationOpenPage($('[data-test-writebig]'));
+				self.animationOpenPage($('[data-test-writebig]'), self._blurField);
+				self._validationForm($('[data-test-writebig]').find('.validation'), function () {
+					console.log('big');
+				});
 			} else if (self.age >= 18) {
-				self.animationOpenPage($('[data-test-writesmall]'));
+				self.animationOpenPage($('[data-test-writesmall]'), self._blurField);
+				self._validationForm($('[data-test-writesmall]').find('.validation'), function () {
+					console.log('small');
+				});
 			};
 		};
 
@@ -824,15 +834,74 @@
 					self.age = +item.getAttribute('id').split('_')[0];
 
 					if (self.age >= 11) {
-						self.animationOpenPage($('[data-test-window]'));
-					} else if (self.age < 11 && self.age > 1) {
-						self.animationOpenPage($('[data-test-writebig]'));
-					};
+						self.animationOpenPage($('[data-test-email]'), self._blurField);
+						self._validationForm($('[data-test-email]').find('.validation'), function (form) {
+							var email = form.find('[data-validation="email"]').val();
+							self.setEmail(email);
 
+							self.animationOpenPage($('[data-test-window]'));
+						});
+					} else if (self.age < 11 && self.age > 1) {
+						self.animationOpenPage($('[data-test-writebig]'), self._blurField);
+						self._validationForm($('[data-test-writebig]').find('.validation'), function () {
+							console.log('big');
+						});
+					}
 				});
 
 				return self.statusTest("resolve");
 			}
+		};
+
+		this._blurField = function () {
+			var input = $('.input__field'),
+				filled = 'field-filled',
+				field = $('field');
+
+			input.each (function () {
+				var this_ = $(this);
+
+				this_.on('focus', function(){
+					this_.parent().addClass('field-filled');
+				});
+
+				this_.on( 'blur', function() {
+					if (!this_.val()) {
+						this_.parent().removeClass('field-filled');
+					}				
+				});
+			});
+		};
+
+		this._installPostfix = function () {
+			var postfix = '';
+
+			switch (Object.keys(this.result[this.data.number][this.variant]).length) {
+				case 0: postfix = 'ов';
+					break;
+				case 1: postfix = '';
+					break;
+				case 2: postfix = 'а';
+					break;
+				case 3: postfix = 'а';
+					break;
+				case 4: postfix = 'a';
+					break;
+				case 5: postfix = 'ов';
+					break;
+				case 21: postfix = '';
+					break;
+				case 22: postfix = 'а';
+					break;
+				case 23: postfix = 'а';
+					break;
+				case 24: postfix = 'а';
+					break;
+				default: postfix = 'ов';
+					break;
+			}
+
+			return postfix;
 		};
 
 		this.nextQuest = function(e) {
@@ -983,6 +1052,7 @@
 			} else if (checkPlus || this.testTimer.getTime() == '00:00') {
 				this._errorTempalte({
 					"level": this.data.level,
+					"postfix": this._installPostfix(),
 					"result": Object.keys(this.result).length <= 0 ? 0 : Object.keys(this.result[this.data.number][this.variant]).length
 				}, this.animationOpenPage);
 			}
@@ -1198,7 +1268,7 @@
 			}
 
 			this.email = email;
-		}
+		};
 
 		this.setTableData = function(data) {
 			if (!data || !(data instanceof Object)) {
@@ -1220,6 +1290,51 @@
 
 		this.getResult = function () {
 			return this.result;
+		};
+
+		this._serialization = function () {
+			return this;
+		};
+
+		this.afterSuccessValidation = function (callback) {
+			if (!(callback && callback instanceof Function && typeof callback === 'function')) {
+				return this._serialization;
+			}
+
+			this._serialization = callback;
+		};
+
+		this._validationForm = function (form, callback) {
+			var form = form[0],
+				self = this;
+
+			if (!form || form.nodeType !== 1) {
+				return;
+			}
+
+			$.validate({
+				form : form,
+				borderColorOnError : true,
+				scrollToTopOnError : false,
+				onValidate: function (form) {
+
+				},
+				onSuccess: function (form) {
+					// There will be your code here
+					self._serialization(form);
+
+					// The function needs in the check in order to a bad callback doesn't call error
+					if (!(callback && callback instanceof Function && typeof callback === 'function')) {
+						return false;
+					}
+
+					// There will be call your callback here
+					
+					callback(form);
+
+					return false;
+				}
+			});
 		};
 
 		this._random = function() {
