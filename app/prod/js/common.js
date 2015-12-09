@@ -329,13 +329,22 @@ $(document).ready(function () {
 			});
 			this_.on( 'blur', function(){
 				if($(this).val() === ''){
-					$(this).parent().removeClass('field-filled');
+					$(this).parents('.field').removeClass('field-filled');
 				}				
 			});
 
 		});
 	})();
 
+	var inp = $('.form__test').find('.input__field');
+	inp.on('click', function(e){
+		e.stopPropagation();
+	});
+	$(document).click(function(event){
+		if(inp.is(':focus')) {
+			inp.blur();
+		}
+	});
 
 	//AUTO RESIZE TEXTAREA
 	(function(){

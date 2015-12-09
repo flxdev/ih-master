@@ -1258,8 +1258,8 @@
 			'upper-intermediate'
 		],
 		time: 15,
-		email: setEmail,
-		result: getResult
+		email: this.setEmail,
+		result: this.getResult
 	});
 
 	test.init();
