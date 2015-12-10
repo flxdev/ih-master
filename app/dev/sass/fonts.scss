@@ -1058,6 +1058,42 @@ table {
         font-size: 1em; // 20px / 20px
     }
 }
+.phone__list-call {
+    li {
+        font-family: $AgoraProBold;
+        font-size: 1.25em; // 20px / 16px
+    }
+}
+.btn-back {
+    span {
+        font-family: $HelveticaBold;
+        font-size: 0.75em; // 12px / 16px
+    }
+}
+.table__overlay {
+    .exams{
+        &.price {
+            tbody tr {
+                td {
+                    font-family: $AgoraProMedium;
+                    font-size: 1em; //16px / 16px
+                    &:first-child {
+                        font-family: $AgoraProMedium;
+                    }
+                    &:nth-child(2) {
+                        font-family: $AgoraProBold;
+                    }
+                     &:first-child {
+                        font-family: $AgoraProMedium;
+                    }
+                    &:nth-child(4) {
+                        font-family: $AgoraProBold;
+                    }
+                }
+            }
+        }
+    }
+}
 @media screen and (max-width: 1599px) {
 	a[class*="btn__type"] {
 		span {

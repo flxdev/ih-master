@@ -2921,8 +2921,8 @@ div[class*="col"] .title {
 			margin: 0 auto;
 		}
 		a {
-			color: $blue;
-			border-bottom: 1px solid $blue;
+			color: $yellow;
+			border-bottom: 1px solid $yellow;
 			transition: color .3s ease 0s, border-color .3s ease 0s;
 			&:hover {
 				color: $red;
@@ -6946,6 +6946,73 @@ table {
 		li {
 			display: inline-block;
 			margin-right: 0.8em; 
+		}
+	}
+}
+
+.phone__list-call {	
+	margin-bottom: 3.6875em; // 59px / 16px
+	li {
+		display: inline-block;
+		width: 39.5%;
+		vertical-align: top;
+		color: $blue;
+		margin-bottom: 0.8125em; // 13px / 16px
+	}
+}
+.table__overlay {
+	.exams{
+		&.price {
+			table-layout: fixed;
+			thead {
+				tr {
+					border-color: #e9e9e9;
+					color: $grey;
+				}
+			}
+			tbody{	
+				td {
+					color: $grey;
+				}
+			}
+		}
+	}
+}
+.btn-back {
+	display: inline-block;
+	margin-bottom: 1em; // 12px / 12px
+	i {
+		width: 2.5em; // 40px / 16px
+		height: 1.25em; // 20px / 16px
+		display: inline-block;
+		vertical-align: middle;
+		svg {
+			stroke: $blue;
+			fill: $blue;
+			transition: stroke 0.3s ease, fill 0.3s ease;
+		}
+	}
+	span {
+		color: $blue;
+		border-bottom: 1px solid $blue;
+		transition: color 0.3s ease, border-color 0.3s ease;
+		display: inline-block;
+		vertical-align: middle;
+		margin-left: 1.5em; // 18px / 12px
+		text-transform: uppercase;
+		margin-top: 0.33333em; // 4px / 12px
+		letter-spacing: 0.1em; // 1.2px / 12px
+	}
+	&:hover {
+		i {
+			svg {
+				stroke: $red;
+				fill: $red;
+			}
+		}
+		span {
+			color: $red;
+			border-color: transparent;
 		}
 	}
 }
