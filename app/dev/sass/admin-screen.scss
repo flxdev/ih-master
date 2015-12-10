@@ -717,6 +717,17 @@ input[type="checkbox"] {
 		.user-exit {
 			float: right;
 		}
+		.address-write {
+			float: left;
+			color: #000;
+			display: table;
+			height: 100%;
+			.address-field {
+				padding-top: 8px;
+				display: table-cell;
+				vertical-align: middle;
+			}
+		}
 		.logo {
 			z-index: 8;
 			display: table;
@@ -2128,6 +2139,114 @@ button {
 		    top: 41px;
 		    opacity: 1;
 		    z-index: 999;
+		}
+	}
+}
+.timeline-for-guest {
+	background: #fff;
+	width: 100%;
+	@include clearfix;
+	.hour-row,
+	.minute-row {
+		color: $grey;
+	}
+	.hour-row {
+		float: left;
+		padding-left: 30px;
+		text-align: right;
+		width: 65px;
+		padding-top: 18px;
+	}
+	.minute-row {
+		width: 50px;
+		text-align: center;
+		span {
+			position: relative;
+			top: 2px;
+		}
+	}
+	.interview-line {
+		float: right;
+		width: 1090px;
+		font-size: 0;
+		[class*="-row"] {
+			display: inline-block;
+			.field-person-data {
+				font-size: 16px;
+				height: 62px;
+				padding-left: 22px;
+				display: inline-block;
+				position: relative;
+				.btn-ico {
+					position: absolute;
+					top: 0;
+					right: 0;
+				    width: 62px;
+				    height: 62px;
+				    svg {
+				    	margin: 23.5px auto;
+				    }
+				}
+				.btn-groupe {
+					position: absolute;
+					top: 0;
+					right: 0;
+					.btn-ico {
+						position: static;
+						float: none;
+					}
+				}
+				&:nth-of-type(1) {
+					width: 190px;
+					padding-left: 26px;
+				}
+				&:nth-of-type(2) {
+					width: 117px;
+				}
+				&:nth-of-type(3) {
+					width: 250px;
+					padding-right: 62px;
+					.btn-ico {
+						use {
+							fill: $blue;
+							transition: fill 0.3s ease;
+						}
+						&:hover {
+							use {
+								fill: #a9a9a9;
+							}
+						}
+					}
+				}
+				&:nth-of-type(4) {
+					width: 198px;
+				}
+				&:nth-of-type(5) {
+					width: 285px;
+					padding-right: 62px;
+				}
+				span {
+					line-height: 62px;
+					vertical-align: middle;
+				}
+			}
+		}
+		.person-row {
+			&:not(:first-of-type) {
+				margin-left: 50px;
+			}
+			border-bottom: 1px solid #f2f2f2;
+		}
+	}
+	.row-time {
+		width: 100%;
+		@include clearfix;
+		&:last-of-type {
+			.person-row {
+				&:last-of-type {
+					border: none;
+				}
+			}
 		}
 	}
 }
