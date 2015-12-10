@@ -193,7 +193,7 @@ $(document).ready(function () {
 				usetransition: false,
 				horizrailenabled: true,
 				zindex: '9',
-				enabletranslate3d: false
+				enabletranslate3d: true
 			});
 		}
 

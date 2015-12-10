@@ -1026,6 +1026,10 @@ table {
                 font-family: $HelveticaMedium;
                 font-size: 0.75em; // 12px / 16px
             }
+            .action__text {
+                font-family: $HelveticaMedium;
+                font-size: 0.75em; // 12px / 16px
+            }
             .news-title {
                 font-family: $AgoraProBold;
                 font-size: 1.25em; // 20px / 16px
@@ -1051,7 +1055,7 @@ table {
 .news-menu {
     a {
         font-family: $AgoraProBold;
-        font-size: 1.25em; // 20px / 16px
+        font-size: 1em; // 20px / 20px
     }
 }
 @media screen and (max-width: 1599px) {
