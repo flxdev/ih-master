@@ -192,7 +192,8 @@ $(document).ready(function () {
 				cursorborder: 'none',
 				usetransition: false,
 				horizrailenabled: true,
-				zindex: '9'
+				zindex: '9',
+				enabletranslate3d: false
 			});
 		}
 

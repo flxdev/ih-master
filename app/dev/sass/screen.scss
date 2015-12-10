@@ -3005,6 +3005,7 @@ div[class*="col"] .title {
 	}
 }
 .categories__change {
+	margin-left: -1.25em;
 	&:after {
 		display: table;
 		clear: both;
@@ -3012,9 +3013,11 @@ div[class*="col"] .title {
 	}
 }
 .categories__change > li {
-	float: left;
+	// float: left;
+	display: inline-block;
+	vertical-align: top;
 	width: 12.5em;
-	margin-right: 1.25em;
+	margin-left: 1.25em;
 	&:last-of-type {
 		margin-right: 0;
 	}
@@ -3083,6 +3086,7 @@ div[class*="col"] .title {
 	}
 }
 @media screen and (max-width: 1023px) {
+
 	.content__block {
 		margin: 2.4375em 0 2.875em 10.3%;
 		.result {
@@ -3107,6 +3111,7 @@ div[class*="col"] .title {
 	.categories__change {
 		vertical-align: top;
 		letter-spacing: -0.36em;
+		margin-left: 0;
 		& > li {
 			letter-spacing: normal;
 			vertical-align: top;
