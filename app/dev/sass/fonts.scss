@@ -571,7 +571,7 @@ div[class*="col"] .title {
 		}
 		.input__field {
 			font-family: $HelveticaBold;
-			font-size: 13px; // 13px / 16px = 0.8125em
+			font-size:  13px; // 13px / 16px = 0.8125em
 		}
 		.input__label {
 			&::after {
@@ -796,6 +796,40 @@ table {
 		font-size: 0.8888em; // 16px / 18px
 	}
 }
+.table__overlay.form__test {
+    .form {
+        .field {
+            .counter {
+                span {
+                    font-family: $HelveticaMedium;
+                    font-size: 0.8125em; // 13px / 16px = 0.8125em
+                }
+            }
+            .input__field {
+                font-family: $HelveticaBold;
+                font-size:  0.8125em; // 13px / 16px = 0.8125em
+            }
+            .input__label {
+                &::after {
+                    font-family: $HelveticaBold;
+                    font-size: 1.125em; // 18px / 16px = 1.125em
+                }
+            }
+            .input__label-content {
+                font-family: $HelveticaBold;
+                font-size: 0.8125em; //13px / 16px = 0.8125em
+            }
+        }
+        p {
+            font-family: $HelveticaRoman;
+            font-size: 1em; // 16px / 16px = 1em
+        }
+        .title__lvl-2 {
+            font-family: $AgoraProBlack;
+            font-size: 1.25em; // 20px / 16px = 1.25em
+        }
+    }
+}
 .table__overlay.columns {
     .categories__change {
         dt {
@@ -984,6 +1018,41 @@ table {
 }
 .gm-style {
     font-size: inherit;
+}
+.news-container {
+    .news-item {
+        a {
+            .date {
+                font-family: $HelveticaMedium;
+                font-size: 0.75em; // 12px / 16px
+            }
+            .news-title {
+                font-family: $AgoraProBold;
+                font-size: 1.25em; // 20px / 16px
+            }
+            .news-preview {
+                font-family: $HelveticaRoman;
+                font-size: 1em; // 16px / 16px
+            }
+        }
+    }
+}
+.pagination {
+    .pages {
+        span {
+            font-family: $AgoraProBold;
+            font-size: 1.25em; // 20px / 16px
+            a {
+                font-family: $AgoraProMedium;
+            }
+        }
+    }
+}
+.news-menu {
+    a {
+        font-family: $AgoraProBold;
+        font-size: 1.25em; // 20px / 16px
+    }
 }
 @media screen and (max-width: 1599px) {
 	a[class*="btn__type"] {

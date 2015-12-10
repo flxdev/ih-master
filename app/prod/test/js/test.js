@@ -1372,7 +1372,9 @@
 			'intermediate',
 			'upper-intermediate'
 		],
-		time: 15
+		time: 15,
+		email: this.setEmail,
+		result: this.getResult
 	});
 
 	test.init();
