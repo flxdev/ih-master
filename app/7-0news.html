@@ -13,252 +13,183 @@
 </head>
 <body>
 	<div class="fixed">
-		<div class="scroll">
-			<header class="header">
-				<div class="header__inner">
-					<div class="header__content">				
-						<div class="lang">
-							<a href="" class="rus is-active">Рус</a>
-							<span></span>
-							<a href="" class="eng">Eng</a>
-						</div>
-						<div class="btn__cart">
-							<button class="btn-menu desktop">
-								<i class="menu__burger">
-									<svg height="22px" class="burger__svg" version="1.1" viewBox="0 0 29 22" width="100%">
-										<g>
-											<rect height="4" width="29"/>
-											<rect class="middle__path" height="4" width="29" y="9"/>
-											<rect height="4" width="29" y="18"/>
+		<header class="header">
+			<div class="header__inner">
+				<div class="header__content">				
+					<div class="lang">
+						<a href="" class="rus is-active">Рус</a>
+						<span></span>
+						<a href="" class="eng">Eng</a>
+					</div>
+					<div class="btn__cart">
+						<button class="btn-menu desktop">
+							<i class="menu__burger">
+								<svg height="22px" class="burger__svg" version="1.1" viewBox="0 0 29 22" width="100%">
+									<g>
+										<rect height="4" width="29"/>
+										<rect class="middle__path" height="4" width="29" y="9"/>
+										<rect height="4" width="29" y="18"/>
+									</g>
+								</svg>
+							</i>
+							<span>Меню</span>
+						</button>
+						<button class="btn-menu mobile">
+							<i class="menu__burger">
+								<svg enable-background="new 0 0 29 22" height="100%" class="burger__svg" version="1.1" viewBox="0 0 29 22" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+									<g>
+										<rect height="4" width="29"/>
+										<rect class="middle__path" height="4" width="29" y="9"/>
+										<rect height="4" width="29" y="18"/>
+									</g>
+								</svg>
+							</i>
+						</button>
+						<a data-href="interview__extended" class="btn__enroll btn__type-1 js-popup-link">
+							<span>Записаться на курсы</span>
+						</a>
+						<a href="" class="location">
+							<i class="marker__svg">
+								<svg height="100%" version="1.1" viewBox="0 0 23 34" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" xmlns:xlink="http://www.w3.org/1999/xlink">
+									<g fill="none" fill-rule="evenodd" id="black" stroke="none" stroke-width="1">
+									<g id="slice" transform="translate(-401.000000, -601.000000)"/>
+										<g id="location" transform="translate(0.000000, 0.000000)">
+											<path d="M0.307692308,12.3846154 C0.307692308,18.7576923 11.8461538,33.6631611 11.8461538,33.2583571 C11.8461538,32.8535532 23.3846154,18.7576923 23.3846154,12.3846154 C23.3846154,6.01153846 18.2153846,0.846153846 11.8461538,0.846153846 C5.47692308,0.846153846 0.307692308,6.01153846 0.307692308,12.3846154 Z M6.07692308,11.2307692 C6.07692308,14.4173077 8.66153846,17 11.8461538,17 C15.0307692,17 17.6153846,14.4173077 17.6153846,11.2307692 C17.6153846,8.04423077 15.0307692,5.46153846 11.8461538,5.46153846 C8.66153846,5.46153846 6.07692308,8.04423077 6.07692308,11.2307692 Z"/>
 										</g>
-									</svg>
-								</i>
-								<span>Меню</span>
-							</button>
-							<button class="btn-menu mobile">
-								<i class="menu__burger">
-									<svg enable-background="new 0 0 29 22" height="100%" class="burger__svg" version="1.1" viewBox="0 0 29 22" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-										<g>
-											<rect height="4" width="29"/>
-											<rect class="middle__path" height="4" width="29" y="9"/>
-											<rect height="4" width="29" y="18"/>
-										</g>
-									</svg>
-								</i>
-							</button>
-							<a data-href="interview__extended" class="btn__enroll btn__type-1 js-popup-link">
+									</g>
+								</svg>
+							</i>
+							<span>Учебные центры</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="popup__menu">
+				<div class="nav__container-bg"></div>
+				<div class="nav__container">
+					<div class="over">
+						<button class="close__menu" type="button">
+							<i class="icon_close_svg">
+								<svg height="100%" class="close_icon" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+									<path d="m0,4l4,-4l8,8l8,-8l4,4l-8,8l8,8l-4,4l-8,-8l-8,8l-4,-4l8,-8l-8,-8z"/>
+								</svg>
+							</i>
+							<span>Закрыть</span>
+						</button>
+						<div class="nav__content">
+							<div class="search__row">
+								<form action="">
+									<input type="text" class="actionInput">
+									<div class="subm">
+										<svg class="search-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+											<g>
+											<path d="m24.03948,21.86274l-6.22481,-6.22481c1.18351,-1.62563 1.8898,-3.62072 1.8898,-5.78577c0,-5.44156 -4.41076,-9.85231 -9.85231,-9.85231s-9.85231,4.41076 -9.85231,9.85231s4.41076,9.85231 9.85231,9.85231c2.16505,0 4.16014,-0.70629 5.78577,-1.8898l6.22481,6.22481l2.17674,-2.17674zm-14.18733,-5.23712c-3.73464,0 -6.77346,-3.03882 -6.77346,-6.77346s3.03882,-6.77346 6.77346,-6.77346s6.77346,3.03882 6.77346,6.77346s-3.03882,6.77346 -6.77346,6.77346z"/>
+											</g>
+										</svg>
+									</div>
+									<button type="submit" class="hidden"></button>						
+								</form>
+							</div>
+							<nav class="nav">
+								<ul class="menu__footer-big">
+									<li class="item__menu"><a href="">Главная</a></li>
+									<li class="item__menu"><a href="">Школа IH</a></li>
+									<li class="item__menu"><a href="">Цены и услуги</a></li>
+									<li class="item__menu"><a href="">Контактная информация</a></li>
+								</ul>
+								<ul class="menu__footer-small">
+									<li class="item__menu"><a href="">Новости</a></li>
+									<li class="item__menu"><a href="">Отзывы</a></li>
+									<li class="item__menu"><a href="">Вопрос-ответ</a></li>
+									<li class="item__menu"><a href="">Преподователям</a></li>
+									<li class="item__menu"><a href="">Учебные центры</a></li>
+								</ul>
+							</nav>
+							<a href="" class="btn__enroll btn__type-2">
 								<span>Записаться на курсы</span>
 							</a>
-							<a href="" class="location">
-								<i class="marker__svg">
-									<svg height="100%" version="1.1" viewBox="0 0 23 34" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" xmlns:xlink="http://www.w3.org/1999/xlink">
-										<g fill="none" fill-rule="evenodd" id="black" stroke="none" stroke-width="1">
-										<g id="slice" transform="translate(-401.000000, -601.000000)"/>
-											<g id="location" transform="translate(0.000000, 0.000000)">
-												<path d="M0.307692308,12.3846154 C0.307692308,18.7576923 11.8461538,33.6631611 11.8461538,33.2583571 C11.8461538,32.8535532 23.3846154,18.7576923 23.3846154,12.3846154 C23.3846154,6.01153846 18.2153846,0.846153846 11.8461538,0.846153846 C5.47692308,0.846153846 0.307692308,6.01153846 0.307692308,12.3846154 Z M6.07692308,11.2307692 C6.07692308,14.4173077 8.66153846,17 11.8461538,17 C15.0307692,17 17.6153846,14.4173077 17.6153846,11.2307692 C17.6153846,8.04423077 15.0307692,5.46153846 11.8461538,5.46153846 C8.66153846,5.46153846 6.07692308,8.04423077 6.07692308,11.2307692 Z"/>
+							<div class="social">
+								<a href="" class="soc__item">
+									<svg class="social_svg fb" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 94.109 94.078" enable-background="new 0 0 94.109 94.078" xml:space="preserve">
+										<g class="stroke">
+											<path fill="none" stroke-width="2" stroke-miterlimit="10" d="M47.099,92.628L1.505,47.034L47.099,1.44 l45.594,45.594L47.099,92.628z"/>
+										</g>
+										<g class="fill">
+											<path d="M49.655,42.142h4.59l-0.32,4.006h-4.27v13.917h-5.393V46.147h-2.878v-4.006h2.878v-2.692
+												c0-1.184,0.031-3.015,0.927-4.149c0.944-1.199,2.24-2.014,4.466-2.014c3.629,0,5.16,0.497,5.16,0.497l-0.72,4.103
+												c0,0-1.199-0.334-2.318-0.334c-1.119,0-2.121,0.384-2.121,1.462L49.655,42.142L49.655,42.142z"/>
+										</g>
+									</svg>
+								</a>
+								<a href="" class="soc__item">
+									<svg class="social_svg tw" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 94.109 94.078" enable-background="new 0 0 94.109 94.078" xml:space="preserve">
+										<g class="stroke">
+											<path fill="none" stroke-width="2" stroke-miterlimit="10" d="M47.099,92.628L1.505,47.034L47.099,1.44
+												l45.594,45.594L47.099,92.628z"/>
+										</g>
+										<g class="fill">
+											<path d="M63.45,38.267c-1.194,0.531-2.48,0.889-3.828,1.049c1.377-0.824,2.433-2.13,2.931-3.688
+												c-1.288,0.764-2.714,1.319-4.233,1.618c-1.215-1.295-2.948-2.105-4.865-2.105c-3.681,0-6.665,2.984-6.665,6.665
+												c0,0.522,0.059,1.03,0.173,1.519c-5.54-0.278-10.452-2.931-13.739-6.964c-0.574,0.984-0.902,2.129-0.902,3.352
+												c0,2.312,1.177,4.353,2.965,5.548c-1.092-0.035-2.12-0.335-3.019-0.834c-0.001,0.028-0.001,0.056-0.001,0.084
+												c0,3.229,2.298,5.922,5.347,6.536c-0.559,0.152-1.148,0.233-1.756,0.233c-0.43,0-0.847-0.042-1.254-0.12
+												c0.849,2.648,3.31,4.576,6.226,4.629c-2.281,1.788-5.155,2.854-8.278,2.854c-0.537,0-1.068-0.032-1.59-0.094
+												c2.951,1.892,6.454,2.995,10.218,2.995c12.261,0,18.964-10.156,18.964-18.964c0-0.289-0.006-0.577-0.018-0.863
+												C61.426,40.779,62.557,39.604,63.45,38.267z"/>
+										</g>
+									</svg>
+								</a>
+								<a href="" class="soc__item">
+									<svg class="social_svg insta" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 94.109 94.078" enable-background="new 0 0 94.109 94.078" xml:space="preserve">
+										<g class="stroke">
+											<path fill="none" stroke-width="2" stroke-miterlimit="10" d="M47.099,92.628L1.505,47.034L47.099,1.44
+												l45.594,45.594L47.099,92.628z"/>
+										</g>
+										<g class="fill">
+											<path d="M55.836,31.337H36.575c-3.346,0-6.068,2.721-6.068,6.067v6.409v12.853c0,3.346,2.722,6.067,6.068,6.067
+												h19.262c3.346,0,6.067-2.721,6.067-6.067V43.812v-6.409C61.903,34.057,59.182,31.337,55.836,31.337z M57.576,34.954l0.694-0.003
+												v0.691v4.631l-5.304,0.017l-0.018-5.321L57.576,34.954z M41.724,43.812c1.006-1.391,2.637-2.304,4.481-2.304
+												s3.475,0.913,4.48,2.304c0.654,0.908,1.046,2.019,1.046,3.222c0,3.047-2.481,5.525-5.527,5.525c-3.047,0-5.526-2.479-5.526-5.525
+												C40.679,45.831,41.07,44.72,41.724,43.812z M58.844,56.664c0,1.66-1.35,3.008-3.008,3.008H36.575c-1.659,0-3.009-1.348-3.009-3.008
+												V43.812h4.686c-0.405,0.996-0.632,2.083-0.632,3.222c0,4.733,3.85,8.586,8.585,8.586c4.734,0,8.584-3.853,8.584-8.586
+												c0-1.139-0.229-2.227-0.633-3.222h4.688V56.664z"/>
+										</g>
+									</svg>
+								</a>
+								<a href="" class="soc__item">
+									<svg class="social_svg g" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 94.109 94.078" enable-background="new 0 0 94.109 94.078" xml:space="preserve">
+										<g class="stroke">
+											<path fill="none" stroke-width="2" stroke-miterlimit="10" d="M47.099,92.628L1.505,47.034L47.099,1.44
+												l45.594,45.594L47.099,92.628z"/>
+										</g>
+										<g class="fill">
+											<g>
+												<path d="M64.089,44.108H58.82v-5.267c0-0.402-0.326-0.729-0.727-0.729h-1.5c-0.404,0-0.73,0.327-0.73,0.729v5.267
+													h-5.269c-0.401,0-0.729,0.328-0.729,0.73v1.5c0,0.403,0.328,0.729,0.729,0.729h5.269v5.27c0,0.403,0.326,0.729,0.73,0.729h1.5
+													c0.401,0,0.727-0.326,0.727-0.729v-5.271h5.269c0.401,0,0.729-0.326,0.729-0.729v-1.5C64.818,44.435,64.49,44.108,64.089,44.108z"
+													/>
+												<path d="M46.384,48.727c-1.108-0.785-2.115-1.936-2.133-2.289c0-0.644,0.058-0.952,1.502-2.077
+													c1.867-1.462,2.895-3.383,2.895-5.414c0-1.841-0.562-3.477-1.52-4.625h0.743c0.154,0,0.304-0.048,0.427-0.137l2.073-1.502
+													c0.257-0.184,0.365-0.513,0.267-0.814c-0.099-0.3-0.377-0.505-0.693-0.505h-9.269c-1.014,0-2.044,0.179-3.056,0.527
+													c-3.378,1.165-5.74,4.043-5.74,6.998c0,4.186,3.243,7.359,7.578,7.459c-0.085,0.332-0.128,0.659-0.128,0.979
+													c0,0.645,0.163,1.256,0.5,1.847c-0.039,0-0.077,0-0.119,0c-4.132,0-7.862,2.028-9.278,5.045c-0.369,0.785-0.557,1.578-0.557,2.361
+													c0,0.762,0.196,1.495,0.579,2.183c0.89,1.592,2.801,2.827,5.384,3.479c1.333,0.337,2.766,0.508,4.254,0.508
+													c1.337,0,2.611-0.173,3.789-0.513c3.674-1.067,6.049-3.771,6.049-6.893C49.931,52.349,48.968,50.555,46.384,48.727z
+													 M34.678,55.584c0-2.179,2.768-4.09,5.924-4.09h0.085c0.687,0.008,1.356,0.109,1.988,0.303c0.217,0.149,0.426,0.292,0.626,0.429
+													c1.462,0.996,2.427,1.653,2.696,2.708c0.063,0.266,0.095,0.532,0.095,0.789c0,2.714-2.023,4.089-6.016,4.089
+													C37.048,59.811,34.678,57.955,34.678,55.584z M37.549,34.994c0.493-0.563,1.139-0.861,1.864-0.861l0.082,0.001
+													c2.049,0.06,4.009,2.343,4.369,5.089c0.203,1.537-0.14,2.983-0.912,3.864c-0.494,0.565-1.131,0.862-1.886,0.862c0,0,0,0-0.001,0
+													h-0.033c-2.007-0.062-4.009-2.432-4.367-5.174C36.463,37.243,36.786,35.865,37.549,34.994z"/>
 											</g>
 										</g>
 									</svg>
-								</i>
-								<span>Учебные центры</span>
-							</a>
+								</a>
+							</div>
 						</div>
 					</div>
-				</div>				
-			</header>		
-			<article class="homepage big_scroll">
-				<div class="overview">
-					<section class="content__scroll">						
-						<div class="content_container">
-							<div class="container__row">
-								<div class="col100">
-									<h1>Новости и события нашей школы</h1>
-									<div class="content__block">
-										<div class="content__row">
-											<div class="relation">
-												Для того, чтобы записаться к нам на курсы, вам необходимо пройти предварительное онлайн-тестирование для определения уровня знания английского языка.
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="container__row">
-								<div class="col100">
-									<div class="content__block">
-										<div class="content__row">
-											<div class="description">Тестирование состоит из 4 уровней по 25 вопросов</div>
-											<div class="table__overlay form__test">
-												<p>Перед началом тестирования введите свой e-mail и мы пришлем туда ваши результаты</p>
-												<div class="form">
-													<form action="" class="js-validate">
-														<div class="row columns">
-															<span class="field field-effect">
-																<input type="text" data-validation="email" class="input__field input__field-effect">
-																<label class="input__label input__label-effect">
-																	<span class="input__label-content input__label-content-effect">E-mail</span>
-																</label>
-															</span>
-															<span class="field field-btn">
-																<button type="submit" class="btn__type-2"><span>Начать тестирование</span></button>
-															</span>
-														</div>
-													</form>
-												</div>
-											</div>
-										</div>
-										<div class="content__row">
-											<blockquote>
-												1 из 4 вариантов ответа является правильным. <br>Выполнение теста занимает 15 минут
-											</blockquote>
-										</div>
-									</div>
-								</div>
-							</div>
-							</div>
-					</section>
-					<footer class="footer">
-						<div class="footer__content">
-							<div class="footer__row">				
-								<div class="location">
-									<div class="all__centres">
-										<a href="">
-											<i class="marker__svg-centres">
-												<svg height="23px" version="1.1" viewBox="0 0 29 35" width="23px" xmlns="http://www.w3.org/2000/svg" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" xmlns:xlink="http://www.w3.org/1999/xlink">
-													<g fill="none" fill-rule="evenodd" id="black" stroke="none" stroke-width="1">
-													<g id="slice" transform="translate(-401.000000, -601.000000)"/>
-														<g id="location" transform="translate(0.000000, 0.000000)">
-															<path d="M0.307692308,12.3846154 C0.307692308,18.7576923 11.8461538,33.6631611 11.8461538,33.2583571 C11.8461538,32.8535532 23.3846154,18.7576923 23.3846154,12.3846154 C23.3846154,6.01153846 18.2153846,0.846153846 11.8461538,0.846153846 C5.47692308,0.846153846 0.307692308,6.01153846 0.307692308,12.3846154 Z M6.07692308,11.2307692 C6.07692308,14.4173077 8.66153846,17 11.8461538,17 C15.0307692,17 17.6153846,14.4173077 17.6153846,11.2307692 C17.6153846,8.04423077 15.0307692,5.46153846 11.8461538,5.46153846 C8.66153846,5.46153846 6.07692308,8.04423077 6.07692308,11.2307692 Z"/>
-														</g>
-													</g>
-												</svg>
-											</i>
-											<span>Все учебные центры</span>
-										</a>
-									</div>
-									<div class="contacts">
-										<p>ул. Смолячкова 9 - 430 Минск, Беларусь </p>
-										<div class="phone">
-											<a href="callto:" class="">+ 375 (17) 293-06-68</a>
-											<a href="callto:" class="">+ 375 (17) 293-06-68</a>
-										</div>
-										<a href="mailto:" class="mail">ih@gmail.com</a>
-									</div>
-								</div>
-								<nav class="nav">
-									<ul class="menu__footer-big">
-										<li class="item__menu"><a href="">Главная</a></li>
-										<li class="item__menu"><a href="">Школа IH</a></li>
-										<li class="item__menu"><a href="">Цены и услуги</a></li>
-										<li class="item__menu"><a href="">Контактная информация</a></li>
-									</ul>
-									<ul class="menu__footer-small">
-										<li class="item__menu"><a href="">Новости</a></li>
-										<li class="item__menu"><a href="">Отзывы</a></li>
-										<li class="item__menu"><a href="">Вопрос-ответ</a></li>
-										<li class="item__menu"><a href="">Преподователям</a></li>
-										<li class="item__menu"><a href="">Учебные центры</a></li>
-									</ul>
-								</nav>
-							</div>
-							<div class="footer__row">
-								<a href="" class="btn__enroll btn__type-1">
-									<span>Записаться на курсы</span>
-								</a>
-								<div class="social">
-									<a href="" class="soc__item">
-										<svg class="social_svg fb" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 94.109 94.078" enable-background="new 0 0 94.109 94.078" xml:space="preserve">
-											<g class="stroke">
-												<path fill="none" stroke-width="2" stroke-miterlimit="10" d="M47.099,92.628L1.505,47.034L47.099,1.44 l45.594,45.594L47.099,92.628z"/>
-											</g>
-											<g class="fill">
-												<path d="M49.655,42.142h4.59l-0.32,4.006h-4.27v13.917h-5.393V46.147h-2.878v-4.006h2.878v-2.692
-													c0-1.184,0.031-3.015,0.927-4.149c0.944-1.199,2.24-2.014,4.466-2.014c3.629,0,5.16,0.497,5.16,0.497l-0.72,4.103
-													c0,0-1.199-0.334-2.318-0.334c-1.119,0-2.121,0.384-2.121,1.462L49.655,42.142L49.655,42.142z"/>
-											</g>
-										</svg>
-									</a>
-									<a href="" class="soc__item">
-										<svg class="social_svg tw" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 94.109 94.078" enable-background="new 0 0 94.109 94.078" xml:space="preserve">
-											<g class="stroke">
-												<path fill="none" stroke-width="2" stroke-miterlimit="10" d="M47.099,92.628L1.505,47.034L47.099,1.44
-													l45.594,45.594L47.099,92.628z"/>
-											</g>
-											<g class="fill">
-												<path d="M63.45,38.267c-1.194,0.531-2.48,0.889-3.828,1.049c1.377-0.824,2.433-2.13,2.931-3.688
-													c-1.288,0.764-2.714,1.319-4.233,1.618c-1.215-1.295-2.948-2.105-4.865-2.105c-3.681,0-6.665,2.984-6.665,6.665
-													c0,0.522,0.059,1.03,0.173,1.519c-5.54-0.278-10.452-2.931-13.739-6.964c-0.574,0.984-0.902,2.129-0.902,3.352
-													c0,2.312,1.177,4.353,2.965,5.548c-1.092-0.035-2.12-0.335-3.019-0.834c-0.001,0.028-0.001,0.056-0.001,0.084
-													c0,3.229,2.298,5.922,5.347,6.536c-0.559,0.152-1.148,0.233-1.756,0.233c-0.43,0-0.847-0.042-1.254-0.12
-													c0.849,2.648,3.31,4.576,6.226,4.629c-2.281,1.788-5.155,2.854-8.278,2.854c-0.537,0-1.068-0.032-1.59-0.094
-													c2.951,1.892,6.454,2.995,10.218,2.995c12.261,0,18.964-10.156,18.964-18.964c0-0.289-0.006-0.577-0.018-0.863
-													C61.426,40.779,62.557,39.604,63.45,38.267z"/>
-											</g>
-										</svg>
-									</a>
-									<a href="" class="soc__item">
-										<svg class="social_svg insta" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 94.109 94.078" enable-background="new 0 0 94.109 94.078" xml:space="preserve">
-											<g class="stroke">
-												<path fill="none" stroke-width="2" stroke-miterlimit="10" d="M47.099,92.628L1.505,47.034L47.099,1.44
-													l45.594,45.594L47.099,92.628z"/>
-											</g>
-											<g class="fill">
-												<path d="M55.836,31.337H36.575c-3.346,0-6.068,2.721-6.068,6.067v6.409v12.853c0,3.346,2.722,6.067,6.068,6.067
-													h19.262c3.346,0,6.067-2.721,6.067-6.067V43.812v-6.409C61.903,34.057,59.182,31.337,55.836,31.337z M57.576,34.954l0.694-0.003
-													v0.691v4.631l-5.304,0.017l-0.018-5.321L57.576,34.954z M41.724,43.812c1.006-1.391,2.637-2.304,4.481-2.304
-													s3.475,0.913,4.48,2.304c0.654,0.908,1.046,2.019,1.046,3.222c0,3.047-2.481,5.525-5.527,5.525c-3.047,0-5.526-2.479-5.526-5.525
-													C40.679,45.831,41.07,44.72,41.724,43.812z M58.844,56.664c0,1.66-1.35,3.008-3.008,3.008H36.575c-1.659,0-3.009-1.348-3.009-3.008
-													V43.812h4.686c-0.405,0.996-0.632,2.083-0.632,3.222c0,4.733,3.85,8.586,8.585,8.586c4.734,0,8.584-3.853,8.584-8.586
-													c0-1.139-0.229-2.227-0.633-3.222h4.688V56.664z"/>
-											</g>
-										</svg>
-									</a>
-									<a href="" class="soc__item">
-										<svg class="social_svg g" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 94.109 94.078" enable-background="new 0 0 94.109 94.078" xml:space="preserve">
-											<g class="stroke">
-												<path fill="none" stroke-width="2" stroke-miterlimit="10" d="M47.099,92.628L1.505,47.034L47.099,1.44
-													l45.594,45.594L47.099,92.628z"/>
-											</g>
-											<g class="fill">
-												<g>
-													<path d="M64.089,44.108H58.82v-5.267c0-0.402-0.326-0.729-0.727-0.729h-1.5c-0.404,0-0.73,0.327-0.73,0.729v5.267
-														h-5.269c-0.401,0-0.729,0.328-0.729,0.73v1.5c0,0.403,0.328,0.729,0.729,0.729h5.269v5.27c0,0.403,0.326,0.729,0.73,0.729h1.5
-														c0.401,0,0.727-0.326,0.727-0.729v-5.271h5.269c0.401,0,0.729-0.326,0.729-0.729v-1.5C64.818,44.435,64.49,44.108,64.089,44.108z"
-														/>
-													<path d="M46.384,48.727c-1.108-0.785-2.115-1.936-2.133-2.289c0-0.644,0.058-0.952,1.502-2.077
-														c1.867-1.462,2.895-3.383,2.895-5.414c0-1.841-0.562-3.477-1.52-4.625h0.743c0.154,0,0.304-0.048,0.427-0.137l2.073-1.502
-														c0.257-0.184,0.365-0.513,0.267-0.814c-0.099-0.3-0.377-0.505-0.693-0.505h-9.269c-1.014,0-2.044,0.179-3.056,0.527
-														c-3.378,1.165-5.74,4.043-5.74,6.998c0,4.186,3.243,7.359,7.578,7.459c-0.085,0.332-0.128,0.659-0.128,0.979
-														c0,0.645,0.163,1.256,0.5,1.847c-0.039,0-0.077,0-0.119,0c-4.132,0-7.862,2.028-9.278,5.045c-0.369,0.785-0.557,1.578-0.557,2.361
-														c0,0.762,0.196,1.495,0.579,2.183c0.89,1.592,2.801,2.827,5.384,3.479c1.333,0.337,2.766,0.508,4.254,0.508
-														c1.337,0,2.611-0.173,3.789-0.513c3.674-1.067,6.049-3.771,6.049-6.893C49.931,52.349,48.968,50.555,46.384,48.727z
-														 M34.678,55.584c0-2.179,2.768-4.09,5.924-4.09h0.085c0.687,0.008,1.356,0.109,1.988,0.303c0.217,0.149,0.426,0.292,0.626,0.429
-														c1.462,0.996,2.427,1.653,2.696,2.708c0.063,0.266,0.095,0.532,0.095,0.789c0,2.714-2.023,4.089-6.016,4.089
-														C37.048,59.811,34.678,57.955,34.678,55.584z M37.549,34.994c0.493-0.563,1.139-0.861,1.864-0.861l0.082,0.001
-														c2.049,0.06,4.009,2.343,4.369,5.089c0.203,1.537-0.14,2.983-0.912,3.864c-0.494,0.565-1.131,0.862-1.886,0.862c0,0,0,0-0.001,0
-														h-0.033c-2.007-0.062-4.009-2.432-4.367-5.174C36.463,37.243,36.786,35.865,37.549,34.994z"/>
-												</g>
-											</g>
-										</svg>
-									</a>
-								</div>
-							</div>
-							<div class="footer__row">
-								<div class="developers">Made in <a href="">Flex Media</a></div>
-								<div class="copyright">
-									© 2016 international House
-								</div>						
-							</div>
-						</div>
-						<!--<div class="btn__scroll">
-							<button class="scroll__top" type="button">
-								<i class="icon__arrow"></i>
-								<span>Наверх</span>
-							</button>
-						</div>-->
-					</footer>
 				</div>
-			</article>
-		</div>
+			</div>
+		</header>
 		<section class="main">
 			<a href="" class="logo">
 				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 1043.244 332.212" enable-background="new 0 0 1043.244 332.212" xml:space="preserve">
@@ -746,131 +677,311 @@
 				</div>
 			</nav>
 		</section>
-		<div class="popup__menu">
-			<div class="nav__container-bg"></div>
-			<div class="nav__container">
-				<div class="over">
-					<button class="close__menu" type="button">
-						<i class="icon_close_svg">
-							<svg height="100%" class="close_icon" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-								<path d="m0,4l4,-4l8,8l8,-8l4,4l-8,8l8,8l-4,4l-8,-8l-8,8l-4,-4l8,-8l-8,-8z"/>
-							</svg>
-						</i>
-						<span>Закрыть</span>
-					</button>
-					<div class="nav__content">
-						<div class="search__row">
-							<form action="">
-								<input type="text" class="actionInput">
-								<div class="subm">
-									<svg class="search-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-										<g>
-										<path d="m24.03948,21.86274l-6.22481,-6.22481c1.18351,-1.62563 1.8898,-3.62072 1.8898,-5.78577c0,-5.44156 -4.41076,-9.85231 -9.85231,-9.85231s-9.85231,4.41076 -9.85231,9.85231s4.41076,9.85231 9.85231,9.85231c2.16505,0 4.16014,-0.70629 5.78577,-1.8898l6.22481,6.22481l2.17674,-2.17674zm-14.18733,-5.23712c-3.73464,0 -6.77346,-3.03882 -6.77346,-6.77346s3.03882,-6.77346 6.77346,-6.77346s6.77346,3.03882 6.77346,6.77346s-3.03882,6.77346 -6.77346,6.77346z"/>
+		<article class="homepage big_scroll">
+			<div class="overview">
+				<section class="content__scroll">						
+					<div class="content_container">
+						<div class="container__row">
+							<div class="col100">
+								<h1>Новости и события нашей школы</h1>
+								<div class="content__block">
+									<div class="content__row">
+										<div class="description">
+											<ul class="news-menu">
+												<li><a class="inactive" href="">Все</a></li>
+												<li><a href="">События</a></li>
+												<li><a href="">Акции</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="content__block grid-section">
+									<div class="content__row">
+										<div class="news-container grid">
+											<div class="news-item grid-item small">
+												<a href="">
+													<div class="img-box">
+														<img src="prod/img/news1.jpg" alt="">
+													</div>
+													<span class="date">15 сентября 2015</span>
+													<div class="news-title">Мы запустили новый сайт</div>
+													<div class="news-preview">Смотрите какой крутой получился и испекся и родился трампарампамп!</div>
+												</a>
+											</div>
+											<div class="news-item grid-item big">
+												<a href="">
+													<div class="img-box">
+														<img src="prod/img/news.jpg" alt="">
+													</div>
+													<span class="date">7 сентября 2015</span>
+													<div class="news-title">Набор в группу по подготовке к экзамену САЕ продолжается!</div>
+												</a>
+											</div>
+											<div class="news-item grid-item small">
+												<a href="">
+													<div class="img-box">
+														<img src="prod/img/news3.jpg" alt="">
+													</div>
+													<span class="date">2 сентября 2015</span>
+													<div class="news-title">Интенсивные занятия на Мележа, 1</div>
+													<div class="news-preview">Для уровней Elementary и Intermediate</div>
+												</a>
+											</div>
+											<div class="news-item grid-item small">
+												<a href="">
+													<div class="img-box">
+														<img src="prod/img/news4.jpg" alt="">
+													</div>
+													<span class="date">23 августа 2015</span>
+													<div class="news-title">Дополнительный набор в группы для школьников и взрослых</div>
+												</a>
+											</div>
+											<div class="news-item grid-item big">
+												<a href="">
+													<div class="img-box">
+														<img src="prod/img/news.jpg" alt="">
+													</div>
+													<span class="date">7 сентября 2015</span>
+													<div class="news-title">Набор в группу по подготовке к экзамену САЕ продолжается!</div>
+												</a>
+											</div>
+											<div class="news-item grid-item">
+												<a href="">
+													<div class="img-box">
+														
+													</div>
+													<span class="date">23 августа 2015</span>
+													<div class="news-title">Торжественное вручение сертификатов PET for Schools</div>
+													<div class="news-preview">Поздравляем кандидатов, сдавших экзамен PET for Schools в мае 2015 года</div>
+												</a>
+											</div>
+										</div>
+										<div class="pagination">
+											<a href='#' class="pagin-btn pagin-btn-prev-all inactive">
+												<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 36.883 23.606"><polygon fill="none" stroke-width="2" stroke-miterlimit="10" points="17.885,1.804 17.885,21.802 1.887,11.803"/><polygon fill="none" stroke-width="2" stroke-miterlimit="10" points="35.883,1.804 35.883,21.802 19.885,11.803"/></svg>
+											</a>
+											<a href="#" class="pagin-btn pagin-btn-nex-all">
+												<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 36.883 23.606"><path fill="none" stroke-width="2" stroke-miterlimit="10" d="M34.996,11.803l-15.998,9.999V1.804L34.996,11.803z"/><path fill="none" stroke-width="2" stroke-miterlimit="10" d="M16.998,11.803L1,21.802V1.804L16.998,11.803z"/></svg>
+											</a>
+											<div class="pagin-center">
+												<a href="#" class="pagin-btn pagin-btn-prev inactive">
+													<svg viewBox="0 0 41.968 23.6" xmlns="http://www.w3.org/2000/svg"><path d="m41.91837,10.83748l0,2l-29.996,0l0,-2l29.996,0" clip-rule="evenodd" fill-rule="evenodd"/><path d="m1.92237,11.83848l16.998,-9.999l0,19.997l-16.998,-9.998z" stroke-miterlimit="10" stroke-width="2" fill="none"/></svg>
+												</a>
+												<a href="" class="pagin-btn pagin-btn-next">
+													<svg viewBox="0 0 42.067 23.6" xmlns="http://www.w3.org/2000/svg"><path d="m0.07761,12.78136l0,-2l29.996,0l0,2l-29.996,0" clip-rule="evenodd" fill-rule="evenodd"/><path d="m40.07361,11.78035l-16.998,9.999l0,-19.997l16.998,9.998z" stroke-miterlimit="10" stroke-width="2" fill="none"/></svg>
+												</a>
+												<div class="pages">
+													<span>1</span><span><a href="#">25</a></span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="banner">
+							<div class="banner-content">
+								<div class="banner-title">Начните учить английский язык с International House:</div>
+								<div class="banner-slider">
+									<ul class="slider_img">
+										<li>
+											<div class="slide-container">
+												<div class="slide__top">
+													<div class="slide__field-left"><img src="prod/img/banner-item1.png" alt="предварительное тестирование"></div>
+													<div class="slide__field-right"></div>
+												</div>
+												<div class="slide__bottom">Пройти предвари&shy;тельное тестирование</div>
+											</div>
+										</li>
+										<li>
+											<div class="slide-container">
+												<div class="slide__top">
+													<div class="slide__field-left"><img src="prod/img/banner-item2.png" alt="записаться на собеседование"></div>
+													<div class="slide__field-right"></div>
+												</div>
+												<div class="slide__bottom">Записаться на собеседование по итогам тестирования</div>
+											</div>
+										</li>
+										<li>
+											<div class="slide-container">
+												<div class="slide__top">
+													<div class="slide__field-left"><img src="prod/img/banner-item3.png" alt="начать занятия английского"></div>
+													<div class="slide__field-right"></div>
+												</div>
+												<div class="slide__bottom">Начать занятия английского языка в школе IH</div>
+											</div>
+										</li>
+									</ul>
+									<div class="btn__left">
+										<svg class="arrow_left" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+											 width="41.968px" height="41.968px" viewBox="0 0 41.968 41.968">
+											<g id="">
+												<path class="fill" fill-rule="evenodd" clip-rule="evenodd" d="M41.968,19.969v2H11.972v-2H41.968"/>
+												<path class="stroke" fill="none" stroke-width="2" stroke-miterlimit="10" d="M1.972,20.97l16.998-9.999v19.997L1.972,20.97z"/>
+											</g>
+										</svg>
+									</div>
+									<div class="btn__right">
+										<svg class="arrow_right" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+											 width="42.067px" height="41.968px" viewBox="0 0 42.067 41.968">
+											<g id="">
+												<path class="fill" fill-rule="evenodd" clip-rule="evenodd" d="M0.097,20.971v-2h29.996v2H0.097"/>
+												<path class="stroke" fill="none" stroke-width="2" stroke-miterlimit="10" d="M40.093,19.97l-16.998,9.999V9.972L40.093,19.97z"
+													/>
+											</g>
+										</svg>
+									</div>
+								</div>
+								<div class="banner-active">
+									<a href="" class="btn__enroll btn__type-2">
+										<span>Начать тестирование</span>
+									</a>
+								</div>
+							</div>
+						</div>
+				</section>
+				<footer class="footer">
+					<div class="footer__content">
+						<div class="footer__row">				
+							<div class="location">
+								<div class="all__centres">
+									<a href="">
+										<i class="marker__svg-centres">
+											<svg height="23px" version="1.1" viewBox="0 0 29 35" width="23px" xmlns="http://www.w3.org/2000/svg" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" xmlns:xlink="http://www.w3.org/1999/xlink">
+												<g fill="none" fill-rule="evenodd" id="black" stroke="none" stroke-width="1">
+												<g id="slice" transform="translate(-401.000000, -601.000000)"/>
+													<g id="location" transform="translate(0.000000, 0.000000)">
+														<path d="M0.307692308,12.3846154 C0.307692308,18.7576923 11.8461538,33.6631611 11.8461538,33.2583571 C11.8461538,32.8535532 23.3846154,18.7576923 23.3846154,12.3846154 C23.3846154,6.01153846 18.2153846,0.846153846 11.8461538,0.846153846 C5.47692308,0.846153846 0.307692308,6.01153846 0.307692308,12.3846154 Z M6.07692308,11.2307692 C6.07692308,14.4173077 8.66153846,17 11.8461538,17 C15.0307692,17 17.6153846,14.4173077 17.6153846,11.2307692 C17.6153846,8.04423077 15.0307692,5.46153846 11.8461538,5.46153846 C8.66153846,5.46153846 6.07692308,8.04423077 6.07692308,11.2307692 Z"/>
+													</g>
+												</g>
+											</svg>
+										</i>
+										<span>Все учебные центры</span>
+									</a>
+								</div>
+								<div class="contacts">
+									<p>ул. Смолячкова 9 - 430 Минск, Беларусь </p>
+									<div class="phone">
+										<a href="callto:" class="">+ 375 (17) 293-06-68</a>
+										<a href="callto:" class="">+ 375 (17) 293-06-68</a>
+									</div>
+									<a href="mailto:" class="mail">ih@gmail.com</a>
+								</div>
+							</div>
+							<nav class="nav">
+								<ul class="menu__footer-big">
+									<li class="item__menu"><a href="">Главная</a></li>
+									<li class="item__menu"><a href="">Школа IH</a></li>
+									<li class="item__menu"><a href="">Цены и услуги</a></li>
+									<li class="item__menu"><a href="">Контактная информация</a></li>
+								</ul>
+								<ul class="menu__footer-small">
+									<li class="item__menu"><a href="">Новости</a></li>
+									<li class="item__menu"><a href="">Отзывы</a></li>
+									<li class="item__menu"><a href="">Вопрос-ответ</a></li>
+									<li class="item__menu"><a href="">Преподователям</a></li>
+									<li class="item__menu"><a href="">Учебные центры</a></li>
+								</ul>
+							</nav>
+						</div>
+						<div class="footer__row">
+							<a href="" class="btn__enroll btn__type-1">
+								<span>Записаться на курсы</span>
+							</a>
+							<div class="social">
+								<a href="" class="soc__item">
+									<svg class="social_svg fb" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 94.109 94.078" enable-background="new 0 0 94.109 94.078" xml:space="preserve">
+										<g class="stroke">
+											<path fill="none" stroke-width="2" stroke-miterlimit="10" d="M47.099,92.628L1.505,47.034L47.099,1.44 l45.594,45.594L47.099,92.628z"/>
+										</g>
+										<g class="fill">
+											<path d="M49.655,42.142h4.59l-0.32,4.006h-4.27v13.917h-5.393V46.147h-2.878v-4.006h2.878v-2.692
+												c0-1.184,0.031-3.015,0.927-4.149c0.944-1.199,2.24-2.014,4.466-2.014c3.629,0,5.16,0.497,5.16,0.497l-0.72,4.103
+												c0,0-1.199-0.334-2.318-0.334c-1.119,0-2.121,0.384-2.121,1.462L49.655,42.142L49.655,42.142z"/>
 										</g>
 									</svg>
-								</div>
-								<button type="submit" class="hidden"></button>						
-							</form>
-						</div>
-						<nav class="nav">
-							<ul class="menu__footer-big">
-								<li class="item__menu"><a href="">Главная</a></li>
-								<li class="item__menu"><a href="">Школа IH</a></li>
-								<li class="item__menu"><a href="">Цены и услуги</a></li>
-								<li class="item__menu"><a href="">Контактная информация</a></li>
-							</ul>
-							<ul class="menu__footer-small">
-								<li class="item__menu"><a href="">Новости</a></li>
-								<li class="item__menu"><a href="">Отзывы</a></li>
-								<li class="item__menu"><a href="">Вопрос-ответ</a></li>
-								<li class="item__menu"><a href="">Преподователям</a></li>
-								<li class="item__menu"><a href="">Учебные центры</a></li>
-							</ul>
-						</nav>
-						<a href="" class="btn__enroll btn__type-2">
-							<span>Записаться на курсы</span>
-						</a>
-						<div class="social">
-							<a href="" class="soc__item">
-								<svg class="social_svg fb" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 94.109 94.078" enable-background="new 0 0 94.109 94.078" xml:space="preserve">
-									<g class="stroke">
-										<path fill="none" stroke-width="2" stroke-miterlimit="10" d="M47.099,92.628L1.505,47.034L47.099,1.44 l45.594,45.594L47.099,92.628z"/>
-									</g>
-									<g class="fill">
-										<path d="M49.655,42.142h4.59l-0.32,4.006h-4.27v13.917h-5.393V46.147h-2.878v-4.006h2.878v-2.692
-											c0-1.184,0.031-3.015,0.927-4.149c0.944-1.199,2.24-2.014,4.466-2.014c3.629,0,5.16,0.497,5.16,0.497l-0.72,4.103
-											c0,0-1.199-0.334-2.318-0.334c-1.119,0-2.121,0.384-2.121,1.462L49.655,42.142L49.655,42.142z"/>
-									</g>
-								</svg>
-							</a>
-							<a href="" class="soc__item">
-								<svg class="social_svg tw" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 94.109 94.078" enable-background="new 0 0 94.109 94.078" xml:space="preserve">
-									<g class="stroke">
-										<path fill="none" stroke-width="2" stroke-miterlimit="10" d="M47.099,92.628L1.505,47.034L47.099,1.44
-											l45.594,45.594L47.099,92.628z"/>
-									</g>
-									<g class="fill">
-										<path d="M63.45,38.267c-1.194,0.531-2.48,0.889-3.828,1.049c1.377-0.824,2.433-2.13,2.931-3.688
-											c-1.288,0.764-2.714,1.319-4.233,1.618c-1.215-1.295-2.948-2.105-4.865-2.105c-3.681,0-6.665,2.984-6.665,6.665
-											c0,0.522,0.059,1.03,0.173,1.519c-5.54-0.278-10.452-2.931-13.739-6.964c-0.574,0.984-0.902,2.129-0.902,3.352
-											c0,2.312,1.177,4.353,2.965,5.548c-1.092-0.035-2.12-0.335-3.019-0.834c-0.001,0.028-0.001,0.056-0.001,0.084
-											c0,3.229,2.298,5.922,5.347,6.536c-0.559,0.152-1.148,0.233-1.756,0.233c-0.43,0-0.847-0.042-1.254-0.12
-											c0.849,2.648,3.31,4.576,6.226,4.629c-2.281,1.788-5.155,2.854-8.278,2.854c-0.537,0-1.068-0.032-1.59-0.094
-											c2.951,1.892,6.454,2.995,10.218,2.995c12.261,0,18.964-10.156,18.964-18.964c0-0.289-0.006-0.577-0.018-0.863
-											C61.426,40.779,62.557,39.604,63.45,38.267z"/>
-									</g>
-								</svg>
-							</a>
-							<a href="" class="soc__item">
-								<svg class="social_svg insta" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 94.109 94.078" enable-background="new 0 0 94.109 94.078" xml:space="preserve">
-									<g class="stroke">
-										<path fill="none" stroke-width="2" stroke-miterlimit="10" d="M47.099,92.628L1.505,47.034L47.099,1.44
-											l45.594,45.594L47.099,92.628z"/>
-									</g>
-									<g class="fill">
-										<path d="M55.836,31.337H36.575c-3.346,0-6.068,2.721-6.068,6.067v6.409v12.853c0,3.346,2.722,6.067,6.068,6.067
-											h19.262c3.346,0,6.067-2.721,6.067-6.067V43.812v-6.409C61.903,34.057,59.182,31.337,55.836,31.337z M57.576,34.954l0.694-0.003
-											v0.691v4.631l-5.304,0.017l-0.018-5.321L57.576,34.954z M41.724,43.812c1.006-1.391,2.637-2.304,4.481-2.304
-											s3.475,0.913,4.48,2.304c0.654,0.908,1.046,2.019,1.046,3.222c0,3.047-2.481,5.525-5.527,5.525c-3.047,0-5.526-2.479-5.526-5.525
-											C40.679,45.831,41.07,44.72,41.724,43.812z M58.844,56.664c0,1.66-1.35,3.008-3.008,3.008H36.575c-1.659,0-3.009-1.348-3.009-3.008
-											V43.812h4.686c-0.405,0.996-0.632,2.083-0.632,3.222c0,4.733,3.85,8.586,8.585,8.586c4.734,0,8.584-3.853,8.584-8.586
-											c0-1.139-0.229-2.227-0.633-3.222h4.688V56.664z"/>
-									</g>
-								</svg>
-							</a>
-							<a href="" class="soc__item">
-								<svg class="social_svg g" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 94.109 94.078" enable-background="new 0 0 94.109 94.078" xml:space="preserve">
-									<g class="stroke">
-										<path fill="none" stroke-width="2" stroke-miterlimit="10" d="M47.099,92.628L1.505,47.034L47.099,1.44
-											l45.594,45.594L47.099,92.628z"/>
-									</g>
-									<g class="fill">
-										<g>
-											<path d="M64.089,44.108H58.82v-5.267c0-0.402-0.326-0.729-0.727-0.729h-1.5c-0.404,0-0.73,0.327-0.73,0.729v5.267
-												h-5.269c-0.401,0-0.729,0.328-0.729,0.73v1.5c0,0.403,0.328,0.729,0.729,0.729h5.269v5.27c0,0.403,0.326,0.729,0.73,0.729h1.5
-												c0.401,0,0.727-0.326,0.727-0.729v-5.271h5.269c0.401,0,0.729-0.326,0.729-0.729v-1.5C64.818,44.435,64.49,44.108,64.089,44.108z"
-												/>
-											<path d="M46.384,48.727c-1.108-0.785-2.115-1.936-2.133-2.289c0-0.644,0.058-0.952,1.502-2.077
-												c1.867-1.462,2.895-3.383,2.895-5.414c0-1.841-0.562-3.477-1.52-4.625h0.743c0.154,0,0.304-0.048,0.427-0.137l2.073-1.502
-												c0.257-0.184,0.365-0.513,0.267-0.814c-0.099-0.3-0.377-0.505-0.693-0.505h-9.269c-1.014,0-2.044,0.179-3.056,0.527
-												c-3.378,1.165-5.74,4.043-5.74,6.998c0,4.186,3.243,7.359,7.578,7.459c-0.085,0.332-0.128,0.659-0.128,0.979
-												c0,0.645,0.163,1.256,0.5,1.847c-0.039,0-0.077,0-0.119,0c-4.132,0-7.862,2.028-9.278,5.045c-0.369,0.785-0.557,1.578-0.557,2.361
-												c0,0.762,0.196,1.495,0.579,2.183c0.89,1.592,2.801,2.827,5.384,3.479c1.333,0.337,2.766,0.508,4.254,0.508
-												c1.337,0,2.611-0.173,3.789-0.513c3.674-1.067,6.049-3.771,6.049-6.893C49.931,52.349,48.968,50.555,46.384,48.727z
-												 M34.678,55.584c0-2.179,2.768-4.09,5.924-4.09h0.085c0.687,0.008,1.356,0.109,1.988,0.303c0.217,0.149,0.426,0.292,0.626,0.429
-												c1.462,0.996,2.427,1.653,2.696,2.708c0.063,0.266,0.095,0.532,0.095,0.789c0,2.714-2.023,4.089-6.016,4.089
-												C37.048,59.811,34.678,57.955,34.678,55.584z M37.549,34.994c0.493-0.563,1.139-0.861,1.864-0.861l0.082,0.001
-												c2.049,0.06,4.009,2.343,4.369,5.089c0.203,1.537-0.14,2.983-0.912,3.864c-0.494,0.565-1.131,0.862-1.886,0.862c0,0,0,0-0.001,0
-												h-0.033c-2.007-0.062-4.009-2.432-4.367-5.174C36.463,37.243,36.786,35.865,37.549,34.994z"/>
+								</a>
+								<a href="" class="soc__item">
+									<svg class="social_svg tw" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 94.109 94.078" enable-background="new 0 0 94.109 94.078" xml:space="preserve">
+										<g class="stroke">
+											<path fill="none" stroke-width="2" stroke-miterlimit="10" d="M47.099,92.628L1.505,47.034L47.099,1.44
+												l45.594,45.594L47.099,92.628z"/>
 										</g>
-									</g>
-								</svg>
-							</a>
+										<g class="fill">
+											<path d="M63.45,38.267c-1.194,0.531-2.48,0.889-3.828,1.049c1.377-0.824,2.433-2.13,2.931-3.688
+												c-1.288,0.764-2.714,1.319-4.233,1.618c-1.215-1.295-2.948-2.105-4.865-2.105c-3.681,0-6.665,2.984-6.665,6.665
+												c0,0.522,0.059,1.03,0.173,1.519c-5.54-0.278-10.452-2.931-13.739-6.964c-0.574,0.984-0.902,2.129-0.902,3.352
+												c0,2.312,1.177,4.353,2.965,5.548c-1.092-0.035-2.12-0.335-3.019-0.834c-0.001,0.028-0.001,0.056-0.001,0.084
+												c0,3.229,2.298,5.922,5.347,6.536c-0.559,0.152-1.148,0.233-1.756,0.233c-0.43,0-0.847-0.042-1.254-0.12
+												c0.849,2.648,3.31,4.576,6.226,4.629c-2.281,1.788-5.155,2.854-8.278,2.854c-0.537,0-1.068-0.032-1.59-0.094
+												c2.951,1.892,6.454,2.995,10.218,2.995c12.261,0,18.964-10.156,18.964-18.964c0-0.289-0.006-0.577-0.018-0.863
+												C61.426,40.779,62.557,39.604,63.45,38.267z"/>
+										</g>
+									</svg>
+								</a>
+								<a href="" class="soc__item">
+									<svg class="social_svg insta" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 94.109 94.078" enable-background="new 0 0 94.109 94.078" xml:space="preserve">
+										<g class="stroke">
+											<path fill="none" stroke-width="2" stroke-miterlimit="10" d="M47.099,92.628L1.505,47.034L47.099,1.44
+												l45.594,45.594L47.099,92.628z"/>
+										</g>
+										<g class="fill">
+											<path d="M55.836,31.337H36.575c-3.346,0-6.068,2.721-6.068,6.067v6.409v12.853c0,3.346,2.722,6.067,6.068,6.067
+												h19.262c3.346,0,6.067-2.721,6.067-6.067V43.812v-6.409C61.903,34.057,59.182,31.337,55.836,31.337z M57.576,34.954l0.694-0.003
+												v0.691v4.631l-5.304,0.017l-0.018-5.321L57.576,34.954z M41.724,43.812c1.006-1.391,2.637-2.304,4.481-2.304
+												s3.475,0.913,4.48,2.304c0.654,0.908,1.046,2.019,1.046,3.222c0,3.047-2.481,5.525-5.527,5.525c-3.047,0-5.526-2.479-5.526-5.525
+												C40.679,45.831,41.07,44.72,41.724,43.812z M58.844,56.664c0,1.66-1.35,3.008-3.008,3.008H36.575c-1.659,0-3.009-1.348-3.009-3.008
+												V43.812h4.686c-0.405,0.996-0.632,2.083-0.632,3.222c0,4.733,3.85,8.586,8.585,8.586c4.734,0,8.584-3.853,8.584-8.586
+												c0-1.139-0.229-2.227-0.633-3.222h4.688V56.664z"/>
+										</g>
+									</svg>
+								</a>
+								<a href="" class="soc__item">
+									<svg class="social_svg g" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 94.109 94.078" enable-background="new 0 0 94.109 94.078" xml:space="preserve">
+										<g class="stroke">
+											<path fill="none" stroke-width="2" stroke-miterlimit="10" d="M47.099,92.628L1.505,47.034L47.099,1.44
+												l45.594,45.594L47.099,92.628z"/>
+										</g>
+										<g class="fill">
+											<g>
+												<path d="M64.089,44.108H58.82v-5.267c0-0.402-0.326-0.729-0.727-0.729h-1.5c-0.404,0-0.73,0.327-0.73,0.729v5.267
+													h-5.269c-0.401,0-0.729,0.328-0.729,0.73v1.5c0,0.403,0.328,0.729,0.729,0.729h5.269v5.27c0,0.403,0.326,0.729,0.73,0.729h1.5
+													c0.401,0,0.727-0.326,0.727-0.729v-5.271h5.269c0.401,0,0.729-0.326,0.729-0.729v-1.5C64.818,44.435,64.49,44.108,64.089,44.108z"
+													/>
+												<path d="M46.384,48.727c-1.108-0.785-2.115-1.936-2.133-2.289c0-0.644,0.058-0.952,1.502-2.077
+													c1.867-1.462,2.895-3.383,2.895-5.414c0-1.841-0.562-3.477-1.52-4.625h0.743c0.154,0,0.304-0.048,0.427-0.137l2.073-1.502
+													c0.257-0.184,0.365-0.513,0.267-0.814c-0.099-0.3-0.377-0.505-0.693-0.505h-9.269c-1.014,0-2.044,0.179-3.056,0.527
+													c-3.378,1.165-5.74,4.043-5.74,6.998c0,4.186,3.243,7.359,7.578,7.459c-0.085,0.332-0.128,0.659-0.128,0.979
+													c0,0.645,0.163,1.256,0.5,1.847c-0.039,0-0.077,0-0.119,0c-4.132,0-7.862,2.028-9.278,5.045c-0.369,0.785-0.557,1.578-0.557,2.361
+													c0,0.762,0.196,1.495,0.579,2.183c0.89,1.592,2.801,2.827,5.384,3.479c1.333,0.337,2.766,0.508,4.254,0.508
+													c1.337,0,2.611-0.173,3.789-0.513c3.674-1.067,6.049-3.771,6.049-6.893C49.931,52.349,48.968,50.555,46.384,48.727z
+													 M34.678,55.584c0-2.179,2.768-4.09,5.924-4.09h0.085c0.687,0.008,1.356,0.109,1.988,0.303c0.217,0.149,0.426,0.292,0.626,0.429
+													c1.462,0.996,2.427,1.653,2.696,2.708c0.063,0.266,0.095,0.532,0.095,0.789c0,2.714-2.023,4.089-6.016,4.089
+													C37.048,59.811,34.678,57.955,34.678,55.584z M37.549,34.994c0.493-0.563,1.139-0.861,1.864-0.861l0.082,0.001
+													c2.049,0.06,4.009,2.343,4.369,5.089c0.203,1.537-0.14,2.983-0.912,3.864c-0.494,0.565-1.131,0.862-1.886,0.862c0,0,0,0-0.001,0
+													h-0.033c-2.007-0.062-4.009-2.432-4.367-5.174C36.463,37.243,36.786,35.865,37.549,34.994z"/>
+											</g>
+										</g>
+									</svg>
+								</a>
+							</div>
+						</div>
+						<div class="footer__row">
+							<div class="developers">Made in <a href="">Flex Media</a></div>
+							<div class="copyright">
+								© 2016 international House
+							</div>						
 						</div>
 					</div>
-				</div>
+					<!--<div class="btn__scroll">
+						<button class="scroll__top" type="button">
+							<i class="icon__arrow"></i>
+							<span>Наверх</span>
+						</button>
+					</div>-->
+				</footer>
 			</div>
-		</div>
+		</article>
 	</div>
 	<div class="menu-tablet js-menu">
 		<div class="menu-tablet__in">
@@ -1800,13 +1911,13 @@
 <script src="prod/js/lib/jquery-2.1.4.min.js"></script>
 <script src="prod/js/lib/slick.min.js"></script>
 <script src="prod/js/lib/jquery.nicescroll.js"></script>
-<script src="prod/js/lib/iscroll.js"></script>
 <script src="prod/js/lib/autosize.min.js"></script>
 <script src="prod/js/lib/jquery.form-validator.min.js"></script>
 <script src="prod/js/lib/jquery.mask.min.js"></script>
 <script src="prod/js/lib/jquery.fancybox.min.js"></script>
 <script src="prod/js/lib/handlebars.js"></script>
 <script src="prod/js/lib/jquery-ui.min.js"></script>
+<script src="prod/js/lib/masonry.pkgd.min.js"></script>
 <script src="prod/js/common.js"></script>
 </body>
 </html>

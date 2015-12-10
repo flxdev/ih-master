@@ -181,34 +181,19 @@ $(document).ready(function () {
 		}());
 
 		if(!isTouchDevice){
-			// return $('.fixed').niceScroll({
-			// 	cursorwidth: 8,
-			// 	cursoropacitymin: 1,
-			// 	cursoropacitymax: 1,
-			// 	cursorborderradius: '0px',
-			// 	autohidemode: false,
-			// 	background: '#e5e5e5',
-			// 	cursorcolor: '#fec601',
-			// 	cursorborder: 'none',
-			// 	usetransition: false,
-			// 	horizrailenabled: true,
-			// 	zindex: '9'
-			// });
-			var myScroll;
-			return myScroll = new IScroll('.fixed', {
-				disableMouse: false,
-				mouseWheel: true,
-				scrollX: false,
-				scrollY: true,
-				bounce: true,
-				scrollbars: 'custom',
-				interactiveScrollbars: true,
-				preventDefault: true,
-				fake: true,
-				tap: false,
-				click: false,
+			return $('.fixed').niceScroll({
+				cursorwidth: 8,
+				cursoropacitymin: 1,
+				cursoropacitymax: 1,
+				cursorborderradius: '0px',
+				autohidemode: false,
+				background: '#e5e5e5',
+				cursorcolor: '#fec601',
+				cursorborder: 'none',
+				usetransition: false,
+				horizrailenabled: true,
+				zindex: '9'
 			});
-			document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
 		}
 
 		jQuery('body').addClass('touch-device');
@@ -540,7 +525,13 @@ $(document).ready(function () {
 		setTimeout(function(){
 			$('.' + data).trigger('click');
 		},500)
-	})
+	});
+
+	$('.grid').masonry({
+	  // options
+		itemSelector: '.grid-item',
+		//columnWidth: 80
+	});
 
 });
 
