@@ -133,10 +133,10 @@ $(function() {
 							$('.popup.success-create-person').modal('show');
 						}
 
-                        if ($form.hasClass('form-edite-person')) {
-                            $('.edite-interview').modal('hide');
-                            $('.popup.success-edite-interview').modal('show');
-                        }
+						if ($form.hasClass('form-edite-person')) {
+							$('.edite-interview').modal('hide');
+							$('.popup.success-edite-interview').modal('show');
+						}
 
 						return false;
 					}
@@ -145,109 +145,163 @@ $(function() {
 		};
 	})();
 
-    if ($(document)) {
-        $(document).tooltip({
-            position: {
-                my: "left-4 bottom-10",
-                at: "right bottom"
-            }
-        });
-    }
+	if ($(document)) {
+		$(document).tooltip({
+			position: {
+				my: "left-4 bottom-10",
+				at: "right bottom"
+			}
+		});
+	}
 
-    if($('.groupe-btn-active')) {
-    	Array.prototype.forEach.call(document.querySelectorAll('.groupe-btn-active'), function (item) {
-    		item.addEventListener('click', function (e) {
-    			var target = e.target;
+	if($('.groupe-btn-active')) {
+		Array.prototype.forEach.call(document.querySelectorAll('.groupe-btn-active'), function (item) {
+			item.addEventListener('click', function (e) {
+				var target = e.target;
 
-    			while(target != this) {
-    				if (target.classList.contains('btn-ico')) {
-    					break;
-    				}
+				while(target != this) {
+					if (target.classList.contains('btn-ico')) {
+						break;
+					}
 
-    				target = target.parentNode;
-    			}
+					target = target.parentNode;
+				}
 
-    			if (target == this) {
-    				return;
-    			}
+				if (target == this) {
+					return;
+				}
 
-    			e.preventDefault();
+				e.preventDefault();
 
-    			if (target.classList.contains('btn-plus')) {
-    				var elem = undefined;
-    				var parent = target.parentNode;
+				if (target.classList.contains('btn-plus')) {
+					var elem = undefined;
+					var parent = target.parentNode;
 
-    				while (!parent.classList.contains('row')) {
-    					parent = parent.parentNode;
-    				}
+					while (!parent.classList.contains('row')) {
+						parent = parent.parentNode;
+					}
 
-    				parent.parentNode.insertBefore(parent.cloneNode(true), parent);
-    			}
-    		});
-    	});	
-    }
+					parent.parentNode.insertBefore(parent.cloneNode(true), parent);
+				}
+			});
+		});	
+	}
+	var activeitem;
 
-    document.addEventListener('click', function (e) {
-    	var target = e.target;
+	document.addEventListener('mouseover', function (e) {
+		var target = e.target;
 
-    	while(target != this) {
-    		if (target.classList.contains('remove')) {
-    			break;
-    		}
+		while(target != this) {
+			if (target.nodeName === 'TD') {
+				break;
+			}
 
-    		target = target.parentNode;
-    	}
+			target = target.parentNode;
+		}
 
-    	if (target == this) {
-    		return;
-    	}
+		if (target == this) {
+			return;
+		}
 
-    	e.preventDefault();
+		activeItem = target;
 
-    	var col = $(target).parents('th'),
-    		inline = $(target).parents('td').prev('td'),
-    		count = undefined;
+		e.preventDefault();
+	});
 
-    	if ($(target).parents('th')[0] && $(target).parents('th')[0].contains(target)) {
-    		col.parents('tr').children().each(function (i, item) {
-    			if (col[0] === item) {
-    				count = i;
-    			}
-    		});
+	document.addEventListener('mouseout', function (e) {
+		var e = e || window.event,
+			target = e.target || e.srcElement,
+			relatedTarget = e.relatedTarget || e.toElement;
 
-    		col.parents('table').find('tr').each(function (i, item) {
-    			$(item).children().each(function (i, item) {
-    				if (i === count) {
-    					$(item).addClass('is-deactive');
-    					if ($(item).children('.is-deactive')) {
-    						$(item).children('.is-deactive').each(function (i, item) {
-    							$(item).removeClass('is-deactive');
-    						});
-    					}
-    				}
-    			});
-    		});
-    	} else if ($(target).parents('.time-list')[0] && $(target).parents('.time-list')[0].contains(target)) {
-    		var x = $(target).parents('tr').hasClass('is-deactive') || $(target).parents('td').hasClass('is-deactive') || $(target).parents('th').hasClass('is-deactive') || $(target).parents('li').hasClass('is-deactive');
+		if (!activeItem) {
+			return;
+		}
 
-    		if (x) {
-    			return;
-    		}
+		if (relatedTarget) {
+			while (relatedTarget != document) {
+				if (relatedTarget == activeItem) {
+					return;
+				}
 
-    		$(target).parents('li').addClass('is-deactive');
-    	} else if ($(target).parents('td:first-of-type')[0] && $(target).parents('td:first-of-type')[0].contains(target)) {
-    		$(target).parents('td:first-of-type').parents('tr').children('td').each(function (i, item) {
-    			if ($(item).hasClass('is-deactive')) {
-    				return;
-    			}
-    			$(item).addClass('is-deactive');
+				relatedTarget = relatedTarget.parentNode;
+			}
+		}
 
-    			$(item).children('.is-deactive').each(function (i, item) {
-    				$(item).removeClass('is-deactive');
-    			});
-    		});
-    	}
-    });
+		e.preventDefault();
+
+		$('.btn-groupe').removeClass('open');
+	});
+
+	(function () {
+		window.collCheck = [];
+	}) ();
+	
+	document.addEventListener('click', function (e) {
+		var target = e.target;
+
+		while(target != this) {
+			if (target.classList.contains('remove')) {
+				break;
+			}
+
+			target = target.parentNode;
+		}
+
+		if (target == this) {
+			return;
+		}
+
+		e.preventDefault();
+
+		var col = $(target).parents('th'),
+			inline = $(target).parents('td').prev('td'),
+			count = undefined;
+
+		if ($(target).parents('th')[0] && $(target).parents('th')[0].contains(target)) {
+			col.parents('tr').children().each(function (i, item) {
+				if (col[0] === item) {
+					count = i;
+				}
+			});
+
+			col.parents('table').find('tr').each(function (i, item) {
+				$(item).children().each(function (i, item) {
+					if (i === count) {
+						$(item).addClass('is-deactive');
+						collCheck.push($(item));
+
+						if ($(item).children('.is-deactive')) {
+							$(item).children('.is-deactive').each(function (i, item) {
+								$(item).removeClass('is-deactive');
+							});
+						}
+					}
+				});
+			});
+		} else if ($(target).parents('.time-list')[0] && $(target).parents('.time-list')[0].contains(target)) {
+			var x = $(target).parents('tr').hasClass('is-deactive') || $(target).parents('td').hasClass('is-deactive') || $(target).parents('th').hasClass('is-deactive') || $(target).parents('li').hasClass('is-deactive');
+
+			if (x) {
+				return;
+			}
+
+			$(target).parents('li').addClass('is-deactive');
+			collCheck.push($(target).parents('li'));
+
+		} else if ($(target).parents('td:first-of-type')[0] && $(target).parents('td:first-of-type')[0].contains(target)) {
+			$(target).parents('td:first-of-type').parents('tr').children('td').each(function (i, item) {
+				if ($(item).hasClass('is-deactive')) {
+					return;
+				}
+				$(item).addClass('is-deactive');
+				collCheck.push($(item));
+
+				$(item).children('.is-deactive').each(function (i, item) {
+					$(item).removeClass('is-deactive');
+				});
+			});
+		}
+	});
 	
 	document.addEventListener('click', function (e) {
 		var target = e.target;
@@ -289,17 +343,17 @@ $(function() {
 		document.body.classList.remove('editer');
 	});
 
-    if ($('.dropdown')) {
-        $('.dropdown').fancySelect();
-    }
+	if ($('.dropdown')) {
+		$('.dropdown').fancySelect();
+	}
 
 	if ($('.dropdown-toggle')) {
 		$('.dropdown-toggle').dropdown();
 	}
-    
+	
 
-    $('.checkbox-general').click(function (e) {
-    	var target = e.target;
+	$('.checkbox-general').click(function (e) {
+		var target = e.target;
 
 		while(target) {
 			if (target.classList.contains('checkbox-general')) {
@@ -313,15 +367,14 @@ $(function() {
 			return;
 		}
 
-        if (!$(target).is(':checked')) {
-        	$(target).parents('.content').find('.elem-checkbox').removeAttr('checked');
-        } else {
-           	$(target).parents('.content').find('.elem-checkbox').prop('checked', 'checked');
-        }
-    });
+		if (!$(target).is(':checked')) {
+			$(target).parents('.content').find('.elem-checkbox').removeAttr('checked');
+		} else {
+			$(target).parents('.content').find('.elem-checkbox').prop('checked', 'checked');
+		}
+	});
 
-    if ($('input[type=file]')) {
-    	$('input[type=file]').customFile();
-    }
-    
+	if ($('input[type=file]')) {
+		$('input[type=file]').customFile();
+	}   
 });

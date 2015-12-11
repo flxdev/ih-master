@@ -583,3 +583,23 @@ nav.tabs-category-menu {
 	text-transform: uppercase;
 	letter-spacing: 0.01em;
 }
+.input__field-temp {
+	font: 14px/33px $HelveticaRoman;
+	letter-spacing: 0.01em;
+}
+.popup-form {
+	.places-field {
+		.row-only_read {
+			.field-only_read {
+				.label-only_read {
+					font: 13px/1.0769 $HelveticaRoman;
+					letter-spacing: 0.05em;
+				}
+				.input-only_read {
+					font: 14px/1 $HelveticaRoman;
+					letter-spacing: 0.01em;
+				}
+			}
+		}
+	}
+}
