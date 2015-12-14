@@ -7,6 +7,7 @@
 	<title>Index</title>
 	<link rel="stylesheet" href="prod/css/admin-font.min.css">
 	<link rel="stylesheet" href="prod/css/admin-screen.min.css">
+	<link rel="stylesheet" href="prod/css/datapicker.css">
 </head>
 <body>
 	<div class="wrapper">
@@ -121,21 +122,20 @@
 			</div>
 			<div class="row tools">
 				<div class="inner-row">
-					<nav class="tabs-category-menu">
+					<nav class="tabs-category-menu include-setting">
 						<ul role="tablist">
-							<li class="active"><a href="#tab1" aria-controls="messages" aria-expanded="true" role="tab" data-toggle="tab">Список студентов</a></li>
-							<li><a href="#tab2" aria-controls="messages" aria-expanded="false" role="tab" data-toggle="tab">Архив с отчетами</a></li>
+							<li><a href=".tab1" aria-controls="messages" aria-expanded="true" role="tab" data-toggle="tab">Список студентов</a></li>
+							<li><a href=".tab2" aria-controls="messages" aria-expanded="false" role="tab" data-toggle="tab">Архив с отчетами</a></li>
+							<li class="setting-tab active"><div class="active-block"><a href=".tab3" aria-controls="messages" aria-expanded="false" role="tab" data-toggle="tab" class="btn btn-setting btn-with-ico" ><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><use xlink:href="prod/img/svg.min.svg#settings"></use></svg></span><span>Настройки</span></a></div></li>
 						</ul>
 					</nav>
-					<div class="active-block"><a href="" class="btn btn-setting btn-with-ico"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><use xlink:href="prod/img/svg.min.svg#settings"></use></svg></span><span>Настройки</span></a></div>
 				</div>
 			</div>
 		</div>
 		<div class="container">
-			<div class="content tab1" style="display: block;">
+			<div class="content tab3" style="display: block;">
 				<div class="subtools">
 					<div class="searcher"><span><input type="text" placeholder="Поиск по студентам"></span></div>
-					<div class="active-block"><a href="" class="btn btn-type1 btn-with-ico"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><use xlink:href="prod/img/svg.min.svg#add"></use></svg></span><span>Добавить</span></a></div>
 				</div>
 				<div class="sidebar">
 					<nav class="sidebar-menu">
@@ -150,76 +150,119 @@
 				</div>
 				<div class="container container-setting">
 					<div class="content tab-s1 active" role="tabpanel">
+						<div class="active-block btn-groupe">
+							<a href="" class="btn btn-type1 btn-add btn-with-ico" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><use xlink:href="prod/img/svg.min.svg#add"></use></svg></span><span>Добавить</span></a>
+							<ul class="dropdown-menu" aria-labelledby="add">
+								<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".add-teacher">Учителя</a></li>
+								<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">загрузка / выгрузка</a></li>
+							</ul>
+						</div>
 						<table class="setting teacher">
 							<tr class="header sort-tool-table">
-								<th class="check-elem"><input type="checkbox" id="00"><label for="00"></label></th>
+								<th class="check-elem"><input type="checkbox" class="checkbox-general" id="00"><label for="00"></label></th>
 								<th><a href=""><span>Фамилия</span><span class="arrow-sort"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><use xlink:href="prod/img/svg.min.svg#arrow-sort"></use></svg></span></a></th>
 								<th><a href=""><span>Имя</span><span class="arrow-sort"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><use xlink:href="prod/img/svg.min.svg#arrow-sort"></use></svg></span></a></th>
 								<th><a href=""><span>Отчество</span><span class="arrow-sort"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><use xlink:href="prod/img/svg.min.svg#arrow-sort"></use></svg></span></a></th>
 							</tr>
 							<tr>
-								<td><input type="checkbox" id="01"><label for="01"></label></td>
+								<td><input type="checkbox" class="elem-checkbox" id="01"><label for="01"></label></td>
 								<td><a href="">Константинопольский</a></td>
 								<td>Константин</td>
 								<td>
 									<span>Владимирович</span>
 									<span class="tools-list">
-										<a href="" class="btn-ico btn-edite"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+										<span class="btn-groupe">
+											<a href="" class="btn-ico btn-edite" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Изменить запись"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+											<ul class="dropdown-menu" aria-labelledby="btn-edite">
+												<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-teacher">Редактировать</a></li>
+												<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">Удалить</a></li>
+											</ul>
+										</span>
 									</span>
 								</td>
 							</tr>
 							<tr>
-								<td><input type="checkbox" id="02"><label for="02"></label></td>
+								<td><input type="checkbox" class="elem-checkbox" id="02"><label for="02"></label></td>
 								<td><a href="">Константинопольский</a></td>
 								<td>Константин</td>
 								<td>
 									<span>Владимирович</span>
 									<span class="tools-list">
-										<a href="" class="btn-ico btn-edite"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+										<span class="btn-groupe">
+											<a href="" class="btn-ico btn-edite" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Изменить запись"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+											<ul class="dropdown-menu" aria-labelledby="btn-edite">
+												<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-teacher">Редактировать</a></li>
+												<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">Удалить</a></li>
+											</ul>
+										</span>
 									</span>
 								</td>
 							</tr>
 							<tr>
-								<td><input type="checkbox" id="03"><label for="03"></label></td>
+								<td><input type="checkbox" class="elem-checkbox" id="03"><label for="03"></label></td>
 								<td><a href="">Константинопольский</a></td>
 								<td>Константин</td>
 								<td>
 									<span>Владимирович</span>
 									<span class="tools-list">
-										<a href="" class="btn-ico btn-edite"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+										<span class="btn-groupe">
+											<a href="" class="btn-ico btn-edite" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Изменить запись"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+											<ul class="dropdown-menu" aria-labelledby="btn-edite">
+												<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-teacher">Редактировать</a></li>
+												<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">Удалить</a></li>
+											</ul>
+										</span>
 									</span>
 								</td>
 							</tr>
 							<tr>
-								<td><input type="checkbox" id="04"><label for="04"></label></td>
+								<td><input type="checkbox" class="elem-checkbox" id="04"><label for="04"></label></td>
 								<td><a href="">Константинопольский</a></td>
 								<td>Константин</td>
 								<td>
 									<span>Владимирович</span>
 									<span class="tools-list">
-										<a href="" class="btn-ico btn-edite"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+										<span class="btn-groupe">
+											<a href="" class="btn-ico btn-edite" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Изменить запись"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+											<ul class="dropdown-menu" aria-labelledby="btn-edite">
+												<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-teacher">Редактировать</a></li>
+												<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">Удалить</a></li>
+											</ul>
+										</span>
 									</span>
 								</td>
 							</tr>
 							<tr>
-								<td><input type="checkbox" id="05"><label for="05"></label></td>
+								<td><input type="checkbox" class="elem-checkbox" id="05"><label for="05"></label></td>
 								<td><a href="">Константинопольский</a></td>
 								<td>Константин</td>
 								<td>
 									<span>Владимирович</span>
 									<span class="tools-list">
-										<a href="" class="btn-ico btn-edite"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+										<span class="btn-groupe">
+											<a href="" class="btn-ico btn-edite" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Изменить запись"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+											<ul class="dropdown-menu" aria-labelledby="btn-edite">
+												<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-teacher">Редактировать</a></li>
+												<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">Удалить</a></li>
+											</ul>
+										</span>
 									</span>
 								</td>
 							</tr>
 							<tr>
-								<td><input type="checkbox" id="06"><label for="06"></label></td>
+								<td><input type="checkbox" class="elem-checkbox" id="06"><label for="06"></label></td>
 								<td><a href="">Константинопольский</a></td>
 								<td>Константин</td>
 								<td>
 									<span>Владимирович</span>
 									<span class="tools-list">
-										<a href="" class="btn-ico btn-edite"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+										<span class="btn-groupe">
+											<a href="" class="btn-ico btn-edite" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Изменить запись"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+											<ul class="dropdown-menu" aria-labelledby="btn-edite">
+												<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-teacher">Редактировать</a></li>
+												<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">Удалить</a></li>
+											</ul>
+										</span>
 									</span>
 								</td>
 							</tr>
@@ -249,62 +292,105 @@
 						</div>		
 					</div>
 					<div class="content tab-s2 " role="tabpanel">
+						<div class="active-block btn-groupe">
+							<a href="" class="btn btn-type1 btn-add btn-with-ico" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><use xlink:href="prod/img/svg.min.svg#add"></use></svg></span><span>Добавить</span></a>
+							<ul class="dropdown-menu" aria-labelledby="add">
+								<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".add-groupe">Группу</a></li>
+								<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">загрузка / выгрузка</a></li>
+							</ul>
+						</div>
 						<table class="setting groupe">
 							<tr class="header sort-tool-table">
-								<th class="check-elem"><input type="checkbox" id="00"><label for="00"></label></th>
+								<th class="check-elem"><input type="checkbox" class="checkbox-general" id="00"><label for="00"></label></th>
 								<th><a href=""><span>Группа</span><span class="arrow-sort"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><use xlink:href="prod/img/svg.min.svg#arrow-sort"></use></svg></span></a></th>
 							</tr>
 							<tr>
-								<td><input type="checkbox" id="01"><label for="01"></label></td>
+								<td><input type="checkbox" class="elem-checkbox" id="01"><label for="01"></label></td>
 								<td>
 									<a href="">K2A Машерова</a>
 									<span class="tools-list">
-										<a href="" class="btn-ico btn-edite"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+										<span class="btn-groupe">
+											<a href="" class="btn-ico btn-edite" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Изменить запись"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+											<ul class="dropdown-menu" aria-labelledby="btn-edite">
+												<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-groupe">Редактировать</a></li>
+												<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">Удалить</a></li>
+											</ul>
+										</span>
 									</span>
 								</td>
 							</tr>
 							<tr>
-								<td><input type="checkbox" id="02"><label for="02"></label></td>
+								<td><input type="checkbox" class="elem-checkbox" id="02"><label for="02"></label></td>
 								<td>
 									<a href="">K2A Машерова</a>
 									<span class="tools-list">
-										<a href="" class="btn-ico btn-edite"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+										<span class="btn-groupe">
+											<a href="" class="btn-ico btn-edite" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Изменить запись"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+											<ul class="dropdown-menu" aria-labelledby="btn-edite">
+												<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-groupe">Редактировать</a></li>
+												<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">Удалить</a></li>
+											</ul>
+										</span>
 									</span>
 								</td>
 							</tr>
 							<tr>
-								<td><input type="checkbox" id="03"><label for="03"></label></td>
+								<td><input type="checkbox" class="elem-checkbox" id="03"><label for="03"></label></td>
 								<td>
 									<a href="">K2A Машерова</a>
 									<span class="tools-list">
-										<a href="" class="btn-ico btn-edite"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+										<span class="btn-groupe">
+											<a href="" class="btn-ico btn-edite" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Изменить запись"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+											<ul class="dropdown-menu" aria-labelledby="btn-edite">
+												<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-groupe">Редактировать</a></li>
+												<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">Удалить</a></li>
+											</ul>
+										</span>
 									</span>
 								</td>
 							</tr>
 							<tr>
-								<td><input type="checkbox" id="04"><label for="04"></label></td>
+								<td><input type="checkbox" class="elem-checkbox" id="04"><label for="04"></label></td>
 								<td>
 									<a href="">K2A Машерова</a>
 									<span class="tools-list">
-										<a href="" class="btn-ico btn-edite"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+										<span class="btn-groupe">
+											<a href="" class="btn-ico btn-edite" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Изменить запись"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+											<ul class="dropdown-menu" aria-labelledby="btn-edite">
+												<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-groupe">Редактировать</a></li>
+												<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">Удалить</a></li>
+											</ul>
+										</span>
 									</span>
 								</td>
 							</tr>
 							<tr>
-								<td><input type="checkbox" id="05"><label for="05"></label></td>
+								<td><input type="checkbox" class="elem-checkbox" id="05"><label for="05"></label></td>
 								<td>
 									<a href="">K2A Машерова</a>
 									<span class="tools-list">
-										<a href="" class="btn-ico btn-edite"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+										<span class="btn-groupe">
+											<a href="" class="btn-ico btn-edite" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Изменить запись"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+											<ul class="dropdown-menu" aria-labelledby="btn-edite">
+												<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-groupe">Редактировать</a></li>
+												<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">Удалить</a></li>
+											</ul>
+										</span>
 									</span>
 								</td>
 							</tr>
 							<tr>
-								<td><input type="checkbox" id="06"><label for="06"></label></td>
+								<td><input type="checkbox" class="elem-checkbox" id="06"><label for="06"></label></td>
 								<td>
 									<a href="">K2A Машерова</a>
 									<span class="tools-list">
-										<a href="" class="btn-ico btn-edite"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+										<span class="btn-groupe">
+											<a href="" class="btn-ico btn-edite" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Изменить запись"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+											<ul class="dropdown-menu" aria-labelledby="btn-edite">
+												<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-groupe">Редактировать</a></li>
+												<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">Удалить</a></li>
+											</ul>
+										</span>
 									</span>
 								</td>
 							</tr>
@@ -334,79 +420,128 @@
 						</div>	
 					</div>
 					<div class="content tab-s3 " role="tabpanel">
-
+						<div class="active-block btn-groupe">
+							<a href="" class="btn btn-type1 btn-add btn-with-ico" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><use xlink:href="prod/img/svg.min.svg#add"></use></svg></span><span>Добавить</span></a>
+							<ul class="dropdown-menu" aria-labelledby="add">
+								<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".add-">Семестр</a></li>
+								<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">загрузка / выгрузка</a></li>
+							</ul>
+						</div>
 					</div>
 					<div class="content tab-s4 " role="tabpanel">
+						<div class="active-block btn-groupe">
+							<a href="" class="btn btn-type1 btn-add btn-with-ico" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><use xlink:href="prod/img/svg.min.svg#add"></use></svg></span><span>Добавить</span></a>
+							<ul class="dropdown-menu" aria-labelledby="add">
+								<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".add-quote">Четверть</a></li>
+								<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">загрузка / выгрузка</a></li>
+							</ul>
+						</div>
 						<table class="setting quote">
 							<tr class="header sort-tool-table">
-								<th class="check-elem"><input type="checkbox" id="00"><label for="00"></label></th>
+								<th class="check-elem"><input type="checkbox" class="checkbox-general" id="00"><label for="00"></label></th>
 								<th><a href=""><span>Заголовок</span><span class="arrow-sort"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><use xlink:href="prod/img/svg.min.svg#arrow-sort"></use></svg></span></a></th>
 								<th><a href=""><span>Дата начала</span><span class="arrow-sort"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><use xlink:href="prod/img/svg.min.svg#arrow-sort"></use></svg></span></a></th>
 								<th><a href=""><span>Дата конца</span><span class="arrow-sort"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><use xlink:href="prod/img/svg.min.svg#arrow-sort"></use></svg></span></a></th>
 							</tr>
 							<tr>
-								<td><input type="checkbox" id="01"><label for="01"></label></td>
+								<td><input type="checkbox" class="elem-checkbox" id="01"><label for="01"></label></td>
 								<td><a href="">1 четверть</a></td>
 								<td>Апрель 5, 2014</td>
 								<td>
 									<span>Июнь 5, 2014</span>
 									<span class="tools-list">
-										<a href="" class="btn-ico btn-edite"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+										<span class="btn-groupe">
+											<a href="" class="btn-ico btn-edite" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Изменить запись"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+											<ul class="dropdown-menu" aria-labelledby="btn-edite">
+												<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-quote">Редактировать</a></li>
+												<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">Удалить</a></li>
+											</ul>
+										</span>
 									</span>
 								</td>
 							</tr>
 							<tr>
-								<td><input type="checkbox" id="02"><label for="02"></label></td>
+								<td><input type="checkbox" class="elem-checkbox" id="02"><label for="02"></label></td>
 								<td><a href="">1 четверть</a></td>
 								<td>Апрель 5, 2014</td>
 								<td>
 									<span>Июнь 5, 2014</span>
 									<span class="tools-list">
-										<a href="" class="btn-ico btn-edite"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+										<span class="btn-groupe">
+											<a href="" class="btn-ico btn-edite" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Изменить запись"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+											<ul class="dropdown-menu" aria-labelledby="btn-edite">
+												<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-quote">Редактировать</a></li>
+												<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">Удалить</a></li>
+											</ul>
+										</span>
 									</span>
 								</td>
 							</tr>
 							<tr>
-								<td><input type="checkbox" id="03"><label for="03"></label></td>
+								<td><input type="checkbox" class="elem-checkbox" id="03"><label for="03"></label></td>
 								<td><a href="">1 четверть</a></td>
 								<td>Апрель 5, 2014</td>
 								<td>
 									<span>Июнь 5, 2014</span>
 									<span class="tools-list">
-										<a href="" class="btn-ico btn-edite"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+										<span class="btn-groupe">
+											<a href="" class="btn-ico btn-edite" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Изменить запись"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+											<ul class="dropdown-menu" aria-labelledby="btn-edite">
+												<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-quote">Редактировать</a></li>
+												<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">Удалить</a></li>
+											</ul>
+										</span>
 									</span>
 								</td>
 							</tr>
 							<tr>
-								<td><input type="checkbox" id="04"><label for="04"></label></td>
+								<td><input type="checkbox" class="elem-checkbox" id="04"><label for="04"></label></td>
 								<td><a href="">1 четверть</a></td>
 								<td>Апрель 5, 2014</td>
 								<td>
 									<span>Июнь 5, 2014</span>
 									<span class="tools-list">
-										<a href="" class="btn-ico btn-edite"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+										<span class="btn-groupe">
+											<a href="" class="btn-ico btn-edite" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Изменить запись"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+											<ul class="dropdown-menu" aria-labelledby="btn-edite">
+												<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-quote">Редактировать</a></li>
+												<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">Удалить</a></li>
+											</ul>
+										</span>
 									</span>
 								</td>
 							</tr>
 							<tr>
-								<td><input type="checkbox" id="05"><label for="05"></label></td>
+								<td><input type="checkbox" class="elem-checkbox" id="05"><label for="05"></label></td>
 								<td><a href="">1 четверть</a></td>
 								<td>Апрель 5, 2014</td>
 								<td>
 									<span>Июнь 5, 2014</span>
 									<span class="tools-list">
-										<a href="" class="btn-ico btn-edite"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+										<span class="btn-groupe">
+											<a href="" class="btn-ico btn-edite" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Изменить запись"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+											<ul class="dropdown-menu" aria-labelledby="btn-edite">
+												<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-quote">Редактировать</a></li>
+												<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">Удалить</a></li>
+											</ul>
+										</span>
 									</span>
 								</td>
 							</tr>
 							<tr>
-								<td><input type="checkbox" id="06"><label for="06"></label></td>
+								<td><input type="checkbox" class="elem-checkbox" id="06"><label for="06"></label></td>
 								<td><a href="">1 четверть</a></td>
 								<td>Апрель 5, 2014</td>
 								<td>
 									<span>Июнь 5, 2014</span>
 									<span class="tools-list">
-										<a href="" class="btn-ico btn-edite"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+										<span class="btn-groupe">
+											<a href="" class="btn-ico btn-edite" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Изменить запись"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+											<ul class="dropdown-menu" aria-labelledby="btn-edite">
+												<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-quote">Редактировать</a></li>
+												<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">Удалить</a></li>
+											</ul>
+										</span>
 									</span>
 								</td>
 							</tr>
@@ -436,69 +571,112 @@
 						</div>
 					</div>
 					<div class="content tab-s5 " role="tabpanel">
+						<div class="active-block btn-groupe">
+							<a href="" class="btn btn-type1 btn-add btn-with-ico" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><use xlink:href="prod/img/svg.min.svg#add"></use></svg></span><span>Добавить</span></a>
+							<ul class="dropdown-menu" aria-labelledby="add">
+								<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".add-comment">Комментарий</a></li>
+								<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">загрузка / выгрузка</a></li>
+							</ul>
+						</div>
 						<table class="setting comments">
 							<tr class="header sort-tool-table">
-								<th class="check-elem"><input type="checkbox" id="00"><label for="00"></label></th>
+								<th class="check-elem"><input type="checkbox" class="checkbox-general" id="00"><label for="00"></label></th>
 								<th><a href=""><span>Комментарий</span><span class="arrow-sort"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><use xlink:href="prod/img/svg.min.svg#arrow-sort"></use></svg></span></a></th>
 								<th><a href=""><span>Категория</span><span class="arrow-sort"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><use xlink:href="prod/img/svg.min.svg#arrow-sort"></use></svg></span></a></th>
 							</tr>
 							<tr>
-								<td><input type="checkbox" id="01"><label for="01"></label></td>
+								<td><input type="checkbox" class="elem-checkbox" id="01"><label for="01"></label></td>
 								<td><a href="">Необходимо больше внимания уделять повторению грамматических правил</a></td>
 								<td>
 									<span>Характеристика ученика</span>
 									<span class="tools-list">
-										<a href="" class="btn-ico btn-edite"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+										<span class="btn-groupe">
+											<a href="" class="btn-ico btn-edite" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Изменить запись"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+											<ul class="dropdown-menu" aria-labelledby="btn-edite">
+												<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-comment">Редактировать</a></li>
+												<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">Удалить</a></li>
+											</ul>
+										</span>
 									</span>
 								</td>
 							</tr>
 							<tr>
-								<td><input type="checkbox" id="02"><label for="02"></label></td>
+								<td><input type="checkbox" class="elem-checkbox" id="02"><label for="02"></label></td>
 								<td><a href="">Необходимо больше внимания уделять повторению грамматических правил</a></td>
 								<td>
 									<span>Характеристика ученика</span>
 									<span class="tools-list">
-										<a href="" class="btn-ico btn-edite"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+										<span class="btn-groupe">
+											<a href="" class="btn-ico btn-edite" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Изменить запись"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+											<ul class="dropdown-menu" aria-labelledby="btn-edite">
+												<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-comment">Редактировать</a></li>
+												<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">Удалить</a></li>
+											</ul>
+										</span>
 									</span>
 								</td>
 							</tr>
 							<tr>
-								<td><input type="checkbox" id="03"><label for="03"></label></td>
+								<td><input type="checkbox" class="elem-checkbox" id="03"><label for="03"></label></td>
 								<td><a href="">Необходимо больше внимания уделять повторению грамматических правил</a></td>
 								<td>
 									<span>Характеристика ученика</span>
 									<span class="tools-list">
-										<a href="" class="btn-ico btn-edite"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+										<span class="btn-groupe">
+											<a href="" class="btn-ico btn-edite" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Изменить запись"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+											<ul class="dropdown-menu" aria-labelledby="btn-edite">
+												<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-comment">Редактировать</a></li>
+												<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">Удалить</a></li>
+											</ul>
+										</span>
 									</span>
 								</td>
 							</tr>
 							<tr>
-								<td><input type="checkbox" id="04"><label for="04"></label></td>
+								<td><input type="checkbox" class="elem-checkbox" id="04"><label for="04"></label></td>
 								<td><a href="">Необходимо больше внимания уделять повторению грамматических правил</a></td>
 								<td>
 									<span>Характеристика ученика</span>
 									<span class="tools-list">
-										<a href="" class="btn-ico btn-edite"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+										<span class="btn-groupe">
+											<a href="" class="btn-ico btn-edite" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Изменить запись"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+											<ul class="dropdown-menu" aria-labelledby="btn-edite">
+												<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-comment">Редактировать</a></li>
+												<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">Удалить</a></li>
+											</ul>
+										</span>
 									</span>
 								</td>
 							</tr>
 							<tr>
-								<td><input type="checkbox" id="05"><label for="05"></label></td>
+								<td><input type="checkbox" class="elem-checkbox" id="05"><label for="05"></label></td>
 								<td><a href="">Необходимо больше внимания уделять повторению грамматических правил</a></td>
 								<td>
 									<span>Характеристика ученика</span>
 									<span class="tools-list">
-										<a href="" class="btn-ico btn-edite"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+										<span class="btn-groupe">
+											<a href="" class="btn-ico btn-edite" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Изменить запись"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+											<ul class="dropdown-menu" aria-labelledby="btn-edite">
+												<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-comment">Редактировать</a></li>
+												<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">Удалить</a></li>
+											</ul>
+										</span>
 									</span>
 								</td>
 							</tr>
 							<tr>
-								<td><input type="checkbox" id="06"><label for="06"></label></td>
+								<td><input type="checkbox" class="elem-checkbox" id="06"><label for="06"></label></td>
 								<td><a href="">Необходимо больше внимания уделять повторению грамматических правил</a></td>
 								<td>
 									<span>Характеристика ученика</span>
 									<span class="tools-list">
-										<a href="" class="btn-ico btn-edite"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+										<span class="btn-groupe">
+											<a href="" class="btn-ico btn-edite" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Изменить запись"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+											<ul class="dropdown-menu" aria-labelledby="btn-edite">
+												<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-comment">Редактировать</a></li>
+												<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">Удалить</a></li>
+											</ul>
+										</span>
 									</span>
 								</td>
 							</tr>
@@ -530,12 +708,366 @@
 				</div>
 			</div>
 		</div>
+		<div class="popup popup-form add-teacher" tabindex="-1" role="dialog">
+			<div class="popup-wrapper">
+				<div class="popup-inner">
+					<div class="form">
+						<button class="popup-close" data-dismiss="modal" aria-label="Close">
+							<i class="icon_close_svg">
+								<svg viewBox="0 0 24 24" height="100%" class="close_icon" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+									<path d="m0,4l4,-4l8,8l8,-8l4,4l-8,8l8,8l-4,4l-8,-8l-8,8l-4,-4l8,-8l-8,-8z"/>
+								</svg>
+							</i>
+						</button>
+						<div class="title-form">Добавить учителя</div>
+						<form action="" class="js-validate form-add-teacher">
+							<div class="row">
+								<span class='field field-effect'>
+									<label class="input__label">
+										<span class="input__label-content">Имя</span>
+									</label>
+									<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+								</span>
+							</div>
+							<div class="row">
+								<span class='field field-effect'>
+									<label class="input__label">
+										<span class="input__label-content">Фамилия</span>
+									</label>
+									<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+								</span>
+							</div>
+							<div class="row">
+								<span class='field field-effect'>
+									<label class="input__label">
+										<span class="input__label-content">Отчество</span>
+									</label>
+									<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+								</span>
+							</div>
+							<div class="row btn-fullwidth">
+								<button class="btn-type3" type="submit"><span>добавить нового учителя</span></button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="popup popup-form edite-teacher" tabindex="-1" role="dialog">
+			<div class="popup-wrapper">
+				<div class="popup-inner">
+					<div class="form">
+						<button class="popup-close" data-dismiss="modal" aria-label="Close">
+							<i class="icon_close_svg">
+								<svg viewBox="0 0 24 24" height="100%" class="close_icon" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+									<path d="m0,4l4,-4l8,8l8,-8l4,4l-8,8l8,8l-4,4l-8,-8l-8,8l-4,-4l8,-8l-8,-8z"/>
+								</svg>
+							</i>
+						</button>
+						<div class="title-form">Редактировать данные учителя</div>
+						<form action="" class="js-validate form-add-teacher">
+							<div class="row">
+								<span class='field field-effect'>
+									<label class="input__label">
+										<span class="input__label-content">Имя</span>
+									</label>
+									<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+								</span>
+							</div>
+							<div class="row">
+								<span class='field field-effect'>
+									<label class="input__label">
+										<span class="input__label-content">Фамилия</span>
+									</label>
+									<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+								</span>
+							</div>
+							<div class="row">
+								<span class='field field-effect'>
+									<label class="input__label">
+										<span class="input__label-content">Отчество</span>
+									</label>
+									<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+								</span>
+							</div>
+							<div class="row btn-fullwidth">
+								<button class="btn-type3" type="submit"><span>сохранить изменения</span></button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="popup popup-form add-quote" tabindex="-1" role="dialog">
+			<div class="popup-wrapper">
+				<div class="popup-inner">
+					<div class="form">
+						<button class="popup-close" data-dismiss="modal" aria-label="Close">
+							<i class="icon_close_svg">
+								<svg viewBox="0 0 24 24" height="100%" class="close_icon" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+									<path d="m0,4l4,-4l8,8l8,-8l4,4l-8,8l8,8l-4,4l-8,-8l-8,8l-4,-4l8,-8l-8,-8z"/>
+								</svg>
+							</i>
+						</button>
+						<div class="title-form">Форма добавления</div>
+						<form action="" class="js-validate form-add-quote">
+							<div class="row">
+								<span class='field field-effect'>
+									<label class="input__label">
+										<span class="input__label-content">Заголовок</span>
+									</label>
+									<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+								</span>
+							</div>
+							<div class="row list-5">
+								<span class='field field-effect'>
+									<label class="input__label">
+										<span class="input__label-content">Дата начала</span>
+									</label>
+									<span class="calendar-input">
+										<input type="text" class="input__field">
+										<span class="input__label-temp">
+											<span class="input__label-temp-content label-calendar"><span class="calendar"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><use xlink:href="prod/img/svg.min.svg#calendar"></use></svg></span></span>
+										</span>
+									</span>
+								</span>
+								<span class='field field-effect'>
+									<label class="input__label">
+										<span class="input__label-content input__label-differenter">—</span>
+									</label>
+								</span>
+								<span class='field field-effect'>
+									<label class="input__label">
+										<span class="input__label-content">Дата конца</span>
+									</label>
+									<span class="calendar-input">
+										<input type="text" class="input__field">
+										<span class="input__label-temp">
+											<span class="input__label-temp-content label-calendar"><span class="calendar"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><use xlink:href="prod/img/svg.min.svg#calendar"></use></svg></span></span>
+										</span>
+									</span>
+								</span>
+							</div>
+							<div class="row btn-fullwidth">
+								<button class="btn-type3" type="submit"><span>добавить новую форму</span></button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="popup popup-form edite-quote" tabindex="-1" role="dialog">
+			<div class="popup-wrapper">
+				<div class="popup-inner">
+					<div class="form">
+						<button class="popup-close" data-dismiss="modal" aria-label="Close">
+							<i class="icon_close_svg">
+								<svg viewBox="0 0 24 24" height="100%" class="close_icon" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+									<path d="m0,4l4,-4l8,8l8,-8l4,4l-8,8l8,8l-4,4l-8,-8l-8,8l-4,-4l8,-8l-8,-8z"/>
+								</svg>
+							</i>
+						</button>
+						<div class="title-form">Форма редактирования</div>
+						<form action="" class="js-validate form-add-quote">
+							<div class="row">
+								<span class='field field-effect'>
+									<label class="input__label">
+										<span class="input__label-content">Заголовок</span>
+									</label>
+									<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+								</span>
+							</div>
+							<div class="row list-5">
+								<span class='field field-effect'>
+									<label class="input__label">
+										<span class="input__label-content">Дата начала</span>
+									</label>
+									<span class="calendar-input">
+										<input data-validation="required" type="text" autocomplete='off' class="input__field input__field-effect">
+										<span class="input__label-temp">
+											<span class="input__label-temp-content label-calendar"><span class="calendar"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><use xlink:href="prod/img/svg.min.svg#calendar"></use></svg></span></span>
+										</span>
+									</span>
+								</span>
+								<span class='field field-effect'>
+									<label class="input__label">
+										<span class="input__label-content input__label-differenter">—</span>
+									</label>
+								</span>
+								<span class='field field-effect'>
+									<label class="input__label">
+										<span class="input__label-content">Дата конца</span>
+									</label>
+									<span class="calendar-input">
+										<input data-validation="required" type="text" autocomplete='off' class="input__field input__field-effect">
+										<span class="input__label-temp">
+											<span class="input__label-temp-content label-calendar"><span class="calendar"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><use xlink:href="prod/img/svg.min.svg#calendar"></use></svg></span></span>
+										</span>
+									</span>
+								</span>
+							</div>
+							<div class="row btn-fullwidth">
+								<button class="btn-type3" type="submit"><span>сохранить изменения</span></button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="popup popup-form add-comment" tabindex="-1" role="dialog">
+			<div class="popup-wrapper">
+				<div class="popup-inner">
+					<div class="form">
+						<button class="popup-close" data-dismiss="modal" aria-label="Close">
+							<i class="icon_close_svg">
+								<svg viewBox="0 0 24 24" height="100%" class="close_icon" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+									<path d="m0,4l4,-4l8,8l8,-8l4,4l-8,8l8,8l-4,4l-8,-8l-8,8l-4,-4l8,-8l-8,-8z"/>
+								</svg>
+							</i>
+						</button>
+						<div class="title-form">Добавить комментарий</div>
+						<form action="" class="js-validate form-add-comment">
+							<div class="row">
+								<span class='field field-effect'>
+									<label class="input__label">
+										<span class="input__label-content">Категория</span>
+									</label>
+									<div class="select select-group">
+										<select name="" class="dropdown" data-validation="required">
+											<option value="Не очень хорошо">Категория</option>
+											<option value="Не очень хорошо">Категория</option>
+											<option value="Не очень хорошо">Категория </option>
+											<option value="Не очень хорошо">Категория</option>
+										</select>
+									</div>
+								</span>
+							</div>
+							<div class="row">
+								<span class='field field-effect'>
+									<label class="input__label">
+										<span class="input__label-content">Комментарий</span>
+									</label>
+									<textarea rows="1" required  data-validation="length" data-validation-length="min1" class="input__field input__field-effect"></textarea>
+								</span>
+							</div>
+							<div class="row btn-fullwidth">
+								<button class="btn-type3" type="submit"><span>добавить новый комментарий</span></button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="popup popup-form edite-comment" tabindex="-1" role="dialog">
+			<div class="popup-wrapper">
+				<div class="popup-inner">
+					<div class="form">
+						<button class="popup-close" data-dismiss="modal" aria-label="Close">
+							<i class="icon_close_svg">
+								<svg viewBox="0 0 24 24" height="100%" class="close_icon" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+									<path d="m0,4l4,-4l8,8l8,-8l4,4l-8,8l8,8l-4,4l-8,-8l-8,8l-4,-4l8,-8l-8,-8z"/>
+								</svg>
+							</i>
+						</button>
+						<div class="title-form">Редактировать комментарий</div>
+						<form action="" class="js-validate form-add-comment">
+							<div class="row">
+								<span class='field field-effect'>
+									<label class="input__label">
+										<span class="input__label-content">Категория</span>
+									</label>
+									<div class="select select-group">
+										<select name="" class="dropdown" data-validation="required">
+											<option value="Не очень хорошо">Категория</option>
+											<option value="Не очень хорошо">Категория</option>
+											<option value="Не очень хорошо">Категория </option>
+											<option value="Не очень хорошо">Категория</option>
+										</select>
+									</div>
+								</span>
+							</div>
+							<div class="row">
+								<span class='field field-effect'>
+									<label class="input__label">
+										<span class="input__label-content">Комментарий</span>
+									</label>
+									<textarea rows="1" required  data-validation="length" data-validation-length="min1" class="input__field input__field-effect"></textarea>
+								</span>
+							</div>
+							<div class="row btn-fullwidth">
+								<button class="btn-type3" type="submit"><span>сохранить изменения</span></button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="popup popup-form add-groupe" tabindex="-1" role="dialog">
+			<div class="popup-wrapper">
+				<div class="popup-inner">
+					<div class="form">
+						<button class="popup-close" data-dismiss="modal" aria-label="Close">
+							<i class="icon_close_svg">
+								<svg viewBox="0 0 24 24" height="100%" class="close_icon" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+									<path d="m0,4l4,-4l8,8l8,-8l4,4l-8,8l8,8l-4,4l-8,-8l-8,8l-4,-4l8,-8l-8,-8z"/>
+								</svg>
+							</i>
+						</button>
+						<div class="title-form">Форма добавления группы</div>
+						<form action="" class="js-validate form-add-groupe">
+							<div class="row">
+								<span class='field field-effect'>
+									<label class="input__label">
+										<span class="input__label-content">Название группы</span>
+									</label>
+									<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+								</span>
+							</div>
+							<div class="row btn-fullwidth">
+								<button class="btn-type3" type="submit"><span>добавить новую группу</span></button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="popup popup-form edite-groupe" tabindex="-1" role="dialog">
+			<div class="popup-wrapper">
+				<div class="popup-inner">
+					<div class="form">
+						<button class="popup-close" data-dismiss="modal" aria-label="Close">
+							<i class="icon_close_svg">
+								<svg viewBox="0 0 24 24" height="100%" class="close_icon" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+									<path d="m0,4l4,-4l8,8l8,-8l4,4l-8,8l8,8l-4,4l-8,-8l-8,8l-4,-4l8,-8l-8,-8z"/>
+								</svg>
+							</i>
+						</button>
+						<div class="title-form">Редактирование группы</div>
+						<form action="" class="js-validate form-add-groupe">
+							<div class="row">
+								<span class='field field-effect'>
+									<label class="input__label">
+										<span class="input__label-content">Название группы</span>
+									</label>
+									<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+								</span>
+							</div>
+							<div class="row btn-fullwidth">
+								<button class="btn-type3" type="submit"><span>сохранить изменения</span></button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 	<script src="prod/js/lib/jquery-2.1.4.min.js"></script>
 	<script src="prod/js/lib/bootstrap.js"></script>
 	<script src="prod/js/lib/jquery-ui.min.js"></script>
 	<script src="prod/js/lib/fancySelect.js"></script>
 	<script src="prod/js/lib/jquery.form-validator.min.js"></script>
+	<script src="prod/js/lib/datapicker.js"></script>
+	<script src="prod/js/lib/datepicker-ru.js"></script>
 	<script src="prod/js/admin-common.js"></script>
 </body>
 </html>

@@ -394,9 +394,14 @@ body {
 .btn-type1,
 .btn-type2 {
 	span {
-		font: 10px/3.3 $HelveticaBold;
+		font: 10px/3.1 $HelveticaBold;
 		text-transform: uppercase;
 		letter-spacing: 0.2em;
+	}
+}
+.btn-type2 {
+	span {
+		line-height: 3.3;
 	}
 }
 .row {
@@ -423,7 +428,7 @@ nav.tabs-category-menu {
 			font: 16px/0.75 $HelveticaRoman;
 			letter-spacing: 0.01em;
 		}
-		&.active a {
+		&.active a:not(.btn) {
 			font-family: $HelveticaMedium;
 		}
 	}
@@ -542,6 +547,10 @@ nav.tabs-category-menu {
 		font: 13px/1 $HelveticaRoman;
 		letter-spacing: 0.05em;
 	}
+	.input__label-differenter {
+		font: 18px/1.333 $HelveticaRoman;
+		letter-spacing: 0.01em;
+	}
 	.input__field {
 		font: 14px $HelveticaRoman;
 	}
@@ -581,5 +590,87 @@ nav.tabs-category-menu {
 .minute-row {
 	font: 18px $HelveticaLight; 
 	text-transform: uppercase;
+	letter-spacing: 0.01em;
+}
+.input__field-temp {
+	font: 14px/33px $HelveticaRoman;
+	letter-spacing: 0.01em;
+}
+.popup-form {
+	.places-field {
+		.row-only_read {
+			.field-only_read {
+				.label-only_read {
+					font: 13px/1.0769 $HelveticaRoman;
+					letter-spacing: 0.05em;
+				}
+				.input-only_read {
+					font: 14px/1 $HelveticaRoman;
+					letter-spacing: 0.01em;
+				}
+			}
+		}
+	}
+}
+.content {
+	.container-with-form {
+		.form {
+			.title-form {
+				font: 42px $HelveticaRoman;
+				letter-spacing: -0.02em;
+			}
+			.title__lvl-2 {
+				font: 24px $HelveticaRoman;
+				letter-spacing: -0.02em;
+			}
+			.input__label-content {
+				font: 13px/1.0769 $HelveticaRoman;
+				letter-spacing: 0.05em;
+			}
+			.input__field {
+				font: 14px/1 $HelveticaRoman;
+				letter-spacing: 0.01em;
+			}
+		}
+	}
+}
+.btn-type4 {
+	span {
+		font: 14px/2.2143 $HelveticaRoman;
+	    letter-spacing: .01em;
+	}
+}
+.lang {
+	a {
+		font-family: $HelveticaBlack;
+		font-size: 0.8125em;
+		&.is-active {
+			font-family: $HelveticaRoman;
+		}
+	}
+}
+.content-info-board {
+	span,
+	p {
+		font: 13px/1.8465 $HelveticaRoman;
+		letter-spacing: 0.02em;
+	}
+}
+.ui-datepicker th {
+	span, a, p, em, i, a {
+		font: 12px/2.333 $HelveticaMedium;
+		letter-spacing: 0.01em;
+	}
+}
+.ui-datepicker td {
+	text-align: center;
+	span, a, p, em, i, a {
+		font: 14px/2.4 $HelveticaMedium;
+		letter-spacing: 0.01em;
+	}
+	
+}
+.ui-datepicker-title {
+	font: 14px/1.0286 $HelveticaRoman;
 	letter-spacing: 0.01em;
 }
