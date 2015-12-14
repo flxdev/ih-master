@@ -283,6 +283,14 @@ $(function() {
 			}
 		}
 
+		elemBtn2 = $('.btn-groupe.open').find('.btn-type2.btn-write')[0];
+
+		if (elemBtn3) {
+			if (elemBtn2.nodeType === 1) {
+				return;
+			}
+		}
+
 		$('.btn-groupe').removeClass('open');
 	});
 
