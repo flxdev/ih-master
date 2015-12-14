@@ -121,13 +121,13 @@
 			</div>
 			<div class="row tools">
 				<div class="inner-row">
-					<nav class="tabs-category-menu">
+					<nav class="tabs-category-menu include-setting">
 						<ul role="tablist">
-							<li class="active"><a href="#tab1" aria-controls="messages" aria-expanded="true" role="tab" data-toggle="tab">Список студентов</a></li>
-							<li><a href="#tab2" aria-controls="messages" aria-expanded="false" role="tab" data-toggle="tab">Архив с отчетами</a></li>
+							<li class="active"><a href=".tab1" aria-controls="messages" aria-expanded="true" role="tab" data-toggle="tab">Список студентов</a></li>
+							<li><a href=".tab2" aria-controls="messages" aria-expanded="false" role="tab" data-toggle="tab">Архив с отчетами</a></li>
+							<li class="setting-tab"><div class="active-block"><a href=".tab3" aria-controls="messages" aria-expanded="false" role="tab" data-toggle="tab" class="btn btn-setting btn-with-ico" ><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><use xlink:href="prod/img/svg.min.svg#settings"></use></svg></span><span>Настройки</span></a></div></li>
 						</ul>
 					</nav>
-					<div class="active-block"><a href="" class="btn btn-setting btn-with-ico"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><use xlink:href="prod/img/svg.min.svg#settings"></use></svg></span><span>Настройки</span></a></div>
 				</div>
 			</div>
 		</div>
@@ -143,7 +143,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="row">
+					<div class="row relative-position">
 						<ol class="guid">
 							<li><a href="" class="btn btn-with-ico"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><use xlink:href="prod/img/svg.min.svg#load"></use></svg></span><span>Скачайте выгрузку</span></a><span> вашего текущего списка</span></li>
 							<li><span>Внесите изменения в текущий список</span></li>
@@ -152,7 +152,20 @@
 						<div class="active-field">
 							<div class="block">
 								<input type="file" id="" />
-								<a href="" class="btn btn-type2"><span>Загрузить</span></a>
+								<a href="" class="btn btn-load-file btn-type2"><span>Загрузить</span></a>
+							</div>
+						</div>
+						<div class="info-board success">
+							<div class="content-info-board">
+								<span class="icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><use xlink:href="prod/img/svg.min.svg#info"></use></svg></span>
+								<span>Файл <span class="name-file-loading"></span> успешно загружен</span>
+							</div>
+						</div>
+						<div class="info-board error">
+							<div class="content-info-board">
+								<span class="icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><use xlink:href="prod/img/svg.min.svg#info"></use></svg></span>
+								<span>Возникла ошибка при загрузке файла <span class="name-file-loading"></span></span>
+								<p>Попробуйте загрузить снова или замените файл.</p>
 							</div>
 						</div>
 					</div>

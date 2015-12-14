@@ -7,6 +7,7 @@
 	<title>Index</title>
 	<link rel="stylesheet" href="prod/css/admin-font.min.css">
 	<link rel="stylesheet" href="prod/css/admin-screen.min.css">
+	<link rel="stylesheet" href="prod/css/datapicker.css">
 </head>
 <body>
 	<div class="wrapper">
@@ -130,16 +131,16 @@
 					</nav>
 					<nav class="tabs-tools">
 						<ul role="tablist">
-							<li class="active"><a href="#tab1" aria-controls="messages" aria-expanded="true" role="tab" data-toggle="tab"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><use xlink:href="prod/img/svg.min.svg#calendar"></use></svg></span></a></li>
-							<li><a href="#tab2" aria-controls="messages" aria-expanded="false" role="tab" data-toggle="tab"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><use xlink:href="prod/img/svg.min.svg#marker"></use></svg></span></a></li>
-							<li><a href="#tab3" aria-controls="messages" aria-expanded="false" role="tab" data-toggle="tab"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 29 23"><use xlink:href="prod/img/svg.min.svg#menu"></use></svg></span></a></li>
+							<li class="active"><a href=".tab1" aria-controls="messages" aria-expanded="true" role="tab" data-toggle="tab"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><use xlink:href="prod/img/svg.min.svg#calendar"></use></svg></span></a></li>
+							<li><a href=".tab2" aria-controls="messages" aria-expanded="false" role="tab" data-toggle="tab"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><use xlink:href="prod/img/svg.min.svg#marker"></use></svg></span></a></li>
+							<li><a href=".tab3" aria-controls="messages" aria-expanded="false" role="tab" data-toggle="tab"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 29 23"><use xlink:href="prod/img/svg.min.svg#menu"></use></svg></span></a></li>
 						</ul>
 					</nav>
 				</div>
 			</div>
 		</div>
 		<div class="container">
-			<div id="tab1" class="content tab1 active" role="tabpanel">
+			<div class="content tab1 active" role="tabpanel">
 				<div class="subtools">
 					<div class="select select-group select-group-geo">
 						<select name="" class="dropdown">
@@ -149,11 +150,25 @@
 							<option value="ул. Ежи Гедройца 20">ул. Ежи Гедройца 20</option>
 						</select>
 					</div>
-					<div class="calendar"></div>
+					<div class="container-for-calendar">
+						<div class="nav-arrow">
+							<div class="arrow-container">
+							<!--class deactive-btn-arrow disables button -->
+								<div class="arrow-btn arrow-left"><a href=""><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><use xlink:href="prod/img/svg.min.svg#left_arrow-sel"></use></svg></span></a></div>
+								<div class="arrow-btn arrow-right"><a href=""><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><use xlink:href="prod/img/svg.min.svg#arrow_select"></use></svg></span></a></div>
+							</div>
+						</div>
+						<div class="calendar-input">
+							<input type="text" class="input__field-temp">
+							<label class="input__label-temp">
+								<span class="input__label-temp-content label-calendar"><span class="calendar"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><use xlink:href="prod/img/svg.min.svg#calendar"></use></svg></span></span>
+							</label>
+						</div>
+					</div>
 					<div class="active-block btn-groupe">
 						<a href="" class="btn btn-edite btn-with-ico" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span><span>Редактировать</span></a>
 						<ul class="dropdown-menu" aria-labelledby="edite">
-							<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-interview">Редактирование</a></li>
+							<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".active-mode">Редактирование</a></li>
 							<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-edite">Быстрое редактирование</a></li>
 						</ul>
 					</div>
@@ -181,12 +196,12 @@
 						</td>
 						<td>
 							<ul class="time-list">
-								<li><a href="" data-toggle="modal" data-href="#" data-target=""><span class="remove"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#close"></use></svg></span></a><a href="" data-toggle="modal" data-href="#" data-target=".edite-note.child"><span class="minute" title="10:22, Вт. 22 Октября">00</span></a></li>
-								<li><a href="" data-toggle="modal" data-href="#" data-target=""><span class="remove"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#close"></use></svg></span></a><a href="" data-toggle="modal" data-href="#" data-target=".edite-note.child"><span class="minute" title="10:22, Вт. 22 Октября">00</span></a></li>
-								<li><a href="" data-toggle="modal" data-href="#" data-target=""><span class="remove"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#close"></use></svg></span></a><a href="" data-toggle="modal" data-href="#" data-target=".edite-note.child"><span class="minute" title="10:22, Вт. 22 Октября">00</span></a></li>
-								<li><a href="" data-toggle="modal" data-href="#" data-target=""><span class="remove"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#close"></use></svg></span></a><a href="" data-toggle="modal" data-href="#" data-target=".edite-note.child"><span class="minute" title="10:22, Вт. 22 Октября">00</span><span class="count">3</span></a></li>
-								<li><a href="" data-toggle="modal" data-href="#" data-target=""><span class="remove"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#close"></use></svg></span></a><a href="" data-toggle="modal" data-href="#" data-target=".edite-note.child"><span class="minute" title="10:22, Вт. 22 Октября">00</span></a></li>
-								<li><a href="" data-toggle="modal" data-href="#" data-target=""><span class="remove"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#close"></use></svg></span></a><a href="" data-toggle="modal" data-href="#" data-target=".edite-note.child"><span class="minute" title="10:22, Вт. 22 Октября">00</span><span class="count is-max">4</span></a></li>
+								<li><a href="" data-toggle="modal" data-href="#" data-target=""><span class="remove"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#close"></use></svg></span></a><a href="" data-toggle="modal" data-href="#" data-target=".edite-note.adult"><span class="minute" title="10:22, Вт. 22 Октября">00</span></a></li>
+								<li><a href="" data-toggle="modal" data-href="#" data-target=""><span class="remove"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#close"></use></svg></span></a><a href="" data-toggle="modal" data-href="#" data-target=".edite-note.adult"><span class="minute" title="10:22, Вт. 22 Октября">00</span></a></li>
+								<li><a href="" data-toggle="modal" data-href="#" data-target=""><span class="remove"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#close"></use></svg></span></a><a href="" data-toggle="modal" data-href="#" data-target=".edite-note.adult"><span class="minute" title="10:22, Вт. 22 Октября">00</span></a></li>
+								<li><a href="" data-toggle="modal" data-href="#" data-target=""><span class="remove"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#close"></use></svg></span></a><a href="" data-toggle="modal" data-href="#" data-target=".edite-note.adult"><span class="minute" title="10:22, Вт. 22 Октября">00</span><span class="count">3</span></a></li>
+								<li><a href="" data-toggle="modal" data-href="#" data-target=""><span class="remove"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#close"></use></svg></span></a><a href="" data-toggle="modal" data-href="#" data-target=".edite-note.adult"><span class="minute" title="10:22, Вт. 22 Октября">00</span></a></li>
+								<li><a href="" data-toggle="modal" data-href="#" data-target=""><span class="remove"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#close"></use></svg></span></a><a href="" data-toggle="modal" data-href="#" data-target=".edite-note.adult"><span class="minute" title="10:22, Вт. 22 Октября">00</span><span class="count is-max">4</span></a></li>
 							</ul>
 						</td>
 						<td>
@@ -328,21 +343,26 @@
 					</tr>
 				</table>
 			</div>
-			<div id="tab2" class="content tab2" role="tabpanel">
+			<div class="content tab2" role="tabpanel">
 				<div class="subtools">
-					<div class="select select-group">
-						<select name="" class="dropdown">
-							<option value="">ул. Ежи Гедройца 20</option>
-							<option value="">ул. Ежи Гедройца 20</option>
-							<option value="">ул. Ежи Гедройца 20</option>
-							<option value="">ул. Ежи Гедройца 20</option>
-						</select>
+					<div class="container-for-calendar">
+						<div class="nav-arrow">
+							<div class="arrow-container">
+								<div class="arrow-btn arrow-left deactive-btn-arrow"><a href=""><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><use xlink:href="prod/img/svg.min.svg#left_arrow-sel"></use></svg></span></a></div>
+								<div class="arrow-btn arrow-right"><a href=""><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><use xlink:href="prod/img/svg.min.svg#arrow_select"></use></svg></span></a></div>
+							</div>
+						</div>
+						<div class="calendar-input">
+							<input type="text" class="input__field-temp">
+							<label class="input__label-temp">
+								<span class="input__label-temp-content label-calendar"><span class="calendar"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><use xlink:href="prod/img/svg.min.svg#calendar"></use></svg></span></span>
+							</label>
+						</div>
 					</div>
-					<div class="calendar"></div>
 					<div class="active-block btn-groupe">
 						<a href="" class="btn btn-edite btn-with-ico" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span><span>Редактировать</span></a>
 						<ul class="dropdown-menu" aria-labelledby="edite">
-							<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".replace-interview">Редактирование</a></li>
+							<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".replace-write">Редактирование</a></li>
 							<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target="">Быстрое редактирование</a></li>
 						</ul>
 					</div>
@@ -367,12 +387,12 @@
 							<div class="left-side"><span>10</span></div>
 							<div class="right-side">
 								<ul class="time-list">
-									<li><a href="" data-toggle="modal" data-href="#" data-target=".edite-note.child"><span class="minute" title="10:22, Вт. 22 Октября">00</span></a></li>
-									<li><a href="" data-toggle="modal" data-href="#" data-target=".edite-note.child"><span class="minute" title="10:22, Вт. 22 Октября">00</span></a></li>
-									<li><a href="" data-toggle="modal" data-href="#" data-target=".edite-note.child"><span class="minute" title="10:22, Вт. 22 Октября">00</span></a></li>
-									<li><a href="" data-toggle="modal" data-href="#" data-target=".edite-note.child"><span class="minute" title="10:22, Вт. 22 Октября">00</span><span class="count">3</span></a></li>
-									<li><a href="" data-toggle="modal" data-href="#" data-target=".edite-note.child"><span class="minute" title="10:22, Вт. 22 Октября">00</span></a></li>
-									<li><a href="" data-toggle="modal" data-href="#" data-target=".edite-note.child"><span class="minute" title="10:22, Вт. 22 Октября">00</span><span class="count is-max">4</span></a></li>
+									<li><a href="" data-toggle="modal" data-href="#" data-target=".edite-note.adult"><span class="minute" title="10:22, Вт. 22 Октября">00</span></a></li>
+									<li><a href="" data-toggle="modal" data-href="#" data-target=".edite-note.adult"><span class="minute" title="10:22, Вт. 22 Октября">00</span></a></li>
+									<li><a href="" data-toggle="modal" data-href="#" data-target=".edite-note.adult"><span class="minute" title="10:22, Вт. 22 Октября">00</span></a></li>
+									<li><a href="" data-toggle="modal" data-href="#" data-target=".edite-note.adult"><span class="minute" title="10:22, Вт. 22 Октября">00</span><span class="count">3</span></a></li>
+									<li><a href="" data-toggle="modal" data-href="#" data-target=".edite-note.adult"><span class="minute" title="10:22, Вт. 22 Октября">00</span></a></li>
+									<li><a href="" data-toggle="modal" data-href="#" data-target=".edite-note.adult"><span class="minute" title="10:22, Вт. 22 Октября">00</span><span class="count is-max">4</span></a></li>
 								</ul>
 							</div>
 						</div>
@@ -652,7 +672,7 @@
 					</div>
 				</div>
 			</div>		
-			<div id="tab3" class="content tab3" role="tabpanel">
+			<div class="content tab3" role="tabpanel">
 				<div class="subtools">
 					<div class="inline-select">
 						<button type="button" class="btn btn-inline">Все</button> 
@@ -671,7 +691,7 @@
 						<th><a href=""><span>Адрес</span><span class="arrow-sort"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><use xlink:href="prod/img/svg.min.svg#arrow-sort"></use></svg></span></a></th>
 					</tr>
 					<tr>
-						<td><span class="age" title="Взрослый"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#person"></use></svg></span><a href="">Константинопольский</a></td>
+						<td><span class="age adult" title="Взрослый"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#person"></use></svg></span><a href="">Константинопольский</a></td>
 						<td>Константин</td>
 						<td>Владимирович</td>
 						<td class="data-cell">26.10.2015, 18:30</td>
@@ -682,7 +702,7 @@
 								<span class="btn-groupe">
 									<a href="" class="btn-ico btn-edite" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
 									<ul class="dropdown-menu" aria-labelledby="btn-edite">
-										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-person">Редактировать</a></li>
+										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-person-child">Редактировать</a></li>
 										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">Удалить</a></li>
 									</ul>
 								</span>
@@ -690,7 +710,7 @@
 						</td>
 					</tr>
 					<tr>
-						<td><span class="age" title="Ребенок"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#child"></use></svg></span><a href="">Константинопольский</a></td>
+						<td><span class="age child" title="Ребенок"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#child"></use></svg></span><a href="">Константинопольский</a></td>
 						<td>Константин</td>
 						<td>Владимирович</td>
 						<td class="data-cell">26.10.2015, 18:30</td>
@@ -701,7 +721,7 @@
 								<span class="btn-groupe">
 									<a href="" class="btn-ico btn-edite" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
 									<ul class="dropdown-menu" aria-labelledby="btn-edite">
-										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-person">Редактировать</a></li>
+										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-person-child">Редактировать</a></li>
 										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">Удалить</a></li>
 									</ul>
 								</span>
@@ -709,7 +729,7 @@
 						</td>
 					</tr>
 					<tr>
-						<td><span class="age" title="Ребенок"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#child"></use></svg></span><a href="">Константинопольский</a></td>
+						<td><span class="age child" title="Ребенок"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#child"></use></svg></span><a href="">Константинопольский</a></td>
 						<td>Константин</td>
 						<td>Владимирович</td>
 						<td class="data-cell">26.10.2015, 18:30</td>
@@ -720,7 +740,7 @@
 								<span class="btn-groupe">
 									<a href="" class="btn-ico btn-edite" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
 									<ul class="dropdown-menu" aria-labelledby="btn-edite">
-										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-person">Редактировать</a></li>
+										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-person-adult">Редактировать</a></li>
 										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">Удалить</a></li>
 									</ul>
 								</span>
@@ -728,7 +748,7 @@
 						</td>
 					</tr>
 					<tr>
-						<td><span class="age" title="Ребенок"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#child"></use></svg></span><a href="">Константинопольский</a></td>
+						<td><span class="age child" title="Ребенок"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#child"></use></svg></span><a href="">Константинопольский</a></td>
 						<td>Константин</td>
 						<td>Владимирович</td>
 						<td class="data-cell">26.10.2015, 18:30</td>
@@ -739,7 +759,7 @@
 								<span class="btn-groupe">
 									<a href="" class="btn-ico btn-edite" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
 									<ul class="dropdown-menu" aria-labelledby="btn-edite">
-										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-person">Редактировать</a></li>
+										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-person-adult">Редактировать</a></li>
 										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">Удалить</a></li>
 									</ul>
 								</span>
@@ -747,7 +767,7 @@
 						</td>
 					</tr>
 					<tr>
-						<td><span class="age" title="Ребенок"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#child"></use></svg></span><a href="">Константинопольский</a></td>
+						<td><span class="age child" title="Ребенок"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#child"></use></svg></span><a href="">Константинопольский</a></td>
 						<td>Константин</td>
 						<td>Владимирович</td>
 						<td class="data-cell">26.10.2015, 18:30</td>
@@ -758,7 +778,7 @@
 								<span class="btn-groupe">
 									<a href="" class="btn-ico btn-edite" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
 									<ul class="dropdown-menu" aria-labelledby="btn-edite">
-										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-person">Редактировать</a></li>
+										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-person-adult">Редактировать</a></li>
 										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">Удалить</a></li>
 									</ul>
 								</span>
@@ -766,7 +786,7 @@
 						</td>
 					</tr>
 					<tr>
-						<td><span class="age" title="Ребенок"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#child"></use></svg></span><a href="">Константинопольский</a></td>
+						<td><span class="age child" title="Ребенок"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#child"></use></svg></span><a href="">Константинопольский</a></td>
 						<td>Константин</td>
 						<td>Владимирович</td>
 						<td class="data-cell">26.10.2015, 18:30</td>
@@ -777,7 +797,7 @@
 								<span class="btn-groupe">
 									<a href="" class="btn-ico btn-edite" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
 									<ul class="dropdown-menu" aria-labelledby="btn-edite">
-										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-person">Редактировать</a></li>
+										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-person-adult">Редактировать</a></li>
 										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">Удалить</a></li>
 									</ul>
 								</span>
@@ -811,7 +831,7 @@
 			</div>		
 		</div>
 	</div>
-	<div class="popup popup-form edite-interview" tabindex="-1" role="dialog">
+	<div class="popup popup-form active-mode" tabindex="-1" role="dialog">
 		<div class="popup-wrapper">
 			<div class="popup-inner">
 				<div class="form">
@@ -836,10 +856,10 @@
 									<label class="input__label">
 										<span class="input__label-content">Место проведения собеседования</span>
 									</label>
-									<div class="select select-group">
+									<div class="select select-group select-group-geo">
 										<select name="" class="dropdown" data-validation="required">
-											<option value="">Взрослый</option>
-											<option value="">Ребенок</option>
+											<option default value="Выберите место">Выберите место</option>
+											<option value="">место</option>
 										</select>
 									</div>
 								</span>
@@ -849,27 +869,40 @@
 									<input type="checkbox" class="elem-checkbox" id="deactive1"><label for="deactive1"><span class="input__label-content">Деактивировать выбранный адрес на все время</span></label>
 								</span>
 							</div>
-							<div class="row">
+							<div class="row original">
 								<span class='field field-effect'>
 									<div class="active-field">
 										<div class="groupe-btn-active">
 											<a href="" title="Добавить поле" class="btn-ico btn-plus"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#plus"></use></svg></span></a>
 											<a href="" title="Очистить выбранные даты" class="btn-ico btn-close"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#close"></use></svg></span></a>
 										</div>
-										<div class="block">
-											<span class="left-column">
-												<label class="input__label">
-													<span class="input__label-content">Дата (с)</span>
-												</label>
-												<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+										<span class='field field-effect'>
+											<label class="input__label">
+												<span class="input__label-content">Дата (c)</span>
+											</label>
+											<span class="calendar-input">
+												<input data-validation="required" type="text" autocomplete='off' class="input__field input__field-effect">
+												<span class="input__label-temp">
+													<span class="input__label-temp-content label-calendar"><span class="calendar"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><use xlink:href="prod/img/svg.min.svg#calendar"></use></svg></span></span>
+												</span>
 											</span>
-											<span class="right-column">
-												<label class="input__label">
-													<span class="input__label-content">Дата (по)</span>
-												</label>
-												<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+										</span>
+										<span class='field field-effect'>
+											<label class="input__label">
+												<span class="input__label-content input__label-differenter">—</span>
+											</label>
+										</span>
+										<span class='field field-effect'>
+											<label class="input__label">
+												<span class="input__label-content">Дата (до)</span>
+											</label>
+											<span class="calendar-input">
+												<input data-validation="required" type="text" autocomplete='off' class="input__field input__field-effect">
+												<span class="input__label-temp">
+													<span class="input__label-temp-content label-calendar"><span class="calendar"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><use xlink:href="prod/img/svg.min.svg#calendar"></use></svg></span></span>
+												</span>
 											</span>
-										</div>
+										</span>
 									</div>
 								</span>
 							</div>
@@ -878,72 +911,75 @@
 									<input type="checkbox" class="elem-checkbox" id="deactive2"><label for="deactive1"><span class="input__label-content">Отменить весь день</span></label>
 								</span>
 							</div>
-							<div class="row">
+							<div class="row list-6 original">
 								<span class='field field-effect'>
 									<div class="active-field">
 										<div class="groupe-btn-active">
 											<a href="" title="Добавить поле" class="btn-ico btn-plus"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#plus"></use></svg></span></a>
 											<a href="" title="Очистить выбранные даты" class="btn-ico btn-close"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#close"></use></svg></span></a>
 										</div>
-										<div class="block">
-											<span class="left-column double-column">
-												<span class="column">
-													<label class="input__label">
-														<span class="input__label-content">Часы</span>
-													</label>
-													<div class="select select-group">
-														<select name="" class="dropdown" data-validation="required">
-															<option value="">9</option>
-															<option value="">10</option>
-															<option value="">11</option>
-															<option value="">12</option>
+										<span class='field field-effect'>
+											<span class="column">
+												<label class="input__label">
+													<span class="input__label-content">Часы</span>
+												</label>
+												<div class="select select-group">
+													<select name="" class="dropdown" data-validation="required">
+														<option value="9">9</option>
+														<option value="10">10</option>
+														<option value="11">11</option>
+														<option value="12">12</option>
 
-														</select>
-													</div>
-												</span>
-												<span class="column">
-													<label class="input__label">
-														<span class="input__label-content">Минуты</span>
-													</label>
-													<div class="select select-group">
-														<select name="" class="dropdown" data-validation="required">
-															<option value="">9</option>
-															<option value="">10</option>
-															<option value="">11</option>
-															<option value="">12</option>
-														</select>
-													</div>
-												</span>
+													</select>
+												</div>
 											</span>
-											<span class="right-column double-column">
-												<span class="column">
-													<label class="input__label">
-														<span class="input__label-content">Часы</span>
-													</label>
-													<div class="select select-group">
-														<select name="" class="dropdown" data-validation="required">
-															<option value="">9</option>
-															<option value="">10</option>
-															<option value="">11</option>
-															<option value="">12</option>
-														</select>
-													</div>
-												</span>
-												<span class="column">
-													<label class="input__label">
-														<span class="input__label-content">Минуты</span>
-													</label>
-													<div class="select select-group">
-														<select name="" class="dropdown" data-validation="required">
-															<option value="">9</option>
-															<option value="">10</option>
-															<option value="">11</option>
-															<option value="">12</option>
-														</select>
-													</div>
-												</span>
+											<span class="column">
+												<label class="input__label">
+													<span class="input__label-content">Минуты</span>
+												</label>
+												<div class="select select-group">
+													<select name="" class="dropdown" data-validation="required">
+														<option value="9">9</option>
+														<option value="10">10</option>
+														<option value="11">11</option>
+														<option value="12">12</option>
+													</select>
+												</div>
 											</span>
-										</div>
+										</span>
+										<span class='field field-effect'>
+											<label class="input__label">
+												<span class="input__label-content input__label-differenter">—</span>
+											</label>
+										</span>
+										<span class='field field-effect'>
+											<span class="column">
+												<label class="input__label">
+													<span class="input__label-content">Часы</span>
+												</label>
+												<div class="select select-group">
+													<select name="" class="dropdown" data-validation="required">
+														<option value="9">9</option>
+														<option value="10">10</option>
+														<option value="11">11</option>
+														<option value="12">12</option>
+													</select>
+												</div>
+											</span>
+											<span class="column">
+												<label class="input__label">
+													<span class="input__label-content">Минуты</span>
+												</label>
+												<div class="select select-group">
+													<select name="" class="dropdown" data-validation="required">
+														<option value="9">9</option>
+														<option value="10">10</option>
+														<option value="11">11</option>
+														<option value="12">12</option>
+													</select>
+												</div>
+											</span>
+										</span>
 									</div>
 								</span>
 							</div>
@@ -959,10 +995,10 @@
 									<label class="input__label">
 										<span class="input__label-content">Место проведения собеседования</span>
 									</label>
-									<div class="select select-group">
+									<div class="select select-group select-group-geo">
 										<select name="" class="dropdown" data-validation="required">
-											<option value="">Взрослый</option>
-											<option value="">Ребенок</option>
+											<option default value="Выберите место">Выберите место</option>
+											<option value="">место</option>
 										</select>
 									</div>
 								</span>
@@ -972,27 +1008,40 @@
 									<input type="checkbox" class="elem-checkbox" id="deactive3"><label for="deactive3"><span class="input__label-content">Деактивировать выбранный адрес на все время</span></label>
 								</span>
 							</div>
-							<div class="row">
+							<div class="row original">
 								<span class='field field-effect'>
 									<div class="active-field">
 										<div class="groupe-btn-active">
 											<a href="" title="Добавить поле" class="btn-ico btn-plus"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#plus"></use></svg></span></a>
 											<a href="" title="Очистить выбранные даты" class="btn-ico btn-close"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#close"></use></svg></span></a>
 										</div>
-										<div class="block">
-											<span class="left-column">
-												<label class="input__label">
-													<span class="input__label-content">Дата (с)</span>
-												</label>
-												<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+										<span class='field field-effect'>
+											<label class="input__label">
+												<span class="input__label-content">Дата (c)</span>
+											</label>
+											<span class="calendar-input">
+												<input data-validation="required" type="text" autocomplete='off' class="input__field input__field-effect">
+												<span class="input__label-temp">
+													<span class="input__label-temp-content label-calendar"><span class="calendar"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><use xlink:href="prod/img/svg.min.svg#calendar"></use></svg></span></span>
+												</span>
 											</span>
-											<span class="right-column">
-												<label class="input__label">
-													<span class="input__label-content">Дата (по)</span>
-												</label>
-												<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+										</span>
+										<span class='field field-effect'>
+											<label class="input__label">
+												<span class="input__label-content input__label-differenter">—</span>
+											</label>
+										</span>
+										<span class='field field-effect'>
+											<label class="input__label">
+												<span class="input__label-content">Дата (до)</span>
+											</label>
+											<span class="calendar-input">
+												<input data-validation="required" type="text" autocomplete='off' class="input__field input__field-effect">
+												<span class="input__label-temp">
+													<span class="input__label-temp-content label-calendar"><span class="calendar"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><use xlink:href="prod/img/svg.min.svg#calendar"></use></svg></span></span>
+												</span>
 											</span>
-										</div>
+										</span>
 									</div>
 								</span>
 							</div>
@@ -1001,72 +1050,75 @@
 									<input type="checkbox" class="elem-checkbox" id="deactive4"><label for="deactive4"><span class="input__label-content">Отменить весь день</span></label>
 								</span>
 							</div>
-							<div class="row">
+							<div class="row list-6 original">
 								<span class='field field-effect'>
 									<div class="active-field">
 										<div class="groupe-btn-active">
 											<a href="" title="Добавить поле" class="btn-ico btn-plus"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#plus"></use></svg></span></a>
 											<a href="" title="Очистить выбранные даты" class="btn-ico btn-close"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#close"></use></svg></span></a>
 										</div>
-										<div class="block">
-											<span class="left-column double-column">
-												<span class="column">
-													<label class="input__label">
-														<span class="input__label-content">Часы</span>
-													</label>
-													<div class="select select-group">
-														<select name="" class="dropdown" data-validation="required">
-															<option value="">9</option>
-															<option value="">10</option>
-															<option value="">11</option>
-															<option value="">12</option>
+										<span class='field field-effect'>
+											<span class="column">
+												<label class="input__label">
+													<span class="input__label-content">Часы</span>
+												</label>
+												<div class="select select-group">
+													<select name="" class="dropdown" data-validation="required">
+														<option value="9">9</option>
+														<option value="10">10</option>
+														<option value="11">11</option>
+														<option value="12">12</option>
 
-														</select>
-													</div>
-												</span>
-												<span class="column">
-													<label class="input__label">
-														<span class="input__label-content">Минуты</span>
-													</label>
-													<div class="select select-group">
-														<select name="" class="dropdown" data-validation="required">
-															<option value="">9</option>
-															<option value="">10</option>
-															<option value="">11</option>
-															<option value="">12</option>
-														</select>
-													</div>
-												</span>
+													</select>
+												</div>
 											</span>
-											<span class="right-column double-column">
-												<span class="column">
-													<label class="input__label">
-														<span class="input__label-content">Часы</span>
-													</label>
-													<div class="select select-group">
-														<select name="" class="dropdown" data-validation="required">
-															<option value="">9</option>
-															<option value="">10</option>
-															<option value="">11</option>
-															<option value="">12</option>
-														</select>
-													</div>
-												</span>
-												<span class="column">
-													<label class="input__label">
-														<span class="input__label-content">Минуты</span>
-													</label>
-													<div class="select select-group">
-														<select name="" class="dropdown" data-validation="required">
-															<option value="">9</option>
-															<option value="">10</option>
-															<option value="">11</option>
-															<option value="">12</option>
-														</select>
-													</div>
-												</span>
+											<span class="column">
+												<label class="input__label">
+													<span class="input__label-content">Минуты</span>
+												</label>
+												<div class="select select-group">
+													<select name="" class="dropdown" data-validation="required">
+														<option value="9">9</option>
+														<option value="10">10</option>
+														<option value="11">11</option>
+														<option value="12">12</option>
+													</select>
+												</div>
 											</span>
-										</div>
+										</span>
+										<span class='field field-effect'>
+											<label class="input__label">
+												<span class="input__label-content input__label-differenter">—</span>
+											</label>
+										</span>
+										<span class='field field-effect'>
+											<span class="column">
+												<label class="input__label">
+													<span class="input__label-content">Часы</span>
+												</label>
+												<div class="select select-group">
+													<select name="" class="dropdown" data-validation="required">
+														<option value="9">9</option>
+														<option value="10">10</option>
+														<option value="11">11</option>
+														<option value="12">12</option>
+													</select>
+												</div>
+											</span>
+											<span class="column">
+												<label class="input__label">
+													<span class="input__label-content">Минуты</span>
+												</label>
+												<div class="select select-group">
+													<select name="" class="dropdown" data-validation="required">
+														<option value="9">9</option>
+														<option value="10">10</option>
+														<option value="11">11</option>
+														<option value="12">12</option>
+													</select>
+												</div>
+											</span>
+										</span>
 									</div>
 								</span>
 							</div>
@@ -1098,7 +1150,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="popup popup-tooltip edite-note men" tabindex="-1" role="dialog">
+	<div class="popup popup-tooltip edite-note adult" tabindex="-1" role="dialog">
 		<div class="popup-wrapper">
 			<div class="popup-inner">
 				<div class="form">
@@ -1128,7 +1180,14 @@
 							<div class="email"><a href="">antoha_punk@gmail.com</a></div>
 							<div class="active-btn-groupe">
 								<a href="" class="btn-ico btn-comment" data-toggle="modal" data-href="#" data-target=".success-save"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#comment"></use></svg></span></a>
-								<a href="" class="btn-ico btn-edite"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+								<span class="btn-groupe">
+									<a href="" class="btn-ico btn-edite" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Изменить запись"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+									<ul class="dropdown-menu" aria-labelledby="btn-edite">
+										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-person">Редактировать</a></li>
+										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".replace-write">перенести запись</a></li>
+										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">Удалить</a></li>
+									</ul>
+								</span>
 							</div>
 						</div>
 					</div>
@@ -1143,13 +1202,20 @@
 							<div class="email"><a href="">antoha_punk@gmail.com</a></div>
 							<div class="active-btn-groupe">
 								<a href="" class="btn-ico btn-comment" data-toggle="modal" data-href="#" data-target=".success-save"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#comment"></use></svg></span></a>
-								<a href="" class="btn-ico btn-edite"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+								<span class="btn-groupe">
+									<a href="" class="btn-ico btn-edite" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Изменить запись"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+									<ul class="dropdown-menu" aria-labelledby="btn-edite">
+										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-person">Редактировать</a></li>
+										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".replace-write">перенести запись</a></li>
+										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">Удалить</a></li>
+									</ul>
+								</span>
 							</div>
 						</div>
 					</div>
 					<div class="row">
 						<div class="row-header">
-							<div class="name">1. Романович  Антон Сергеевич</div>
+							<div class="name">3. Романович  Антон Сергеевич</div>
 							<div class="active-btn-groupe">
 								<a href="" class="btn-ico btn-save" data-toggle="modal" data-href="#" data-target=".success-save"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#load"></use></svg></span></a>
 							</div>
@@ -1158,13 +1224,20 @@
 							<div class="email"><a href="">antoha_punk@gmail.com</a></div>
 							<div class="active-btn-groupe">
 								<a href="" class="btn-ico btn-comment" data-toggle="modal" data-href="#" data-target=".success-save"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#comment"></use></svg></span></a>
-								<a href="" class="btn-ico btn-edite"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+								<span class="btn-groupe">
+									<a href="" class="btn-ico btn-edite" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Изменить запись"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+									<ul class="dropdown-menu" aria-labelledby="btn-edite">
+										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-person">Редактировать</a></li>
+										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".replace-write">перенести запись</a></li>
+										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">Удалить</a></li>
+									</ul>
+								</span>
 							</div>
 						</div>
 					</div>
 					<div class="row">
 						<div class="row-header">
-							<div class="name">1. Романович  Антон Сергеевич</div>
+							<div class="name">4. Романович  Антон Сергеевич</div>
 							<div class="active-btn-groupe">
 								<a href="" class="btn-ico btn-save" data-toggle="modal" data-href="#" data-target=".success-save"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#load"></use></svg></span></a>
 							</div>
@@ -1173,7 +1246,14 @@
 							<div class="email"><a href="">antoha_punk@gmail.com</a></div>
 							<div class="active-btn-groupe">
 								<a href="" class="btn-ico btn-comment" data-toggle="modal" data-href="#" data-target=".success-save"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#comment"></use></svg></span></a>
-								<a href="" class="btn-ico btn-edite"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+								<span class="btn-groupe">
+									<a href="" class="btn-ico btn-edite" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Изменить запись"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+									<ul class="dropdown-menu" aria-labelledby="btn-edite">
+										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-person">Редактировать</a></li>
+										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".replace-write">перенести запись</a></li>
+										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">Удалить</a></li>
+									</ul>
+								</span>
 							</div>
 						</div>
 					</div>
@@ -1212,7 +1292,14 @@
 							<div class="email"><a href="">antoha_punk@gmail.com</a></div>
 							<div class="active-btn-groupe">
 								<a href="" class="btn-ico btn-comment" data-toggle="modal" data-href="#" data-target=".success-save"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#comment"></use></svg></span></a>
-								<a href="" class="btn-ico btn-edite"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+								<span class="btn-groupe">
+									<a href="" class="btn-ico btn-edite" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Изменить запись"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+									<ul class="dropdown-menu" aria-labelledby="btn-edite">
+										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-person">Редактировать</a></li>
+										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".replace-write">перенести запись</a></li>
+										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">Удалить</a></li>
+									</ul>
+								</span>
 							</div>
 						</div>
 						<div class="row-footer">
@@ -1230,7 +1317,14 @@
 							<div class="email"><a href="">antoha_punk@gmail.com</a></div>
 							<div class="active-btn-groupe">
 								<a href="" class="btn-ico btn-comment" data-toggle="modal" data-href="#" data-target=".success-save"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#comment"></use></svg></span></a>
-								<a href="" class="btn-ico btn-edite"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+								<span class="btn-groupe">
+									<a href="" class="btn-ico btn-edite" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Изменить запись"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+									<ul class="dropdown-menu" aria-labelledby="btn-edite">
+										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-person">Редактировать</a></li>
+										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".replace-write">перенести запись</a></li>
+										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">Удалить</a></li>
+									</ul>
+								</span>
 							</div>
 						</div>
 						<div class="row-footer">
@@ -1248,7 +1342,14 @@
 							<div class="email"><a href="">antoha_punk@gmail.com</a></div>
 							<div class="active-btn-groupe">
 								<a href="" class="btn-ico btn-comment" data-toggle="modal" data-href="#" data-target=".success-save"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#comment"></use></svg></span></a>
-								<a href="" class="btn-ico btn-edite"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+								<span class="btn-groupe">
+									<a href="" class="btn-ico btn-edite" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Изменить запись"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+									<ul class="dropdown-menu" aria-labelledby="btn-edite">
+										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-person">Редактировать</a></li>
+										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".replace-write">перенести запись</a></li>
+										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">Удалить</a></li>
+									</ul>
+								</span>
 							</div>
 						</div>
 						<div class="row-footer">
@@ -1266,7 +1367,14 @@
 							<div class="email"><a href="">antoha_punk@gmail.com</a></div>
 							<div class="active-btn-groupe">
 								<a href="" class="btn-ico btn-comment" data-toggle="modal" data-href="#" data-target=".success-save"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#comment"></use></svg></span></a>
-								<a href="" class="btn-ico btn-edite"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+								<span class="btn-groupe">
+									<a href="" class="btn-ico btn-edite" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Изменить запись"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
+									<ul class="dropdown-menu" aria-labelledby="btn-edite">
+										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-person">Редактировать</a></li>
+										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".replace-write">перенести запись</a></li>
+										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">Удалить</a></li>
+									</ul>
+								</span>
 							</div>
 						</div>
 						<div class="row-footer">
@@ -1278,7 +1386,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="popup popup-form replace-interview" tabindex="-1" role="dialog">
+	<div class="popup popup-form replace-write" tabindex="-1" role="dialog">
 		<div class="popup-wrapper">
 			<div class="popup-inner">
 				<div class="form">
@@ -1291,6 +1399,55 @@
 					</button>
 					<div class="title-form">Перенос записи</div>
 					<form action="" class="js-validate">
+						<div class="row columns column-time-form">
+							<span class='field field-effect'>
+								<label class="input__label">
+									<span class="input__label-content">Дата собеседования</span>
+								</label>
+								<span class="calendar-input">
+									<input data-validation="required" type="text" autocomplete='off' class="input__field input__field-effect">
+									<span class="input__label-temp">
+										<span class="input__label-temp-content label-calendar"><span class="calendar"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><use xlink:href="prod/img/svg.min.svg#calendar"></use></svg></span></span>
+									</span>
+								</span>
+							</span>
+							<span class='field field-effect'>
+								<span class="column">
+									<label class="input__label">
+										<span class="input__label-content">Часы</span>
+									</label>
+									<div class="select select-group">
+										<select name="" class="dropdown" data-validation="required">
+											<option value="9">9</option>
+											<option value="10">10</option>
+											<option value="11">11</option>
+											<option value="12">12</option>
+											<option value="13">13</option>
+											<option value="14">14</option>
+											<option value="15">15</option>
+											<option value="16">16</option>
+										</select>
+									</div>
+								</span>
+								<span class="column">
+									<label class="input__label">
+										<span class="input__label-content">Минуты</span>
+									</label>
+									<div class="select select-group">
+										<select name="" class="dropdown" data-validation="required">
+											<option value="9">9</option>
+											<option value="10">10</option>
+											<option value="11">11</option>
+											<option value="12">12</option>
+											<option value="13">13</option>
+											<option value="14">14</option>
+											<option value="15">15</option>
+											<option value="16">16</option>
+										</select>
+									</div>
+								</span>
+							</span>
+						</div>
 						<div class="row columns">
 							<span class='field field-effect'>
 								<label class="input__label">
@@ -1343,7 +1500,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="popup popup-form add-person" tabindex="-1" role="dialog">
+	<div class="popup popup-form add-person-child" tabindex="-1" role="dialog">
 		<div class="popup-wrapper">
 			<div class="popup-inner">
 				<div class="form">
@@ -1392,27 +1549,185 @@
 								<input data-validation="email" class="input__field input__field-effect js-input-tel" autocomplete='off'>
 							</span>
 						</div>
+						<div class="row">
+							<span class='field field-effect'>
+								<label class="input__label">
+									<span class="input__label-content">Комментарий</span>
+								</label>
+								<textarea rows="1" required  data-validation="length" data-validation-length="min1" class="input__field input__field-effect"></textarea>
+							</span>
+						</div>
+						<div class="row">
+							<div class="title__lvl-2">Контакты одного из родителей</div>
+						</div>
 						<div class="row columns">
 							<span class='field field-effect'>
 								<label class="input__label">
-									<span class="input__label-content">Категория</span>
+									<span class="input__label-content">Имя</span>
 								</label>
-								<div class="select select-group">
-									<select name="" class="dropdown" data-validation="required">
-										<option value="">Взрослый</option>
-										<option value="">Ребенок</option>
-									</select>
-								</div>
+								<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
 							</span>
 							<span class='field field-effect'>
 								<label class="input__label">
-									<span class="input__label-content">Группа</span>
+									<span class="input__label-content">Фамилия</span>
 								</label>
-								<div class="select select-group">
-									<select name="" class="dropdown" data-validation="required">
-										<option value="" class="default">Выберите группу</option>
-									</select>
-								</div>
+								<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+							</span>
+						</div>
+						<div class="row columns">
+							<span class='field field-effect'>
+								<label class="input__label">
+									<span class="input__label-content">Отчество</span>
+								</label>
+								<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+							</span>
+							<span class='field field-effect'>
+								<label class="input__label">
+									<span class="input__label-content">Телефон</span>
+								</label>
+								<input data-validation-regexp="^[-0-9()+ ]+$" data-validation="custom" type="text" class="input__field input__field-effect js-input-tel" autocomplete='off'>
+							</span>
+						</div>
+						<div class="row btn-fullwidth">
+							<button class="btn-type3" type="submit"><span>добавить пользователя</span></button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="popup popup-form add-person-adult" tabindex="-1" role="dialog">
+		<div class="popup-wrapper">
+			<div class="popup-inner">
+				<div class="form">
+					<button class="popup-close" data-dismiss="modal" aria-label="Close">
+						<i class="icon_close_svg">
+							<svg viewBox="0 0 24 24" height="100%" class="close_icon" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+								<path d="m0,4l4,-4l8,8l8,-8l4,4l-8,8l8,8l-4,4l-8,-8l-8,8l-4,-4l8,-8l-8,-8z"/>
+							</svg>
+						</i>
+					</button>
+					<div class="title-form">Добавить пользователя</div>
+					<form action="" class="js-validate form-create-person">
+						<div class="row columns">
+							<span class='field field-effect'>
+								<label class="input__label">
+									<span class="input__label-content">Имя</span>
+								</label>
+								<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+							</span>
+							<span class='field field-effect'>
+								<label class="input__label">
+									<span class="input__label-content">Фамилия</span>
+								</label>
+								<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+							</span>
+						</div>
+						<div class="row columns">
+							<span class='field field-effect'>
+								<label class="input__label">
+									<span class="input__label-content">Отчество</span>
+								</label>
+								<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+							</span>
+							<span class='field field-effect'>
+								<label class="input__label">
+									<span class="input__label-content">Телефон</span>
+								</label>
+								<input data-validation-regexp="^[-0-9()+ ]+$" data-validation="custom" type="text" class="input__field input__field-effect js-input-tel" autocomplete='off'>
+							</span>
+						</div>
+						<div class="row">
+							<span class='field field-effect'>
+								<label class="input__label">
+									<span class="input__label-content">E-mail</span>
+								</label>
+								<input data-validation="email" class="input__field input__field-effect js-input-tel" autocomplete='off'>
+							</span>
+						</div>
+						<div class="row">
+							<span class='field field-effect'>
+								<label class="input__label">
+									<span class="input__label-content">Комментарий</span>
+								</label>
+								<textarea rows="1" required  data-validation="length" data-validation-length="min1" class="input__field input__field-effect"></textarea>
+							</span>
+						</div>
+						<div class="row btn-fullwidth">
+							<button class="btn-type3" type="submit"><span>добавить пользователя</span></button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="popup popup-form edite-person-child" tabindex="-1" role="dialog">
+		<div class="popup-wrapper">
+			<div class="popup-inner">
+				<div class="form">
+					<button class="popup-close" data-dismiss="modal" aria-label="Close">
+						<i class="icon_close_svg">
+							<svg viewBox="0 0 24 24" height="100%" class="close_icon" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+								<path d="m0,4l4,-4l8,8l8,-8l4,4l-8,8l8,8l-4,4l-8,-8l-8,8l-4,-4l8,-8l-8,-8z"/>
+							</svg>
+						</i>
+					</button>
+					<div class="title-form">Контактные данные</div>
+					<form action="" class="js-validate form-create-person">
+						<div class="row columns">
+							<span class='field field-effect'>
+								<label class="input__label">
+									<span class="input__label-content">Имя</span>
+								</label>
+								<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+							</span>
+							<span class='field field-effect'>
+								<label class="input__label">
+									<span class="input__label-content">Фамилия</span>
+								</label>
+								<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+							</span>
+						</div>
+						<div class="row columns">
+							<span class='field field-effect'>
+								<label class="input__label">
+									<span class="input__label-content">Отчество</span>
+								</label>
+								<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+							</span>
+							<span class='field field-effect'>
+								<label class="input__label">
+									<span class="input__label-content">Телефон</span>
+								</label>
+								<input data-validation-regexp="^[-0-9()+ ]+$" data-validation="custom" type="text" class="input__field input__field-effect js-input-tel" autocomplete='off'>
+							</span>
+						</div>
+						<div class="row columns">
+							<span class='field field-effect'>
+								<label class="input__label">
+									<span class="input__label-content">E-mail</span>
+								</label>
+								<input data-validation="email" class="input__field input__field-effect" autocomplete='off'>
+							</span>
+							<span class='field field-effect'>
+								<label class="input__label">
+									<span class="input__label-content">Уровень</span>
+								</label>
+								<input data-validation="required" type="text" disabled class="input__field input__field-effect input__field-deactive" autocomplete='off'>
+							</span>
+						</div>
+						<div class="row columns">
+							<span class='field field-effect'>
+								<label class="input__label">
+									<span class="input__label-content">Дата и время записи</span>
+								</label>
+								<input data-validation="required" type="text" disabled class="input__field input__field-effect input__field-deactive" autocomplete='off'>
+							</span>
+							<span class='field field-effect'>
+								<label class="input__label">
+									<span class="input__label-content">Адрес записи</span>
+								</label>
+								<input data-validation="required" type="text" disabled class="input__field input__field-effect input__field-deactive" autocomplete='off'>
 							</span>
 						</div>
 						<div class="row">
@@ -1455,7 +1770,92 @@
 							</span>
 						</div>
 						<div class="row btn-fullwidth">
-							<button class="btn-type3" type="submit"><span>добавить новго студента</span></button>
+							<button class="btn-type3" type="submit"><span>сохранить изменения</span></button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="popup popup-form edite-person-adult" tabindex="-1" role="dialog">
+		<div class="popup-wrapper">
+			<div class="popup-inner">
+				<div class="form">
+					<button class="popup-close" data-dismiss="modal" aria-label="Close">
+						<i class="icon_close_svg">
+							<svg viewBox="0 0 24 24" height="100%" class="close_icon" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+								<path d="m0,4l4,-4l8,8l8,-8l4,4l-8,8l8,8l-4,4l-8,-8l-8,8l-4,-4l8,-8l-8,-8z"/>
+							</svg>
+						</i>
+					</button>
+					<div class="title-form">Контактные данные</div>
+					<form action="" class="js-validate form-create-person">
+						<div class="row columns">
+							<span class='field field-effect'>
+								<label class="input__label">
+									<span class="input__label-content">Имя</span>
+								</label>
+								<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+							</span>
+							<span class='field field-effect'>
+								<label class="input__label">
+									<span class="input__label-content">Фамилия</span>
+								</label>
+								<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+							</span>
+						</div>
+						<div class="row columns">
+							<span class='field field-effect'>
+								<label class="input__label">
+									<span class="input__label-content">Отчество</span>
+								</label>
+								<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+							</span>
+							<span class='field field-effect'>
+								<label class="input__label">
+									<span class="input__label-content">Телефон</span>
+								</label>
+								<input data-validation-regexp="^[-0-9()+ ]+$" data-validation="custom" type="text" class="input__field input__field-effect js-input-tel" autocomplete='off'>
+							</span>
+						</div>
+						<div class="row columns">
+							<span class='field field-effect'>
+								<label class="input__label">
+									<span class="input__label-content">E-mail</span>
+								</label>
+								<input data-validation="email" class="input__field input__field-effect" autocomplete='off'>
+							</span>
+							<span class='field field-effect'>
+								<label class="input__label">
+									<span class="input__label-content">Уровень</span>
+								</label>
+								<input data-validation="required" type="text" disabled class="input__field input__field-effect input__field-deactive" autocomplete='off'>
+							</span>
+						</div>
+						<div class="row columns">
+							<span class='field field-effect'>
+								<label class="input__label">
+									<span class="input__label-content">Дата и время записи</span>
+								</label>
+								<input data-validation="required" type="text" disabled class="input__field input__field-effect input__field-deactive" autocomplete='off'>
+							</span>
+							<span class='field field-effect'>
+								<label class="input__label">
+									<span class="input__label-content">Адрес записи</span>
+								</label>
+								<input data-validation="required" type="text" disabled class="input__field input__field-effect input__field-deactive" autocomplete='off'>
+							</span>
+						</div>
+						<div class="row">
+							<span class='field field-effect'>
+								<label class="input__label">
+									<span class="input__label-content">Комментарий</span>
+								</label>
+								<textarea rows="1" required  data-validation="length" data-validation-length="min1" class="input__field input__field-effect"></textarea>
+							</span>
+						</div>
+						<div class="row btn-fullwidth">
+							<button class="btn-type3" type="submit"><span>сохранить изменения</span></button>
 						</div>
 					</form>
 				</div>
@@ -1467,6 +1867,8 @@
 	<script src="prod/js/lib/jquery-ui.min.js"></script>
 	<script src="prod/js/lib/fancySelect.js"></script>
 	<script src="prod/js/lib/jquery.form-validator.min.js"></script>
+	<script src="prod/js/lib/datapicker.js"></script>
+	<script src="prod/js/lib/datepicker-ru.js"></script>
 	<script src="prod/js/admin-common.js"></script>
 </body>
 </html>

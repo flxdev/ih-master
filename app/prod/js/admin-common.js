@@ -51,13 +51,13 @@ $(function() {
 						.attr('title', filename)
 						.focus();
 
+					$('.name-file-loading').html(filename);
+
 					if (filename) {
 						$('.active-field').addClass('changed');
 					} else {
 						$('.active-field').removeClass('changed');
 					}
-					
-
 				});
 
 				$input.on({
@@ -128,14 +128,14 @@ $(function() {
 
 					},
 					onSuccess: function ($form) {
-						if ($form.hasClass('form-create-person')) {
-							$('.add-person').modal('hide');
-							$('.popup.success-create-person').modal('show');
+						if ($form.hasClass('form-add-person')) {
+							$('[class*="add-person-"]').modal('hide');
+							$('.popup.success-add-person').modal('show');
 						}
 
 						if ($form.hasClass('form-edite-person')) {
-							$('.edite-interview').modal('hide');
-							$('.popup.success-edite-interview').modal('show');
+							$('[class*="edite-person-"]').modal('hide');
+							$('.popup.success-edite-person').modal('show');
 						}
 
 						return false;
@@ -144,6 +144,36 @@ $(function() {
 			});
 		};
 	})();
+
+	$('.btn-load-file').on('click', function (e) {
+		e.preventDefault();
+
+		$.ajax({
+			url: "/",
+			processData: false,
+			data: $('.custom-file-upload-hidden').get(0).files[0],
+			success: function () {
+				$('.file-upload-wrapper+.btn')
+					.parents('.row')
+						.children('.info-board')
+						.removeClass('is-active')
+				$('.file-upload-wrapper+.btn')
+					.parents('.row')
+						.children('.info-board.success')
+						.addClass('is-active');
+			},
+			error: function () {
+				$('.file-upload-wrapper+.btn')
+					.parents('.row')
+						.children('.info-board')
+						.removeClass('is-active')
+				$('.file-upload-wrapper+.btn')
+					.parents('.row')
+						.children('.info-board.success')
+						.addClass('is-active');
+			}
+		})
+	});
 
 	if ($(document)) {
 		$(document).tooltip({
@@ -154,39 +184,46 @@ $(function() {
 		});
 	}
 
-	if($('.groupe-btn-active')) {
-		Array.prototype.forEach.call(document.querySelectorAll('.groupe-btn-active'), function (item) {
-			item.addEventListener('click', function (e) {
-				var target = e.target;
+	document.addEventListener('click', function (e) {
+		var target = e.target;
 
-				while(target != this) {
-					if (target.classList.contains('btn-ico')) {
-						break;
-					}
+		while(target != this) {
+			if (target.classList.contains('btn-ico') && target.parentNode.classList.contains('groupe-btn-active')) {
+				break;
+			}
 
-					target = target.parentNode;
-				}
+			target = target.parentNode;
+		}
 
-				if (target == this) {
-					return;
-				}
+		if (target == this) {
+			return;
+		}
 
-				e.preventDefault();
+		e.preventDefault();
 
-				if (target.classList.contains('btn-plus')) {
-					var elem = undefined;
-					var parent = target.parentNode;
 
-					while (!parent.classList.contains('row')) {
-						parent = parent.parentNode;
-					}
+		if (target.classList.contains('btn-plus')) {
+			var elem = $(target).parents('.row')[0].cloneNode(true);
+				$(elem).removeClass('original');
+			$(target).parents('form')[0].insertBefore(elem, $(target).parents('.row')[0]);
+		} else if (target.classList.contains('btn-close')) {
+			if ($(target).parents('.row')[0].classList.contains('original')) {
 
-					parent.parentNode.insertBefore(parent.cloneNode(true), parent);
-				}
-			});
-		});	
-	}
-	var activeitem;
+				$('ui-tooltip').each(function (i, item) {
+					item.style.display = 'none';
+				});
+
+				return;
+			}
+
+			$(target).parents('form')[0].removeChild($(target).parents('.row')[0]);
+		}
+		$('ui-tooltip').each(function (i, item) {
+			item.style.display = 'none';
+		});
+	});
+	
+	var activeItem;
 
 	document.addEventListener('mouseover', function (e) {
 		var target = e.target;
@@ -211,15 +248,16 @@ $(function() {
 	document.addEventListener('mouseout', function (e) {
 		var e = e || window.event,
 			target = e.target || e.srcElement,
-			relatedTarget = e.relatedTarget || e.toElement;
+			relatedTarget = e.relatedTarget || e.toElement,
+			elemBtn1, elemBtn2;
 
 		if (!activeItem) {
 			return;
 		}
 
 		if (relatedTarget) {
-			while (relatedTarget != document) {
-				if (relatedTarget == activeItem) {
+			while (relatedTarget !== document) {
+				if (relatedTarget === activeItem) {
 					return;
 				}
 
@@ -228,6 +266,22 @@ $(function() {
 		}
 
 		e.preventDefault();
+
+		elemBtn1 = $('.btn-groupe.open').find('.btn-add.btn-with-ico')[0];
+
+		if (elemBtn1) {
+			if (elemBtn1.nodeType === 1) {
+				return;
+			}
+		}
+
+		elemBtn2 = $('.btn-groupe.open').find('.btn-edite.btn-with-ico')[0];
+
+		if (elemBtn2) {
+			if (elemBtn2.nodeType === 1) {
+				return;
+			}
+		}
 
 		$('.btn-groupe').removeClass('open');
 	});
@@ -238,6 +292,10 @@ $(function() {
 	
 	document.addEventListener('click', function (e) {
 		var target = e.target;
+
+		if (!target) {
+			return;
+		}
 
 		while(target != this) {
 			if (target.classList.contains('remove')) {
@@ -252,7 +310,6 @@ $(function() {
 		}
 
 		e.preventDefault();
-
 		var col = $(target).parents('th'),
 			inline = $(target).parents('td').prev('td'),
 			count = undefined;
@@ -347,14 +404,128 @@ $(function() {
 		$('.dropdown').fancySelect();
 	}
 
+	window.onload = function () {
+		(function () {
+			if (!$( ".calendar-input input" )[0]) {
+				return;
+			}
+
+			$( ".calendar-input input" ).datepicker({
+				prevText: '',
+				nextText: '',
+				altFormat: "DD, d MM, yy"
+			});
+		    $.datepicker.setDefaults( $.datepicker.regional[ "ru" ] );
+		}) ();
+	};
+
+	var currentTime = new Date().getTime();
+
+	document.addEventListener('click', function (e) {
+		var target = e.target,
+			time;
+
+		while(target != this) {
+			if (target.classList.contains('arrow-btn')) {
+				break;
+			}
+
+			target = target.parentNode;
+		}
+
+		if (target == this) {
+			return;
+		}
+
+		e.preventDefault();
+
+		if (target.classList.contains('arrow-left')) {
+			if (target.classList.contains('deactive-btn-arrow')) {
+				return;
+			}
+
+			if ($( ".calendar-input input" ).datepicker( "getDate" )) {
+				time = $( ".calendar-input input" ).datepicker( "getDate" ).valueOf() - 24 * 60 * 60 * 1000;
+			}
+
+			if (!time) {
+				time = new Date().getTime() - 24 * 60 * 60 * 1000;
+			}
+
+			$( ".calendar-input input" ).datepicker("setDate", new Date(time));
+
+			if (currentTime <= time) {
+				$('.arrow-left').addClass('.deactive-btn-arrow');
+			}
+		} else {
+			$('.deactive-btn-arrow').removeClass('.deactive-btn-arrow');
+
+			if ($( ".calendar-input input" ).datepicker( "getDate" )) {
+				time = $( ".calendar-input input" ).datepicker( "getDate" ).valueOf() + 24 * 60 * 60 * 1000;
+			}
+
+			if (!time) {
+				time = new Date().getTime() + 24 * 60 * 60 * 1000;
+			}
+
+			$( ".calendar-input input" ).datepicker("setDate", new Date(time));
+		}
+	});
+
+	var collectionTeg = [];
+
+	document.addEventListener('click', function (e) {
+		var target = e.target,
+			teg;
+
+		while(target != this) {
+			if (target.classList.contains('btn-type3') && target.parentNode.classList.contains('btn-fullwidth')) {
+				break;
+			}
+
+			target = target.parentNode;
+		}
+
+		if (target == this) {
+			return;
+		}
+
+		e.preventDefault();
+
+		teg = $(target).parents('.add-teg')[0].classList[3];
+
+		if (!collectionTeg[teg]) {
+			collectionTeg[teg] = [];
+		}
+
+		if (collectionTeg[teg].length > 0) {
+			collectionTeg[teg] = [];
+		}
+
+		$(target).parents('.form').find('.elem-checkbox').each(function (i, item) {
+			if ($(item).is(':checked')) {
+				collectionTeg[teg].push($(item).val());
+			}
+		});
+
+		$('[data-target=".add-teg.' + teg + '"]').parents('.row.no-btn-modal').find('.input__field').val(collectionTeg[teg].join(' '));
+		$(target).parents('.add-teg').modal('hide');
+		$('[data-target=".add-teg.' + teg + '"]').parents('.row.no-btn-modal').find('.input__field').parents('.field').addClass('has-success');
+	});
+
 	if ($('.dropdown-toggle')) {
 		$('.dropdown-toggle').dropdown();
 	}
 	
+	$('.elem-checkbox').click(function (e) {
+		$('.popup.success-delete').modal('show');
+	});
 
 	$('.checkbox-general').click(function (e) {
 		var target = e.target;
 
+		$('.popup.success-delete').modal('show');
+		
 		while(target) {
 			if (target.classList.contains('checkbox-general')) {
 				break;

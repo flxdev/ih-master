@@ -123,8 +123,8 @@
 				<div class="inner-row">
 					<nav class="tabs-category-menu">
 						<ul role="tablist">
-							<li class="active"><a href="#tab1" aria-controls="messages" aria-expanded="true" role="tab" data-toggle="tab">Список студентов</a></li>
-							<li><a href="#tab2" aria-controls="messages" aria-expanded="false" role="tab" data-toggle="tab">Архив с отчетами</a></li>
+							<li class="active"><a href=".tab1" aria-controls="messages" aria-expanded="true" role="tab" data-toggle="tab">Список студентов</a></li>
+							<li><a href=".tab2" aria-controls="messages" aria-expanded="false" role="tab" data-toggle="tab">Архив с отчетами</a></li>
 						</ul>
 					</nav>
 					<div class="active-block"><a href="" class="btn btn-setting btn-with-ico"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><use xlink:href="prod/img/svg.min.svg#settings"></use></svg></span><span>Настройки</span></a></div>
@@ -132,7 +132,7 @@
 			</div>
 		</div>
 		<div class="container">
-			<div id="tab1" class="content tab1 active" role="tabpanel">
+			<div class="content tab1 active" role="tabpanel">
 				<div class="subtools">
 					<div class="inline-select">
 						<button type="button" class="btn btn-inline">Все</button> 
@@ -151,8 +151,8 @@
 					<div class="active-block btn-groupe">
 						<a href="" class="btn btn-type1 btn-add btn-with-ico" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><use xlink:href="prod/img/svg.min.svg#add"></use></svg></span><span>Добавить</span></a>
 						<ul class="dropdown-menu" aria-labelledby="add">
-							<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".add-person">Студента</a></li>
-							<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">загрузка / выгрузка</a></li>
+							<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".add-person-child">Студента</a></li>
+							<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target="">загрузка / выгрузка</a></li>
 						</ul>
 					</div>
 				</div>
@@ -176,7 +176,7 @@
 								<span class="btn-groupe">
 									<a href="" class="btn-ico btn-edite" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Изменить запись"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
 									<ul class="dropdown-menu" aria-labelledby="btn-edite">
-										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-person">Редактировать</a></li>
+										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-person-adult">Редактировать</a></li>
 										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">Удалить</a></li>
 									</ul>
 								</span>
@@ -195,7 +195,7 @@
 								<span class="btn-groupe">
 									<a href="" class="btn-ico btn-edite" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Изменить запись"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
 									<ul class="dropdown-menu" aria-labelledby="btn-edite">
-										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-person">Редактировать</a></li>
+										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-person-child">Редактировать</a></li>
 										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">Удалить</a></li>
 									</ul>
 								</span>
@@ -214,7 +214,7 @@
 								<span class="btn-groupe">
 									<a href="" class="btn-ico btn-edite" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Изменить запись"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
 									<ul class="dropdown-menu" aria-labelledby="btn-edite">
-										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-person">Редактировать</a></li>
+										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-person-child">Редактировать</a></li>
 										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">Удалить</a></li>
 									</ul>
 								</span>
@@ -233,7 +233,7 @@
 								<span class="btn-groupe">
 									<a href="" class="btn-ico btn-edite" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Изменить запись"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
 									<ul class="dropdown-menu" aria-labelledby="btn-edite">
-										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-person">Редактировать</a></li>
+										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-person-child">Редактировать</a></li>
 										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">Удалить</a></li>
 									</ul>
 								</span>
@@ -252,7 +252,7 @@
 								<span class="btn-groupe">
 									<a href="" class="btn-ico btn-edite" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Изменить запись"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
 									<ul class="dropdown-menu" aria-labelledby="btn-edite">
-										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-person">Редактировать</a></li>
+										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-person-child">Редактировать</a></li>
 										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">Удалить</a></li>
 									</ul>
 								</span>
@@ -271,7 +271,7 @@
 								<span class="btn-groupe">
 									<a href="" class="btn-ico btn-edite" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Изменить запись"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
 									<ul class="dropdown-menu" aria-labelledby="btn-edite">
-										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-person">Редактировать</a></li>
+										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-person-child">Редактировать</a></li>
 										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">Удалить</a></li>
 									</ul>
 								</span>
@@ -303,7 +303,7 @@
 					</div>
 				</div>		
 			</div>
-			<div id="tab2" class="content tab2" role="tabpanel">
+			<div class="content tab2" role="tabpanel">
 				<div class="subtools">
 					<div class="inline-select">
 						<button type="button" class="btn btn-inline">Все</button> 
@@ -349,7 +349,7 @@
 								<span class="btn-groupe">
 									<a href="" class="btn-ico btn-edite" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Изменить запись"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
 									<ul class="dropdown-menu" aria-labelledby="btn-edite">
-										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-person">Редактировать</a></li>
+										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-person-child">Редактировать</a></li>
 										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">Удалить</a></li>
 									</ul>
 								</span>
@@ -369,7 +369,7 @@
 								<span class="btn-groupe">
 									<a href="" class="btn-ico btn-edite" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Изменить запись"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
 									<ul class="dropdown-menu" aria-labelledby="btn-edite">
-										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-person">Редактировать</a></li>
+										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-person-child">Редактировать</a></li>
 										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">Удалить</a></li>
 									</ul>
 								</span>
@@ -389,7 +389,7 @@
 								<span class="btn-groupe">
 									<a href="" class="btn-ico btn-edite" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Изменить запись"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
 									<ul class="dropdown-menu" aria-labelledby="btn-edite">
-										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-person">Редактировать</a></li>
+										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-person-child">Редактировать</a></li>
 										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">Удалить</a></li>
 									</ul>
 								</span>
@@ -409,7 +409,7 @@
 								<span class="btn-groupe">
 									<a href="" class="btn-ico btn-edite" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Изменить запись"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
 									<ul class="dropdown-menu" aria-labelledby="btn-edite">
-										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-person">Редактировать</a></li>
+										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-person-child">Редактировать</a></li>
 										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">Удалить</a></li>
 									</ul>
 								</span>
@@ -429,7 +429,7 @@
 								<span class="btn-groupe">
 									<a href="" class="btn-ico btn-edite" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Изменить запись"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
 									<ul class="dropdown-menu" aria-labelledby="btn-edite">
-										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-person">Редактировать</a></li>
+										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-person-child">Редактировать</a></li>
 										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">Удалить</a></li>
 									</ul>
 								</span>
@@ -449,7 +449,7 @@
 								<span class="btn-groupe">
 									<a href="" class="btn-ico btn-edite" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#" title="Изменить запись"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#pencil"></use></svg></span></a>
 									<ul class="dropdown-menu" aria-labelledby="btn-edite">
-										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-person">Редактировать</a></li>
+										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".edite-person-child">Редактировать</a></li>
 										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">Удалить</a></li>
 									</ul>
 								</span>
@@ -522,7 +522,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="popup popup-tooltip success-create-person" tabindex="-1" role="dialog">
+		<div class="popup popup-tooltip success-add-person" tabindex="-1" role="dialog">
 			<div class="popup-wrapper">
 				<div class="popup-inner">
 					<div class="form">
@@ -540,7 +540,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="popup popup-tooltip form-edite-person" tabindex="-1" role="dialog">
+		<div class="popup popup-tooltip success-edite-person" tabindex="-1" role="dialog">
 			<div class="popup-wrapper">
 				<div class="popup-inner">
 					<div class="form">
@@ -558,7 +558,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="popup popup-form create-person" tabindex="-1" role="dialog">
+		<div class="popup popup-form add-person-child" tabindex="-1" role="dialog">
 			<div class="popup-wrapper">
 				<div class="popup-inner">
 					<div class="form">
@@ -570,103 +570,7 @@
 							</i>
 						</button>
 						<div class="title-form">Добавить пользователя</div>
-						<form action="" class="js-validate">
-							<div class="row columns">
-								<span class='field field-effect'>
-									<label class="input__label">
-										<span class="input__label-content">Имя</span>
-									</label>
-									<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
-								</span>
-								<span class='field field-effect'>
-									<label class="input__label">
-										<span class="input__label-content">Фамилия</span>
-									</label>
-									<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
-								</span>
-							</div>
-							<div class="row columns">
-								<span class='field field-effect'>
-									<label class="input__label">
-										<span class="input__label-content">Отчество</span>
-									</label>
-									<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
-								</span>
-								<span class='field field-effect'>
-									<label class="input__label">
-										<span class="input__label-content">Телефон</span>
-									</label>
-									<input data-validation-regexp="^[-0-9()+ ]+$" data-validation="custom" type="text" class="input__field input__field-effect js-input-tel" autocomplete='off'>
-								</span>
-							</div>
-							<div class="row">
-								<span class='field field-effect'>
-									<label class="input__label">
-										<span class="input__label-content">E-mail</span>
-									</label>
-									<input data-validation="email" class="input__field input__field-effect js-input-tel" autocomplete='off'>
-								</span>
-							</div>
-							<div class="row">
-								<span class='field field-effect'>
-									<label class="input__label">
-										<span class="input__label-content">Комментарий</span>
-									</label>
-									<textarea rows="1" required  data-validation="length" data-validation-length="min1" class="input__field input__field-effect"></textarea>
-								</span>
-							</div>
-							<div class="row">
-								<div class="title__lvl-2">Контакты одного из родителей</div>
-							</div>
-							<div class="row columns">
-								<span class='field field-effect'>
-									<label class="input__label">
-										<span class="input__label-content">Имя</span>
-									</label>
-									<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
-								</span>
-								<span class='field field-effect'>
-									<label class="input__label">
-										<span class="input__label-content">Фамилия</span>
-									</label>
-									<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
-								</span>
-							</div>
-							<div class="row columns">
-								<span class='field field-effect'>
-									<label class="input__label">
-										<span class="input__label-content">Отчество</span>
-									</label>
-									<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
-								</span>
-								<span class='field field-effect'>
-									<label class="input__label">
-										<span class="input__label-content">Телефон</span>
-									</label>
-									<input data-validation-regexp="^[-0-9()+ ]+$" data-validation="custom" type="text" class="input__field input__field-effect js-input-tel" autocomplete='off'>
-								</span>
-							</div>
-							<div class="row btn-fullwidth">
-								<button class="btn-type3" data-dismiss="modal" data-toogle="modal" data-href="" data-target="#success-newperson" type="submit"><span>добавить пользователя</span></button>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="popup popup-form add-person" tabindex="-1" role="dialog">
-			<div class="popup-wrapper">
-				<div class="popup-inner">
-					<div class="form">
-						<button class="popup-close" data-dismiss="modal" aria-label="Close">
-							<i class="icon_close_svg">
-								<svg viewBox="0 0 24 24" height="100%" class="close_icon" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-									<path d="m0,4l4,-4l8,8l8,-8l4,4l-8,8l8,8l-4,4l-8,-8l-8,8l-4,-4l8,-8l-8,-8z"/>
-								</svg>
-							</i>
-						</button>
-						<div class="title-form">Добавить пользователя</div>
-						<form action="" class="js-validate form-create-person">
+						<form action="" class="js-validate form-add-person">
 							<div class="row columns">
 								<span class='field field-effect'>
 									<label class="input__label">
@@ -710,8 +614,8 @@
 									</label>
 									<div class="select select-group">
 										<select name="" class="dropdown" data-validation="required">
-											<option value="">Взрослый</option>
-											<option value="">Ребенок</option>
+											<option value="Взрослый">Взрослый</option>
+											<option value="Ребенок">Ребенок</option>
 										</select>
 									</div>
 								</span>
@@ -722,6 +626,8 @@
 									<div class="select select-group">
 										<select name="" class="dropdown" data-validation="required">
 											<option value="" class="default">Выберите группу</option>
+											<option value="группа">группа</option>
+											<option value="группа">группа</option>
 										</select>
 									</div>
 								</span>
@@ -773,7 +679,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="popup popup-form edite-person" tabindex="-1" role="dialog">
+		<div class="popup popup-form edite-person-child" tabindex="-1" role="dialog">
 			<div class="popup-wrapper">
 				<div class="popup-inner">
 					<div class="form">
@@ -882,6 +788,182 @@
 										<span class="input__label-content">Телефон</span>
 									</label>
 									<input data-validation-regexp="^[-0-9()+ ]+$" data-validation="custom" type="text" class="input__field input__field-effect js-input-tel" autocomplete='off'>
+								</span>
+							</div>
+							<div class="row btn-fullwidth">
+								<button class="btn-type3" type="submit"><span>сохранить изменения</span></button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="popup popup-form add-person-adult" tabindex="-1" role="dialog">
+			<div class="popup-wrapper">
+				<div class="popup-inner">
+					<div class="form">
+						<button class="popup-close" data-dismiss="modal" aria-label="Close">
+							<i class="icon_close_svg">
+								<svg viewBox="0 0 24 24" height="100%" class="close_icon" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+									<path d="m0,4l4,-4l8,8l8,-8l4,4l-8,8l8,8l-4,4l-8,-8l-8,8l-4,-4l8,-8l-8,-8z"/>
+								</svg>
+							</i>
+						</button>
+						<div class="title-form">Добавить пользователя</div>
+						<form action="" class="js-validate form-add-person">
+							<div class="row columns">
+								<span class='field field-effect'>
+									<label class="input__label">
+										<span class="input__label-content">Имя</span>
+									</label>
+									<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+								</span>
+								<span class='field field-effect'>
+									<label class="input__label">
+										<span class="input__label-content">Фамилия</span>
+									</label>
+									<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+								</span>
+							</div>
+							<div class="row columns">
+								<span class='field field-effect'>
+									<label class="input__label">
+										<span class="input__label-content">Отчество</span>
+									</label>
+									<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+								</span>
+								<span class='field field-effect'>
+									<label class="input__label">
+										<span class="input__label-content">Телефон</span>
+									</label>
+									<input data-validation-regexp="^[-0-9()+ ]+$" data-validation="custom" type="text" class="input__field input__field-effect js-input-tel" autocomplete='off'>
+								</span>
+							</div>
+							<div class="row">
+								<span class='field field-effect'>
+									<label class="input__label">
+										<span class="input__label-content">E-mail</span>
+									</label>
+									<input data-validation="email" class="input__field input__field-effect js-input-tel" autocomplete='off'>
+								</span>
+							</div>
+							<div class="row columns">
+								<span class='field field-effect'>
+									<label class="input__label">
+										<span class="input__label-content">Категория</span>
+									</label>
+									<div class="select select-group">
+										<select name="" class="dropdown" data-validation="required">
+											<option value="">Взрослый</option>
+											<option value="">Ребенок</option>
+										</select>
+									</div>
+								</span>
+								<span class='field field-effect'>
+									<label class="input__label">
+										<span class="input__label-content">Группа</span>
+									</label>
+									<div class="select select-group">
+										<select name="" class="dropdown" data-validation="required">
+											<option value="" class="default">Выберите группу</option>
+										</select>
+									</div>
+								</span>
+							</div>
+							<div class="row">
+								<span class='field field-effect'>
+									<label class="input__label">
+										<span class="input__label-content">Комментарий</span>
+									</label>
+									<textarea rows="1" required  data-validation="length" data-validation-length="min1" class="input__field input__field-effect"></textarea>
+								</span>
+							</div>
+							<div class="row btn-fullwidth">
+								<button class="btn-type3" type="submit"><span>добавить нового студента</span></button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="popup popup-form edite-person-adult" tabindex="-1" role="dialog">
+			<div class="popup-wrapper">
+				<div class="popup-inner">
+					<div class="form">
+						<button class="popup-close" data-dismiss="modal" aria-label="Close">
+							<i class="icon_close_svg">
+								<svg viewBox="0 0 24 24" height="100%" class="close_icon" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+									<path d="m0,4l4,-4l8,8l8,-8l4,4l-8,8l8,8l-4,4l-8,-8l-8,8l-4,-4l8,-8l-8,-8z"/>
+								</svg>
+							</i>
+						</button>
+						<div class="title-form">Редактироватьть данные пользователя</div>
+						<form action="" class="js-validate form-edite-person">
+							<div class="row columns">
+								<span class='field field-effect'>
+									<label class="input__label">
+										<span class="input__label-content">Имя</span>
+									</label>
+									<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+								</span>
+								<span class='field field-effect'>
+									<label class="input__label">
+										<span class="input__label-content">Фамилия</span>
+									</label>
+									<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+								</span>
+							</div>
+							<div class="row columns">
+								<span class='field field-effect'>
+									<label class="input__label">
+										<span class="input__label-content">Отчество</span>
+									</label>
+									<input data-validation="required" type="text" class="input__field input__field-effect" autocomplete='off'>
+								</span>
+								<span class='field field-effect'>
+									<label class="input__label">
+										<span class="input__label-content">Телефон</span>
+									</label>
+									<input data-validation-regexp="^[-0-9()+ ]+$" data-validation="custom" type="text" class="input__field input__field-effect js-input-tel" autocomplete='off'>
+								</span>
+							</div>
+							<div class="row">
+								<span class='field field-effect'>
+									<label class="input__label">
+										<span class="input__label-content">E-mail</span>
+									</label>
+									<input data-validation="email" class="input__field input__field-effect js-input-tel" autocomplete='off'>
+								</span>
+							</div>
+							<div class="row columns">
+								<span class='field field-effect'>
+									<label class="input__label">
+										<span class="input__label-content">Категория</span>
+									</label>
+									<div class="select select-group">
+										<select name="" class="dropdown" data-validation="required">
+											<option value="">Взрослый</option>
+											<option value="">Ребенок</option>
+										</select>
+									</div>
+								</span>
+								<span class='field field-effect'>
+									<label class="input__label">
+										<span class="input__label-content">Группа</span>
+									</label>
+									<div class="select select-group">
+										<select name="" class="dropdown" data-validation="required">
+											<option value="" class="default">Выберите группу</option>
+										</select>
+									</div>
+								</span>
+							</div>
+							<div class="row">
+								<span class='field field-effect'>
+									<label class="input__label">
+										<span class="input__label-content">Комментарий</span>
+									</label>
+									<textarea rows="1" required  data-validation="length" data-validation-length="min1" class="input__field input__field-effect"></textarea>
 								</span>
 							</div>
 							<div class="row btn-fullwidth">
