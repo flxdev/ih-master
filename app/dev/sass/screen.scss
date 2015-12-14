@@ -6960,6 +6960,13 @@ table {
 		margin-bottom: 0.8125em; // 13px / 16px
 	}
 }
+@media screen and (max-width: 979px) {
+	.phone__list-call {
+		li {
+			width: 100%;
+		}
+	}
+}
 .table__overlay {
 	.exams{
 		&.price {
