@@ -161,6 +161,7 @@ $(function() {
 					.parents('.row')
 						.children('.info-board.success')
 						.addClass('is-active');
+				$('.active-field').removeClass('changed');
 			},
 			error: function () {
 				$('.file-upload-wrapper+.btn')
@@ -171,6 +172,7 @@ $(function() {
 					.parents('.row')
 						.children('.info-board.success')
 						.addClass('is-active');
+				$('.active-field').removeClass('changed');
 			}
 		})
 	});

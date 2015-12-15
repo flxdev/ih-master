@@ -435,7 +435,7 @@ body {
 		tr {
 			height: 84px;
 			&:not(.header) {
-				border-bottom: 1px solid #ddd;
+				border-bottom: 1px solid #f2f2f2;
 			}
 			&:nth-of-type(2) {
 				height: 90px;
@@ -469,6 +469,7 @@ body {
 					}
 					&:nth-of-type(3):not(:last-of-type) {
 						padding-right: 68px;
+						position: relative;
 					}
 					.age {
 						left: 17px;
@@ -478,6 +479,25 @@ body {
 					}
 					&:last-of-type:not(:nth-of-type(2)):not(:first-of-type) {
 						width: 233px;
+					}
+					.btn-save {
+						position: absolute;
+						right: 30px;
+						top: 50%;
+						transform: translate3d(0, -50%, 0);
+						use {
+							fill: $blue;
+							transition: fill 0.3s ease;
+						}
+						&:hover {
+							use {
+								fill: #a9a9a9;
+							}
+						}
+					}
+					.tools-list {
+					    visibility: visible;
+					    opacity: 1;
 					}
 				}
 			}
