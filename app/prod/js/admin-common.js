@@ -425,6 +425,8 @@ $(function() {
 
 	    $.datepicker.setDefaults( $.datepicker.regional[ "ru" ] );
 
+	    $( ".calendar-input input" ).datepicker("setDate", new Date());
+
 	    document.addEventListener('click', function (e) {
 	    	var target = e.target;
 
