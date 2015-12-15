@@ -201,7 +201,7 @@ $(function() {
 	document.addEventListener('click', function (e) {
 		var target = e.target;
 
-		while(target != this) {
+		while(target !== document && target !== null) {
 			if (target.classList.contains('btn-ico') && target.parentNode.classList.contains('groupe-btn-active')) {
 				break;
 			}
@@ -209,7 +209,7 @@ $(function() {
 			target = target.parentNode;
 		}
 
-		if (target == this) {
+		if (!target || target == document) {
 			return;
 		}
 
@@ -254,7 +254,7 @@ $(function() {
 	document.addEventListener('click', function (e) {
 		var target = e.target;
 
-		while(target != this) {
+		while(target !== document && target !== null) {
 			if (target.getAttribute('data-target') === 'new-select') {
 				break;
 			}
@@ -262,15 +262,17 @@ $(function() {
 			target = target.parentNode;
 		}
 
-		if (target == this) {
+		if (!target || target == document) {
 			return;
 		}
 
 		e.preventDefault();
 
-		var str = '<div class="select select-group"><select name="" class="dropdown" data-validation="required"><option value="Волчкевич Наталья">Волчкевич Наталья</option><option value="Волчкевич Наталья">Волчкевич Наталья</option><option value="Волчкевич Наталья">Волчкевич Наталья</option><option value="Волчкевич Наталья">Волчкевич Наталья</option></select></div>';
-
-		target.parentNode.parentNode.innerHTML += str;
+		var count = Math.floor(Math.random() * (50)) + 1;
+		var elem = target.parentNode.parentNode.querySelector('select').cloneNode(false);
+		$(elem).removeClass('fancified');
+		$(elem).html('<option value>Выберите значение</option>')
+		target.parentNode.parentNode.appendChild(elem);
 
 		if ($('.dropdown')) {
 			$('.dropdown').fancySelect();
@@ -282,7 +284,7 @@ $(function() {
 	document.addEventListener('mouseover', function (e) {
 		var target = e.target;
 
-		while(target != this) {
+		while(target !== document && target !== null) {
 			if (target.nodeName === 'TD') {
 				break;
 			}
@@ -290,7 +292,7 @@ $(function() {
 			target = target.parentNode;
 		}
 
-		if (target == this) {
+		if (!target || target == document) {
 			return;
 		}
 
@@ -310,7 +312,7 @@ $(function() {
 		}
 
 		if (relatedTarget) {
-			while (relatedTarget !== document) {
+			while (relatedTarget !== document && relatedTarget !== null) {
 				if (relatedTarget === activeItem) {
 					return;
 				}
@@ -345,6 +347,14 @@ $(function() {
 			}
 		}
 
+		elemBtn4 = $('.btn-groupe.open').find('.btn-ico.btn-edite')[0];
+
+		if (elemBtn4) {
+			if (elemBtn4.nodeType === 1) {
+				return;
+			}
+		}
+
 		$('.btn-groupe').removeClass('open');
 	});
 
@@ -359,7 +369,7 @@ $(function() {
 			return;
 		}
 
-		while(target != this) {
+		while(target !== document && target !== null) {
 			if (target.classList.contains('remove')) {
 				break;
 			}
@@ -367,7 +377,7 @@ $(function() {
 			target = target.parentNode;
 		}
 
-		if (target == this) {
+		if (!target || target == document) {
 			return;
 		}
 
@@ -425,7 +435,7 @@ $(function() {
 	document.addEventListener('click', function (e) {
 		var target = e.target;
 
-		while(target != this) {
+		while(target !== document && target !== null) {
 			if (target.getAttribute('data-target') === '.success-edite') {
 				break;
 			}
@@ -433,7 +443,7 @@ $(function() {
 			target = target.parentNode;
 		}
 
-		if (target == this) {
+		if (!target || target == document) {
 			return;
 		}
 
@@ -445,7 +455,7 @@ $(function() {
 	document.addEventListener('click', function (e) {
 		var target = e.target;
 
-		while(target != this) {
+		while(target !== document && target !== null) {
 			if (target.hasAttribute('data-event-modal')) {
 				break;
 			}
@@ -453,7 +463,7 @@ $(function() {
 			target = target.parentNode;
 		}
 
-		if (target == this) {
+		if (!target || target == document) {
 			return;
 		}
 
@@ -484,7 +494,7 @@ $(function() {
 	    document.addEventListener('click', function (e) {
 	    	var target = e.target;
 
-	    	while(target != this) {
+	    	while (target !== document && target !== null) {
 	    		if (target.classList.contains('input__label-temp') && target.parentNode.classList.contains('calendar-input')) {
 	    			break;
 	    		}
@@ -492,7 +502,7 @@ $(function() {
 	    		target = target.parentNode;
 	    	}
 
-	    	if (target == this) {
+	    	if (!target || target == document) {
 	    		return;
 	    	}
 
@@ -509,7 +519,7 @@ $(function() {
 		var target = e.target,
 			time;
 
-		while(target != this) {
+		while(target !== document && target !== null) {
 			if (target.classList.contains('arrow-btn')) {
 				break;
 			}
@@ -517,7 +527,7 @@ $(function() {
 			target = target.parentNode;
 		}
 
-		if (target == this) {
+		if (!target || target == document) {
 			return;
 		}
 
@@ -562,7 +572,7 @@ $(function() {
 		var target = e.target,
 			teg;
 
-		while(target != this) {
+		while(target !== document && target !== null) {
 			if (target.classList.contains('btn-type3') && target.parentNode.classList.contains('btn-fullwidth')) {
 				break;
 			}
@@ -570,7 +580,7 @@ $(function() {
 			target = target.parentNode;
 		}
 
-		if (target == this) {
+		if (!target || target == document) {
 			return;
 		}
 
