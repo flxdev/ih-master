@@ -286,7 +286,7 @@ $(function() {
 		elemBtn3 = $('.btn-groupe.open').find('.btn-type2.btn-write')[0];
 
 		if (elemBtn3) {
-			if (elemBtn2.nodeType === 1) {
+			if (elemBtn3.nodeType === 1) {
 				return;
 			}
 		}
