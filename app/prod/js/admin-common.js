@@ -249,7 +249,7 @@ $(function() {
 		var e = e || window.event,
 			target = e.target || e.srcElement,
 			relatedTarget = e.relatedTarget || e.toElement,
-			elemBtn1, elemBtn2;
+			elemBtn1, elemBtn2, elemBtn3;
 
 		if (!activeItem) {
 			return;
@@ -283,7 +283,7 @@ $(function() {
 			}
 		}
 
-		elemBtn2 = $('.btn-groupe.open').find('.btn-type2.btn-write')[0];
+		elemBtn3 = $('.btn-groupe.open').find('.btn-type2.btn-write')[0];
 
 		if (elemBtn3) {
 			if (elemBtn2.nodeType === 1) {
@@ -412,20 +412,40 @@ $(function() {
 		$('.dropdown').fancySelect();
 	}
 
-	window.onload = function () {
-		(function () {
-			if (!$( ".calendar-input input" )[0]) {
-				return;
-			}
+	$( document ).ready(function () {
+		if (!$( ".calendar-input input" )[0]) {
+			return;
+		}
 
-			$( ".calendar-input input" ).datepicker({
-				prevText: '',
-				nextText: '',
-				altFormat: "DD, d MM, yy"
-			});
-		    $.datepicker.setDefaults( $.datepicker.regional[ "ru" ] );
-		}) ();
-	};
+		$( ".calendar-input input" ).datepicker({
+			prevText: '',
+			nextText: '',
+			altFormat: "DD, d MM, yy"
+		}).attr('readonly', 'readonly');
+
+	    $.datepicker.setDefaults( $.datepicker.regional[ "ru" ] );
+
+	    document.addEventListener('click', function (e) {
+	    	var target = e.target;
+
+	    	while(target != this) {
+	    		if (target.classList.contains('input__label-temp') && target.parentNode.classList.contains('calendar-input')) {
+	    			break;
+	    		}
+
+	    		target = target.parentNode;
+	    	}
+
+	    	if (target == this) {
+	    		return;
+	    	}
+
+	    	e.preventDefault();
+
+	    	$(target.previousElementSibling).datepicker( "show" );
+	    });
+
+	});
 
 	var currentTime = new Date().getTime();
 

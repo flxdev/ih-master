@@ -2781,6 +2781,7 @@ button {
 	border: 1px solid #dadada;
 	height: 33px;
 	color: #000;
+	cursor: pointer;
 	width: 311px;
 	border-radius: 5px;
 	padding: 0 41px 0 12px;
@@ -2794,6 +2795,7 @@ button {
 		display: block;
 		position: absolute;
 		top: 0;
+		cursor: pointer;
 		right: 0;
 		width: 41px;
 		height: 33px;
