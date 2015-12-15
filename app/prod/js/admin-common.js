@@ -218,6 +218,7 @@ $(function() {
 
 		if (target.classList.contains('btn-plus')) {
 			var elem = $(target).parents('.row')[0].cloneNode(true);
+				$(target).parents('.row').find('.btn-plus').hide(300);
 				$(elem).removeClass('original');
 			$(target).parents('form')[0].insertBefore(elem, $(target).parents('.row')[0].nextElementSibling);
 		} else if (target.classList.contains('btn-close')) {
@@ -227,12 +228,21 @@ $(function() {
 					item.style.display = 'none';
 				});
 
+				$(target).parents('.row').find('input').val('').removeAttr('checked').removeAttr('selected');
+				$(target).parents('.row').find('select').removeAttr('checked').removeAttr('selected');
+				if ($(target).parents('.row').find('.fancy-select').length > 0) {
+					$(target).parents('.row').find('.options').children('li').removeClass('selected');
+					$(target).parents('.row').find('.trigger').removeClass('selected').html($(target).parents('.row').find('.options').children('li')[0].innerHTML);
+				}
+				
 				return;
 			}
 
 			$('.ui-tooltip.ui-widget').each(function (i, item) {
 				item.style.display = 'none';
 			});
+
+			$(target).parents('.row').prev('.row').find('.btn-plus').show(300);
 
 			$(target).parents('form')[0].removeChild($(target).parents('.row')[0]);
 		}
