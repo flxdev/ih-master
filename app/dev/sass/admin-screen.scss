@@ -425,6 +425,7 @@ body {
 			background: #dbe3eb;
 			color: $text-admin;
 			svg {
+				margin: 0 auto;
 				height: 16px;
 			}
 			use {
@@ -443,7 +444,8 @@ body {
 			td, th {
 				padding: 0;
 				&:first-of-type {
-					padding-left: 30px;
+					padding: 0 44px 0 30px;
+					text-align: center;
 				}
 				&:nth-child(1),
 				&:nth-child(1) {

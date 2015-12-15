@@ -226,6 +226,32 @@ $(function() {
 			item.style.display = 'none';
 		});
 	});
+
+	document.addEventListener('click', function (e) {
+		var target = e.target;
+
+		while(target != this) {
+			if (target.getAttribute('data-target') === 'new-select') {
+				break;
+			}
+
+			target = target.parentNode;
+		}
+
+		if (target == this) {
+			return;
+		}
+
+		e.preventDefault();
+
+		var str = '<div class="select select-group"><select name="" class="dropdown" data-validation="required"><option value="Волчкевич Наталья">Волчкевич Наталья</option><option value="Волчкевич Наталья">Волчкевич Наталья</option><option value="Волчкевич Наталья">Волчкевич Наталья</option><option value="Волчкевич Наталья">Волчкевич Наталья</option></select></div>';
+
+		target.parentNode.parentNode.innerHTML += str;
+
+		if ($('.dropdown')) {
+			$('.dropdown').fancySelect();
+		}
+	});
 	
 	var activeItem;
 
