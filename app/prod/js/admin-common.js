@@ -177,6 +177,18 @@ $(function() {
 		})
 	});
 
+	$('.deactive-day').on("change", function () {
+		if ($(this).is(':checked')) {
+			$(this).parents('.row').siblings('.row.list-6').each(function (i, item) {
+				$(item).hide(300);
+			});
+		} else {
+			$(this).parents('.row').siblings('.row.list-6').each(function (i, item) {
+				$(item).show(300);
+			});
+		}
+	});
+
 	if ($(document)) {
 		$(document).tooltip({
 			position: {
