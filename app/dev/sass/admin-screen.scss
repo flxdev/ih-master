@@ -425,6 +425,7 @@ body {
 			background: #dbe3eb;
 			color: $text-admin;
 			svg {
+				margin: 0 auto;
 				height: 16px;
 			}
 			use {
@@ -434,7 +435,7 @@ body {
 		tr {
 			height: 84px;
 			&:not(.header) {
-				border-bottom: 1px solid #ddd;
+				border-bottom: 1px solid #f2f2f2;
 			}
 			&:nth-of-type(2) {
 				height: 90px;
@@ -443,7 +444,8 @@ body {
 			td, th {
 				padding: 0;
 				&:first-of-type {
-					padding-left: 30px;
+					padding: 0 44px 0 30px;
+					text-align: center;
 				}
 				&:nth-child(1),
 				&:nth-child(1) {
@@ -467,6 +469,7 @@ body {
 					}
 					&:nth-of-type(3):not(:last-of-type) {
 						padding-right: 68px;
+						position: relative;
 					}
 					.age {
 						left: 17px;
@@ -476,6 +479,25 @@ body {
 					}
 					&:last-of-type:not(:nth-of-type(2)):not(:first-of-type) {
 						width: 233px;
+					}
+					.btn-save {
+						position: absolute;
+						right: 30px;
+						top: 50%;
+						transform: translate3d(0, -50%, 0);
+						use {
+							fill: $blue;
+							transition: fill 0.3s ease;
+						}
+						&:hover {
+							use {
+								fill: #a9a9a9;
+							}
+						}
+					}
+					.tools-list {
+					    visibility: visible;
+					    opacity: 1;
 					}
 				}
 			}
@@ -782,7 +804,7 @@ input[type="checkbox"] {
 		}
 		.logo {
 			z-index: 8;
-			display: table;
+			display: block;
 			.fill {
 				fill: $blue;
 			}
@@ -792,10 +814,10 @@ input[type="checkbox"] {
 				padding-right: 23px;
 			}
 			a {
-				display: table-cell;
-				vertical-align: middle;
+				display: inline-block;
 				width: 176px;
-				height: 48px;
+				height: 71px;
+				padding: 11px 0;
 			}
 		}
 		nav.tabs-menu {

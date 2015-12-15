@@ -161,6 +161,7 @@ $(function() {
 					.parents('.row')
 						.children('.info-board.success')
 						.addClass('is-active');
+				$('.active-field').removeClass('changed');
 			},
 			error: function () {
 				$('.file-upload-wrapper+.btn')
@@ -171,8 +172,21 @@ $(function() {
 					.parents('.row')
 						.children('.info-board.success')
 						.addClass('is-active');
+				$('.active-field').removeClass('changed');
 			}
 		})
+	});
+
+	$('.deactive-day').on("change", function () {
+		if ($(this).is(':checked')) {
+			$(this).parents('.row').siblings('.row.list-6').each(function (i, item) {
+				$(item).hide(300);
+			});
+		} else {
+			$(this).parents('.row').siblings('.row.list-6').each(function (i, item) {
+				$(item).show(300);
+			});
+		}
 	});
 
 	if ($(document)) {
@@ -205,22 +219,52 @@ $(function() {
 		if (target.classList.contains('btn-plus')) {
 			var elem = $(target).parents('.row')[0].cloneNode(true);
 				$(elem).removeClass('original');
-			$(target).parents('form')[0].insertBefore(elem, $(target).parents('.row')[0]);
+			$(target).parents('form')[0].insertBefore(elem, $(target).parents('.row')[0].nextElementSibling);
 		} else if (target.classList.contains('btn-close')) {
 			if ($(target).parents('.row')[0].classList.contains('original')) {
 
-				$('ui-tooltip').each(function (i, item) {
+				$('.ui-tooltip.ui-widget').each(function (i, item) {
 					item.style.display = 'none';
 				});
 
 				return;
 			}
 
+			$('.ui-tooltip.ui-widget').each(function (i, item) {
+				item.style.display = 'none';
+			});
+
 			$(target).parents('form')[0].removeChild($(target).parents('.row')[0]);
 		}
 		$('ui-tooltip').each(function (i, item) {
 			item.style.display = 'none';
 		});
+	});
+
+	document.addEventListener('click', function (e) {
+		var target = e.target;
+
+		while(target != this) {
+			if (target.getAttribute('data-target') === 'new-select') {
+				break;
+			}
+
+			target = target.parentNode;
+		}
+
+		if (target == this) {
+			return;
+		}
+
+		e.preventDefault();
+
+		var str = '<div class="select select-group"><select name="" class="dropdown" data-validation="required"><option value="Волчкевич Наталья">Волчкевич Наталья</option><option value="Волчкевич Наталья">Волчкевич Наталья</option><option value="Волчкевич Наталья">Волчкевич Наталья</option><option value="Волчкевич Наталья">Волчкевич Наталья</option></select></div>';
+
+		target.parentNode.parentNode.innerHTML += str;
+
+		if ($('.dropdown')) {
+			$('.dropdown').fancySelect();
+		}
 	});
 	
 	var activeItem;
