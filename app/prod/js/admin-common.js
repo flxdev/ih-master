@@ -205,16 +205,20 @@ $(function() {
 		if (target.classList.contains('btn-plus')) {
 			var elem = $(target).parents('.row')[0].cloneNode(true);
 				$(elem).removeClass('original');
-			$(target).parents('form')[0].insertBefore(elem, $(target).parents('.row')[0]);
+			$(target).parents('form')[0].insertBefore(elem, $(target).parents('.row')[0].nextElementSibling);
 		} else if (target.classList.contains('btn-close')) {
 			if ($(target).parents('.row')[0].classList.contains('original')) {
 
-				$('ui-tooltip').each(function (i, item) {
+				$('.ui-tooltip.ui-widget').each(function (i, item) {
 					item.style.display = 'none';
 				});
 
 				return;
 			}
+
+			$('.ui-tooltip.ui-widget').each(function (i, item) {
+				item.style.display = 'none';
+			});
 
 			$(target).parents('form')[0].removeChild($(target).parents('.row')[0]);
 		}
