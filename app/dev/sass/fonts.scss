@@ -1093,6 +1093,43 @@ table {
             }
         }
     }
+    .table__main {
+    	thead {
+    		tr th {
+    			font-family: $AgoraProMedium;
+    			font-size: 1em; //16px / 16px
+    		}
+    	}
+    	tbody {
+    		tr td {
+    			font-family: $AgoraProMedium;
+                   font-size: 1em; //16px / 16px
+    			a {
+    				font-family: $AgoraProBlack;
+    			}
+    			&:last-child {
+    				font-family: $AgoraProBlack;
+    			}
+    			.italic {
+					font-family: $AgoraProItalic;
+    			}
+    		}
+    	}
+    }
+}
+.main__prices {
+	.content__block {
+		.bold {
+			font-family: $AgoraProBlack;
+		}
+		.italic {
+			font-family: $AgoraProItalic;
+		}
+		.btn__link {
+			font-family: $AgoraProMedium;
+			font-size: 1em; // 16px / 16px
+		}
+	}
 }
 @media screen and (max-width: 1599px) {
 	a[class*="btn__type"] {
