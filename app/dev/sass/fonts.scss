@@ -1058,6 +1058,20 @@ table {
         font-size: 1em; // 20px / 20px
     }
 }
+.list-menu {
+    a {
+        font-family: $AgoraProBold;
+        font-size: 1em; // 20px / 20px
+    }
+}
+.description {
+	.btn__type-1 {
+		span {
+			font-family: $HelveticaBold;
+        	font-size: 0.62em; // 12px / 16px
+		}
+	}
+}
 .phone__list-call {
     li {
         font-family: $AgoraProBold;
@@ -1126,7 +1140,7 @@ table {
 			font-family: $AgoraProItalic;
 		}
 		.btn__link {
-			font-family: $AgoraProMedium;
+			font-family: $HelveticaBold;
 			font-size: 1em; // 16px / 16px
 		}
 	}
