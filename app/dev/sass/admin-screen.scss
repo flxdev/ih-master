@@ -1645,7 +1645,7 @@ nav.tabs-category-menu {
 					}
 				}
 				.input__label-differenter {
-					color: #3c3d41;
+					color: #000;
 				}
 				&.list-2,
 				&.list-3,
@@ -2272,7 +2272,7 @@ nav.tabs-category-menu {
 					margin-bottom: 6px;
 				}
 				.input__label-content {
-					color: #787878;
+					color: #000;
 				}
 			}
 		}
@@ -2342,10 +2342,12 @@ nav.tabs-category-menu {
 			.active-block {
 				position: absolute;
 				top: -42px;
-				right: 110px;
+				right: 61px;
 			}
 			.popup-close {
 				top: -38px;
+				right: 15px;
+				z-index: 0;
 			}
 			.title-tooltip {
 				position: absolute;
@@ -2383,10 +2385,17 @@ nav.tabs-category-menu {
 					width: 50px;
 				}
 				.email + .active-btn-groupe {
-					width: 105px;
+					width: 141px;
 				}
 				.active-btn-groupe {
 					height: 38px;
+					position: relative;
+				}
+				.btn-groupe {
+					position: absolute;
+				    top: 50%;
+				    right: -18px;
+				    transform: translate3d(0, -50%, 0);
 				}
 				.btn-ico {
 					height: 38px;
@@ -2430,6 +2439,9 @@ nav.tabs-category-menu {
 					a {
 						color: $blue;
 					}
+				}
+				.options {
+					z-index: 1;
 				}
 			}
 		}
@@ -3381,7 +3393,7 @@ ol.guid {
 					margin-bottom: 6px;
 				}
 				.input__label-content {
-					color: #787878;
+					color: #000;
 				}
 			}
 		}

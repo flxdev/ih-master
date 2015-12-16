@@ -376,7 +376,7 @@ $(function() {
 			}
 		}
 
-		elemBtn4 = $('.btn-groupe.open').find('.btn-ico.btn-edite')[0];
+		elemBtn4 = $('.btn-groupe.open').find('.btn-ico.btn-edite.btn-static')[0];
 
 		if (elemBtn4) {
 			if (elemBtn4.nodeType === 1) {
@@ -642,7 +642,7 @@ $(function() {
 	
 	$('.elem-checkbox').click(function (e) {
 		var target = e.target;
-		
+
 		if ($(target).parents('table').hasClass('report-archive')) {
 			$('.popup.success-save').modal('show');
 		} else {
