@@ -1058,6 +1058,20 @@ table {
         font-size: 1em; // 20px / 20px
     }
 }
+.list-menu {
+    a {
+        font-family: $AgoraProBold;
+        font-size: 1em; // 20px / 20px
+    }
+}
+.description {
+	.btn__type-1 {
+		span {
+			font-family: $HelveticaBold;
+        	font-size: 0.62em; // 12px / 16px
+		}
+	}
+}
 .phone__list-call {
     li {
         font-family: $AgoraProBold;
@@ -1093,6 +1107,43 @@ table {
             }
         }
     }
+    .table__main {
+    	thead {
+    		tr th {
+    			font-family: $AgoraProMedium;
+    			font-size: 1em; //16px / 16px
+    		}
+    	}
+    	tbody {
+    		tr td {
+    			font-family: $AgoraProMedium;
+                   font-size: 1em; //16px / 16px
+    			a {
+    				font-family: $AgoraProBlack;
+    			}
+    			&:last-child {
+    				font-family: $AgoraProBlack;
+    			}
+    			.italic {
+					font-family: $AgoraProItalic;
+    			}
+    		}
+    	}
+    }
+}
+.main__prices {
+	.content__block {
+		.bold {
+			font-family: $AgoraProBlack;
+		}
+		.italic {
+			font-family: $AgoraProItalic;
+		}
+		.btn__link {
+			font-family: $HelveticaBold;
+			font-size: 1em; // 16px / 16px
+		}
+	}
 }
 @media screen and (max-width: 1599px) {
 	a[class*="btn__type"] {
