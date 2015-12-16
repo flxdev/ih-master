@@ -361,6 +361,7 @@ body {
 			th {
 				position: relative;
 				.remove {
+					left: 24px;
 					background: #c2c7cd;
 					use {
 						fill: #dbe3eb !important;
@@ -425,7 +426,7 @@ body {
 			background: #dbe3eb;
 			color: $text-admin;
 			svg {
-				margin: 0 auto;
+				margin: 3px auto;
 				height: 16px;
 			}
 			use {
@@ -499,6 +500,14 @@ body {
 					    opacity: 1;
 					}
 				}
+				td {
+					&:nth-of-type(1) {
+						a {
+							text-decoration: underline;
+							color: $blue;
+						}
+					}
+				}
 			}
 		}
 		tr {
@@ -558,6 +567,31 @@ body {
 						width: 339px;
 						padding-right: 150px;
 					}
+				}
+			}
+		}
+	}
+	table.report-teacher-lose {
+		tr {
+			td, th {
+				&:first-of-type {
+					width: 220px;
+					position: relative;
+					padding-left: 48px;
+				}
+				&:nth-of-type(2) {
+					padding-left: 26px;
+				}
+				&:last-of-type {
+					&:not(:nth-of-type(2)) {
+						width: 569px;
+					}
+				}
+				&:last-of-type:not(:nth-of-type(2)) {
+					width: 450px;
+				}
+				.age {
+					left: 17px;
 				}
 			}
 		}
@@ -3485,11 +3519,9 @@ ol.guid {
 	text-align: center;
 	[class*="ui-datepicker-"] {
 		&:first-of-type {
-			margin-right: 36px;
 			height: 18px;
 			display: inline-block;
 		}
-		border-bottom: 1px dotted $blue; 
 	}
 }
 .ui-datepicker-prev {

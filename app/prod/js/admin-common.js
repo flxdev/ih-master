@@ -269,6 +269,11 @@ $(function() {
 		e.preventDefault();
 
 		var count = Math.floor(Math.random() * (50)) + 1;
+
+		if (target.parentNode.parentNode.querySelectorAll('select').length >= 2) {
+			return;
+		}
+
 		var elem = target.parentNode.parentNode.querySelector('select').cloneNode(false);
 		$(elem).removeClass('fancified');
 		$(elem).html('<option value>Выберите значение</option>')
@@ -300,7 +305,31 @@ $(function() {
 
 		e.preventDefault();
 	});
+	document.addEventListener('click', function (e) {
+		var target = e.target;
 
+		while(target !== document && target !== null) {
+			var str = target.getAttribute('data-target');
+
+			if (str) {
+				if (str.search(/add-teg/) !== -1) {
+					break;
+				}
+			}
+
+			target = target.parentNode;
+		}
+
+		if (!target || target == document) {
+			return;
+		}
+
+		e.preventDefault();
+
+		var mathc = target.getAttribute('data-target').split('.').join(' ');
+
+		$('[class*="' + mathc + '"]').find('input').removeAttr('checked');
+	});
 	document.addEventListener('mouseout', function (e) {
 		var e = e || window.event,
 			target = e.target || e.srcElement,
@@ -602,7 +631,7 @@ $(function() {
 			}
 		});
 
-		$('[data-target=".add-teg.' + teg + '"]').parents('.row.no-btn-modal').find('.input__field').val(collectionTeg[teg].join(' '));
+		$('[data-target=".add-teg.' + teg + '"]').parents('.row.no-btn-modal').find('.input__field')[0].innerHTML += collectionTeg[teg].join(' ');
 		$(target).parents('.add-teg').modal('hide');
 		$('[data-target=".add-teg.' + teg + '"]').parents('.row.no-btn-modal').find('.input__field').parents('.field').addClass('has-success');
 	});
@@ -612,13 +641,23 @@ $(function() {
 	}
 	
 	$('.elem-checkbox').click(function (e) {
-		$('.popup.success-delete').modal('show');
+		var target = e.target;
+		
+		if ($(target).parents('table').hasClass('report-archive')) {
+			$('.popup.success-save').modal('show');
+		} else {
+			$('.popup.success-delete').modal('show');
+		}
 	});
 
 	$('.checkbox-general').click(function (e) {
 		var target = e.target;
 
-		$('.popup.success-delete').modal('show');
+		if ($(target).parents('table').hasClass('report-archive')) {
+			$('.popup.success-save').modal('show');
+		} else {
+			$('.popup.success-delete').modal('show');
+		}	
 		
 		while(target) {
 			if (target.classList.contains('checkbox-general')) {
