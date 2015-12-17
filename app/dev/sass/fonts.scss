@@ -1080,6 +1080,35 @@ table {
 		}
 	}
 }
+.personal__area {
+	.table__overlay {
+		.form {
+			.row {
+				&.columns {
+					.field {
+						.input__field {
+							font-family: $HelveticaBold;
+							font-size: 0.8125em; // 13px / 16px
+						}
+						.input__label {
+							&::before {
+								font-size: 1.125em; // 18px / 16px
+							}
+							&::after {
+								font-size: 1.125em; // 18px / 16px
+							}
+						}
+						.input__label-content {
+							&.input__label-content-effect {
+								font-size: 0.8125em; // 13px / 16px
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
 .news-menu {
     a {
         font-family: $AgoraProBold;

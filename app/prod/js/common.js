@@ -336,10 +336,17 @@ $(document).ready(function () {
 	(function(){
 		var input = $('.input__field'),
 			filled = 'field-filled',
-			field = $('field');
+			field = $('.field');
+
+		
 
 		input.each(function(){
 			var this_ = $(this);
+
+			if(this_.val().length > 0) {
+				console.log(true)
+				$(this).parent().addClass('field-filled');
+			}
 
 			this_.on('focus', function(){
 				$(this).parent().addClass('field-filled');

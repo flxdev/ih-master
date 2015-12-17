@@ -7452,6 +7452,70 @@ table {
 		}
 	}
 }
+.personal__area {
+	.list-menu {
+		margin-top: 0;
+	}
+	.table__overlay {
+		padding: 2.9375em 3.5625em 4.8125em; // 47px 57px 77px / 16px
+		max-width: 43.125em; // 690px / 16px
+		min-width: auto;
+		.form {
+			.row {
+				&.columns {
+					.field {
+						max-width: 46.7%;
+						margin-bottom: 0.5em; // 8px / 16px
+						.input__field {
+							height: 2.769em; // 36px 13px
+							letter-spacing: 0.0884em; // 1.15px / 13px
+							padding-right: 1.1538em; // 15px / 13px
+						}
+						.input__field-effect {
+							margin-bottom: 2.4615em; // 32px / 13px
+						}
+						.input__label {
+							&::before {
+								top: 0.6111em; // 11px / 18px
+							}
+							&.input__label-effect {
+								padding: 0.8125em 0; // 13px / 16px
+							}
+						}
+						.input__label-content {
+							&.input__label-content-effect {
+								letter-spacing: 0.123em; // 1.6px / 13px
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: 1024px) {
+	.personal__area {
+		.table__overlay {
+			padding: 2.9375em 1.5625em 3.8125em; // 47px 57px 77px / 16px
+		}
+	}
+}
+@media screen and (max-width: 850px) {
+	.personal__area {
+		.table__overlay {
+			.form {
+				.row {
+					&.columns {
+						.field {
+							max-width: 100%;
+							width: 100%;
+						}
+					}
+				}
+			}
+		}
+	}
+}
 @each $name, $list in $color {
 	body.#{$name} {
 		.nicescroll-cursors {
