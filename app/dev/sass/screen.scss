@@ -7177,6 +7177,15 @@ table {
 				}
 			}
 		}
+		&.no-resalt {
+			.responsive__numbers {
+				li {
+					&::before {
+						content: none;
+					}
+				}
+			}
+		}
 	}
 }
 @media screen and (max-width: 1750px) {
