@@ -361,6 +361,7 @@ body {
 			th {
 				position: relative;
 				.remove {
+					left: 24px;
 					background: #c2c7cd;
 					use {
 						fill: #dbe3eb !important;
@@ -425,7 +426,7 @@ body {
 			background: #dbe3eb;
 			color: $text-admin;
 			svg {
-				margin: 0 auto;
+				margin: 3px auto;
 				height: 16px;
 			}
 			use {
@@ -499,6 +500,14 @@ body {
 					    opacity: 1;
 					}
 				}
+				td {
+					&:nth-of-type(1) {
+						a {
+							text-decoration: underline;
+							color: $blue;
+						}
+					}
+				}
 			}
 		}
 		tr {
@@ -558,6 +567,31 @@ body {
 						width: 339px;
 						padding-right: 150px;
 					}
+				}
+			}
+		}
+	}
+	table.report-teacher-lose {
+		tr {
+			td, th {
+				&:first-of-type {
+					width: 220px;
+					position: relative;
+					padding-left: 48px;
+				}
+				&:nth-of-type(2) {
+					padding-left: 26px;
+				}
+				&:last-of-type {
+					&:not(:nth-of-type(2)) {
+						width: 569px;
+					}
+				}
+				&:last-of-type:not(:nth-of-type(2)) {
+					width: 450px;
+				}
+				.age {
+					left: 17px;
 				}
 			}
 		}
@@ -1611,7 +1645,7 @@ nav.tabs-category-menu {
 					}
 				}
 				.input__label-differenter {
-					color: #3c3d41;
+					color: #000;
 				}
 				&.list-2,
 				&.list-3,
@@ -2238,7 +2272,7 @@ nav.tabs-category-menu {
 					margin-bottom: 6px;
 				}
 				.input__label-content {
-					color: #787878;
+					color: #000;
 				}
 			}
 		}
@@ -2308,10 +2342,12 @@ nav.tabs-category-menu {
 			.active-block {
 				position: absolute;
 				top: -42px;
-				right: 110px;
+				right: 61px;
 			}
 			.popup-close {
 				top: -38px;
+				right: 15px;
+				z-index: 0;
 			}
 			.title-tooltip {
 				position: absolute;
@@ -2349,10 +2385,17 @@ nav.tabs-category-menu {
 					width: 50px;
 				}
 				.email + .active-btn-groupe {
-					width: 105px;
+					width: 141px;
 				}
 				.active-btn-groupe {
 					height: 38px;
+					position: relative;
+				}
+				.btn-groupe {
+					position: absolute;
+				    top: 50%;
+				    right: -18px;
+				    transform: translate3d(0, -50%, 0);
 				}
 				.btn-ico {
 					height: 38px;
@@ -2396,6 +2439,9 @@ nav.tabs-category-menu {
 					a {
 						color: $blue;
 					}
+				}
+				.options {
+					z-index: 1;
 				}
 			}
 		}
@@ -3347,7 +3393,7 @@ ol.guid {
 					margin-bottom: 6px;
 				}
 				.input__label-content {
-					color: #787878;
+					color: #000;
 				}
 			}
 		}
@@ -3485,11 +3531,9 @@ ol.guid {
 	text-align: center;
 	[class*="ui-datepicker-"] {
 		&:first-of-type {
-			margin-right: 36px;
 			height: 18px;
 			display: inline-block;
 		}
-		border-bottom: 1px dotted $blue; 
 	}
 }
 .ui-datepicker-prev {
