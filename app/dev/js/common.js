@@ -401,8 +401,10 @@ $(document).ready(function () {
 	//FORM VALIDATOR
 	(function(){
 		var form_validate = $('.js-validate'),
+			popup = form_validate.parents('.popup__wrap'),
 			success = $('.popup__success'),
-			forms = $('.popup__form');
+			forms = $('.popup__form'),
+			author = $('.form__perspective');
 		if (form_validate.length) {
 			form_validate.each(function () {
 				var form_this = $(this);
@@ -414,13 +416,37 @@ $(document).ready(function () {
 
 					},
 					onSuccess: function($form){
-						forms.removeClass('is-active');
-						success.addClass('is-active');
+						if (!$form.parents('.popup__wrap').hasClass('authorization')){
+							removes(forms, success);
+						}
 						return false;
 					}
 				});
 			});
 		};
+	})();
+
+	function removes(forms, success) {
+		forms.removeClass('is-active');
+		success.addClass('is-active');
+	};
+
+	//form animation
+
+	(function(){
+		$('.js-reg').on('click', function(event){
+			event.preventDefault();
+			var this_ = $(this),
+				attr = this_.data('active'),
+				formIn = this_.parents('.js-form');
+			if(attr === 'form_back') {
+				formIn.addClass('is-visible');
+			} else {
+				formIn.removeClass('is-visible');
+			};
+
+			return false;
+		});
 	})();
 
 	//TEL MASK 
