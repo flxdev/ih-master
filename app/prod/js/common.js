@@ -50,6 +50,32 @@ $(document).ready(function () {
 		area.removeClass('active');
 	}
 
+	//CLEAR BTN FOR SEARCH
+	(function(){
+		var input = $('.js-input-search'),
+			inputVal = input.val(),
+			btnClear = input.parent().find('.js-btn-clear');
+
+		if(inputVal.length > 0) {
+			btnClear.fadeIn(200);
+		}
+
+		input.on('input', function(){
+			var this_ = $(this);
+
+			if(this_.val().length > 0){
+				btnClear.fadeIn(200);
+			} else {
+				btnClear.fadeOut(200);
+			}
+		});
+
+		btnClear.on("click", function(){
+			input.val('');
+			$(this).hide();
+		})
+	})();
+
 	//SLICK SLIDER
 
 	(function () {

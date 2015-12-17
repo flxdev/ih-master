@@ -7035,6 +7035,109 @@ table {
 		}
 	}
 }
+.search__box {
+	.pagination {
+		margin-right: -3.75em;
+		width: auto;
+	}
+	.search__box-row {
+		@include clearfix;
+		margin-left: -29.5%;
+		margin-right: -3.75em;
+		margin-bottom: 4.0625em; // 65px / 16px
+		position: relative;
+		.input {
+			background-color: $blue;
+			height: 4.5em; // 90px / 30px
+			width: 100%;
+			padding: 0 4em; // 80px / 20px
+			color: $white;
+			letter-spacing: -0.01em; // 0.2px / 20px
+			position: relative;
+		}
+		.btn__clear {
+			width: 5.0525em; // 81px / 16px
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: none;
+			.icon__clear {
+				width: 0.9375em; // 15px / 16px
+				height: 0.9375em; // 15px / 16px
+				margin-top: 0.5em; // 8px / 16px
+				margin-left: -0.1875em; // 3px / 16px
+				display: inline-block;
+				svg {
+					fill: $white;
+				}
+			}
+		}
+		.search__btn {
+			width: 5.0525em; // 81px / 16px
+			height: 100%;
+			position: absolute;
+			top: 0;
+			right: 0;
+			.icon__search {
+				width: 1.5em; // 24px / 16px
+				height: 1.5em; // 24px / 16px
+				display: inline-block;
+				opacity: 0.5;
+				margin-top: 0.375em; // 6px / 16px
+				margin-left: -0.25em; // 4px / 16px
+				svg {
+					fill: $white;
+				}
+			}
+		}
+	}
+	.responsive__numbers {
+		li {
+			&::before {
+				color: $grey;
+			}
+		}
+	}
+}
+@media screen and (max-width: 1750px) {
+	.search__box {
+		.search__box-row {
+			margin-left: -31.7%;
+		}
+	}
+}
+@media screen and (max-width: 1279px) {
+	.search__box {
+		.pagination {
+			margin-right: -1.75em;
+		}
+		.search__box-row {
+			margin-right: -1.75em;
+		}
+	}
+}
+@media screen and (max-width: 1023px) {
+	.search__box {
+		.search__box-row {
+			margin-left: -16.7%;
+		}
+	}
+}
+@media screen and (max-width: 900px) {
+	.search__box {
+		.search__box-row {
+			margin-left: -17.7%;
+		}
+	}
+}
+@media screen and (max-width: 767px) {
+	.search__box {
+		.search__box-row {
+			margin-left: -26.4%;
+		}
+	}
+}
 .pagination {
 	width: 100%;
 	border-top: 0.25em solid $blue; // 4px / 16px

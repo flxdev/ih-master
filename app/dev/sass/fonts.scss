@@ -1052,6 +1052,14 @@ table {
         }
     }
 }
+.search__box {
+	.search__box-row {
+		.input {
+			font-family: $AgoraProBlack;
+               font-size: 1.25em; // 20px / 16px
+		}
+	}
+}
 .news-menu {
     a {
         font-family: $AgoraProBold;
