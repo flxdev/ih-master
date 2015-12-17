@@ -1059,6 +1059,26 @@ table {
                font-size: 1.25em; // 20px / 16px
 		}
 	}
+	.resalt__box {
+		.responsive__numbers {
+			.post__title {
+				font-family: $AgoraProBold;
+            	font-size: 1em; // 20px / 20px
+            	font-weight: normal;
+				b {
+					font-family: $AgoraProUltraBlack;
+				}
+			}
+			p {
+				font-family: $HelveticaRoman;
+				font-size: 0.8em; //16px / 20px
+				b {
+					font-family: $AgoraProBold;
+					font-weight: normal;
+				}
+			}
+		}
+	}
 }
 .news-menu {
     a {

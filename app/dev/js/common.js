@@ -51,7 +51,7 @@ $(document).ready(function () {
 	}
 
 	//CLEAR BTN FOR SEARCH
-	(function(){
+	function searchBox(){
 		var input = $('.js-input-search'),
 			inputVal = input.val(),
 			btnClear = input.parent().find('.js-btn-clear');
@@ -74,7 +74,12 @@ $(document).ready(function () {
 			input.val('');
 			$(this).hide();
 		})
-	})();
+	};
+	
+
+	if ($('.js-input-search').length) {
+		searchBox();
+	}
 
 	//SLICK SLIDER
 

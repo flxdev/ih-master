@@ -5844,11 +5844,34 @@ table {
 		span {
 			perspective: 600px;
 			perspective-origin: 50% 50%;
+			transition: border-color 0.3s ease, color 0.3s ease;
 		}		
+		&:hover {
+			span {
+				color: $red;
+				border-color: $red;
+				.mark {
+					&::after {
+						opacity: 0;
+					}
+					&::before {
+						opacity: 1;
+					}
+				}
+			}
+		}	
 		&.ui-state-active {
 			span {
+				color: $red;
+				border-color: $red;
 				.mark {
 					transform: rotateX(-180deg);
+					&::after {
+						opacity: 0;
+					}
+					&::before {
+						opacity: 1;
+					}
 				}
 			}
 		}
@@ -5859,14 +5882,39 @@ table {
 		margin-right: -1.6em; // 32px / 20px
 		margin-left: 0.8em; // 16px / 20px
 		display: inline-block;
-		vertical-align: middle;
-		background-image: url(../img/svg/triangle-accord.svg);
-		background-size: cover;
-		background-repeat: no-repeat;
+		vertical-align: middle;		
 		transform-origin: 50% 50% 0;
 		transform-style: preserve-3d;
 		transition: transform 0.3s ease 0s;
 		transform: rotateX(0deg);
+		&:after {
+			content: '';
+			background-image: url(../img/svg/triangle-accord.svg);
+			background-size: cover;
+			background-repeat: no-repeat;
+			height: 100%;
+			width: 100%;
+			display: inline-block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			opacity: 1;
+			@include transition(opacity);
+		}
+		&:before {
+			content: '';
+			background-image: url(../img/svg/triangle-accord-hover.svg);
+			background-size: cover;
+			background-repeat: no-repeat;
+			height: 100%;
+			width: 100%;
+			display: inline-block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			opacity: 0;
+			@include transition(opacity);
+		}
 	}
 }
 @media screen and (max-width: 1899px) {
@@ -7099,6 +7147,37 @@ table {
 			}
 		}
 	}
+	.resalt__box {
+		.responsive__numbers {
+			a {
+				display: inline-block;
+				&:hover {
+					.post__title {
+						color: $red;
+						b {
+							color: $red;
+						}
+					}
+				}
+			}
+			.post__title {
+				margin-top: 0;
+				margin-bottom: 0.85em; // 18px / 20px
+				color: $grey;
+				@include transition(color);
+				b {
+					letter-spacing: -0.0225em; // 0.45px / 20px
+					color: $blue;
+					@include transition(color);
+				}
+			}
+			p {
+				b {
+					color: $blue;
+				}
+			}
+		}
+	}
 }
 @media screen and (max-width: 1750px) {
 	.search__box {
@@ -7121,6 +7200,16 @@ table {
 	.search__box {
 		.search__box-row {
 			margin-left: -16.7%;
+		}
+	}
+	.resalt__box {
+		.responsive__numbers {
+			li {
+				padding-left: 0;
+				&::before {
+					left: -3.5em;
+				}
+			}
 		}
 	}
 }
