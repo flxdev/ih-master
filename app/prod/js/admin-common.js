@@ -274,12 +274,12 @@ $(function() {
 			return;
 		}
 
-		var elem = target.parentNode.parentNode.querySelector('select').cloneNode(false);
+		var elem = target.parentNode.parentNode.querySelector('select').cloneNode(true);
 		$(elem).removeClass('fancified');
-		$(elem).html('<option value>Выберите значение</option>')
+		//$(elem).html('<option value>Выберите значение</option>')
 		target.parentNode.parentNode.appendChild(elem);
 
-		if ($('.dropdown')) {
+		if ($('.dropdown')) { 
 			$('.dropdown').fancySelect();
 		}
 	});
