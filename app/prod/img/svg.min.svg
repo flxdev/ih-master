@@ -29,7 +29,7 @@
 </symbol><symbol id="arrow-doubl" viewBox="0 0 5 13.998">
 <path d="M5,10l-5,0.001l2.502,3.997L5,10z"/>
 <path d="M2.502,0L0,3.997l5,0.001L2.502,0z"/>
-</symbol><symbol id="arrow-sort" viewBox="0 0 48 48"><path d="M14 20l10 10 10-10z"/></symbol><symbol id="arrow_nav" viewBox="0 0 42 24">
+</symbol><symbol id="arrow-sort-top"><path transform="rotate(180, 24, 25)" id="svg_1" d="m14,20l10,10l10,-10l-20,0z"/></symbol><symbol id="arrow-sort" viewBox="0 0 48 48"><path d="M14 20l10 10 10-10z"/></symbol><symbol id="arrow_nav" viewBox="0 0 42 24">
 	<path id="fill" fill-rule="evenodd" clip-rule="evenodd" d="m41.968,10.9065v2h-29.996v-2h29.996"/>
 	<path id="stroke" fill="none" stroke-width="2" stroke-miterlimit="10" d="m1.972,11.9075l16.998,-9.999v19.997l-16.998,-9.998z"/>
 </symbol><symbol id="arrow_select" viewBox="0 0 7.655 13.857">
@@ -339,6 +339,13 @@
 			<path d="M479.5,466 C479.5,466 487,456.127718 487,451.812818 C487,447.497918 484.518799,443.999999 479.5,444 C474.481201,444.000001 472,447.497918 472,451.812818 C472,456.127718 479.5,466 479.5,466 L479.5,466 Z M479.5,454.5 C481.709139,454.5 483.5,452.709139 483.5,450.5 C483.5,448.290861 481.709139,446.5 479.5,446.5 C477.290861,446.5 475.5,448.290861 475.5,450.5 C475.5,452.709139 477.290861,454.5 479.5,454.5 L479.5,454.5 Z" fill="#000" id="map-location-pin-map-marker-glyph"/>
 		</g>
 	</g>
+</symbol><symbol id="markerblue" viewBox="0 0 24 24">
+    <g fill="none" fill-rule="evenodd" id="miu" stroke="none" stroke-width="1">
+        <g transform="translate(-471.000000, -443.000000)">
+            <g id="slice" transform="translate(215.000000, 119.000000)"/>
+            <path d="M479.5,466 C479.5,466 487,456.127718 487,451.812818 C487,447.497918 484.518799,443.999999 479.5,444 C474.481201,444.000001 472,447.497918 472,451.812818 C472,456.127718 479.5,466 479.5,466 L479.5,466 Z M479.5,454.5 C481.709139,454.5 483.5,452.709139 483.5,450.5 C483.5,448.290861 481.709139,446.5 479.5,446.5 C477.290861,446.5 475.5,448.290861 475.5,450.5 C475.5,452.709139 477.290861,454.5 479.5,454.5 L479.5,454.5 Z" fill="#003e7e" id="map-location-pin-map-marker-glyph"/>
+        </g>
+    </g>
 </symbol><symbol id="menu" viewBox="6 12 36 24">
 <path fill="none" d="M0,0h48v48H0V0z"/>
 <path d="M6,36h36v-4H6V36z M6,26h36v-4H6V26z M6,12v4h36v-4H6z"/>
@@ -519,6 +526,10 @@
 </g>
 <g id="Livello_1_1_">
 </g>
+</symbol><symbol id="triangle-accord-hover" viewBox="0 0 16 10">
+   <g transform="rotate(-180, 8, 5.0625)" id="Group" fill="#e51836">
+    <path id="Triangle 155 copy" d="m7.999984,0.091695l7.999985,9.945148l-15.99997,0l7.999985,-9.945148zm0,1.243143l-5.999989,8.080433l11.999977,0l-5.999988,-8.080433zm0,0"/>
+   </g>
 </symbol><symbol id="triangle-accord" viewBox="0 0 16 10">
    <g transform="rotate(-180, 8, 5.0625)" id="Group" fill="#003e7e">
     <path id="Triangle 155 copy" d="m7.999984,0.091695l7.999985,9.945148l-15.99997,0l7.999985,-9.945148zm0,1.243143l-5.999989,8.080433l11.999977,0l-5.999988,-8.080433zm0,0"/>
