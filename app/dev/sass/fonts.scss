@@ -1052,6 +1052,75 @@ table {
         }
     }
 }
+.search__box {
+	.search__box-row {
+		.input {
+			font-family: $AgoraProBlack;
+               font-size: 1.25em; // 20px / 16px
+		}
+	}
+	.resalt__box {
+		.responsive__numbers {
+			.post__title {
+				font-family: $AgoraProBold;
+            	font-size: 1em; // 20px / 20px
+            	font-weight: normal;
+				b {
+					font-family: $AgoraProUltraBlack;
+				}
+			}
+			p {
+				font-family: $HelveticaRoman;
+				font-size: 0.8em; //16px / 20px
+				b {
+					font-family: $AgoraProBold;
+					font-weight: normal;
+				}
+			}
+		}
+	}
+}
+.personal__area {
+	.table__overlay {
+		.form {
+			.row {
+				&.columns {
+					.field {
+						.input__field {
+							font-family: $HelveticaBold;
+							font-size: 0.8125em; // 13px / 16px
+						}
+						.input__label {
+							&::before {
+								font-size: 1.125em; // 18px / 16px
+							}
+							&::after {
+								font-size: 1.125em; // 18px / 16px
+							}
+						}
+						.input__label-content {
+							&.input__label-content-effect {
+								font-size: 0.8125em; // 13px / 16px
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.reviews__sliders {
+	.reviews__text {
+		.text {
+			font-family: $AgoraProBoldItalic;
+			font-size: 1.5em; // 24px / 16px
+		}
+		.author {
+			font-family: $AgoraPro;
+			font-size: 1.25em; // 20px / 16px
+		}
+	}
+}
 .news-menu {
     a {
         font-family: $AgoraProBold;
@@ -1142,6 +1211,22 @@ table {
 		.btn__link {
 			font-family: $HelveticaBold;
 			font-size: 1em; // 16px / 16px
+		}
+	}
+}
+.review__list {
+	.review__list-list {
+		.date {
+			font-family: $HelveticaMedium;
+            font-size: 0.75em; // 12px / 16px
+		}
+		.text {
+			font-family: $AgoraProBoldItalic;
+			font-size: 1.25em; //20px / 16px
+		}
+		.author {
+			font-family: $AgoraPro;
+			font-size: 1.125em; //18px / 16px
 		}
 	}
 }
@@ -1297,6 +1382,18 @@ table {
 	.title__form {
 		font-family: $AgoraProBlack;
 		font-size: 26px; // 38px / 16px = 1.625em
+	}
+	.reviews__sliders {
+		.reviews__text {
+			.text {
+				font-family: $AgoraProBoldItalic;
+				font-size: 1.25em; // 20px / 16px
+			}
+			.author {
+				font-family: $AgoraPro;
+				font-size: 1.125em; // 18px / 16px
+			}
+		}
 	}
 }
 @media screen and (max-width: 479px) {

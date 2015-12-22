@@ -50,6 +50,37 @@ $(document).ready(function () {
 		area.removeClass('active');
 	}
 
+	//CLEAR BTN FOR SEARCH
+	function searchBox(){
+		var input = $('.js-input-search'),
+			inputVal = input.val(),
+			btnClear = input.parent().find('.js-btn-clear');
+
+		if(inputVal.length > 0) {
+			btnClear.fadeIn(200);
+		}
+
+		input.on('input', function(){
+			var this_ = $(this);
+
+			if(this_.val().length > 0){
+				btnClear.fadeIn(200);
+			} else {
+				btnClear.fadeOut(200);
+			}
+		});
+
+		btnClear.on("click", function(){
+			input.val('');
+			$(this).hide();
+		})
+	};
+	
+
+	if ($('.js-input-search').length) {
+		searchBox();
+	}
+
 	//SLICK SLIDER
 
 	(function () {
@@ -123,7 +154,27 @@ $(document).ready(function () {
 						slidesToScroll: 1,
 						asNavFor: '.slider-caption',
 						fade: true
-					})
+					});
+				} else if ($(item).hasClass('reviews__img')) {
+					$(item).slick({
+						arrows: true,
+						prevArrow: '<button type="button" class="slick-prev"><svg class="arrow_left" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 41.968 41.968"><path class="fill" fill-rule="evenodd" clip-rule="evenodd" d="M41.968,19.969v2H11.972v-2H41.968"/><path class="stroke" fill="none" stroke-width="2" stroke-miterlimit="10" d="M1.972,20.97l16.998-9.999v19.997L1.972,20.97z"/></svg></button>',
+						nextArrow: '<button type="button" class="slick-next"><svg class="arrow_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 42.067 41.968"><path class="fill" fill-rule="evenodd" clip-rule="evenodd" d="M0.097,20.971v-2h29.996v2H0.097"/><path class="stroke" fill="none" stroke-width="2" stroke-miterlimit="10" d="M40.093,19.97l-16.998,9.999V9.972L40.093,19.97z"/></svg></button>',
+						dots: false,
+						infinite: false,
+						slidesToShow: 1,
+						slidesToScroll: 1,
+						asNavFor: '.reviews__text',
+						fade: true
+					});
+					$('.reviews__text').slick({
+						arrows: false,
+						dots: false,
+						infinite: false,
+						slidesToShow: 1,
+						slidesToScroll: 1,
+						asNavFor: '.reviews__img'						
+					});
 				} else {
 					$(item).slick({
 						arrows: false,
@@ -305,10 +356,17 @@ $(document).ready(function () {
 	(function(){
 		var input = $('.input__field'),
 			filled = 'field-filled',
-			field = $('field');
+			field = $('.field');
+
+		
 
 		input.each(function(){
 			var this_ = $(this);
+
+			if(this_.val().length > 0) {
+				console.log(true)
+				$(this).parent().addClass('field-filled');
+			}
 
 			this_.on('focus', function(){
 				$(this).parent().addClass('field-filled');
@@ -343,8 +401,10 @@ $(document).ready(function () {
 	//FORM VALIDATOR
 	(function(){
 		var form_validate = $('.js-validate'),
+			popup = form_validate.parents('.popup__wrap'),
 			success = $('.popup__success'),
-			forms = $('.popup__form');
+			forms = $('.popup__form'),
+			author = $('.form__perspective');
 		if (form_validate.length) {
 			form_validate.each(function () {
 				var form_this = $(this);
@@ -356,13 +416,37 @@ $(document).ready(function () {
 
 					},
 					onSuccess: function($form){
-						forms.removeClass('is-active');
-						success.addClass('is-active');
+						if (!$form.parents('.popup__wrap').hasClass('authorization')){
+							removes(forms, success);
+						}
 						return false;
 					}
 				});
 			});
 		};
+	})();
+
+	function removes(forms, success) {
+		forms.removeClass('is-active');
+		success.addClass('is-active');
+	};
+
+	//form animation
+
+	(function(){
+		$('.js-reg').on('click', function(event){
+			event.preventDefault();
+			var this_ = $(this),
+				attr = this_.data('active'),
+				formIn = this_.parents('.js-form');
+			if(attr === 'form_back') {
+				formIn.addClass('is-visible');
+			} else {
+				formIn.removeClass('is-visible');
+			};
+
+			return false;
+		});
 	})();
 
 	//TEL MASK 
@@ -528,11 +612,34 @@ $(document).ready(function () {
 		},500)
 	});
 
-	$('.grid').masonry({
-	  // options
-		itemSelector: '.grid-item',
-		//columnWidth: 80
-	});
+	//MASONRY
+	(function(){
+		var grid = $('.grid');
+
+		Array.prototype.forEach.call(grid, function (item) {
+			var nameClass = item.parentNode.getAttribute('class').split(' ')[0];
+
+			if($(item).hasClass('review__list')){
+				$(item).masonry({
+					itemSelector: '.grid-item',
+					//columnWidth: 330,
+					//percentPosition: true,
+					gutter: '.gutter-sizer'
+				});
+			} else {
+				$(item).masonry({
+					itemSelector: '.grid-item'
+				});
+			}
+		});
+
+	})();
+
+	// $('.grid').masonry({
+	//   // options
+	// 	itemSelector: '.grid-item',
+	// 	//columnWidth: 80
+	// });
 
 });
 
