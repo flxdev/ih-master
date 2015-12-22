@@ -1765,6 +1765,50 @@ a {
 	}
 
 }
+@media screen and (max-width: 1175px) {
+	.container__row {
+		.prevslide-block {
+			.slide-pb {
+			    max-width: 226px;
+			    min-width: 220px;
+			    width: 224px;
+			    padding: 2.2em 1.275em 1.8em;
+			    .descr_slide-pb {
+			        margin-bottom: 3.1131em;
+			    }
+			    .info_slide-pb {
+			        margin-bottom: 2.8em;
+			    }
+			}
+			.slider-pb {
+				li {
+					padding: 0.5em 0.5em 1.5em;
+				}
+			}
+		}
+		.card-block  {
+			max-width: 294px;
+			.container {
+		    	padding: 2.6em 1.475em 2.4em;
+		    }
+		}
+	}
+}
+@media screen and (max-width: 1138px) {
+	.container__row {
+		.prevslide-block {
+			float: none;
+			margin-left: 2.4375em; /* 39px / 16px */
+			.slider-pb {
+				width: 30.125em;
+			}
+		}
+		.card-block  {
+			margin-left: 2.9em; /* 55px / 16px */
+			float: none;
+		}
+	}
+}
 @media screen and (max-width: 1023px) {
 	.container__row {
 		margin-top: 1.375em; //22px / 16xp
@@ -1774,6 +1818,12 @@ a {
 			letter-spacing: -2.35px;
 			margin: 0 0 1em; // 0 0 16px / 16px
 			padding-left: 0.125em; // 2px 16px
+		}
+		.prevslide-block {
+			margin-left: 1.19em;
+		}
+		.card-block  {
+			margin-left: 1.7em; /* 55px / 16px */
 		}
 	}
 }
@@ -1801,6 +1851,43 @@ a {
 			max-width:  100%;
 		}
 	}
+}
+@media screen and (max-width: 750px) {
+	.container__row {
+		.prevslide-block {
+			.slide-pb {
+			}
+			.slider-pb {
+				width: 42em;
+			}
+		}
+		.card-block  {
+			max-width: 468px;
+		}
+	}
+}
+@media screen and (max-width: 481px) {
+    .container__row {
+    	.prevslide-block {
+    		font-size: 110%;
+    		.slide-pb {
+    			max-width: none;
+    			min-width: 0;
+    			width: auto;
+			    padding: 2.2em 1.875em 2.5em;
+    		}
+    		.title-pb {
+    			font-size: 1.975em;
+    		}
+    		.slider-pb {
+    			width: 102%;
+    		}
+    	}
+    	.card-block  {
+    		font-size: 110%;
+    		max-width: 468px;
+    	}
+    }
 }
 .col60 {
 	width: 68.04123%;
@@ -5424,6 +5511,13 @@ table {
 	}
 	.descr-cb {
 		margin: 0.25em 0 2.1875em;
+		& + .link-svg-arrow {
+			.triangle {
+				svg {
+					width: 3.3078em;
+				}
+			}
+		}
 	}
 }
 .link-svg-arrow {
@@ -8837,4 +8931,14 @@ table {
     -o-transform: scale(0.8);
     transform: scale(0.8);
   }
+}
+.container__row {
+	.prevslide-block {
+		.slick-arrow {
+			left: auto;
+			right: 0;
+			top: -4em;
+		}
+		
+	}
 }
