@@ -296,7 +296,6 @@
 							<a href="" class="btn btn-type1 btn-add btn-with-ico" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><use xlink:href="prod/img/svg.min.svg#add"></use></svg></span><span>Добавить</span></a>
 							<ul class="dropdown-menu" aria-labelledby="add">
 								<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".add-groupe">Группу</a></li>
-								<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">загрузка / выгрузка</a></li>
 							</ul>
 						</div>
 						<table class="setting groupe">
@@ -424,7 +423,6 @@
 							<a href="" class="btn btn-type1 btn-add btn-with-ico" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><use xlink:href="prod/img/svg.min.svg#add"></use></svg></span><span>Добавить</span></a>
 							<ul class="dropdown-menu" aria-labelledby="add">
 								<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".add-">Семестр</a></li>
-								<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">загрузка / выгрузка</a></li>
 							</ul>
 						</div>
 					</div>
@@ -433,7 +431,6 @@
 							<a href="" class="btn btn-type1 btn-add btn-with-ico" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><use xlink:href="prod/img/svg.min.svg#add"></use></svg></span><span>Добавить</span></a>
 							<ul class="dropdown-menu" aria-labelledby="add">
 								<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".add-quote">Четверть</a></li>
-								<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">загрузка / выгрузка</a></li>
 							</ul>
 						</div>
 						<table class="setting quote">
@@ -575,7 +572,6 @@
 							<a href="" class="btn btn-type1 btn-add btn-with-ico" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><use xlink:href="prod/img/svg.min.svg#add"></use></svg></span><span>Добавить</span></a>
 							<ul class="dropdown-menu" aria-labelledby="add">
 								<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".add-comment">Комментарий</a></li>
-								<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">загрузка / выгрузка</a></li>
 							</ul>
 						</div>
 						<table class="setting comments">
@@ -704,6 +700,25 @@
 								</div>
 							</div>
 						</div>	
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="popup popup-tooltip success-delete" tabindex="-1" role="dialog">
+			<div class="popup-wrapper">
+				<div class="popup-inner">
+					<div class="form">
+						<button class="popup-close" data-dismiss="modal" aria-label="Close">
+							<i class="icon_close_svg">
+								<svg viewBox="0 0 24 24" height="100%" class="close_icon" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+									<path d="m0,4l4,-4l8,8l8,-8l4,4l-8,8l8,8l-4,4l-8,-8l-8,8l-4,-4l8,-8l-8,-8z"/>
+								</svg>
+							</i>
+						</button>
+						<div class="row">
+							<span class="info">Вы действительно хотите удалить выбранных студентов?</span>
+							<a href="" class="btn btn-type1" data-dismiss="modal"><span>Отменить</span></a><a href="" data-dismiss="modal" class="btn btn-type2"><span>Удалить</span></a>
+						</div>
 					</div>
 				</div>
 			</div>

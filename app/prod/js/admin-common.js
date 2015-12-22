@@ -1,4 +1,7 @@
 $(function() {
+
+	// create custom file loader
+	// 
 	(function($) {
 		var multipleSupport = typeof $('<input/>')[0].multiple !== 'undefined',
 			isIE = /msie/i.test(navigator.userAgent);
@@ -83,6 +86,8 @@ $(function() {
 			});
 		};
 
+		// checking suport file loader
+
 		if (!multipleSupport) {
 			$(document).on('change', 'input.customfile', function() {
 
@@ -111,6 +116,8 @@ $(function() {
 			});
 		}
 	}(jQuery));
+
+	// init validation forms
 
 	(function(){
 		var form_validate = $('.js-validate');
@@ -145,6 +152,8 @@ $(function() {
 		};
 	})();
 
+	// success file loader and send file to server
+
 	$('.btn-load-file').on('click', function (e) {
 		e.preventDefault();
 
@@ -177,6 +186,8 @@ $(function() {
 		})
 	});
 
+	// deactivation day at form deactivation
+
 	$('.deactive-day').on("change", function () {
 		if ($(this).is(':checked')) {
 			$(this).parents('.row').siblings('.row.list-6').each(function (i, item) {
@@ -189,14 +200,20 @@ $(function() {
 		}
 	});
 
+	// activation title
+
 	if ($(document)) {
-		$(document).tooltip({
-			position: {
-				my: "left-4 bottom-10",
-				at: "right bottom"
-			}
-		});
+		if ($('[title]').length >= 1) {
+			$(document).tooltip({
+				position: {
+					my: "left-4 bottom-10",
+					at: "right bottom"
+				}
+			});
+		}
 	}
+
+	// create new field at forms activation / deactivation
 
 	document.addEventListener('click', function (e) {
 		var target = e.target;
@@ -215,12 +232,29 @@ $(function() {
 
 		e.preventDefault();
 
+		var str1 = '<div class="row"><span class="field field-effect"><div class="active-field"><div class="groupe-btn-active"><a href="" title="Добавить поле" class="btn-ico btn-plus"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#plus"></use></svg></span></a><a href="" title="Очистить выбранные даты" class="btn-ico btn-close"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#close"></use></svg></span></a></div><span class="field field-effect"><label class="input__label"><span class="input__label-content">Дата (c)</span></label><span class="calendar-input has-success"><input data-validation="required" type="text" autocomplete="off" class="input__field input__field-effect"><span class="input__label-temp"><span class="input__label-temp-content label-calendar"><span class="calendar"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><use xlink:href="prod/img/svg.min.svg#calendar"></use></svg></span></span></span></span></span><span class="field field-effect"><label class="input__label"><span class="input__label-content input__label-differenter">—</span></label></span><span class="field field-effect"><label class="input__label"><span class="input__label-content">Дата (до)</span></label><span class="calendar-input has-success"><input data-validation="required" type="text" autocomplete="off" class="input__field input__field-effect"><span class="input__label-temp"><span class="input__label-temp-content label-calendar"><span class="calendar"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><use xlink:href="prod/img/svg.min.svg#calendar"></use></svg></span></span></span></span></span></div></span></div>',
+			str2 = '<div class="row list-6"><span class="field field-effect"><div class="active-field"><div class="groupe-btn-active"><a href="" title="Добавить поле" class="btn-ico btn-plus"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#plus"></use></svg></span></a><a href="" title="Очистить выбранные даты" class="btn-ico btn-close"><span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><use xlink:href="prod/img/svg.min.svg#close"></use></svg></span></a></div><span class="field field-effect"><span class="column"><label class="input__label"><span class="input__label-content">Часы</span></label><div class="select select-group"><select name="" class="dropdown" data-validation="required"><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select></div></span><span class="column"><label class="input__label"><span class="input__label-content">Минуты</span></label><div class="select select-group"><select name="" class="dropdown" data-validation="required"><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select></div></span></span><span class="field field-effect"><label class="input__label"><span class="input__label-content input__label-differenter">—</span></label></span><span class="field field-effect"><span class="column"><label class="input__label"><span class="input__label-content">Часы</span></label><div class="select select-group"><select name="" class="dropdown" data-validation="required"><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select></div></span><span class="column"><label class="input__label"><span class="input__label-content">Минуты</span></label><div class="select select-group"><select name="" class="dropdown" data-validation="required"><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select></div></span></span></div></span></div>';
 
 		if (target.classList.contains('btn-plus')) {
-			var elem = $(target).parents('.row')[0].cloneNode(true);
-				$(target).parents('.row').find('.btn-plus').hide(300);
-				$(elem).removeClass('original');
-			$(target).parents('form')[0].insertBefore(elem, $(target).parents('.row')[0].nextElementSibling);
+			$(target).parents('.row').find('.btn-plus').hide(300);
+			if ($(target).parents('.row').hasClass('list-6')) {
+				$(target).parents('.row')[0].nextElementSibling.insertAdjacentHTML("beforeBegin", str2);
+				if ($('.dropdown').length >= 1) {
+					$('.dropdown').fancySelect();
+				}
+			} else {
+				$(target).parents('.row')[0].nextElementSibling.insertAdjacentHTML("beforeBegin", str1);
+				$( ".calendar-input input" ).datepicker({
+					prevText: '',
+					nextText: '',
+					altFormat: "DD, d MM, yy"
+				}).attr('readonly', 'readonly');
+
+			    $.datepicker.setDefaults( $.datepicker.regional[ "ru" ] );
+
+			    $( ".calendar-input input" ).datepicker("setDate", new Date());
+			}
+
 		} else if (target.classList.contains('btn-close')) {
 			if ($(target).parents('.row')[0].classList.contains('original')) {
 
@@ -251,6 +285,8 @@ $(function() {
 		});
 	});
 
+	// create new select
+
 	document.addEventListener('click', function (e) {
 		var target = e.target;
 
@@ -279,12 +315,39 @@ $(function() {
 		$(elem).html('<option value>Выберите значение</option>')
 		target.parentNode.parentNode.appendChild(elem);
 
-		if ($('.dropdown')) {
+		if ($('.dropdown').length >= 1) {
 			$('.dropdown').fancySelect();
 		}
 	});
+
+	document.addEventListener('click', function (e) {
+		var target = e.target;
+
+		if (!target) {
+			return;
+		}
+
+		while(target !== document && target !== null) {
+			if (target.tagName === 'A' && $(target).find('.arrow-sort').length) {
+				break;
+			}
+
+			target = target.parentNode;
+		}
+
+		if (!target || target == document) {
+			return;
+		}
+
+		e.preventDefault();
+
+		$('a.sort-top').removeClass('sort-top');
+		target.classList.toggle('sort-top');
+	});
 	
 	var activeItem;
+
+	// context menu
 
 	document.addEventListener('mouseover', function (e) {
 		var target = e.target;
@@ -305,6 +368,9 @@ $(function() {
 
 		e.preventDefault();
 	});
+
+	// reset forms with teg
+
 	document.addEventListener('click', function (e) {
 		var target = e.target;
 
@@ -330,6 +396,9 @@ $(function() {
 
 		$('[class*="' + mathc + '"]').find('input').removeAttr('checked');
 	});
+
+	// hide context menu
+
 	document.addEventListener('mouseout', function (e) {
 		var e = e || window.event,
 			target = e.target || e.srcElement,
@@ -389,7 +458,10 @@ $(function() {
 
 	(function () {
 		window.collCheck = [];
+		window.collCheckLocal = [];
 	}) ();
+
+	// deactivation task in tables
 	
 	document.addEventListener('click', function (e) {
 		var target = e.target;
@@ -415,29 +487,44 @@ $(function() {
 			inline = $(target).parents('td').prev('td'),
 			count = undefined;
 
-		if ($(target).parents('th')[0] && $(target).parents('th')[0].contains(target)) {
-			col.parents('tr').children().each(function (i, item) {
-				if (col[0] === item) {
-					count = i;
-				}
-			});
+		if ($(target).parents('th')[0] && $(target).parents('th')[0].contains(target) || $(target).parents('.header').parents('.card-interview')[0]) {
 
-			col.parents('table').find('tr').each(function (i, item) {
-				$(item).children().each(function (i, item) {
-					if (i === count) {
-						$(item).addClass('is-deactive');
-						collCheck.push($(item));
-
-						if ($(item).children('.is-deactive')) {
-							$(item).children('.is-deactive').each(function (i, item) {
-								$(item).removeClass('is-deactive');
-							});
-						}
+			if ($(target).parents('th')[0]) {
+				col.parents('tr').children().each(function (i, item) {
+					if (col[0] === item) {
+						count = i;
 					}
 				});
-			});
+
+				col.parents('table').find('tr').each(function (i, item) {
+					$(item).children().each(function (i, item) {
+						if (i === count) {
+							if ($(item).children('.is-deactive')) {
+								$(item).children('.is-deactive').each(function (i, item) {
+									$(item).removeClass('is-deactive');
+								});
+							}
+
+							$(item).addClass('is-deactive');
+							collCheck.push($(item));
+						}
+					});
+				});
+			} else {
+				$(target).parents('.header').parents('.card-interview').addClass('is-deactive');
+
+				if ($(target).parents('.header').parents('.card-interview').find('.time-list li .remove')[0]) {
+					$(target).parents('.header').parents('.card-interview').find('.time-list li .remove').each(function (i, item) {
+						if ($(item).hasClass('.is-deactive')) {
+							$(item).each(function (i, item) {
+								$(item).parents('li').removeClass('is-deactive');
+							});
+						}
+					});
+				}
+			}
 		} else if ($(target).parents('.time-list')[0] && $(target).parents('.time-list')[0].contains(target)) {
-			var x = $(target).parents('tr').hasClass('is-deactive') || $(target).parents('td').hasClass('is-deactive') || $(target).parents('th').hasClass('is-deactive') || $(target).parents('li').hasClass('is-deactive');
+			var x = $(target).parents('tr').hasClass('is-deactive') || $(target).parents('td').hasClass('is-deactive') || $(target).parents('th').hasClass('is-deactive') || $(target).parents('li').hasClass('is-deactive') || $(target).parents('.card-interview').hasClass('is-deactive') || $(target).parents('.row-card .column').hasClass('is-deactive');
 
 			if (x) {
 				return;
@@ -446,21 +533,31 @@ $(function() {
 			$(target).parents('li').addClass('is-deactive');
 			collCheck.push($(target).parents('li'));
 
-		} else if ($(target).parents('td:first-of-type')[0] && $(target).parents('td:first-of-type')[0].contains(target)) {
-			$(target).parents('td:first-of-type').parents('tr').children('td').each(function (i, item) {
-				if ($(item).hasClass('is-deactive')) {
-					return;
-				}
-				$(item).addClass('is-deactive');
-				collCheck.push($(item));
+		} else if ($(target).parents('td:first-of-type')[0] && $(target).parents('td:first-of-type')[0].contains(target) || $(target).parents('.left-side').parents('.column')[0]) {
+			if ($(target).parents('td:first-of-type')[0]) {
+				$(target).parents('td:first-of-type').parents('tr').children('td').each(function (i, item) {
+					if ($(item).hasClass('is-deactive')) {
+						return;
+					}
+					$(item).addClass('is-deactive');
+					collCheck.push($(item));
 
-				$(item).children('.is-deactive').each(function (i, item) {
-					$(item).removeClass('is-deactive');
+					$(item).children('.is-deactive').each(function (i, item) {
+						$(item).removeClass('is-deactive');
+					});
 				});
-			});
+			} else {
+				$(target).parents('.left-side').parents('.column').addClass('is-deactive');
+
+				if ($(target).parents('.left-side').parents('.column').children().find('.is-deactive')[0]) {
+					$(target).parents('.left-side').parents('.column').children().find('.is-deactive').removeClass('is-deactive');
+				}
+			}
 		}
 	});
 	
+	// show / hide "editer" mode
+
 	document.addEventListener('click', function (e) {
 		var target = e.target;
 
@@ -480,6 +577,8 @@ $(function() {
 
 		document.body.classList.toggle('editer');
 	});
+
+	// activation "editer" mode
 
 	document.addEventListener('click', function (e) {
 		var target = e.target;
@@ -501,9 +600,27 @@ $(function() {
 		document.body.classList.remove('editer');
 	});
 
-	if ($('.dropdown')) {
+	// dropdown context menu activation
+
+	if ($('.dropdown').length >= 1) {
 		$('.dropdown').fancySelect();
 	}
+
+	// count tags in page for calc width search
+	
+	$(document).ready(function () {
+		if (!$(".inline-select")[0]) {
+			return;
+		}
+
+		$(".inline-select").each(function (i, item) {
+			if ($(item).children('a.btn-inline').length > 3) {
+				$(item).parents('.subtools').addClass('long-inline-select');
+			}
+		});
+	});
+
+	// datepicker activation
 
 	$( document ).ready(function () {
 		if (!$( ".calendar-input input" )[0]) {
@@ -519,30 +636,33 @@ $(function() {
 	    $.datepicker.setDefaults( $.datepicker.regional[ "ru" ] );
 
 	    $( ".calendar-input input" ).datepicker("setDate", new Date());
+	});
 
-	    document.addEventListener('click', function (e) {
-	    	var target = e.target;
+	// icons datepicker
 
-	    	while (target !== document && target !== null) {
-	    		if (target.classList.contains('input__label-temp') && target.parentNode.classList.contains('calendar-input')) {
-	    			break;
-	    		}
+	document.addEventListener('click', function (e) {
+		var target = e.target;
 
-	    		target = target.parentNode;
-	    	}
+		while (target !== document && target !== null) {
+			if (target.classList.contains('input__label-temp') && target.parentNode.classList.contains('calendar-input')) {
+				break;
+			}
 
-	    	if (!target || target == document) {
-	    		return;
-	    	}
+			target = target.parentNode;
+		}
 
-	    	e.preventDefault();
+		if (!target || target == document) {
+			return;
+		}
 
-	    	$(target.previousElementSibling).datepicker( "show" );
-	    });
+		e.preventDefault();
 
+		$(target.previousElementSibling).datepicker( "show" );
 	});
 
 	var currentTime = new Date().getTime();
+
+	// datepickers buttons activation
 
 	document.addEventListener('click', function (e) {
 		var target = e.target,
@@ -597,6 +717,8 @@ $(function() {
 
 	var collectionTeg = [];
 
+	// write in textarea the tegs fasts choice 
+
 	document.addEventListener('click', function (e) {
 		var target = e.target,
 			teg;
@@ -636,10 +758,14 @@ $(function() {
 		$('[data-target=".add-teg.' + teg + '"]').parents('.row.no-btn-modal').find('.input__field').parents('.field').addClass('has-success');
 	});
 
-	if ($('.dropdown-toggle')) {
+	// dropdown context menu activation
+
+	if ($('.dropdown-toggle').length >= 1) {
 		$('.dropdown-toggle').dropdown();
 	}
 	
+	// Show popup of success at save checkboxs in tables
+
 	$('.elem-checkbox').click(function (e) {
 		var target = e.target;
 
@@ -649,6 +775,8 @@ $(function() {
 			$('.popup.success-delete').modal('show');
 		}
 	});
+
+	// Choosing checkboxs in tables
 
 	$('.checkbox-general').click(function (e) {
 		var target = e.target;
@@ -678,6 +806,8 @@ $(function() {
 		}
 	});
 
+
+	// Custom file loader
 	if ($('input[type=file]')) {
 		$('input[type=file]').customFile();
 	}   
