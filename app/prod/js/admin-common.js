@@ -757,9 +757,9 @@ $(function() {
 			}
 		});
 
-		$('[data-target=".add-teg.' + teg + '"]').parents('.row.no-btn-modal').find('.input__field')[0].innerHTML += collectionTeg[teg].join(' ');
+		$('[data-target=".add-teg.' + teg + '"]').parents('.row.no-btn-modal').find('.input__field')[0].value += collectionTeg[teg].join(' ') + ' ';
 		$(target).parents('.add-teg').modal('hide');
-		$('[data-target=".add-teg.' + teg + '"]').parents('.row.no-btn-modal').find('.input__field').parents('.field').addClass('has-success');
+		$('[data-target=".add-teg.' + teg + '"]').parents('.row.no-btn-modal').find('.input__field').parents('.field').removeClass('has-error').addClass('has-success');
 	});
 
 	// dropdown context menu activation
