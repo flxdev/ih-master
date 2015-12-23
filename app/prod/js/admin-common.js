@@ -1126,14 +1126,10 @@ $(function() {
 
 		var elem = target.parentNode.parentNode.querySelector('select').cloneNode(true);
 		$(elem).removeClass('fancified');
-		//$(elem).html('<option value>Выберите значение</option>')
+		//$(elem).html('<option value>Выберите значение</option>');
 		target.parentNode.parentNode.appendChild(elem);
 
-<<<<<<< HEAD
 		if ($('.dropdown').length >= 1) {
-=======
-		if ($('.dropdown')) { 
->>>>>>> de05a1ba3727e917f486b1d3d3ff72fc3e4dd391
 			$('.dropdown').fancySelect();
 		}
 	});
