@@ -3731,3 +3731,27 @@ ol.guid {
 // .modal-open.editer {
 // 	overflow-y: auto !important;
 // }
+.add-teg {
+	.popup-wrapper {
+		.popup-inner {
+			.form .row.inline-row {
+				[type=checkbox]+label {
+					min-height: 20px;
+					height: auto;
+					&:after,
+					&:before {
+						top: 11px;
+					}
+				}
+				[type=checkbox]:checked+label span:before {
+					bottom: -6px;
+					height: auto;
+				}
+				.input__label-content {
+					white-space: normal;
+					line-height: 20px;
+				}
+			}
+		}
+	}
+}

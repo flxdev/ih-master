@@ -736,7 +736,12 @@ $(function() {
 
 		e.preventDefault();
 
-		teg = $(target).parents('.add-teg')[0].classList[3];
+		if ($(target).parents('.add-teg').length >= 1) {
+			teg = $(target).parents('.add-teg')[0].classList[3];
+		} else {
+			return;
+		}
+		
 
 		if (!collectionTeg[teg]) {
 			collectionTeg[teg] = [];
