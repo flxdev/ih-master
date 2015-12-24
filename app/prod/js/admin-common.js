@@ -283,6 +283,29 @@ $(function() {
 			item.style.display = 'none';
 		});
 	});
+	
+	// hide popup to click tab 
+	
+	document.addEventListener('click', function (e) {
+		var target = e.target;
+
+		while(target !== document && target !== null) {
+			if (target.getAttribute('data-toggle') === 'tab') {
+				break;
+			}
+
+			target = target.parentNode;
+		}
+
+		if (!target || target == document) {
+			return;
+		}
+
+		e.preventDefault();
+
+		$('.popup.in').modal('hide');
+		document.body.classList.remove('editer');
+	});
 
 	// create new select
 
