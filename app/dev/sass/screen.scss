@@ -1258,7 +1258,7 @@ a {
 		padding-right: 3em; //48px / 16px
 		display: inline-block;
 		width: 100%;
-		transition: background 0.3s cubic-bezier(0.7, 0, 0.3, 1) 0.5s;
+		transition: background 0s cubic-bezier(0.7, 0, 0.3, 1) 0s;
 		& > a {
 			padding: 0.8em 0 0.8em 7.5em; // 16px 0 16px 150px / 20px
 			display: inline-block;			
@@ -1270,7 +1270,8 @@ a {
 			}
 		}
 		&:hover {
-			transition: background 0.3s cubic-bezier(0.7, 0, 0.3, 1) 0s;
+			//transition: none;
+			transition: background 0s cubic-bezier(0.7, 0, 0.3, 1) 0.5s;
 			span {
 				color: $white;
 				border-color: transparent;
@@ -1279,10 +1280,15 @@ a {
 	}
 	&.hovered {
 		li {
-			transition: background 0s cubic-bezier(0.7, 0, 0.3, 1) 0s;
+			transition: none;
+			//transition: background 0s cubic-bezier(0.7, 0, 0.3, 1) 0.5s;
+			&:hover {
+				transition: none!important;
+			}
 		}
 		.active {
 			background-color: transparent;
+			//transition: background 0.3s cubic-bezier(0.7, 0, 0.3, 1) 0s;		
 			span {
 				color: $white;
 				border-color: transparent;
@@ -1300,7 +1306,7 @@ a {
 		top: 0;
 		left: 0;
 		z-index: 1;
-		transition: opacity 0.5s cubic-bezier(0.7, 0, 0.3, 1) 0s, visiblity 0.5s cubic-bezier(0.7, 0, 0.3, 1) 0s;
+		transition: opacity 0.3s cubic-bezier(0.7, 0, 0.3, 1) 0s, visiblity 0.3s cubic-bezier(0.7, 0, 0.3, 1) 0s;
 		opacity: 0;
 		visibility: hidden;
 		&.visible {

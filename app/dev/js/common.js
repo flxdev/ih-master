@@ -218,12 +218,12 @@ $(document).ready(function () {
 		});
 	}) ();
 
-	// (function() {
-	// 	var hoverSection = new Menu({
-	// 		elem: document.querySelector('.main__menu'),
-	// 		contentBlock: document.querySelector('.content__bg')
-	// 	});
-	// }) ();
+	(function() {
+		var hoverSection = new Menu({
+			elem: document.querySelector('.main__menu'),
+			contentBlock: document.querySelector('.content__bg')
+		});
+	}) ();
 
 
 	//CUSTOM SCROLL
