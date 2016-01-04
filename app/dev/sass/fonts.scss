@@ -1230,6 +1230,18 @@ table {
 		}
 	}
 }
+.client__box {
+	.client__item {
+		.client__name {
+			font-family: $AgoraProBold;
+			font-size: 1.25em; // 20px / 16px
+		}
+		.client__link {
+			font-family: $HelveticaRoman;
+			font-size: 1em; // 16px / 16px
+		}
+	}
+}
 @media screen and (max-width: 1599px) {
 	a[class*="btn__type"] {
 		span {
