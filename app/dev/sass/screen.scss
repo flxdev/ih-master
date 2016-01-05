@@ -612,36 +612,9 @@ a[class*="btn__type"] {
 	.footer__content {
 		height: 100%;
 		padding-top: 5.6875em; //91px /16px
-		padding-bottom: 6em; // 96px / 16px
+		//padding-bottom: 6em; // 96px / 16px
 	}
-	.btn__scroll {
-		position: absolute;
-		bottom: 6.3em;
-		left: -0.1875em;
-		.scroll__top {
-			width: 3.875em; // 62px / 16px
-			height: 3.4375em;// 55px / 16px
-			text-transform: uppercase;
-			.icon__arrow {
-				width: 1.25em; // 20px / 16px
-				height: 2.5em; //40px / 16px
-				background-color: #fff;
-				display: inline-block;
-			}
-			span {
-				margin-top: 0.625em; // 10px / 16px
-				color: $blue;
-				@include transition(color);
-				display: inline-block;
-				letter-spacing: 0.0625em;
-			}
-			&:hover {
-				span {
-					color: $red;
-				}
-			}
-		}
-	}
+	
 	.footer__row {
 		@include clearfix;
 		padding-left: 2px;
@@ -1181,6 +1154,59 @@ a {
 			stroke: $blue
 		}
 	}
+	.btn__scroll {
+		position: absolute;
+		bottom: 4.6em;
+		left: 9.413em;
+		z-index: 6;
+		transform: translate3d(0, 15em, 0);
+		opacity: 0;
+		visibility: hidden;
+		transition: transform 0.5s linear, opacity 0.5s linear, visibility 0.5s linear;
+		&.scrolled {
+			transform: translate3d(0, 0, 0);
+			opacity: 1;
+			visibility: visible;
+		}
+		.scroll__top {
+			width: 4.6875em; // 75px / 16px
+			//height: 3.4375em;// 55px / 16px
+			text-transform: uppercase;
+			.icon__arrow {
+				width: 1.6em; // 20px / 16px
+				height: 2.9875em; //35px / 16px
+				display: inline-block;
+				.fill {
+					fill: $blue;
+					@include transition(fill);
+				}
+				.stroke {
+					stroke: $blue;
+					@include transition(stroke);
+				}
+			}
+			span {
+				margin-top: 0.625em; // 10px / 16px
+				color: $blue;
+				@include transition(color);
+				display: inline-block;
+				letter-spacing: 0.0625em;
+			}
+			&:hover {
+				span {
+					color: $red;
+				}
+				.icon__arrow {
+					.fill {
+						fill: $red;
+					}
+					.stroke {
+						stroke: $red;
+					}
+				}
+			}
+		}
+	}
 }
 @media screen and (max-width: 1599px) {
 	.main {
@@ -1193,6 +1219,9 @@ a {
 		.subbox {
 			margin-left: 24.9%;
 			width: 75.1%;
+		}
+		.btn__scroll {
+			left: 1.5em;
 		}
 	}
 }

@@ -261,6 +261,28 @@ $(document).ready(function () {
 		jQuery('body').addClass('touch-device');
 	})();
 
+	//SCROLL TOP
+	(function(){
+		var btn = $('.btn__scroll'),
+			scContent = $('.fixed'),
+			top = scContent.scrollTop();
+
+		scContent.on('scroll', function(){
+			var top = $(this).scrollTop();
+			
+			if(top > 200) {
+				btn.addClass('scrolled');
+			} else {
+				btn.removeClass('scrolled');
+			}
+
+		});		
+
+		btn.on('click', function(){
+			scContent.getNiceScroll(0).doScrollTop(0, 1500);
+		});
+	})();
+
 	//MOBILE MENU INIT
 	(function () {
 		var duration = 300,

@@ -23,10 +23,7 @@
 	<path display="inline" fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" d="M20.095,1.972l9.999,16.998
 		H10.097L20.095,1.972z"/>
 </g>
-</symbol><symbol id="arrow up" viewBox="0 0 23.494 41.968">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M12.748,41.968h-2V11.972h2V41.968"/>
-<path fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" d="M11.747,1.972l9.999,16.998H1.748L11.747,1.972z"/>
-</symbol><symbol id="arrow-doubl" viewBox="0 0 5 13.998">
+</symbol><symbol id="arrow up" viewBox="0 0 23.494 41.968"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.748,41.968h-2V11.972h2V41.968"/><path fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" d="M11.747,1.972l9.999,16.998H1.748L11.747,1.972z"/></symbol><symbol id="arrow-doubl" viewBox="0 0 5 13.998">
 <path d="M5,10l-5,0.001l2.502,3.997L5,10z"/>
 <path d="M2.502,0L0,3.997l5,0.001L2.502,0z"/>
 </symbol><symbol id="arrow-sort-top"><path transform="rotate(180, 24, 25)" id="svg_1" d="m14,20l10,10l10,-10l-20,0z"/></symbol><symbol id="arrow-sort" viewBox="0 0 48 48"><path d="M14 20l10 10 10-10z"/></symbol><symbol id="arrow_nav" viewBox="0 0 42 24">
