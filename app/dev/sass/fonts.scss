@@ -775,7 +775,7 @@ table {
 	}
 }
 .steps_cover {
-	margin-bottom: 3.4375em; //55px / 16px
+	//margin-bottom: 3.4375em; //55px / 16px
 }
 .categories__change dl.steps {
 	dt {
@@ -1213,6 +1213,18 @@ table {
 			font-size: 1em; // 16px / 16px
 		}
 	}
+	.categories__change {
+		li {
+			&:last-child {
+				p {
+					font-family: $AgoraProBlack;
+				}
+				.italic {
+					font-family: $AgoraProItalic;
+    			}
+			}
+		}
+	}
 }
 .review__list {
 	.review__list-list {
@@ -1223,6 +1235,9 @@ table {
 		.text {
 			font-family: $AgoraProBoldItalic;
 			font-size: 1.25em; //20px / 16px
+			p {
+				font-family: $AgoraProBoldItalic;
+			}
 		}
 		.author {
 			font-family: $AgoraPro;
@@ -1315,6 +1330,34 @@ table {
 			}
 		}
 	}
+	.test__box {
+		&.big {
+		}
+		&.small {
+			.content__box {
+				font: 1.62em/1.2857 pf_agora_slab_probold,Arial,sans-serif;
+			}
+		}
+	}
+}
+@media screen and (max-width: 1105px) {
+	.prevslide-block {
+		.title-pb {
+			font: 2.275em/1.1679 pf_agora_slab_problack,Arial,sans-serif;
+		}
+		.descr_slide-pb {
+			font: 0.8125em/2.1077 helveticaneuecyrmedium,Arial,sans-serif;
+		}
+		.title_slide-pb {
+			font: 1.05em/1.75 pf_agora_slab_proultrablack,Arial,sans-serif;
+		}
+		.price_slide-pb {
+			font: 1.15em/1.4 pf_agora_slab_probold,Arial,sans-serif;
+		}
+		.info_slide-pb {
+			font: 0.9em/1.625 helveticaneuecyrroman,Arial,sans-serif;
+		}
+	}
 }
 @media screen and (max-width: 1023px) {
 	.location {
@@ -1341,7 +1384,44 @@ table {
             }
         }
     }
-	
+    .prevslide-block {
+		.title-pb {
+			font: 1.575em/1.1679 pf_agora_slab_problack,Arial,sans-serif;
+		}
+	}
+	.card-block {
+		.title-cb {
+			font: 1.125em/1.6667 pf_agora_slab_proregular,Arial,sans-serif;
+		}
+		.descr-cb {
+			font: 1.1em/1.4 pf_agora_slab_probold_italic,Arial,sans-serif;
+		}
+	}
+}
+@media screen and (max-width: 980px) {
+	.test__box {
+		&.small {
+			.content__box {
+				font: 1.12em/1.2857 pf_agora_slab_probold,Arial,sans-serif;
+			}
+		}
+		.content__box {
+			font: 0.85em/1.5 pf_agora_slab_problack,Arial,sans-serif;
+		}
+	}
+	// .prevslide-block {
+	// 	.title-pb {
+	// 		font: 1.575em/1.1679 pf_agora_slab_problack,Arial,sans-serif;
+	// 	}
+	// }
+	// .card-block {
+	// 	.title-cb {
+	// 		font: 1.125em/1.6667 pf_agora_slab_proregular,Arial,sans-serif;
+	// 	}
+	// 	.descr-cb {
+	// 		font: 1.1em/1.4 pf_agora_slab_probold_italic,Arial,sans-serif;
+	// 	}
+	// }
 }
 @media screen and (max-width: 767px) {
 	.main__menu {
@@ -1386,6 +1466,16 @@ table {
             }
         }
     }
+    .test__box {
+		&.small {
+			.content__box {
+				font-size: 1.62em;line-height: 1.5;
+			}
+		}
+		.content__box {
+			font-size: 1.25em;line-height: 1.5;
+		}
+	}
 }
 @media screen and (max-width: 749px) {
 	body {

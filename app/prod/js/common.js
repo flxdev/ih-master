@@ -1,5 +1,25 @@
 $(document).ready(function () {
 	
+	//scrollTo
+	(function(){
+		var block = $('.blocks-links'),
+			link = block.find('a');
+
+		link.click(function(){
+			if($(this).hasClass('btn__enroll')){
+				return false
+			} else {
+				var idscroll = $(this).attr('href'),
+				top = $(idscroll).offset().top - 50;
+
+				$(this).addClass('active__anchor').parent().siblings().find('a').removeClass('active__anchor');
+
+				$('.fixed').getNiceScroll(0).doScrollTop(top, 1850);
+				return false;
+			}
+		});
+	})();
+
 	var emitter = EventEmitter();
 
 	//open menu
@@ -16,7 +36,7 @@ $(document).ready(function () {
 		btn.on('click', function(){
 			cont.addClass('opened');
 			contBg.addClass('opened');
-			document.body.classList.add('animate-block');
+			document.body.classList.add('animate');
 		});
 		close.on('click', function(){
 			actionRemove(cont, contBg);
@@ -28,7 +48,7 @@ $(document).ready(function () {
 		function actionRemove(btn, close) {
 			cont.removeClass('opened');
 			contBg.removeClass('opened');
-			document.body.classList.remove('animate-block');
+			document.body.classList.remove('animate');
 		}
 	}) ();
 
@@ -104,7 +124,7 @@ $(document).ready(function () {
 						nextArrow: '<button type="button" class="slick-next"><svg class="arrow_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 42.067 41.968"><path class="fill" fill-rule="evenodd" clip-rule="evenodd" d="M0.097,20.971v-2h29.996v2H0.097"/><path class="stroke" fill="none" stroke-width="2" stroke-miterlimit="10" d="M40.093,19.97l-16.998,9.999V9.972L40.093,19.97z"/></svg></button>',
 						responsive: [
 							{
-								breakpoint: 510,
+								breakpoint: 1024,
 								settings: {
 									slidesToShow: 1
 								}
@@ -221,7 +241,8 @@ $(document).ready(function () {
 	(function() {
 		var hoverSection = new Menu({
 			elem: document.querySelector('.main__menu'),
-			contentBlock: document.querySelector('.content__bg')
+			contentBlock: document.querySelector('.content__bg'),
+			menuBox: document.querySelector('.boxes'),
 		});
 	}) ();
 
@@ -683,6 +704,7 @@ $(document).ready(function () {
 function Menu (config) {
 	this.elem = config.elem;
 	this.block = config.contentBlock;
+	this.box = config.menuBox;
 	this.closeBtn = 'data-type-close';
 	this.item = 'data-item';
 	this.content = 'data-content-menu';
@@ -793,7 +815,7 @@ Menu.prototype.over = function (e) {
 		var id = target.getAttribute(this.item),
 			attr = this.content;
 
-		Array.prototype.forEach.call(this.block.children, function (item) {
+		Array.prototype.forEach.call(this.box.children, function (item) {
 			if (item.getAttribute(attr) == id) {
 				item.classList.add('visible');
 			} else {
@@ -826,7 +848,7 @@ Menu.prototype.out = function (e) {
 		var id = target.getAttribute(this.item),
 			attr = this.content;
 
-		Array.prototype.forEach.call(this.block.children, function (item) {
+		Array.prototype.forEach.call(this.box.children, function (item) {
 			if (item.getAttribute(attr) == id) {
 				item.classList.add('visible');
 			} else {
@@ -855,7 +877,7 @@ Menu.prototype.close = function (e) {
 	this._fadeMenu(document, e, function (e) {
 		this.block.classList.remove('visible');
 
-		Array.prototype.forEach.call(this.block.children, function (item) {
+		Array.prototype.forEach.call(this.box.children, function (item) {
 			item.classList.remove('visible');
 		});
 
