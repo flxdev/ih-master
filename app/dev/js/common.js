@@ -243,6 +243,8 @@ $(document).ready(function () {
 			elem: document.querySelector('.main__menu'),
 			contentBlock: document.querySelector('.content__bg'),
 			menuBox: document.querySelector('.boxes'),
+			sub: document.querySelector('.content__bg .sub__header'),
+			soc: document.querySelector('.content__bg .social')
 		});
 	}) ();
 
@@ -705,6 +707,8 @@ function Menu (config) {
 	this.elem = config.elem;
 	this.block = config.contentBlock;
 	this.box = config.menuBox;
+	this.sub = config.sub;
+	this.soc = config.soc;
 	this.closeBtn = 'data-type-close';
 	this.item = 'data-item';
 	this.content = 'data-content-menu';
@@ -810,7 +814,6 @@ Menu.prototype.over = function (e) {
 	if (target.classList.contains('active')) {
 		return;
 	}
-	
 	this._fadeMenu(target, e, function (e) {
 		var id = target.getAttribute(this.item),
 			attr = this.content;
@@ -836,7 +839,7 @@ Menu.prototype.out = function (e) {
 
 	if (relatedTarget) {
 		while (relatedTarget != document) {
-			if (relatedTarget == this.activeItem || relatedTarget.hasAttribute(this.content)) {
+			if (relatedTarget == this.activeItem || relatedTarget.hasAttribute(this.content) || relatedTarget == this.sub || relatedTarget == this.soc) {
 				return;
 			}
 
