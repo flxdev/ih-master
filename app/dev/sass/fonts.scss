@@ -307,6 +307,17 @@ body {
 	text-rendering: optimizeLegibility;
 	font-kerning: normal;
 }
+.breadcrumbs__box {
+	ul {
+		li {
+			letter-spacing: -0.036em;
+		}
+	}
+	a {
+		font-family: $AgoraProItalic;
+		font-size: 0.875em; // 14px / 16px
+	}
+}
 .btn__cart {
 	.btn-menu {
 		span { 

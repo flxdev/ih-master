@@ -1577,6 +1577,43 @@ a {
 		margin-top: -0.425em;
 	}
 }
+
+.breadcrumbs__box {
+	margin-bottom: 2.2em;
+	.breadcrumbs {
+	}
+	li {
+		margin-bottom: 0.5em;
+		margin-left: 1.25em;
+		margin-right: 1.25em;
+		display: inline-block;
+		position: relative;
+		&::after {
+			content: '';
+			position: absolute;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 0.34375em 0 0.34375em 0.5626em; // 5.5px 9px // 16px
+			border-color: transparent transparent transparent #8998a7;
+			left: -1.4em;
+			top: 0.45em;
+		}
+		&:first-child {
+			margin-left: 0;
+			&::after {
+				display: none;
+			}
+		}
+		a {
+			color: #8998a7;
+			@include transition(color);
+			&:hover {
+				color: $red;
+			}
+		}
+	}
+}
 .big_scroll {		
 	.viewport {
 		position: relative;
@@ -1609,10 +1646,19 @@ a {
 		// 	z-index: 5;
 		// }
 		.content__scroll {
-			padding-top: 12.75em; //134px / 16px
+			padding-top: 10em; //134px / 16px
 		}
 		.main {
 			padding-top: 8.3125em; // 133px / 16px
+		}
+	}
+}
+#index {
+	.big_scroll {
+		.overview {
+			.content__scroll {
+				padding-top: 12.75em;
+			}
 		}
 	}
 }
@@ -1630,6 +1676,15 @@ a {
 	}
 }
 @media screen and (max-width: 1279px) {
+	#index {
+		.big_scroll {
+			.overview {
+				.content__scroll {
+					padding-top: 5.65em; // 100px / 16px
+				}
+			}
+		}
+	}
 	.big_scroll {		
 		.overview {
 			padding-right: 1.4375em; // 23px/ 16px
@@ -1641,6 +1696,7 @@ a {
 			}
 		}		
 	}
+	
 }
 @media screen and (max-width: 1023px) {
 	.big_scroll {		
@@ -1651,9 +1707,18 @@ a {
 				width: 10.99%;
 			}
 			.content__scroll {
-				padding-top: 7.15em; // 92px / 16px
+				padding-top: 5.65em; // 92px / 16px
 			}
 		}		
+	}
+	#index {
+		.big_scroll {
+			.overview {
+				.content__scroll {
+					padding-top: 7.15em; // 92px / 16px
+				}
+			}
+		}
 	}
 }
 @media screen and (max-width: 767px) {
@@ -1663,7 +1728,10 @@ a {
 			&::after {
 				width: 13.9%;
 			}
-		}		
+			.content__scroll {
+				padding-top: 3.65em; // 92px / 16px
+			}
+		}
 	}
 }
 // @media screen and (max-width: 639px) {
@@ -2233,7 +2301,7 @@ h1 {
 		position: absolute;
 		left: 0;
 		bottom: -0.0625em;
-		max-width: 24.67%;
+		max-width: 23.97%;
 		line-height: 3.625em; // 58px / 16px
 		display: inline-block;
 		width: 100%;
