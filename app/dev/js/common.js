@@ -671,19 +671,39 @@ $(document).ready(function () {
 	(function(){
 		var grid = $('.grid');
 
+		// Array.prototype.forEach.call(grid, function (item) {
+		// 	var nameClass = item.parentNode.getAttribute('class').split(' ')[0];
+
+		// 	if($(item).hasClass('review__list')){
+		// 		$(item).masonry({
+		// 			itemSelector: '.grid-item',
+		// 			//columnWidth: 330,
+		// 			//percentPosition: true,
+		// 			gutter: '.gutter-sizer'
+		// 		});
+		// 	} else {
+		// 		$(item).masonry({
+		// 			itemSelector: '.grid-item'
+		// 		});
+		// 	}
+		// });
+
 		Array.prototype.forEach.call(grid, function (item) {
 			var nameClass = item.parentNode.getAttribute('class').split(' ')[0];
 
 			if($(item).hasClass('review__list')){
-				$(item).masonry({
+				$(item).isotope({
 					itemSelector: '.grid-item',
 					//columnWidth: 330,
 					//percentPosition: true,
 					gutter: '.gutter-sizer'
 				});
 			} else {
-				$(item).masonry({
-					itemSelector: '.grid-item'
+				$(item).isotope({
+					itemSelector: '.grid-item',
+					getSortData: {
+						name: '.data'
+					}
 				});
 			}
 		});
