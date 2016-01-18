@@ -313,9 +313,12 @@ body {
 			letter-spacing: -0.036em;
 		}
 	}
-	a {
+	// a {
+	// 	font-family: $AgoraProItalic;
+	// 	font-size: 0.875em; // 14px / 16px
+	// }
+	span {
 		font-family: $AgoraProItalic;
-		font-size: 0.875em; // 14px / 16px
 	}
 }
 .btn__cart {

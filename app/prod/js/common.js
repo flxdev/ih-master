@@ -34,7 +34,11 @@ $(document).ready(function () {
 			popupCont = btnSubm.parents('.popup__menu');
 
 		btn.on('click', function(){
-			cont.addClass('opened');
+			setTimeout(function(){
+				//cont.addClass('opened');
+				cont.fadeIn(800);
+			},800)
+			
 			contBg.addClass('opened');
 			document.body.classList.add('animate');
 		});
@@ -46,7 +50,8 @@ $(document).ready(function () {
 			actionRemove(cont, contBg);
 		});
 		function actionRemove(btn, close) {
-			cont.removeClass('opened');
+			cont.hide(0);
+			//cont.removeClass('opened');
 			contBg.removeClass('opened');
 			document.body.classList.remove('animate');
 		}
@@ -277,7 +282,8 @@ $(document).ready(function () {
 				usetransition: false,
 				horizrailenabled: true,
 				zindex: '9',
-				enabletranslate3d: true
+				enabletranslate3d: true,
+				hwacceleration: false
 			});
 		}
 
@@ -694,9 +700,9 @@ $(document).ready(function () {
 			if($(item).hasClass('review__list')){
 				$(item).isotope({
 					itemSelector: '.grid-item',
-					//columnWidth: 330,
-					//percentPosition: true,
-					gutter: '.gutter-sizer'
+					masonry: {
+				    gutter: '.gutter-sizer'
+				  }
 				});
 			} else {
 				$(item).isotope({
@@ -1032,7 +1038,7 @@ function Map () {
 
     	var mapsOptions = {
 	            zoom: 12,
-	            scrollwheel: true,
+	            scrollwheel: false,
 	            streetViewControl: false,
 	            zoomControl: false,
 	            scaleControl: false,

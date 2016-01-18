@@ -1597,7 +1597,7 @@ a {
 			border-width: 0.34375em 0 0.34375em 0.5626em; // 5.5px 9px // 16px
 			border-color: transparent transparent transparent #8998a7;
 			left: -1.4em;
-			top: 0.45em;
+			top: 0.29em;
 		}
 		&:first-child {
 			margin-left: 0;
@@ -1680,7 +1680,7 @@ a {
 		.big_scroll {
 			.overview {
 				.content__scroll {
-					padding-top: 5.65em; // 100px / 16px
+					padding-top: 8.25em; // 100px / 16px
 				}
 			}
 		}
@@ -1777,17 +1777,18 @@ a {
 	width: 70%;
 	right: 0;
 	height: 100%;
-	visibility: hidden;
-	opacity: 0;
+	// visibility: hidden;
+	// opacity: 0;
 	z-index: 10;
-	transition: all 0s cubic-bezier(0.7, 0, 0.3, 1) 0s;
-	&.opened {
-		display: table;
-		visibility: visible;
-		opacity: 1;
-		transform: translateX(0px);
-		transition: all 0.8s cubic-bezier(0.7, 0, 0.3, 1) 0.8s;
-	}
+	// transition: all 0s cubic-bezier(0.7, 0, 0.3, 1) 0.0s;
+	// &.opened {
+	// 	display: table;
+	// 	visibility: visible;
+	// 	opacity: 1;
+	// 	//transform: translateX(0px);
+	// 	transition: all 0.8s cubic-bezier(0.7, 0, 0.3, 1) 0s;
+	display: none;
+	// }
 	.nav__content {
 		//max-width: 970px;
 		padding: 0 9.8%;
@@ -4777,7 +4778,7 @@ div[class*="col"] .title {
 		height: 31.8125em; /* 509px / 16px */
 		position: relative;
 		float: right;
-		width: 52.6%;
+		width: 52.2%;
 	}
 	.map {
 		min-width: 100%;
