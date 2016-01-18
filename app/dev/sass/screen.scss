@@ -1331,14 +1331,14 @@ a {
 	li {
 		background-color: $yellow;
 		position: relative;
-		padding-right: 3em; //48px / 16px
+		//padding-right: 3em; //48px / 16px
 		display: inline-block;
 		width: 100%;
 		transition: background 0s cubic-bezier(0.7, 0, 0.3, 1) 0s;
 		& > a {
-			padding: 0.8em 0 0.8em 7.5em; // 16px 0 16px 150px / 20px
+			padding: 0.8em 26% 0.8em 7.5em; // 16px 0 16px 150px / 20px
 			display: inline-block;			
-			max-width: 80%;
+			
 			span {
 				color: $blue;
 				border-bottom: 1px solid $blue;

@@ -283,7 +283,12 @@ $(document).ready(function () {
 				horizrailenabled: true,
 				zindex: '9',
 				enabletranslate3d: true,
-				hwacceleration: false
+				hwacceleration: false,
+				//scrollspeed: 50,
+				mousescrollstep: 20,
+				enabletranslate3d: false,
+				bouncescroll: false,
+				smoothscroll: false
 			});
 		}
 
@@ -308,7 +313,10 @@ $(document).ready(function () {
 		});		
 
 		btn.on('click', function(){
-			scContent.getNiceScroll(0).doScrollTop(0, 1500);
+			//scContent.getNiceScroll(0).doScrollTop(0, 1500);
+			scContent.animate({
+				scrollTop: $('body').offset().top
+			},500);
 		});
 	})();
 
