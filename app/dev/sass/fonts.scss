@@ -1271,6 +1271,16 @@ table {
 		}
 	}
 }
+div[class*="col"] .text__block {
+	.title {
+		font-family: $AgoraProUltraBlack;
+		font-size: 1.75em; // 28px / 16px
+	}
+	.subtitle {
+		font-family: $AgoraProBoldItalic;
+		font-size: 1.375em; // 22px / 16px
+	}
+}
 @media screen and (max-width: 1599px) {
 	a[class*="btn__type"] {
 		span {
@@ -1353,6 +1363,9 @@ table {
 			}
 		}
 	}
+	div[class*="col"] .text__block {
+		font-size: 80%;
+	}
 }
 @media screen and (max-width: 1105px) {
 	.prevslide-block {
@@ -1410,6 +1423,9 @@ table {
 		.descr-cb {
 			font: 1.1em/1.4 pf_agora_slab_probold_italic,Arial,sans-serif;
 		}
+	}
+	div[class*="col"] .text__block {
+		font-size: 60%;
 	}
 }
 @media screen and (max-width: 980px) {

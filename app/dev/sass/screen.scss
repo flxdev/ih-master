@@ -1490,7 +1490,7 @@ a {
 	.main__menu {
 		li {
 			> a {
-				padding: 0.8em 0 0.8em 1.5em; // 16px 0 16px 30px / 20px
+				padding: 0.8em 26% 0.8em 1.5em; // 16px 0 16px 30px / 20px
 			}
 		}
 		.sub__menu-item {
@@ -1536,7 +1536,7 @@ a {
 		margin-top: 27px;
 		li {
 			> a {
-				padding: 0.8em 0 0.8em 1.15em; // 16px 0 16px 23px / 20px
+				padding: 0.8em 26% 0.8em 1.15em; // 16px 0 16px 23px / 20px
 			}
 		}
 		.subbox{
@@ -9675,4 +9675,33 @@ table {
     -o-transform: scale(0.8);
     transform: scale(0.8);
   }
+}
+
+
+div[class*="col"] .text__block {
+	position: absolute;
+	right: 2em; // 32px / 16px
+	bottom: 2em;
+	width: 65%;
+	text-align: right;
+	.title {
+		color: $white;
+		margin-bottom: 0.4em;
+		span {
+			color: $yellow;
+		}
+	}
+	.subtitle {
+		color: $white;
+	}
+}
+@media screen and (max-width: 1279px) {
+	div[class*="col"] .text__block {
+		width: 80%;
+	}
+}
+@media screen and (max-width: 767px) {
+	div[class*="col"] .text__block {
+		width: 60%;
+	}
 }

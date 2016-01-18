@@ -716,8 +716,9 @@ $(document).ready(function () {
 				$(item).isotope({
 					itemSelector: '.grid-item',
 					getSortData: {
-						name: '.data'
-					}
+						color: '[data-id]'
+					},
+					sortBy: [ 'color' ]
 				});
 			}
 		});
