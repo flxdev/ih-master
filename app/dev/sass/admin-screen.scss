@@ -78,6 +78,7 @@ body {
 .wrapper {
 	width: 100%;
 	@include clearfix;
+	min-width: 1280px;
 }
 .container {
 	max-width: 1157px;

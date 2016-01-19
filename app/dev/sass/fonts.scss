@@ -898,6 +898,11 @@ table {
 	.info_slide-pb {
 		font: 1em/1.625 $HelveticaRoman;
 	}
+	.btn__enroll {
+		span {
+			font-family: $HelveticaBold;
+		}
+	}
 }
 .card-block {
 	.title-cb {

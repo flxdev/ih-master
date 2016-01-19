@@ -1,4 +1,4 @@
-var style = [{featureType:"all",elementType:"geometry",stylers:[{visibility:"on"}]},{featureType:"all",elementType:"geometry.stroke",stylers:[{visibility:"off"}]},{featureType:"all",elementType:"labels.text.fill",stylers:[{lightness:100},{visibility:"on"},{color:"#000000"}]},{featureType:"all",elementType:"labels.text.stroke",stylers:[{color:"#000000"},{gamma:9.91},{visibility:"off"}]},{featureType:"all",elementType:"labels.icon",stylers:[{visibility:"off"},{color:"#ff0000"}]},{featureType:"administrative",elementType:"geometry",stylers:[{visibility:"off"},{color:"#ffffff"}]},{featureType:"administrative.country",elementType:"all",stylers:[{visibility:"off"}]},{featureType:"administrative.neighborhood",elementType:"all",stylers:[{visibility:"off"}]},{featureType:"administrative.land_parcel",elementType:"all",stylers:[{visibility:"off"}]},{featureType:"landscape.man_made",elementType:"all",stylers:[{visibility:"simplified"},{color:"#f2f2f2"}]},{featureType:"landscape.natural",elementType:"all",stylers:[{visibility:"on"},{color:"#f2f2f2"}]},{featureType:"landscape.natural.landcover",elementType:"all",stylers:[{visibility:"off"}]},{featureType:"landscape.natural.terrain",elementType:"all",stylers:[{visibility:"off"}]},{featureType:"poi",elementType:"all",stylers:[{visibility:"off"},{color:"#fecc1a"}]},{featureType:"poi.attraction",elementType:"all",stylers:[{visibility:"off"}]},{featureType:"poi.attraction",elementType:"labels",stylers:[{visibility:"off"}]},{featureType:"poi.business",elementType:"all",stylers:[{visibility:"off"}]},{featureType:"poi.business",elementType:"labels",stylers:[{visibility:"off"}]},{featureType:"poi.government",elementType:"all",stylers:[{visibility:"off"}]},{featureType:"poi.government",elementType:"labels",stylers:[{visibility:"off"}]},{featureType:"poi.medical",elementType:"all",stylers:[{visibility:"off"}]},{featureType:"poi.medical",elementType:"labels",stylers:[{visibility:"off"}]},{featureType:"poi.park",elementType:"all",stylers:[{visibility:"on"}]},{featureType:"poi.park",elementType:"labels",stylers:[{visibility:"off"}]},{featureType:"poi.place_of_worship",elementType:"all",stylers:[{visibility:"off"}]},{featureType:"poi.place_of_worship",elementType:"labels",stylers:[{visibility:"off"}]},{featureType:"poi.school",elementType:"all",stylers:[{visibility:"simplified"}]},{featureType:"poi.school",elementType:"labels",stylers:[{visibility:"off"}]},{featureType:"poi.sports_complex",elementType:"all",stylers:[{visibility:"off"}]},{featureType:"poi.sports_complex",elementType:"labels.text",stylers:[{visibility:"off"}]},{featureType:"road",elementType:"all",stylers:[{visibility:"simplified"},{color:"#fecc1a"}]},{featureType:"road.highway.controlled_access",elementType:"all",stylers:[{visibility:"simplified"}]},{featureType:"road.arterial",elementType:"all",stylers:[{visibility:"on"}]},{featureType:"road.local",elementType:"all",stylers:[{visibility:"off"}]},{featureType:"road.local",elementType:"labels.text.fill",stylers:[{visibility:"off"}]},{featureType:"road.local",elementType:"labels.text.stroke",stylers:[{visibility:"off"}]},{featureType:"transit",elementType:"all",stylers:[{visibility:"off"}]},{featureType:"transit.station",elementType:"all",stylers:[{visibility:"off"}]},{featureType:"water",elementType:"all",stylers:[{color:"#ffffff"}]}];
+var style = [{"featureType":"landscape.natural.terrain","elementType":"labels.text.fill","stylers":[{"visibility":"simplified"},{"hue":"#ff0000"}]}];
 
 function googleMapFunc(googleMap){
     if(googleMap.length){
@@ -11,6 +11,7 @@ function googleMapFunc(googleMap){
         var myOptions = {
             zoom: 9,
             center: latlng,
+            scrollwheel: false,
             streetViewControl: false,
             zoomControl: false,
             scaleControl: false,
@@ -92,6 +93,7 @@ function googleGroups(){
     var myOptions = {
         zoom: 12,
         center: new google.maps.LatLng(53.894717, 27.562312),
+        scrollwheel: false,
         streetViewControl: false,
         zoomControl: false,
         scaleControl: false,
