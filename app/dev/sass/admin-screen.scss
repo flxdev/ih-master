@@ -271,7 +271,7 @@ body {
 }
 .searcher {
 	input[type="text"] {
-		width: 309px;
+		width: 180px;
 		height: 34px;
 		border: 1px solid #ddd;
 		border-radius: 20px;
@@ -1171,6 +1171,13 @@ nav.tabs-category-menu {
 		.btn-setting  {
 			display: table-cell;
 			vertical-align: middle;
+		}
+		.btn-add_min {
+			min-width: 58px;
+			.icon {
+				margin-right: 0;
+				margin-top: 7px;
+			}
 		}
 	}
 }
@@ -3648,9 +3655,9 @@ ol.guid {
 	border-collapse: collapse;
 }
 .subtools.long-inline-select .select-group + .select-group + .searcher {
-	float: right;
+	//float: right;
 	input[type=text] {
-		width: 255px;
+		width: 180px;
 	}
 }
 .entry-container {
