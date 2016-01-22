@@ -1629,14 +1629,14 @@ nav.tabs-category-menu {
 				&.no-btn-modal {
 					.groupe-btn-active {
 						position: absolute;
-					    top: 2px;
-					    right: 0;
-					    z-index: 5;
-					    svg {
-					    	width: 10px;
-					    	height: 10px;
-					    	margin-bottom: -1px;
-					    }
+				    top: 2px;
+				    right: 0;
+				    z-index: 5;
+				    svg {
+				    	width: 10px;
+				    	height: 10px;
+				    	margin-bottom: -1px;
+				    }
 					}
 				}
 				.column {
@@ -2721,6 +2721,7 @@ button {
 	    width: 218px;
 	    top: 41px;
 	    left: 1px;
+	    max-height: 450px;
 	    li {
 	        line-height: 28px;
 	        cursor: pointer;
@@ -3123,6 +3124,11 @@ ol.guid {
 						position: absolute;
 					    top: 0;
 					    right: 0;
+					    &.teachers {
+						  	top: auto;
+						  	bottom: -7px;
+						  	z-index: 2;
+						  }
 					    .btn  {
 					    	text-decoration: none;
 					    }
@@ -3192,6 +3198,9 @@ ol.guid {
 				}
 				&.columns-3 {
 					margin-top: 30px;
+					&.mt-0 {
+						margin-top: 0;
+					}
 					.field {
 						width: 156px;
 						max-width: 156px;

@@ -780,7 +780,7 @@ $(function() {
 			}
 		});
 
-		$('[data-target=".add-teg.' + teg + '"]').parents('.row.no-btn-modal').find('.input__field')[0].value += collectionTeg[teg].join(' ') + ' ';
+		$('[data-target=".add-teg.' + teg + '"]').parents('.row.no-btn-modal').find('.input__field')[0].value += collectionTeg[teg].join('\n') + '\n';
 		$(target).parents('.add-teg').modal('hide');
 		$('[data-target=".add-teg.' + teg + '"]').parents('.row.no-btn-modal').find('.input__field').parents('.field').removeClass('has-error').addClass('has-success');
 	});
