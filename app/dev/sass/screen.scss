@@ -3402,6 +3402,9 @@ div[class*="col"] .title {
 	.relation {
 		color: $grey;
 		margin-bottom: 1.4em; /* 70px / 20px */
+		&.mb-50 {
+			margin-top: -0.5em; // 10px / 20px
+		}
 	}
 	&.content-area {
 		.relation {
