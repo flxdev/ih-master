@@ -213,7 +213,8 @@ $(document).ready(function () {
 				} else {
 					$(item).slick({
 						arrows: false,
-						dots: false
+						dots: false,
+						autoplay: true
 					});
 				}
 				$('.' + nameClass + ' .btn__left').on('click', function(){

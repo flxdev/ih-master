@@ -1572,7 +1572,7 @@ a {
 		margin-top: 2.125em;
 		li {
 			& > a {
-				padding: 0.4em 0 0.4em 1.5em; //  8px 0 8px 30px / 20px
+				padding: 0.4em 11% 0.4em 1.5em; //  8px 0 8px 30px / 20px
 				line-height: 1.3;
 			} 
 		}
@@ -1952,7 +1952,7 @@ a {
 @media screen and (max-width: 1366px) {
 	.container__row {
 		h1 {
-			max-width: 90%;
+			max-width: 89%;
 		}
 	}
 }
