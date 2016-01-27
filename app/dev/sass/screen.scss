@@ -993,6 +993,13 @@ a[class*="btn__type"] {
 		}
 	}
 }
+@media screen and (max-width: 1599px) {
+	.popup__menu {
+		.social {
+			margin-top: 7.3%;
+		}
+	}
+}
 .mail {
 	color: $blue;
 	font-size: 1em; //16px / 16px
