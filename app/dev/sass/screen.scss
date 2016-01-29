@@ -1317,6 +1317,20 @@ a {
 		}
 	}
 }
+@media screen and (max-height: 555px) {
+	.main {
+		.btn__scroll {
+			bottom: 1.6em;
+		}
+	}
+}
+@media screen and (max-height: 500px) {
+	.main {
+		.btn__scroll {
+			display: none;
+		}
+	}
+}
 .main__menu {		
 	position: relative;
 	z-index: 6;

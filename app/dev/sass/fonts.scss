@@ -1311,6 +1311,18 @@ div[class*="col"] .text__block {
 			}
 		}
 	}
+	.blocks-links {
+		ul > li > a:not(.btn__enroll) {
+			font: 1.22em/1.5 $AgoraProBold;
+		}
+	}
+}
+@media screen and (max-width: 1366px) {
+	.blocks-links {
+		ul > li > a:not(.btn__enroll) {
+			font: 1.12em/1.5 $AgoraProBold;
+		}
+	}
 }
 @media screen and (max-width: 1279px) {
 	a[class*="btn__type"] {
@@ -1388,6 +1400,11 @@ div[class*="col"] .text__block {
 		}
 		.info_slide-pb {
 			font: 0.9em/1.625 helveticaneuecyrroman,Arial,sans-serif;
+		}
+	}
+	.blocks-links {
+		ul > li > a:not(.btn__enroll) {
+			font: 1.08em/1.5 $AgoraProBold;
 		}
 	}
 }
