@@ -9782,6 +9782,7 @@ div[class*="col"] .text__block {
 	bottom: 2em;
 	width: 80%;
 	text-align: right;
+	opacity: 0;
 	.img__block {
 		width: 80%;
 		position: relative;
@@ -9805,6 +9806,9 @@ div[class*="col"] .text__block {
 	}
 	.subtitle {
 		color: $white;
+	}
+	&.init {
+		opacity: 1;
 	}
 }
 @media screen and (max-width: 1279px) {

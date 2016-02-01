@@ -211,6 +211,9 @@ $(document).ready(function () {
 						asNavFor: '.reviews__img'						
 					});
 				} else {
+					$(item).on('init', function(slick){
+						$(item).find('.text__block').addClass('init');
+					});
 					$(item).slick({
 						arrows: false,
 						dots: false,
