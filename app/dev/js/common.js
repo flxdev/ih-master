@@ -1,3 +1,5 @@
+
+
 $(document).ready(function () {
 	
 	//scrollTo
@@ -260,43 +262,60 @@ $(document).ready(function () {
 
 	//CUSTOM SCROLL
 	(function (){
-		var isTouchDevice = (function() {
-			try {
-				var hasTouch = ('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch;
+		// var isTouchDevice = (function() {
+		// 	try {
+		// 		var hasTouch = ('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch;
 
-				if (window.innerWidth && parseInt(window.innerWidth) <= 780) {
-					return window.matchMedia('(pointer: coarse)').matches || hasTouch;
-				}
+		// 		if (window.innerWidth && parseInt(window.innerWidth) <= 780) {
+		// 			return window.matchMedia('(pointer: coarse)').matches || hasTouch;
+		// 		}
 
-			} catch (e) {
-				return false;
-			}
-		}());
+		// 	} catch (e) {
+		// 		return false;
+		// 	}
+		// }());
 
-		if(!isTouchDevice){
-			return $('.fixed').niceScroll({
-				cursorwidth: 8,
-				cursoropacitymin: 1,
-				cursoropacitymax: 1,
-				cursorborderradius: '0px',
-				autohidemode: false,
-				background: '#e5e5e5',
-				cursorcolor: '#fec601',
-				cursorborder: 'none',
-				usetransition: false,
-				horizrailenabled: true,
-				zindex: '9',
-				enabletranslate3d: true,
-				hwacceleration: false,
-				//scrollspeed: 50,
-				mousescrollstep: 20,
-				enabletranslate3d: false,
-				bouncescroll: false,
-				smoothscroll: false
-			});
+		// if(!isTouchDevice){
+		// 	// return $('.fixed').niceScroll({
+		// 	// 	cursorwidth: 8,
+		// 	// 	cursoropacitymin: 1,
+		// 	// 	cursoropacitymax: 1,
+		// 	// 	cursorborderradius: '0px',
+		// 	// 	autohidemode: false,
+		// 	// 	background: '#e5e5e5',
+		// 	// 	cursorcolor: '#fec601',
+		// 	// 	cursorborder: 'none',
+		// 	// 	usetransition: false,
+		// 	// 	horizrailenabled: true,
+		// 	// 	zindex: '9',
+		// 	// 	enabletranslate3d: true,
+		// 	// 	hwacceleration: false,
+		// 	// 	//scrollspeed: 50,
+		// 	// 	mousescrollstep: 20,
+		// 	// 	enabletranslate3d: false,
+		// 	// 	bouncescroll: false,
+		// 	// 	smoothscroll: false
+		// 	// });
+		// 	var container = document.querySelector('.fixed');
+		// 			Ps.initialize(container, {
+		// 				suppressScrollX: true
+		// 			});
+		// }
+
+		if (head.mobile) {
+			jQuery('body').addClass('touch-device');
+		} else {
+			var container = document.querySelector('.fixed');
+					Ps.initialize(container, {
+						suppressScrollX: true
+					});
 		}
+		var menu = $('.main__menu');
+		if (menu.length) {
+        menu = new Menu(menu);
+    }
 
-		jQuery('body').addClass('touch-device');
+		
 	})();
 
 	//SCROLL TOP
@@ -736,7 +755,184 @@ $(document).ready(function () {
 	// });
 
 });
+// function Menu(element, options) {
 
+//     this.config = {
+//         button: '.menu__btn',
+//         tab: '.menu__tab',
+//         menu: '.menu',
+//         content: '.menu__content',
+//         activeClass: 'is-active',
+//         openClass: 'is-open',
+// 				delayBeforeOpen: 500,
+//         stickyClass: 'is-fixed',
+//         activeTab: 0,
+//         alwaysOpen: false,
+//         sticky: true
+//     };
+
+//     $.extend(this.config, options || {});
+
+//     // 470px - height of menu
+//     this.config.shiftY = this.config.alwaysOpen ? 470 : 0;
+
+//     this.$el       = element instanceof jQuery ? element : $(element);
+//     this.activeTab = this.config.activeTab;
+//     this.opened    = false;
+//     this.isFixed   = false;
+
+//     // this.opened    = this.config.alwaysOpen ? true : false;
+
+//     this.init();
+
+// }
+
+// Menu.prototype = {
+
+//     constructor: Menu,
+
+//     _initEvents: function() {
+//         var _ = this;
+// 				var timeout;
+//         this.$buttons.on('mouseover touchend', function(e) {
+//             var btn   = $(this);
+//             var index = $(this).index();
+//             var index = btn.index();
+
+//             e.preventDefault();
+//             clearTimeout(timeout);
+
+//             if (e.type === 'touchend' && index === _.activeTab && _.opened) {
+//                 if (_.config.alwaysOpen) {
+//                     if (_.isFixed) {
+//                         //console.log(_.isFixed);
+//                         _.close();
+//                     }
+//                 } else {
+//                     _.close();
+//                 }
+
+//                 return;
+//             }
+
+//             if (!_.opened) {
+//                 //_.toggleTabs(index);
+//                 //_.open();
+// 							timeout = setTimeout(function() {
+// 	                _.toggleTabs(index);
+// 	                _.open();
+// 	            },250);
+//             } else if (index !== _.activeTab) {
+//                 _.toggleTabs(index);
+//             }
+
+//         });
+
+//         this.$menu.on('mouseleave', function() {
+//             clearTimeout(timeout)
+//             // if (_.opened && !_.config.alwaysOpen) {
+//             //     _.close();
+//             // }
+//             console.log('eee')
+
+//             if (_.opened) {
+//                 _.close();
+//             }
+//         });
+//     },
+
+//     // _initModEvents: function() {
+//     //     var _ = this;
+//     //     this.$buttons.on('mouseover touchend', function(e) {
+//     //         var index = $(this).index();
+//     //         e.preventDefault();
+//     //         if (index !== _.activeTab) {
+//     //             _.toggleTabs(index);
+//     //         }
+//     //     });
+//     // },
+
+//     toggleTabs: function(index) {
+//         var _ = this;
+//         $(_.$buttons[_.activeTab]).removeClass(_.config.activeClass);
+//         $(_.$buttons[index]).addClass(_.config.activeClass);
+//         $(_.$tabs[_.activeTab]).removeClass(_.config.activeClass);
+//         $(_.$tabs[index]).addClass(_.config.activeClass);
+//         _.activeTab = index;
+//     },
+
+//     open: function(duration, index) {
+//         if (this.opened) return;
+
+//         var _        = this;
+//         var duration = $.isNumeric(duration) ? duration : 300;
+
+//         _.$content.slideDown({
+//             duration: duration,
+//             start: function() {
+//                 setTimeout(function() {
+//                     _.$el.addClass(_.config.openClass);
+//                 }, 100);
+
+//                 if ($.isNumeric(index)) {
+//                     _.toggleTabs(index);
+//                 }
+//             },
+
+//             complete: function() {
+//                 _.opened = true;
+//             },
+//         });
+//     },
+
+//     close: function(duration) {
+//         if (!this.opened) return;
+
+//         var _        = this;
+//         var duration = $.isNumeric(duration) ? duration : 300;
+
+//         _.$content.slideUp({
+//             duration: duration,
+//             start: function() {
+//                 setTimeout(function() {
+//                     $(_.$buttons[_.activeTab]).removeClass(_.config.activeClass);
+//                     $(_.$tabs[_.activeTab]).removeClass(_.config.activeClass);
+//                 }, 200);
+//             },
+
+//             complete: function() {
+//                 _.$el.removeClass(_.config.openClass);
+//                 _.opened = false;
+//             },
+//         });
+//     },
+
+//     init: function() {
+//         var _ = this;
+//         _.$buttons = _.$el.find(_.config.button);
+//         _.$tabs    = _.$el.find(_.config.tab);
+//         _.$content = _.$el.find(_.config.content);
+//         _.$menu = _.$el.find(_.config.content);
+
+//         // if (_.config.alwaysOpen) {
+//         //     _._initModEvents();
+//         //     _.toggleTabs(_.activeTab);
+//         // } else {
+//         //     _._initEvents();
+//         //     _.$content.slideUp();
+//         // }
+
+//         // if (_.config.alwaysOpen) {
+//         //     _.toggleTabs(_.activeTab);
+//         //     _.open();
+//         // } else {
+//         //     _.$content.slideUp();
+//         // }
+
+//         _._initEvents();
+//     }
+
+// };
 
 /**
  * [Menu class]

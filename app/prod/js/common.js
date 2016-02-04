@@ -1,3 +1,5 @@
+
+
 $(document).ready(function () {
 	
 	//scrollTo
@@ -14,7 +16,8 @@ $(document).ready(function () {
 
 				$(this).addClass('active__anchor').parent().siblings().find('a').removeClass('active__anchor');
 
-				$('.fixed').getNiceScroll(0).doScrollTop(top, 1850);
+				$('.fixed').scrollTo(idscroll, 1000, {offset: function() { return {top:-50}; }});
+
 				return false;
 			}
 		});
@@ -260,43 +263,55 @@ $(document).ready(function () {
 
 	//CUSTOM SCROLL
 	(function (){
-		var isTouchDevice = (function() {
-			try {
-				var hasTouch = ('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch;
+		// var isTouchDevice = (function() {
+		// 	try {
+		// 		var hasTouch = ('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch;
 
-				if (window.innerWidth && parseInt(window.innerWidth) <= 780) {
-					return window.matchMedia('(pointer: coarse)').matches || hasTouch;
-				}
+		// 		if (window.innerWidth && parseInt(window.innerWidth) <= 780) {
+		// 			return window.matchMedia('(pointer: coarse)').matches || hasTouch;
+		// 		}
 
-			} catch (e) {
-				return false;
-			}
-		}());
+		// 	} catch (e) {
+		// 		return false;
+		// 	}
+		// }());
 
-		if(!isTouchDevice){
-			return $('.fixed').niceScroll({
-				cursorwidth: 8,
-				cursoropacitymin: 1,
-				cursoropacitymax: 1,
-				cursorborderradius: '0px',
-				autohidemode: false,
-				background: '#e5e5e5',
-				cursorcolor: '#fec601',
-				cursorborder: 'none',
-				usetransition: false,
-				horizrailenabled: true,
-				zindex: '9',
-				enabletranslate3d: true,
-				hwacceleration: false,
-				//scrollspeed: 50,
-				mousescrollstep: 20,
-				enabletranslate3d: false,
-				bouncescroll: false,
-				smoothscroll: false
-			});
+		// if(!isTouchDevice){
+		// 	// return $('.fixed').niceScroll({
+		// 	// 	cursorwidth: 8,
+		// 	// 	cursoropacitymin: 1,
+		// 	// 	cursoropacitymax: 1,
+		// 	// 	cursorborderradius: '0px',
+		// 	// 	autohidemode: false,
+		// 	// 	background: '#e5e5e5',
+		// 	// 	cursorcolor: '#fec601',
+		// 	// 	cursorborder: 'none',
+		// 	// 	usetransition: false,
+		// 	// 	horizrailenabled: true,
+		// 	// 	zindex: '9',
+		// 	// 	enabletranslate3d: true,
+		// 	// 	hwacceleration: false,
+		// 	// 	//scrollspeed: 50,
+		// 	// 	mousescrollstep: 20,
+		// 	// 	enabletranslate3d: false,
+		// 	// 	bouncescroll: false,
+		// 	// 	smoothscroll: false
+		// 	// });
+		// 	var container = document.querySelector('.fixed');
+		// 			Ps.initialize(container, {
+		// 				suppressScrollX: true
+		// 			});
+		// }
+
+		if (head.mobile) {
+			jQuery('body').addClass('touch-device');
+		} else {
+			var container = document.querySelector('.fixed');
+					Ps.initialize(container, {
+						suppressScrollX: true
+					});
 		}
-
-		jQuery('body').addClass('touch-device');
+		
 	})();
 
 	//SCROLL TOP
@@ -736,7 +751,6 @@ $(document).ready(function () {
 	// });
 
 });
-
 
 /**
  * [Menu class]
