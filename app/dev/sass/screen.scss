@@ -2006,7 +2006,7 @@ a {
 			    max-width: 226px;
 			    min-width: 220px;
 			    width: 224px;
-			    padding: 2.2em 1.275em 1.8em;
+			    padding: 2.2em 1.275em 5em;
 			    .descr_slide-pb {
 			        margin-bottom: 3.1131em;
 			    }
@@ -2053,7 +2053,7 @@ a {
 				max-width: 100%;
 				min-width: auto;
 				width: 188px; // 188px / 16px
-				padding: 1.2em 1.175em 1.8em;
+				padding: 1.2em 1.175em 5em;
 				.descr_slide-pb {
 					margin-bottom: 0.9em;
 				}
@@ -2206,7 +2206,7 @@ a {
     			max-width: none;
     			min-width: 0;
     			width: auto;
-			    padding: 2.2em 1.875em 2.5em;
+			    padding: 2.2em 1.875em 5em;
     		}
     		.title-pb {
     			font-size: 1.975em;
@@ -2249,7 +2249,7 @@ a {
     			}
     		}
     		.slide-pb {
-    			padding: 2.2em 1.275em 2.5em;
+    			padding: 2.2em 1.275em 5em;
     		}
     		.title-pb {
     			font-size: 1.975em;
@@ -6278,11 +6278,19 @@ table {
 		display: inline-block;
 		min-width: 241px; 
 		position: relative;
-		padding: 2.2em 1.875em 2.5em; /* 40px / 16px, 30px / 16px */
+		padding: 2.2em 1.875em 5em; /* 40px / 16px, 30px / 16px */
 		background: url('../img/slider-pb1.png') 0 0 no-repeat;
 		background-size: cover;
+		height: 100%;
 		.btn__enroll {
 			min-width: 100%;
+			position: absolute;
+			bottom: -2.5em;
+			left: 0;
+			span {
+				text-transform: uppercase;
+				letter-spacing: 0.1em;
+			}
 		}
 		&:after {
 			z-index: 0;
@@ -6300,6 +6308,7 @@ table {
 			text-align: center;
 			z-index: 2;
 			position: relative;
+			height: 100%;
 		}
 		.descr_slide-pb {
 			width: 100%;
