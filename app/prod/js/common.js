@@ -1,5 +1,3 @@
-
-
 $(document).ready(function () {
 	
 	//scrollTo
@@ -16,8 +14,7 @@ $(document).ready(function () {
 
 				$(this).addClass('active__anchor').parent().siblings().find('a').removeClass('active__anchor');
 
-				$('.fixed').scrollTo(idscroll, 1000, {offset: function() { return {top:-50}; }});
-
+				$('.fixed').getNiceScroll(0).doScrollTop(top, 1850);
 				return false;
 			}
 		});
@@ -109,8 +106,6 @@ $(document).ready(function () {
 		searchBox();
 	}
 
-	
-
 	//SLICK SLIDER
 
 	(function () {
@@ -124,12 +119,6 @@ $(document).ready(function () {
 				var nameClass = item.parentNode.getAttribute('class').split(' ')[0];
 			
 				if ($(item).hasClass('slider-pb')) {
-					$(item).on('init', function(){
-						setTimeout(function(){
-							$('.slide-pb').matchHeight();
-						},10);
-						
-					})
 					$(item).slick({
 						arrows: true,
 						dots: false,
@@ -319,6 +308,7 @@ $(document).ready(function () {
 						suppressScrollX: true
 					});
 		}
+
 		
 	})();
 
@@ -701,12 +691,8 @@ $(document).ready(function () {
 
 		console.log(data, top)
 
-		$('.fixed').animate({
-			scrollTop: top
-		},300)
-		if ($('.' + data).hasClass('ui-state-active')) {
-			return false;
-		}
+		$('.fixed').getNiceScroll(0).doScrollTop(top, 200);
+
 		setTimeout(function(){
 			$('.' + data).trigger('click');
 		},500)
@@ -762,9 +748,7 @@ $(document).ready(function () {
 	// 	//columnWidth: 80
 	// });
 
-});
-
-/**
+});/**
  * [Menu class]
  * @param {[object]} config [description]
  */
@@ -799,10 +783,11 @@ function Menu (config) {
 		});
 
 		if (e.type == 'mouseover') {
-			this.elem.classList.add('hovered');
-			item.classList.add('active');
-			this.block.classList.add('visible');
-			document.body.classList.add('animate-block');
+				this.elem.classList.add('hovered');
+				item.classList.add('active');
+				this.block.classList.add('visible');
+				document.body.classList.add('animate-block');
+			
 
 			callback(e);
 		} else if (e.type == 'mouseout') {
@@ -857,6 +842,7 @@ function Menu (config) {
 	});
 }
 
+
 Menu.prototype.over = function (e) {
 	var e = e || window.event,
 		target = e.target || e.srcElement,
@@ -879,13 +865,15 @@ Menu.prototype.over = function (e) {
 	if (target.classList.contains('active')) {
 		return;
 	}
+
 	this._fadeMenu(target, e, function (e) {
 		var id = target.getAttribute(this.item),
 			attr = this.content;
 
 		Array.prototype.forEach.call(this.box.children, function (item) {
 			if (item.getAttribute(attr) == id) {
-				item.classList.add('visible');
+					item.classList.add('visible');
+				
 			} else {
 				item.classList.remove('visible');
 			}
@@ -918,7 +906,9 @@ Menu.prototype.out = function (e) {
 
 		Array.prototype.forEach.call(this.box.children, function (item) {
 			if (item.getAttribute(attr) == id) {
-				item.classList.add('visible');
+				setTimeout(function(){
+					item.classList.add('visible');
+				},2000)
 			} else {
 				item.classList.remove('visible');
 			}
@@ -953,6 +943,8 @@ Menu.prototype.close = function (e) {
 
 	}.bind(this));
 };
+
+
 
 /**
  * [Map constructor]
