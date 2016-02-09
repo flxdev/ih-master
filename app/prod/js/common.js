@@ -407,6 +407,9 @@ $(document).ready(function () {
 
 	//mobile nav
 	(function(){
+		$.fn.hasAttr = function(name) {
+		  return this.attr(name) !== undefined;
+		};
 		var duration = 0;
 		$(".js-nav-root a[data-nav]").on("click", function(){
 			var nav = $("."+$(this).attr("data-nav"));
@@ -434,6 +437,19 @@ $(document).ready(function () {
 			$(".js-subnav").fadeOut(duration);
 			$(this).parents(".js-nav").find(".js-nav-main").fadeIn(duration);
 			return false;
+		});
+
+		var link = $('.menu-tablet .tab__container').find('a');
+
+		link.each(function(){
+			$(this).on('click',function(){
+				if($(this).hasAttr('data-nav')){
+					return 
+				}else {
+					var lnk = $(this).attr('href');
+					location.href = lnk;
+				}
+			});
 		});
 	})();
 
