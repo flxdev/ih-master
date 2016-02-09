@@ -325,6 +325,19 @@ svg:not(:root) {
 .ps-scrollbar-y-rail {
 	background-color: #e5e5e5;
 }
+.animate-block, .space, .animate {
+	.ps-container {
+		overflow: visible!important;
+	}
+}
+body {
+	overflow: hidden;
+}
+.mobile {
+	body {
+		overflow: visible;
+	}
+}
 .header {
 	position: absolute;
 	left: 0;
@@ -1066,6 +1079,7 @@ a {
 	position: relative;
 	width: 70%;
 	float: right;
+	overflow: hidden;
 	.content__scroll {
 		width: 100%;
 	}
@@ -1668,8 +1682,8 @@ a {
 		&::after {
 			position: absolute;
 			left: 0;
-			top: 0px;
-			bottom: 0px;
+			top: -300px;
+			bottom: -300px;
 			width: 14.59%;
 			background-color: $yellow;
 			content: '';
