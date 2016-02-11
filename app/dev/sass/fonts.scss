@@ -1560,6 +1560,9 @@ div[class*="col"] .text__block {
 	ul li label > span {
 		font: 20px/1.6 $AgoraProBold;
 	}
+	.links {
+		font: 16px/1.75 $AgoraProBlack;
+	}
 	.question {
 		font: 38px/1 $AgoraProBlack;
 	}
@@ -1570,6 +1573,22 @@ div[class*="col"] .text__block {
 				font-family: $HelveticaBold;
 			}
 		}
+	}
+	.row.columns {
+		&.columns-3 {
+			.field {
+				width: 32.3%;
+				&:nth-child(2) {
+					padding-top: 11px;
+				}
+			}
+			.btn__type-2 {
+				span {
+					font-size: 0.7125em;
+				}
+			}
+		}
+		
 	}
 	.number-quest {
 		.current {
