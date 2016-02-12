@@ -1677,8 +1677,8 @@ a {
 		&::after {
 			position: absolute;
 			left: 0;
-			top: -300px;
-			bottom: -300px;
+			top: 0px;
+			bottom: 0px;
 			width: 14.59%;
 			background-color: $yellow;
 			content: '';
@@ -9309,9 +9309,39 @@ table {
 	}
 	.links {
 		color: $blue;
-		@include transition(color);
+		transition: border-color 0.3s linear, color 0.3s linear;
+		border-bottom: 1px solid;
 		&:hover {
 			color: $red;
+			border-color: transparent;
+		}
+	}
+	.form {
+		p {
+			color: $grey;
+			margin-bottom: 25px;
+			&:last-of-type {
+				//margin-bottom: 0;
+			}
+			&.is-green {
+				color: #87aa0e;
+			}
+		}
+	}
+	.popup__inner .title__form {
+		margin-bottom: 0.66842em;
+	}
+	.row {
+		&:last-of-type {
+			.field {
+				margin-bottom: 0;
+			}
+		}
+		&.bottom {
+			letter-spacing: 0.115em;
+			.field {
+				font-size: 0.875em;
+			}
 		}
 	}
 	.row.columns {
@@ -9441,6 +9471,13 @@ table {
 				}
 				.field.field-sub-info {
 					margin-bottom: 50px;
+				}
+				.row {
+					&:last-of-type {
+						.field {
+							margin-bottom: 0;
+						}
+					}
 				}
 				.row.columns {
 					.field:first-of-type {
