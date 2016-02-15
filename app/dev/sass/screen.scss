@@ -9327,6 +9327,29 @@ table {
 				color: #87aa0e;
 			}
 		}
+		p {
+			.field.field-info,
+			.field.field-sub-info {
+				color: #3c454e;
+				text-align: left;
+				max-width: 100%;
+			}
+		}
+		.field.field-sub-info {
+			margin-bottom: 50px;
+		}
+		.row {
+			&:last-of-type {
+				.field {
+					margin-bottom: 0;
+				}
+			}
+		}
+		.row.columns {
+			.field:first-of-type {
+				padding-top: 11px;
+			}
+		}
 	}
 	.popup__inner .title__form {
 		margin-bottom: 0.66842em;
@@ -9460,29 +9483,6 @@ table {
 				.field.field-sub-info {
 					color: #3c454e;
 					text-align: center;
-				}
-				p {
-					.field.field-info,
-					.field.field-sub-info {
-						color: #3c454e;
-						text-align: left;
-						max-width: 100%;
-					}
-				}
-				.field.field-sub-info {
-					margin-bottom: 50px;
-				}
-				.row {
-					&:last-of-type {
-						.field {
-							margin-bottom: 0;
-						}
-					}
-				}
-				.row.columns {
-					.field:first-of-type {
-						padding-top: 11px;
-					}
 				}
 			}
 		}
@@ -9733,6 +9733,21 @@ table {
 }
 @media screen and (max-width: 1023px) {
 	[data-test] {
+		.form {
+			.row.columns {
+				.field:first-of-type {
+					padding-top: 2px;
+				}
+				.field:nth-of-type(2) {
+					padding-top: 2px;
+				}
+				&.columns-3 {
+					.field:nth-of-type(2) {
+						margin: 0 15px;
+					}
+				}
+			}
+		}
 		[data-test-window] {
 			margin: 0;
 			width: 100%;
@@ -9770,19 +9785,6 @@ table {
 					}
 					.field.field-sub-info {
 						margin-bottom: 42px;
-					}
-					.row.columns {
-						.field:first-of-type {
-							padding-top: 2px;
-						}
-						.field:nth-of-type(2) {
-							padding-top: 2px;
-						}
-						&.columns-3 {
-							.field:nth-of-type(2) {
-								margin: 0 15px;
-							}
-						}
 					}
 				}
 			}
@@ -9829,27 +9831,27 @@ table {
 }
 @media screen and (max-width: 549px) {
 	[data-test] {
-		[data-test-email] {
-			.popup__inner {
-				padding-bottom: 45px;
-				.form {
-					.row.columns {
-						&.columns-3 {
-							text-align: center;
-							.field {
-								width: 100%;
-							}
-							.field:nth-of-type(2) {
-								margin: 0 0 8px 0;
-							}
-							.btn__type-2 {
-								span {
-									font-size: 12px;
-								}
-							}
+		.form {
+			.row.columns {
+				&.columns-3 {
+					text-align: center;
+					.field {
+						width: 100%;
+					}
+					.field:nth-of-type(2) {
+						margin: 0 0 8px 0;
+					}
+					.btn__type-2 {
+						span {
+							font-size: 12px;
 						}
 					}
 				}
+			}
+		}
+		[data-test-email] {
+			.popup__inner {
+				padding-bottom: 45px;
 			}
 		}
 	}
