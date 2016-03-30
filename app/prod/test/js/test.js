@@ -730,7 +730,7 @@
 				return;
 			}
 
-			if (document.querySelector('[data-test-window]').classList.contains('is-active')) {
+			if (document.querySelector('[data-test-window]').classList.contains('is-active') || document.querySelector('[data-test-onsucces]').classList.contains('is-active')) {
 				return;
 			}
 

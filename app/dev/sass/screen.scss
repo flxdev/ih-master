@@ -4513,10 +4513,15 @@ div[class*="col"] .title {
 	}
 	.content__section {
 		color: $grey;
+		margin-bottom: 1em;
 		a:not(.btn__enroll) {
 			color: $blue;
 			border-bottom: 1px solid $blue;
 		}
+	}
+	p {
+		color: $grey;
+		margin-bottom: 1em;
 	}
 	.section:first-of-type {
 		max-height: 20.625em; /* 330px / 16px */
@@ -4547,8 +4552,12 @@ div[class*="col"] .title {
 			.content__section {
 				font-size: 1.125em;
 				line-height: 1.875;
+				
 			}
 			padding: 0 2.2312%;
+		}
+		p {
+			font-size: 0.93em
 		}
 	}
 }
@@ -4580,6 +4589,9 @@ div[class*="col"] .title {
 				font-size: 0.875em;
 				line-height: 1.7143;
 			}
+		}
+		p {
+			font-size: 0.78em;
 		}
 	}
 }
@@ -4621,6 +4633,10 @@ div[class*="col"] .title {
 				padding-left: 0.3em;
 				margin-top: -0.3em;
 			}
+		}
+		p {
+			font-size: 0.65em;
+			padding-left: 0.3em;
 		}
 	}
 }
@@ -4669,7 +4685,9 @@ div[class*="col"] .title {
 			.btn__type-3 {
 				min-width: 11.25em;
 			}
-	
+		}
+		p {
+			font-size: 0.85em;
 		}
 	}
 }
@@ -5385,7 +5403,7 @@ blockquote {
 			}
 			.steps {
 				margin-right: 1.125em; // 18px / 16px
-				dt {
+				& > dt {
 					position: relative;
 					padding-bottom: 2.25em; // 36px / 16px
 				}
@@ -5417,12 +5435,12 @@ blockquote {
 					margin-bottom: 3.25em; // 52px / 16px
 					width: 11.4375em; // 176px / 16px
 				}
-				dt {
+				& > dt {
 					position: relative;
 					letter-spacing: -0.05em; // 1.4px / 28px
 					color: $blue;
 				}
-				dd {
+				& > dd {
 					p {
 						color: $grey;
 					}
@@ -5440,21 +5458,21 @@ blockquote {
 					text-align: center;
 					th {
 						padding: 0.875em 0; // 14px / 16px
+						width: 13%;
 						&:first-child {
-							text-align: left;
-							width: 20.9%;
+							width: 21%;
 						}
 						&:nth-child(2) {
-							width: 22.1%;
+							width: 17.1%;
 						}
 						&:nth-child(3) {
-							width: 15.951%;
+							width: 16.951%;
 						}
 						&:nth-child(4) {
-							width: 22.44%;
+							width: 16.44%;
 						}
 						&:last-child {
-							width: 18.6%;
+							width: 13%;
 							text-align: right;
 						}
 					}
@@ -5473,8 +5491,12 @@ blockquote {
 						text-align: center;
 						padding: 1.5625em 0; // 25px / 16px
 						&:first-child {
-							text-align: left;
 							padding-right: 1em;
+							i {
+								display: inline-block;
+								margin-top: 0.3em;
+								font-style: normal;
+							}
 						}
 						&:last-child {
 							text-align: right;
@@ -5490,6 +5512,16 @@ blockquote {
 						}
 						.italic {
 							display: inline-block;
+						}
+						p {
+							&.title {
+								color: #3b4b5b;
+								margin-bottom: 0;
+								margin-top: 0.6em;
+							}
+							&:first-of-type {
+								margin-top: 0;
+							}
 						}
 					}
 				}
@@ -5508,7 +5540,7 @@ span.dash {
 }
 .main__prices {
 	display: none;
-	margin: 0 0 2.875em 10.7%;
+	margin: 0 0 2.875em 13.3%;
 	.head {
 		padding: 1.3125em 1.75em;
 		background-color: #f4f8fc;
@@ -5519,6 +5551,9 @@ span.dash {
 		span {
 			color: $blue;
 			border-bottom: 1px dashed #003e7e;
+			i {
+				font-style: normal;
+			}
 		}
 	}
 	.content__block {
@@ -5540,6 +5575,28 @@ span.dash {
 		}
 		.italic {
 			display: inline-block;
+		}
+		.categories__change {
+			li {
+				width: 43%;
+				margin-bottom: 1.25em;
+				.steps {
+					p {
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: 1023px) {
+	.main__prices {
+		.content__block {
+			.categories__change {
+				li {
+					width: 50%;
+				}
+			}
 		}
 	}
 }
@@ -5630,6 +5687,12 @@ span.dash {
 			}
 		}
 	}
+	.table__prices {
+		display: none;
+	}
+	.main__prices {
+		display: block;
+	}
 }
 @media screen and (max-width: 1169px) {
 	.table__overlay {
@@ -5685,11 +5748,8 @@ span.dash {
 			padding: 2.5em 1.48em 1.0625em;
 		}
 	}
-	.table__prices {
-		display: none;
-	}
 	.main__prices {
-		display: block;
+		margin: 0 0 2.875em 10.7%;
 	}
 }
 @media screen and (max-width: 979px) {
@@ -5788,7 +5848,7 @@ table {
 .categories__change {
 	.steps {
 		margin-right: 1.2em; //19px / 16px
-		dt {
+		& > dt {
 			padding-bottom: 0.8125em; // 13px / 16px 
 			border-bottom: 0.25em solid $blue; // 4px / 16px			
 			margin-bottom: 0.75em; // 12px / 16px
@@ -9317,6 +9377,11 @@ table {
 		}
 	}
 	.form {
+		.field.field-info,
+		.field.field-sub-info {
+			color: #3c454e;
+			text-align: center;
+		}
 		p {
 			color: $grey;
 			margin-bottom: 25px;
@@ -9339,6 +9404,7 @@ table {
 			margin-bottom: 50px;
 		}
 		.row {
+			text-align: center;
 			&:last-of-type {
 				.field {
 					margin-bottom: 0;
