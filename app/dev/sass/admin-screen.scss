@@ -3773,3 +3773,74 @@ ol.guid {
 		}
 	}
 }
+.centered {
+	display: inline-block;
+	margin: 0 auto 0 125px;
+	text-align: center;
+	overflow: hidden;
+}
+.content {
+	table {
+		&.report-teacher-lose {
+			tr {
+				td {
+					&:last-of-type:not(:nth-of-type(2)) {
+						.group {
+							max-width: 145px;
+							display: inline-block;
+							float: left;
+							width: 100%;
+						}
+						.status {
+							width: 20px;
+							height: 18px;
+							display: block;
+							margin: 0 auto;
+							overflow: hidden;
+							margin-top: 7px;
+							.success {
+								width: 100%;
+								background-image: url(../img/svg/check-mark.svg);
+								height: 100%;
+								display: inline-block;
+							}
+							.error {
+								width: 18px;
+								background-image: url(../img/svg/cross.svg);
+								height: 20px;
+								display: inline-block;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.no-active {
+	pointer-events: none;
+	opacity: 0.7;
+}
+.subtools {
+	.report {
+		.fancy-select .trigger {
+			width: 120px;
+			& + ul.options {
+				width: 120px;
+			}
+		}
+	}
+	.fancy-select .trigger {
+		padding: 9px 25px 9px 15px;
+		width: 173px;
+		&::after {
+			right: 8px;
+		}
+		& + ul.options {
+			width: 176px;
+			li.selected::after {
+				right: -23px;
+			}
+		}
+	}
+}

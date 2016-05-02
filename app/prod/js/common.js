@@ -40,7 +40,7 @@ $(document).ready(function () {
 			},300)
 			
 			contBg.addClass('opened');
-			document.body.classList.add('animate');
+			$('body').addClass('animate');
 		});
 		close.on('click', function(){
 			actionRemove(cont, contBg);
@@ -53,7 +53,7 @@ $(document).ready(function () {
 			cont.hide(0);
 			//cont.removeClass('opened');
 			contBg.removeClass('opened');
-			document.body.classList.remove('animate');
+			$('body').removeClass('animate');
 		}
 	}) ();
 
