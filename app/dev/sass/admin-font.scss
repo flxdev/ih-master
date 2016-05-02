@@ -678,3 +678,9 @@ nav.tabs-category-menu {
 	font: 13px/1 $HelveticaRoman;
 	letter-spacing: 0.01em;
 }
+.hide__container {
+	ul li, p {
+		font-family: $HelveticaRoman;
+		font-size: 0.8em;
+	}
+}

@@ -1,5 +1,18 @@
 $(function() {
 
+	(function(){
+		var info = $('.info__case'),
+			btn = info.find('.btn'),
+			container = info.find('.hide__container');
+
+		btn.on('mouseenter', function(){
+			container.fadeIn(200);
+		});
+		btn.on('mouseleave', function(){
+			container.fadeOut(200);
+		});
+	})();
+
 	// create custom file loader
 	(function($) {
 		var multipleSupport = typeof $('<input/>')[0].multiple !== 'undefined',
