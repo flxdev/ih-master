@@ -29,10 +29,19 @@ function googleMapFunc(googleMap){
         map.mapTypes.set('tehgrayz', mapType);
         map.setMapTypeId('tehgrayz');
 
+        var image = {
+            url: 'prod/img/svg/map_marker.svg',
+            size: new google.maps.Size(31, 54),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(0, 54)
+        };
+
         var companyImage = new google.maps.MarkerImage();
         var companyPos = latlng;
         var companyMarker = new google.maps.Marker({
-            position: companyPos
+            position: companyPos,
+            icon: image,
+            map: map
         });
 
         var boxText = document.createElement("div");
