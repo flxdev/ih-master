@@ -136,8 +136,7 @@
 				<div class="subtools">
 					<div class="inline-select">
 						<a href="#" class="btn btn-inline">Все</a> 
-						<a href="#" class="btn btn-inline">Дети</a> 
-						<a href="#" class="btn btn-inline">Взрослые</a>
+						<a href="#" class="btn btn-inline">Дети и тинейджеры</a>
 						<a href="#" class="btn btn-inline active-btn-inline">Взрослые</a>
 					</div>
 					<div class="select select-group">
@@ -156,6 +155,13 @@
 							<option value="">К2А Машерова</option>
 						</select>
 					</div>
+					<div class="select select-group report">
+						<select name="" class="dropdown">
+							<option value="">Отчеты</option>
+							<option value="Есть отчет">Есть отчет</option>
+							<option value="Нет отчета">Нет отчета</option>
+						</select>
+					</div>
 					<div class="searcher"><span><input type="text" placeholder="Поиск по студентам"></span></div>
 					<div class="active-block btn-groupe">
 						<a href="" class="btn btn-type1 btn-add btn-with-ico btn-add_min" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-target="#"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><use xlink:href="prod/img/svg.min.svg#add"></use></svg></span></a>
@@ -171,7 +177,7 @@
 						<th><a href=""><span>Фамилия</span><span class="arrow-sort"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><use xlink:href="prod/img/svg.min.svg#arrow-sort"></use></svg></span></a></th>
 						<th><a href=""><span>Имя</span><span class="arrow-sort"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><use xlink:href="prod/img/svg.min.svg#arrow-sort"></use></svg></span></a></th>
 						<th><a href=""><span>Отчество</span><span class="arrow-sort"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><use xlink:href="prod/img/svg.min.svg#arrow-sort"></use></svg></span></a></th>
-						<th><a href=""><span>Группа</span><span class="arrow-sort"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><use xlink:href="prod/img/svg.min.svg#arrow-sort"></use></svg></span></a></th>
+						<th><a href=""><span>Группа</span><span class="arrow-sort"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><use xlink:href="prod/img/svg.min.svg#arrow-sort"></use></svg></span></a><a href="" class="centered"><span>Отчет</span><span class="arrow-sort"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48"><use xlink:href="prod/img/svg.min.svg#arrow-sort"></use></svg></span></a></th>
 					</tr>
 					<tr>
 						<td><input type="checkbox" class="elem-checkbox" id="01"><label for="01"></label></td>
@@ -189,6 +195,9 @@
 										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">Удалить</a></li>
 									</ul>
 								</span>
+							</span>
+							<span class="status">
+								<i class="success"></i>
 							</span>
 						</td>
 					</tr>
@@ -208,6 +217,9 @@
 										<li><a href="#" class="aria" data-toggle="modal" data-href="#" data-target=".success-delete">Удалить</a></li>
 									</ul>
 								</span>
+							</span>
+							<span class="status">
+								<i class="error"></i>
 							</span>
 						</td>
 					</tr>

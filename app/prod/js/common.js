@@ -119,6 +119,11 @@ $(document).ready(function () {
 				var nameClass = item.parentNode.getAttribute('class').split(' ')[0];
 			
 				if ($(item).hasClass('slider-pb')) {
+					$(item).on('init', function(){
+						setTimeout(function(){
+							$('.slide-pb').matchHeight();
+						},10);						
+					});
 					$(item).slick({
 						arrows: true,
 						dots: false,

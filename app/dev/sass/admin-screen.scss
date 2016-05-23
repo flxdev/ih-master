@@ -596,10 +596,10 @@ body {
 					}
 				}
 				&:last-of-type:not(:nth-of-type(2)) {
-					width: 450px;
+					width: 490px;
 				}
 				.age {
-					left: 17px;
+					left: 14px;
 				}
 			}
 		}
@@ -3775,13 +3775,13 @@ ol.guid {
 }
 .centered {
 	display: inline-block;
-	margin: 0 auto 0 125px;
+	margin: 0 auto 0 165px;
 	text-align: center;
 	overflow: hidden;
 }
 .content {
 	table {
-		&.report-teacher-lose {
+		&.report {
 			tr {
 				td {
 					&:last-of-type:not(:nth-of-type(2)) {

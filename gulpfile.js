@@ -20,7 +20,7 @@ gulp.task('css', function () {
 	return gulp.src('./app/dev/sass/*.scss')
 		.pipe(sass())
 		.pipe(postcss([ autoprefixer({ 
-			browsers: ["not ie < 9", "ff >= 10", "ios_saf >= 4.1", "Safari >= 4", "Chrome > 15", "and_chr 47", "Opera 10", "not Android < 3"],
+			browsers: ['> 1%', 'last 3 versions', 'Opera 12.1', 'IE 9', 'IE 10'],
 			cascade: true
 		}) ]))
 		.pipe(minifyCss({compatibility: 'ie8'}))
