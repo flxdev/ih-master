@@ -86,7 +86,7 @@
 
     display: none;
 
-    width: 8px;
+    width: 12px;
 
     -webkit-transition: background-color .2s linear, opacity .2s linear;
        -moz-transition: background-color .2s linear, opacity .2s linear;
@@ -94,12 +94,13 @@
             transition: background-color .2s linear, opacity .2s linear;
 
     opacity: 1;
+    z-index: 15;
 }.ps-container > .ps-scrollbar-y-rail > .ps-scrollbar-y
 {
     position: absolute;
     right: 0;
 
-    width: 8px;
+    width: 12px;
 
     -webkit-transition: background-color .2s linear;
        -moz-transition: background-color .2s linear;

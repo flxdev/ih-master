@@ -773,196 +773,239 @@ $(document).ready(function () {
  * [Menu class]
  * @param {[object]} config [description]
  */
-function Menu (config) {
-	this.elem = config.elem;
-	this.block = config.contentBlock;
-	this.box = config.menuBox;
-	this.sub = config.sub;
-	this.soc = config.soc;
-	this.closeBtn = 'data-type-close';
-	this.item = 'data-item';
-	this.content = 'data-content-menu';
-	this.activeItem = null;
+// function Menu (config) {
+// 	this.elem = config.elem;
+// 	this.block = config.contentBlock;
+// 	this.box = config.menuBox;
+// 	this.sub = config.sub;
+// 	this.soc = config.soc;
+// 	this.closeBtn = 'data-type-close';
+// 	this.item = 'data-item';
+// 	this.content = 'data-content-menu';
+// 	this.activeItem = null;
 
-	this._fadeMenu = _eventMouseMenu.bind(this);
+// 	this._fadeMenu = _eventMouseMenu.bind(this);
 
-	var over = this.over.bind(this),
-		out = this.out.bind(this),
-		close = this.close.bind(this),
-		tryAdd = undefined;
+// 	var over = this.over.bind(this),
+// 		out = this.out.bind(this),
+// 		close = this.close.bind(this),
+// 		tryAdd = undefined;
 
-	function _eventMouseMenu(item, e, callback) {
-		if (!item) {
-			console.info('Don\'t target');
-			callback();
-		}
+// 	function _eventMouseMenu(item, e, callback) {
+// 		if (!item) {
+// 			console.info('Don\'t target');
+// 			callback();
+// 		}
 
-		var siblingItem = this.elem.querySelectorAll('li.active');
+// 		var siblingItem = this.elem.querySelectorAll('li.active');
 
-		Array.prototype.forEach.call(siblingItem, function (item) {
-			item.classList.remove('active');
-		});
+// 		Array.prototype.forEach.call(siblingItem, function (item) {
+// 			item.classList.remove('active');
+// 		});
 
-		if (e.type == 'mouseover') {
-				this.elem.classList.add('hovered');
-				item.classList.add('active');
-				this.block.classList.add('visible');
-				document.body.classList.add('animate-block');
+// 		if (e.type == 'mouseover') {
+// 				this.elem.classList.add('hovered');
+// 				item.classList.add('active');
+// 				this.block.classList.add('visible');
+// 				document.body.classList.add('animate-block');
 			
 
-			callback(e);
-		} else if (e.type == 'mouseout') {
-			this.elem.classList.remove('hovered');
-			item.classList.remove('active');
-			this.block.classList.remove('visible');
-			document.body.classList.remove('animate-block');
+// 			callback(e);
+// 		} else if (e.type == 'mouseout') {
+// 			this.elem.classList.remove('hovered');
+// 			item.classList.remove('active');
+// 			this.block.classList.remove('visible');
+// 			document.body.classList.remove('animate-block');
 
-			callback(e);
-		} else {
-			this.elem.classList.remove('hovered');
-			document.body.classList.remove('animate-block');
+// 			callback(e);
+// 		} else {
+// 			this.elem.classList.remove('hovered');
+// 			document.body.classList.remove('animate-block');
 
-			callback();
-		}
-	};
+// 			callback();
+// 		}
+// 	};
 
-	function _removeEventMenu() {
-		document.removeEventListener('mouseover', over);
-		document.removeEventListener('mouseout', out);
-		document.removeEventListener('click', close);
+// 	function _removeEventMenu() {
+// 		document.removeEventListener('mouseover', over);
+// 		document.removeEventListener('mouseout', out);
+// 		document.removeEventListener('click', close);
 
-		tryAdd = false;
-	}
+// 		tryAdd = false;
+// 	}
 
-	function _addEventMenu() {
-		document.addEventListener('mouseover', over);
-		document.addEventListener('mouseout', out);
-		document.addEventListener('click', close);
+// 	function _addEventMenu() {
+// 		document.addEventListener('mouseover', over);
+// 		document.addEventListener('mouseout', out);
+// 		document.addEventListener('click', close);
 
-		tryAdd = true;
-	}
+// 		tryAdd = true;
+// 	}
 
-	window.addEventListener('resize', function () {
-		if (window.innerWidth && parseInt(window.innerWidth) <= 780) {
-			_removeEventMenu();
-		} else if (!tryAdd) {
-			_addEventMenu();
-		} else {
-			return;
-		}
-	});
+// 	window.addEventListener('resize', function () {
+// 		if (window.innerWidth && parseInt(window.innerWidth) <= 780) {
+// 			_removeEventMenu();
+// 		} else if (!tryAdd) {
+// 			_addEventMenu();
+// 		} else {
+// 			return;
+// 		}
+// 	});
 
-	window.addEventListener('load', function () {
-		if (window.innerWidth && parseInt(window.innerWidth) <= 780) {
-			_removeEventMenu();
-		} else if (!tryAdd) {
-			_addEventMenu();
-		} else {
-			return;
-		}
-	});
-}
+// 	window.addEventListener('load', function () {
+// 		if (window.innerWidth && parseInt(window.innerWidth) <= 780) {
+// 			_removeEventMenu();
+// 		} else if (!tryAdd) {
+// 			_addEventMenu();
+// 		} else {
+// 			return;
+// 		}
+// 	});
+// }
 
 
-Menu.prototype.over = function (e) {
-	var e = e || window.event,
-		target = e.target || e.srcElement,
-		relatedTarget = e.relatedTarget || e.fromElement;
+// Menu.prototype.over = function (e) {
+// 	var e = e || window.event,
+// 		target = e.target || e.srcElement,
+// 		relatedTarget = e.relatedTarget || e.fromElement;
 
-	while (target != document) {
-		if (target.hasAttribute(this.item)) {
-			break;
-		}
+// 	while (target != document) {
+// 		if (target.hasAttribute(this.item)) {
+// 			break;
+// 		}
 
-		target = target.parentNode;
-	}
+// 		target = target.parentNode;
+// 	}
 
-	if (target == document) {
-		return;
-	}
+// 	if (target == document) {
+// 		return;
+// 	}
 
-	this.activeItem = target;
+// 	this.activeItem = target;
 
-	if (target.classList.contains('active')) {
-		return;
-	}
+// 	if (target.classList.contains('active')) {
+// 		return;
+// 	}
 
-	this._fadeMenu(target, e, function (e) {
-		var id = target.getAttribute(this.item),
-			attr = this.content;
+// 	this._fadeMenu(target, e, function (e) {
+// 		var id = target.getAttribute(this.item),
+// 			attr = this.content;
 
-		Array.prototype.forEach.call(this.box.children, function (item) {
-			if (item.getAttribute(attr) == id) {
-					item.classList.add('visible');
+// 		Array.prototype.forEach.call(this.box.children, function (item) {
+// 			if (item.getAttribute(attr) == id) {
+// 					item.classList.add('visible');
 				
-			} else {
-				item.classList.remove('visible');
-			}
-		});
-	}.bind(this));
-};
+// 			} else {
+// 				item.classList.remove('visible');
+// 			}
+// 		});
+// 	}.bind(this));
+// };
 
-Menu.prototype.out = function (e) {
-	var e = e || window.event,
-		target = e.target || e.srcElement,
-		relatedTarget = e.relatedTarget || e.toElement;
+// Menu.prototype.out = function (e) {
+// 	var e = e || window.event,
+// 		target = e.target || e.srcElement,
+// 		relatedTarget = e.relatedTarget || e.toElement;
 
-	if (!this.activeItem) {
-		return;
-	}
+// 	if (!this.activeItem) {
+// 		return;
+// 	}
 
-	if (relatedTarget) {
-		while (relatedTarget != document) {
-			if (relatedTarget == this.activeItem || relatedTarget.hasAttribute(this.content) || relatedTarget == this.sub || relatedTarget == this.soc) {
-				return;
-			}
+// 	if (relatedTarget) {
+// 		while (relatedTarget != document) {
+// 			if (relatedTarget == this.activeItem || relatedTarget.hasAttribute(this.content) || relatedTarget == this.sub || relatedTarget == this.soc) {
+// 				return;
+// 			}
 
-			relatedTarget = relatedTarget.parentNode;
+// 			relatedTarget = relatedTarget.parentNode;
+// 		}
+// 	}
+
+// 	this._fadeMenu(target, e, function (e) {
+// 		var id = target.getAttribute(this.item),
+// 			attr = this.content;
+
+// 		Array.prototype.forEach.call(this.box.children, function (item) {
+// 			if (item.getAttribute(attr) == id) {
+// 				setTimeout(function(){
+// 					item.classList.add('visible');
+// 				},2000)
+// 			} else {
+// 				item.classList.remove('visible');
+// 			}
+// 		});
+// 	}.bind(this));
+// };
+
+// Menu.prototype.close = function (e) {
+// 	var e = e || window.event,
+// 		target = e.target || e.srcElement;
+
+// 	while (target != document) {
+// 		if (target.hasAttribute(this.closeBtn)) {
+// 			break;
+// 		}
+
+// 		target = target.parentNode;
+// 	}
+
+// 	if (target == document) {
+// 		return;
+// 	}
+
+// 	this._fadeMenu(document, e, function (e) {
+// 		this.block.classList.remove('visible');
+
+// 		Array.prototype.forEach.call(this.box.children, function (item) {
+// 			item.classList.remove('visible');
+// 		});
+
+// 		this.block.classList.remove('visible');
+
+// 	}.bind(this));
+// };
+
+function Menu(){
+	var containerMenu = $('.main__menu'),
+		linkContainer = containerMenu.find('.tab_init'),
+		link = linkContainer.find('a'),
+		containerBg = containerMenu.find('.content__bg'),
+		cBody = $('body'),
+		bgItem = containerBg.find('bg'),
+		close = containerMenu.find('.close__menu');
+
+	$('.menu, .content__bg').on('click', function(event){
+		event.stopPropagation();
+	});
+	function closes() {
+		link.parent().removeClass('work');
+		bgItem.removeClass('visible');
+		containerMenu.removeClass('hovered');
+		cBody.removeClass('animate-block');
+		containerBg.removeClass('visible');
+	};
+	link.on('click', function(event){
+		var _ = $(this),
+			_p = _.parent(),
+			index = _.parent().data('item');
+
+		if(!_p.hasClass('work')) {
+			_p.addClass('work').siblings().removeClass('work');
+			event.preventDefault();
 		}
-	}
+		_p.addClass('active').siblings().removeClass('active');
+		containerMenu.addClass('hovered');
+		cBody.addClass('animate-block');
+		containerBg.addClass('visible');
+		$("[data-content-menu ='" + index + "'").addClass('visible').siblings().removeClass('visible');
+	});
 
-	this._fadeMenu(target, e, function (e) {
-		var id = target.getAttribute(this.item),
-			attr = this.content;
-
-		Array.prototype.forEach.call(this.box.children, function (item) {
-			if (item.getAttribute(attr) == id) {
-				setTimeout(function(){
-					item.classList.add('visible');
-				},2000)
-			} else {
-				item.classList.remove('visible');
-			}
-		});
-	}.bind(this));
-};
-
-Menu.prototype.close = function (e) {
-	var e = e || window.event,
-		target = e.target || e.srcElement;
-
-	while (target != document) {
-		if (target.hasAttribute(this.closeBtn)) {
-			break;
-		}
-
-		target = target.parentNode;
-	}
-
-	if (target == document) {
-		return;
-	}
-
-	this._fadeMenu(document, e, function (e) {
-		this.block.classList.remove('visible');
-
-		Array.prototype.forEach.call(this.box.children, function (item) {
-			item.classList.remove('visible');
-		});
-
-		this.block.classList.remove('visible');
-
-	}.bind(this));
+	$('.main__menu').on('click', function(){
+		closes();
+	});
+	close.on('click', function(){
+		closes();
+	});
 };
 
 
