@@ -1009,6 +1009,14 @@ function Menu(){
 };
 
 
+	function scrollPopup() {
+		var container = document.querySelector('.scroll__area');
+		Ps.initialize(container, {
+			suppressScrollX: true
+		});
+	};
+	scrollPopup()
+
 
 /**
  * [Map constructor]
