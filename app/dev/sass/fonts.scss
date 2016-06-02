@@ -1583,6 +1583,12 @@ div[class*="col"] .text__block {
 		font-size: 45%;
 	}
 }
+.btn__enroll.btn__type-2 {
+	span {
+		font-size: 0.8125em;
+		font-family: $HelveticaBold;
+	}
+}
 [data-test], .data-test {
 	ul li label > span {
 		font: 20px/1.6 $AgoraProBold;
@@ -1752,4 +1758,8 @@ div[class*="col"] .text__block {
 			}
 		}
 	}
+}
+.appeal {
+	font-family: $AgoraProBold;
+	font-size: 1em;
 }
