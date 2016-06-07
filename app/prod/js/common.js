@@ -1,5 +1,37 @@
 $(document).ready(function () {
-	
+
+	function detected(){
+		var ua = detect.parse(navigator.userAgent),
+			uaName = ua.browser.family,
+			uaVersion = ua.browser.major;
+
+		console.log(uaName, uaVersion)
+		if((uaName === 'Firefox' && uaVersion < '26') || 
+			(uaName === "Chrome" && uaVersion < '28') ||
+			(uaName === "Opera" && uaVersion < '19')  ||
+			(uaName === "Safari" && uaVersion < '7') ||
+			(uaName === "IE" && uaVersion < '9')){
+			openUpdate();
+		}
+		
+	} 
+	if($(window).width() > 981) {
+		detected();
+	}
+
+	function openUpdate(){
+		$.ajax({
+			url:'../../update.html',
+			cashe: false,
+			success: function(html) {
+				$('body').append(html);
+				$('html').addClass('space')
+				popups();
+			}
+		})
+	}
+
+
 	//scrollTo
 	(function(){
 		var block = $('.blocks-links'),
@@ -565,7 +597,7 @@ $(document).ready(function () {
 
 	//POPUP INIT
 
-	(function(){
+	function popups(){
 		var duration = 500,
 			popupSelector = $('.popup__wrap'),
 			innerSelector = $('.popup'),
@@ -588,7 +620,7 @@ $(document).ready(function () {
 			event.stopPropagation();
 		});
 
-		$("button.popup__close, .popup__wrap").on("click", function(){	
+		$("button.popup__close, .popup__wrap, .return").on("click", function(e){	
 			if(!popupSelector.hasClass('is-visible')) return;
 			
 			popupSelector
@@ -601,8 +633,11 @@ $(document).ready(function () {
 				forms.addClass('is-active');
 				success.removeClass('is-active');
 			},duration);
+
+			e.preventDefault();
 	    });
-	})();
+	} popups();
+
 
 	//TEXTAREA COUNTING
 

@@ -1656,6 +1656,10 @@ div[class*="col"] .text__block {
 }
 .field-info {
 	font: 20px/1.5 $AgoraProBold;
+	i {
+		font: 20px/1.5 $AgoraProBoldItalic;
+		font-style: normal;
+	}
 }
 .field-sub-info {
 	font: 16px/1.625 $HelveticaRoman;
@@ -1762,4 +1766,17 @@ div[class*="col"] .text__block {
 .appeal {
 	font-family: $AgoraProBold;
 	font-size: 1em;
+}
+.browser {
+	text-align: left;
+	.browser-row {
+		span {
+			font-family: $HelveticaRoman;
+			font-size: 14px;
+		}
+	}
+}
+.return {
+	font-family: $HelveticaBold;
+	font-size: 12px;
 }
