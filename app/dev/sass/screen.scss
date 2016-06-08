@@ -4272,15 +4272,11 @@ div[class*="col"] .title {
 	&.update {
 		.popup {
 			max-width: 757px; //757px / 16px = 47.9375em
-			background-image: url(../img/old.png);
-			background-repeat: no-repeat;
-			background-position: 90% 75%;
 		}
 		.popup__inner {
-			background-color: transparent;
 			.row {
 				text-align: center;
-				color: $white;
+				color: #19508a;
 			}
 		}
 	}
@@ -10369,15 +10365,15 @@ div[class*="col"] .text__block {
 		.browser-item {
 			display: inline-block;
 			vertical-align: top;
-			width: 145px;
+			width: 19%;
 			text-align: center;
 			margin-bottom: 25px;
-			&:not(:first-child) {
-				margin-left: 15px;
-			}
-			&.small {
-				width: 90px;
-			}
+			// &:not(:first-child) {
+			// 	margin-left: 15px;
+			// }
+			// &.small {
+			// 	width: 90px;
+			// }
 		}
 		.browser-img {
 			display: block;
@@ -10388,7 +10384,7 @@ div[class*="col"] .text__block {
 		}
 		span {
 			display: inline-block;
-			color: $white;
+			color: #19508a;
 		}
 	}
 }
