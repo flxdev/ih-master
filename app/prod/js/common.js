@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+	
+
 	function detected(){
 		var ua = detect.parse(navigator.userAgent),
 			uaName = ua.browser.family,

@@ -684,3 +684,47 @@ nav.tabs-category-menu {
 		font-size: 0.8em;
 	}
 }
+
+.bootstrap-select {
+	width: 176px;
+	&.btn-group {
+		.btn {
+			span {
+				font: 14px/1 helveticaneuecyrroman,Arial,sans-serif;
+			    letter-spacing: 0.01em;
+			}
+		}
+	}
+	.dropdown-menu {
+		li {
+			&.no-results {
+				font: 14px/2.1429 helveticaneuecyrroman,Arial,sans-serif;
+			}
+			a {
+				.text {
+					font: 14px/2.1429 helveticaneuecyrroman,Arial,sans-serif;
+			    	letter-spacing: 0.01em;
+				}
+			}
+			&.active {
+				a {
+					.text {
+						font-family: helveticaneuecyrbold,Arial,sans-serif;
+					}
+				} 
+			}
+			&.selected {
+				a {
+					.text {
+						font-family: helveticaneuecyrbold,Arial,sans-serif;
+					}
+				}
+			}
+		}
+		.bs-searchbox {
+			input {
+				font: 14px/2.1429 helveticaneuecyrroman,Arial,sans-serif;
+			}
+		}
+	}
+}

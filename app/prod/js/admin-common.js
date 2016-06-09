@@ -216,7 +216,7 @@ $(function() {
 
 	if ($(document)) {
 		if ($('[title]').length >= 1) {
-			$(document).tooltip({
+			$('[title]').tooltip({
 				position: {
 					my: "left-4 bottom-10",
 					at: "right bottom"
@@ -639,6 +639,18 @@ $(function() {
 
 	if ($('.dropdown').length >= 1) {
 		$('.dropdown').fancySelect();
+	}
+
+	if ($('.dropdown-search').length >= 1) {
+		$('.dropdown-search').selectpicker({
+			noneResultsText: 'Ничего не найдено'
+		});
+		setTimeout(function(){
+			$('.select-group').each(function(){
+				$(this).find('.btn').removeAttr('title');
+			});
+		},100)
+		//$('[title]').tooltip('destroy');
 	}
 
 	// count tags in page for calc width search
