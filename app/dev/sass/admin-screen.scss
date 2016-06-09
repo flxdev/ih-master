@@ -3849,8 +3849,8 @@ ol.guid {
 }
 .info__case {
 	position: absolute;
-	top: 5px;
-	right: 78px;
+	top: 40px;
+	left: -30%;
 }
 .info__case .icon {
 	width: 20px;
@@ -3859,17 +3859,16 @@ ol.guid {
 	cursor: pointer;
 }
 .hide__container {
-	width: 300px;
-	position: absolute;
-	bottom: 25px;
-	padding: 20px;
-	box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
-	margin-left: -140px;
+	width: 250px;
+	position: relative;
+	// bottom: 25px;
+	// padding: 20px;
+	// box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+	// margin-left: -140px;
 	background-color: #fff;
 	z-index: 101;
 	text-align: left;
 	border-radius: 4px;
-	display: none;
 	ul {
 		margin-bottom: 10px;
 		li {
