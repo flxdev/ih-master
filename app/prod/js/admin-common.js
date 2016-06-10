@@ -650,7 +650,6 @@ $(function() {
 				$(this).find('.btn').removeAttr('title');
 			});
 		},100)
-		//$('[title]').tooltip('destroy');
 	}
 
 	// count tags in page for calc width search

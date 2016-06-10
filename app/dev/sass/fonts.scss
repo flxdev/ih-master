@@ -337,6 +337,18 @@ body {
 		line-height: 1.2;
 	}
 }
+.drop__phone {
+	.phones {
+		font-family: $AgoraProBlack;
+		font-size: 1em; /*16px / 16px*/
+	}
+	.drop__phone-list {
+		a {
+			font-family: $AgoraProBlack;
+			font-size: 1em; /*16px / 16px*/
+		}
+	}
+}
 a[class*="btn__type"] {
 	span {
 		font-family: $HelveticaBold;

@@ -428,8 +428,11 @@ body {
 			}
 			.btn__enroll {
 				float: right;
-				margin-right: 10.666%; /*78px / 16px*/
+				margin-right: 7.666%; /*78px / 16px*/
 				display: inline-block;
+				i {
+					font-style: normal;
+				}
 			}
 		}
 	}
@@ -462,6 +465,44 @@ body {
 			border-color: transparent;
 		}
 	}
+	.drop__phone {
+		float: left;
+		margin-left: 5%;
+		padding: 10px 20px;
+		position: relative;
+		.phones {
+			color: $blue;
+			border-bottom: 1px dotted $blue;
+			transition: color .3s ease .0s, border-color .3s ease .0s;
+			position: relative;
+			z-index: 3
+		}
+		&.active {
+			.phones {
+				color: $red;
+				border-color: $red;
+			}
+		}
+		.drop__phone-list {
+			background-color: $white;
+			box-shadow:  0px 0px 8px 0px rgba(0, 62, 125, 0.21);
+			padding: 55px 20px 15px;
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 100%;
+			z-index: 2;
+			display: none;
+			ul {
+				li {
+					margin-bottom: 10px;
+				}
+				a {
+					color: $grey;
+				}
+			}
+		}
+	}
 }
 
 @media screen and (max-width: 1780px) {
@@ -469,7 +510,13 @@ body {
 		.header__content {
 			.btn__cart {
 				width: 78.42%;
+				.btn__enroll {
+					margin-right: 2%;
+				}
 			}
+		}
+		.drop__phone {
+			margin-left: 2%;
 		}
 	}
 }
@@ -502,7 +549,7 @@ body {
 			.btn__cart {
 				width: 78%;
 				.btn__enroll {
-					margin-right: 13.666%;
+					margin-right: 5.666%;
 					min-width: 13.75em; // 220px / 16px 
 				}
 			}
@@ -514,8 +561,16 @@ body {
 		.header__content {
 			.btn__cart {
 				width: 77.6%;
+				.btn__enroll {
+					margin-right: 3.666%;
+					min-width: 9.75em; // 220px / 16px
+					i {
+						display: none;
+					}
+				}
 			}
 		}
+
 	}
 }
 @media screen and (max-width: 1279px) {
@@ -544,8 +599,8 @@ body {
 					}
 				}
 				.btn__enroll {
-					margin-right: 11.6%;
-					min-width: 12.375em; //198px / 16px
+					margin-right: 2.6%;
+					min-width: 7.375em; //198px / 16px
 					line-height: 2.47em;
 				}
 			}
@@ -585,8 +640,9 @@ body {
 					}
 				}
 				.btn__enroll {
-					margin-right: 10.8%;
-					min-width: 11.125em; // 178px / 16px
+					margin-right: 3.8%;
+					min-width: 6.125em; // 178px / 16px
+					display: none;
 				}
 			}
 		}
@@ -594,6 +650,9 @@ body {
 			span {
 				margin-left: 0;
 			}
+		}
+		.drop__phone {
+			display: none;
 		}
 	}
 }
