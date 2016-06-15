@@ -307,6 +307,41 @@ body {
 	text-rendering: optimizeLegibility;
 	font-kerning: normal;
 }
+.fancy-select .trigger {
+	font-family: $HelveticaBold;
+	font-size: 13px;
+	text-transform: uppercase;
+}
+.fancy-select {
+	.options {
+		li {
+			font-family: $AgoraPro;
+			font-size: 14px;
+			&.selected {
+				font-family: $AgoraProMedium;
+			}
+		}
+	}
+}
+
+.ui-datepicker th {
+	span, a, p, em, i, a {
+		font: 12px/2.333 $HelveticaMedium;
+		letter-spacing: 0.01em;
+	}
+}
+.ui-datepicker td {
+	text-align: center;
+	span, a, p, em, i, a {
+		font: 14px/2.4 $HelveticaMedium;
+		letter-spacing: 0.01em;
+	}
+	
+}
+.ui-datepicker-title {
+	font: 14px/1.0286 $HelveticaRoman;
+	letter-spacing: 0.01em;
+}
 .breadcrumbs__box {
 	ul {
 		li {
