@@ -1,0 +1,58 @@
+.menu_prev li {
+	display: inline-block;
+    width: 32%;
+    padding: 0 30px 0 0;
+}
+
+.menu_prev li .num {
+    font-size: 5em;
+    line-height: 0;
+}
+
+.menu_prev li .italic {
+	font-style: italic;
+}
+.width70 {
+	width: 70%;
+}
+.width70 li {
+	width: 49%;
+	height: 110px;
+	overflow: hidden;
+	margin-bottom: 35px;
+}
+
+.width70 .foto {
+	height: 305px;
+}
+
+.width70 li img {
+	width: 60%;
+	border-radius: 50%;
+	margin: 0 0 25px 10px;
+}
+
+.width70 li .title {
+	font-size: 1.3em; 
+	text-align: left;
+	margin-bottom: 10px;
+
+}
+table.confa_table tbody tr td:first-child { 
+	width: 50%;
+	padding: 15px 0;
+}
+table.confa_table thead tr th {
+	text-align: left;
+	padding: 15px 0;
+}
+table.confa_table tbody tr td {
+	font-family: pf_agora_slab_promedium,Arial,sans-serif !important;
+}
+table.confa_table tbody tr td.black {
+	font-family: pf_agora_slab_problack,Arial,sans-serif !important;
+}
+
+table.confa_table thead tr {
+	border-bottom: .1875em solid #c2baba;
+}

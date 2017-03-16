@@ -1,3 +1,37 @@
+$('.tab__groups').find('.tabs').fadeIn(0);
+google.load("visualization", "1", {packages:["corechart"]});
+google.setOnLoadCallback(drawChart);
+
+function drawChart() {
+	$('.charts').each(function() {
+		var set = $(this).data('charts');
+		var data = google.visualization.arrayToDataTable(set.setting);
+		var options = {
+			legend: 'none',
+			pieResidueSliceLabel: 'Остальное',
+			pieHole: 0.9,
+			colors:['#f0e0c3','#b31426','#553a59','#307578','#b8b8b8']
+		};
+		var id = this.id;
+		var chart = new google.visualization.PieChart(document.getElementById(id));
+		chart.draw(data, options);
+	})
+}
+
+setTimeout(function() {
+	$('.tab__groups').children('.tabs').each(function(index) {
+		if (index == 0 ) $(this).fadeIn(0);
+		else $(this).fadeOut(0);
+	})
+}, 1000)
+
+
+$(window).load(function() {
+ 	var anc = window.location.hash;
+ 	var idscroll2 = $(anc);
+ 	$('.fixed').scrollTo(idscroll2, 1000, {offset: function() { return {top:-50}; }});
+ });
+
 function picker(){
 	$( ".calendar-input input" ).datepicker({
 		prevText: '',
@@ -124,6 +158,10 @@ $(document).ready(function () {
 			}
 		});
 	})();
+
+
+
+
 
 	var emitter = EventEmitter();
 
@@ -1131,7 +1169,7 @@ Menu.prototype.close = function (e) {
  * [Map constructor]
  */
 
-function Map () {
+function Map() {
 	var markers = [],
 		center = {},
 		pathIMGMarker = ['/bitrix/templates/ih_main/img/map_marker.png', '/bitrix/templates/ih_main/img/svg/map_marker.svg'],
