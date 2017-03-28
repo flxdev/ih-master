@@ -56,3 +56,19 @@ table.confa_table tbody tr td.black {
 table.confa_table thead tr {
 	border-bottom: .1875em solid #c2baba;
 }
+.video-wrapp {
+	height: 500px;
+}
+
+@media (max-width: 992px) {
+	.video-wrapp {
+		text-align: right;
+		height: 300px;
+	}
+}
+@media (max-width: 600px) {
+	.video-wrapp {
+		
+		height: 200px;
+	}
+}

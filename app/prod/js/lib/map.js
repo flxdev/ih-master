@@ -154,12 +154,24 @@ function setMarkers(map){
 
         var markerPosition = new google.maps.LatLng(school[0], school[1]);
         markersBounds.extend(markerPosition);
-        var marker = new google.maps.Marker({
-            position: markerPosition,
-            map: map,
-            icon: image,
-            info: '<div id="gm_content" class="tip_containet">' + '<div class="tip_title">' + school[2] + '</div>' + '<div class="tip_address">' + school[3] + '</div>' + '<div class="tip_phone">' + school[4] + '</div>' + '</div>'
-        });
+
+        if (school[3] == undefined) {
+            var marker = new google.maps.Marker({
+                position: markerPosition,
+                map: map,
+                icon: image,
+                info: '<div id="gm_content" class="tip_containet">' + '<div class="tip_title">' + school[2] + '</div>' + '</div>'
+            });
+        }
+        else {
+            var marker = new google.maps.Marker({
+                position: markerPosition,
+                map: map,
+                icon: image,
+                info: '<div id="gm_content" class="tip_containet">' + '<div class="tip_title">' + school[2] + '</div>' + '<div class="tip_address">' + school[3] + '</div>' + '<div class="tip_phone">' + school[4] + '</div>' + '</div>'
+            });
+        }
+        
         (function (marker, i){
             google.maps.event.addListener(marker, 'click', function(){
                 infowindow.setContent(this.info);
