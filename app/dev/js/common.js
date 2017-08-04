@@ -337,6 +337,45 @@ $(document).ready(function () {
 		});
 	})();
 
+	// Scroll Menu
+    (function(){
+        var btn = $('.btn__scroll'),
+            scContent = $('.fixed'),
+            top = scContent.scrollTop(),
+        	lastScrollTop = 0,
+        	height = $('.header-fix').height() + 20;
+        $(window).resize(function(){
+            height = $('.header-fix').height() + 20;
+        });
+
+        scContent.on('scroll', function(){
+            var top = $(this).scrollTop();
+
+            if(top > lastScrollTop){
+                $('.header-fix').removeClass('opacityFixMenu');
+			} else {
+                $('.header-fix').addClass('opacityFixMenu');
+			}
+            lastScrollTop = top;
+        });
+
+        scContent.on('scroll', function(){
+            var top = $(this).scrollTop();
+            if(top >= height){
+                $('.header-fix').addClass('fixedMenu');
+                $('.header-fix').addClass('animetMenuIn');
+                $('.wrapp_page').css({"padding-top":height });
+			} else {
+                $('.header-fix').removeClass('fixedMenu');
+                $('.header-fix').removeClass('opacityFixMenu');
+                $('.header-fix').removeClass('animetMenuIn');
+                $('.wrapp_page').removeClass('fixPaddingMenu');
+                $('.wrapp_page').removeAttr('style');
+			}
+		});
+
+    })();
+
 	//MOBILE MENU INIT
 	(function () {
 		var duration = 300,
@@ -1168,3 +1207,19 @@ function EventEmitter() {
     	"emit": emit
     }
 }
+
+//show phone
+(function(){
+    var phones = $('.phones'),
+        parent = phones.parent(),
+        list = parent.find('.drop__phone-list');
+
+    phones.on('mouseenter', function(){
+        parent.addClass('active');
+        list.fadeIn();
+    });
+    parent.on('mouseleave', function(){
+        parent.removeClass('active');
+        list.fadeOut();
+    });
+})();

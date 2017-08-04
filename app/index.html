@@ -16,24 +16,24 @@
 		<header class="header">
 			<div class="header__inner">
 				<div class="header__content">				
-					<div class="lang">
-						<a href="" class="rus is-active">Рус</a>
-						<span></span>
-						<a href="" class="eng">Eng</a>
-					</div>
+					<!--<div class="lang">-->
+						<!--<a href="" class="rus is-active">Рус</a>-->
+						<!--<span></span>-->
+						<!--<a href="" class="eng">Eng</a>-->
+					<!--</div>-->
 					<div class="btn__cart">
-						<button class="btn-menu desktop">
-							<i class="menu__burger">
-								<svg height="22px" class="burger__svg" version="1.1" viewBox="0 0 29 22" width="100%">
-									<g>
-										<rect height="4" width="29"/>
-										<rect class="middle__path" height="4" width="29" y="9"/>
-										<rect height="4" width="29" y="18"/>
-									</g>
-								</svg>
-							</i>
-							<span>Меню</span>
-						</button>
+						<!--<button class="btn-menu desktop">-->
+							<!--<i class="menu__burger">-->
+								<!--<svg height="22px" class="burger__svg" version="1.1" viewBox="0 0 29 22" width="100%">-->
+									<!--<g>-->
+										<!--<rect height="4" width="29"/>-->
+										<!--<rect class="middle__path" height="4" width="29" y="9"/>-->
+										<!--<rect height="4" width="29" y="18"/>-->
+									<!--</g>-->
+								<!--</svg>-->
+							<!--</i>-->
+							<!--<span>Меню</span>-->
+						<!--</button>-->
 						<button class="btn-menu mobile">
 							<i class="menu__burger">
 								<svg enable-background="new 0 0 29 22" height="100%" class="burger__svg" version="1.1" viewBox="0 0 29 22" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -45,25 +45,20 @@
 								</svg>
 							</i>
 						</button>
-						<a data-href="authorization" class="btn__enroll btn__type-1 js-popup-link">
+						<a data-href="authorization" class="btn__enroll btn__type-1 js-popup-link authorization-header">
 							<span>Записаться</span>
 						</a>
-						<a href="" class="location">
-							<i class="marker__svg">
-								<svg height="100%" version="1.1" viewBox="0 0 23 34" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" xmlns:xlink="http://www.w3.org/1999/xlink">
-									<g fill="none" fill-rule="evenodd" id="black" stroke="none" stroke-width="1">
-									<g id="slice" transform="translate(-401.000000, -601.000000)"/>
-										<g id="location" transform="translate(0.000000, 0.000000)">
-											<path d="M0.307692308,12.3846154 C0.307692308,18.7576923 11.8461538,33.6631611 11.8461538,33.2583571 C11.8461538,32.8535532 23.3846154,18.7576923 23.3846154,12.3846154 C23.3846154,6.01153846 18.2153846,0.846153846 11.8461538,0.846153846 C5.47692308,0.846153846 0.307692308,6.01153846 0.307692308,12.3846154 Z M6.07692308,11.2307692 C6.07692308,14.4173077 8.66153846,17 11.8461538,17 C15.0307692,17 17.6153846,14.4173077 17.6153846,11.2307692 C17.6153846,8.04423077 15.0307692,5.46153846 11.8461538,5.46153846 C8.66153846,5.46153846 6.07692308,8.04423077 6.07692308,11.2307692 Z"/>
-										</g>
-									</g>
-								</svg>
-							</i>
-							<span>Учебные центры</span>
-						</a>
-						<a href="#" class="price-list-link">
-							Цены
-						</a>
+						<ul class="btn__cart-list-link">
+							<li>
+								<a href="#">Наши школы</a>
+							</li>
+							<li>
+								<a href="#">Цены</a>
+							</li>
+							<li>
+								<a href="#">Отзывы</a>
+							</li>
+						</ul>
 						<div class="drop__phone">
 							<a class="phones" href="tel:74951504026">+375 44 777 73 18</a>
 							<div class="drop__phone-list">
@@ -74,6 +69,15 @@
 									</ul>
 								</div>
 							</div>
+						</div>
+						<div class="box-link-search-header">
+							 <a href="#">
+								 <svg class="search-icon" xmlns="http://www.w3.org/2000/svg">
+									 <g>
+										 <path d="m24.03948,21.86274l-6.22481,-6.22481c1.18351,-1.62563 1.8898,-3.62072 1.8898,-5.78577c0,-5.44156 -4.41076,-9.85231 -9.85231,-9.85231s-9.85231,4.41076 -9.85231,9.85231s4.41076,9.85231 9.85231,9.85231c2.16505,0 4.16014,-0.70629 5.78577,-1.8898l6.22481,6.22481l2.17674,-2.17674zm-14.18733,-5.23712c-3.73464,0 -6.77346,-3.03882 -6.77346,-6.77346s3.03882,-6.77346 6.77346,-6.77346s6.77346,3.03882 6.77346,6.77346s-3.03882,6.77346 -6.77346,6.77346z"/>
+									 </g>
+								 </svg>
+							 </a>
 						</div>
 					</div>
 				</div>
@@ -189,6 +193,169 @@
 				</div>
 			</div>				
 		</header>
+		<div class="header header-fix">
+			<div class="header__inner">
+				<div class="header__content">
+					<div class="btn__cart">
+						<button class="btn-menu mobile">
+							<i class="menu__burger">
+								<svg enable-background="new 0 0 29 22" height="100%" class="burger__svg" version="1.1" viewBox="0 0 29 22" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+									<g>
+										<rect height="4" width="29"/>
+										<rect class="middle__path" height="4" width="29" y="9"/>
+										<rect height="4" width="29" y="18"/>
+									</g>
+								</svg>
+							</i>
+						</button>
+						<a data-href="authorization" class="btn__enroll btn__type-1 js-popup-link authorization-header">
+							<span>Записаться</span>
+						</a>
+						<ul class="btn__cart-list-link">
+							<li>
+								<a href="#">Наши школы</a>
+							</li>
+							<li>
+								<a href="#">Цены</a>
+							</li>
+							<li>
+								<a href="#">Отзывы</a>
+							</li>
+						</ul>
+						<div class="drop__phone">
+							<a class="phones" href="tel:74951504026">+375 44 777 73 18</a>
+							<div class="drop__phone-list">
+								<div class="drop__phone-container">
+									<ul>
+										<li><a href="">+375 17 293 65 55</a></li>
+										<li><a href="">+375 29 777 73 18</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="box-link-search-header">
+							<a href="#">
+								<svg class="search-icon" xmlns="http://www.w3.org/2000/svg">
+									<g>
+										<path d="m24.03948,21.86274l-6.22481,-6.22481c1.18351,-1.62563 1.8898,-3.62072 1.8898,-5.78577c0,-5.44156 -4.41076,-9.85231 -9.85231,-9.85231s-9.85231,4.41076 -9.85231,9.85231s4.41076,9.85231 9.85231,9.85231c2.16505,0 4.16014,-0.70629 5.78577,-1.8898l6.22481,6.22481l2.17674,-2.17674zm-14.18733,-5.23712c-3.73464,0 -6.77346,-3.03882 -6.77346,-6.77346s3.03882,-6.77346 6.77346,-6.77346s6.77346,3.03882 6.77346,6.77346s-3.03882,6.77346 -6.77346,6.77346z"/>
+									</g>
+								</svg>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="popup__menu">
+				<div class="nav__container-bg"></div>
+				<div class="nav__container">
+					<div class="over">
+						<button class="close__menu" type="button">
+							<i class="icon_close_svg">
+								<svg height="100%" class="close_icon" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+									<path d="m0,4l4,-4l8,8l8,-8l4,4l-8,8l8,8l-4,4l-8,-8l-8,8l-4,-4l8,-8l-8,-8z"/>
+								</svg>
+							</i>
+							<span>Закрыть</span>
+						</button>
+						<div class="nav__content">
+							<div class="search__row">
+								<form action="">
+									<input type="text" class="actionInput">
+									<div class="subm">
+										<svg class="search-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+											<g>
+												<path d="m24.03948,21.86274l-6.22481,-6.22481c1.18351,-1.62563 1.8898,-3.62072 1.8898,-5.78577c0,-5.44156 -4.41076,-9.85231 -9.85231,-9.85231s-9.85231,4.41076 -9.85231,9.85231s4.41076,9.85231 9.85231,9.85231c2.16505,0 4.16014,-0.70629 5.78577,-1.8898l6.22481,6.22481l2.17674,-2.17674zm-14.18733,-5.23712c-3.73464,0 -6.77346,-3.03882 -6.77346,-6.77346s3.03882,-6.77346 6.77346,-6.77346s6.77346,3.03882 6.77346,6.77346s-3.03882,6.77346 -6.77346,6.77346z"/>
+											</g>
+										</svg>
+									</div>
+									<button type="submit" class="hidden"></button>
+								</form>
+							</div>
+							<nav class="nav">
+								<ul class="menu__footer-big">
+									<li class="item__menu"><a href="">Главная</a></li>
+									<li class="item__menu"><a href="">Школа IH</a></li>
+									<li class="item__menu"><a href="">Цены и услуги</a></li>
+									<li class="item__menu"><a href="">Контактная информация</a></li>
+								</ul>
+								<ul class="menu__footer-small">
+									<li class="item__menu"><a href="">Новости</a></li>
+									<li class="item__menu"><a href="">Отзывы</a></li>
+									<li class="item__menu"><a href="">Вопрос-ответ</a></li>
+									<li class="item__menu"><a href="">Преподователям</a></li>
+									<li class="item__menu"><a href="">Учебные центры</a></li>
+								</ul>
+							</nav>
+							<a href="" class="btn__enroll btn__type-2">
+								<span>Записаться на курсы</span>
+							</a>
+							<div class="social">
+								<a href="" class="soc__item">
+									<svg class="social_svg fb" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 94.109 94.078" enable-background="new 0 0 94.109 94.078" xml:space="preserve">
+										<g class="stroke">
+											<path fill="none" stroke-width="2" stroke-miterlimit="10" d="M47.099,92.628L1.505,47.034L47.099,1.44 l45.594,45.594L47.099,92.628z"/>
+										</g>
+										<g class="fill">
+											<path d="M49.655,42.142h4.59l-0.32,4.006h-4.27v13.917h-5.393V46.147h-2.878v-4.006h2.878v-2.692
+												c0-1.184,0.031-3.015,0.927-4.149c0.944-1.199,2.24-2.014,4.466-2.014c3.629,0,5.16,0.497,5.16,0.497l-0.72,4.103
+												c0,0-1.199-0.334-2.318-0.334c-1.119,0-2.121,0.384-2.121,1.462L49.655,42.142L49.655,42.142z"/>
+										</g>
+									</svg>
+								</a>
+								<a href="" class="soc__item">
+									<svg class="social_svg tw" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 94.109 94.078" enable-background="new 0 0 94.109 94.078" xml:space="preserve">
+										<g class="stroke">
+											<path fill="none" stroke-width="2" stroke-miterlimit="10" d="M47.099,92.628L1.505,47.034L47.099,1.44
+												l45.594,45.594L47.099,92.628z"/>
+										</g>
+										<g class="fill">
+											<path d="M63.45,38.267c-1.194,0.531-2.48,0.889-3.828,1.049c1.377-0.824,2.433-2.13,2.931-3.688
+												c-1.288,0.764-2.714,1.319-4.233,1.618c-1.215-1.295-2.948-2.105-4.865-2.105c-3.681,0-6.665,2.984-6.665,6.665
+												c0,0.522,0.059,1.03,0.173,1.519c-5.54-0.278-10.452-2.931-13.739-6.964c-0.574,0.984-0.902,2.129-0.902,3.352
+												c0,2.312,1.177,4.353,2.965,5.548c-1.092-0.035-2.12-0.335-3.019-0.834c-0.001,0.028-0.001,0.056-0.001,0.084
+												c0,3.229,2.298,5.922,5.347,6.536c-0.559,0.152-1.148,0.233-1.756,0.233c-0.43,0-0.847-0.042-1.254-0.12
+												c0.849,2.648,3.31,4.576,6.226,4.629c-2.281,1.788-5.155,2.854-8.278,2.854c-0.537,0-1.068-0.032-1.59-0.094
+												c2.951,1.892,6.454,2.995,10.218,2.995c12.261,0,18.964-10.156,18.964-18.964c0-0.289-0.006-0.577-0.018-0.863
+												C61.426,40.779,62.557,39.604,63.45,38.267z"/>
+										</g>
+									</svg>
+								</a>
+								<a href="" class="soc__item">
+									<svg class="social_svg insta" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 94.109 94.078" enable-background="new 0 0 94.109 94.078" xml:space="preserve">
+										<g class="stroke">
+											<path fill="none" stroke-width="2" stroke-miterlimit="10" d="M47.099,92.628L1.505,47.034L47.099,1.44
+												l45.594,45.594L47.099,92.628z"/>
+										</g>
+										<g class="fill">
+											<path d="M55.836,31.337H36.575c-3.346,0-6.068,2.721-6.068,6.067v6.409v12.853c0,3.346,2.722,6.067,6.068,6.067
+												h19.262c3.346,0,6.067-2.721,6.067-6.067V43.812v-6.409C61.903,34.057,59.182,31.337,55.836,31.337z M57.576,34.954l0.694-0.003
+												v0.691v4.631l-5.304,0.017l-0.018-5.321L57.576,34.954z M41.724,43.812c1.006-1.391,2.637-2.304,4.481-2.304
+												s3.475,0.913,4.48,2.304c0.654,0.908,1.046,2.019,1.046,3.222c0,3.047-2.481,5.525-5.527,5.525c-3.047,0-5.526-2.479-5.526-5.525
+												C40.679,45.831,41.07,44.72,41.724,43.812z M58.844,56.664c0,1.66-1.35,3.008-3.008,3.008H36.575c-1.659,0-3.009-1.348-3.009-3.008
+												V43.812h4.686c-0.405,0.996-0.632,2.083-0.632,3.222c0,4.733,3.85,8.586,8.585,8.586c4.734,0,8.584-3.853,8.584-8.586
+												c0-1.139-0.229-2.227-0.633-3.222h4.688V56.664z"/>
+										</g>
+									</svg>
+								</a>
+								<a href="" class="soc__item">
+									<svg class="social_svg g" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 94.109 94.078" enable-background="new 0 0 94.109 94.078" xml:space="preserve">
+										<g class="stroke">
+											<path fill="none" stroke-width="2" stroke-miterlimit="10" d="M47.099,92.628L1.505,47.034L47.099,1.44
+												l45.594,45.594L47.099,92.628z"/>
+										</g>
+										<g class="fill">
+											<g>
+												<path transform="matrix(1 0 0 1 39.125 38.4795)" d="M0,0v21.4h10.7c4,0,7.2-2.2,7.2-6.4c0-3-1.7-4.6-3.9-5.2c1.7-0.8,2.9-2.3,2.9-4.4c0-3.8-3.1-5.4-6.8-5.4H0z M4.6,3.6h4.3 c1.8,0,3.5,0.4,3.5,2.5c0,2.2-1.8,2.5-3.5,2.5H4.6V3.6z M4.6,11.8H9c2.1,0,4.2,0.3,4.2,2.9c0,2.5-1.9,2.9-4,2.9H4.6V11.8z"/>
+											</g>
+										</g>
+									</svg>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 		<section class="main">
 			<a href="" class="logo">
 				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 1043.244 332.212" enable-background="new 0 0 1043.244 332.212" xml:space="preserve">
@@ -287,12 +454,26 @@
 			<nav class="main__menu">
 				<ul class="menu">
 					<li class="tab_init" data-item="point-1">
-						<a href=""><span>Обучение английскому</span></a>
+						<a href="">
+							<i class="menu__burger">
+								<svg height="22px" class="burger__svg" version="1.1" viewBox="0 0 29 22" width="100%">
+									<g>
+										<rect height="3" width="29"/>
+										<rect class="middle__path" height="3" width="29" y="6"/>
+										<rect height="3" width="29" y="13"/>
+									</g>
+								</svg>
+							</i>
+							<span>Весь сайт</span>
+						</a>
 					</li>
 					<li class="tab_init" data-item="point-2">
-						<a href=""><span>Международные экзамены</span></a>
+						<a href=""><span>Обучение английскому</span></a>
 					</li>
 					<li class="tab_init" data-item="point-3">
+						<a href=""><span>Международные экзамены</span></a>
+					</li>
+					<li class="tab_init" data-item="point-4">
 						<a href=""><span>Подготовка преподователей</span></a>
 					</li>
 					<li><a href=""><span>Корпоративное обучение</span></a></li>
@@ -326,6 +507,31 @@
 							<div class="bg point-1" data-content-menu="point-1">
 								<div class="content__box">
 									<div class="container">
+										<nav class="nav">
+											<ul class="menu__footer-big">
+												<li class="item__menu"><a href="">Главная</a></li>
+												<li class="item__menu"><a href="">Цены</a></li>
+												<li class="item__menu"><a href="">О школе IH</a></li>
+												<li class="item__menu"><a href="">Контакты</a></li>
+											</ul>
+											<ul class="menu__footer-small">
+												<li class="item__menu"><a href="">Новости</a></li>
+												<li class="item__menu"><a href="">Отзывы</a></li>
+												<li class="item__menu"><a href="">Вопрос-ответ</a></li>
+												<li class="item__menu"><a href="">Школы</a></li>
+												<li class="item__menu"><a href="">Оплата услуг</a></li>
+												<li class="item__menu"><a href="">Онлайн-тест</a></li>
+											</ul>
+										</nav>
+										<a href="" class="btn__enroll btn__type-2">
+											<span>Записаться на курсы</span>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="bg point-2" data-content-menu="point-2">
+								<div class="content__box">
+									<div class="container">
 										<div class="sub__menu-item">
 											<a href="" class="title">Взрослым</a>
 											<a href="">Летние курсы для взрослых</a>
@@ -346,7 +552,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="bg point-2" data-content-menu="point-2">
+							<div class="bg point-3" data-content-menu="point-3">
 								<div class="content__box">
 									<div class="container">
 										<div class="sub__menu-item">
@@ -364,12 +570,12 @@
 										<div class="sub__menu-item">
 											<div class="title">Подготовка к экзаменам</div>
 											<a href="">IELTS</a>
-											<a href="">Cambridge exam</a>
+											<a href="">Cambridge exam3</a>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="bg point-3" data-content-menu="point-3">
+							<div class="bg point-4" data-content-menu="point-4">
 								<div class="content__box">
 									<div class="container">
 										<div class="sub__menu-item">
@@ -458,6 +664,7 @@
 					</div>
 				</div>
 			</nav>
+			<a href="" class="btn__enroll btn__type-3 btn-menu-fix" data-test-open><span>Онлайн-тест</span></a>
 			<div class="btn__scroll">
 				<button class="scroll__top" type="button">
 					<i class="icon__arrow"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 23.494 41.968"><path class="fill" fill-rule="evenodd" clip-rule="evenodd" d="M12.748,41.968h-2V11.972h2V41.968"/><path fill="none" class="stroke" stroke-width="2" stroke-miterlimit="10" d="M11.747,1.972l9.999,16.998H1.748L11.747,1.972z"/></svg></i>
@@ -470,19 +677,13 @@
 				<section class="content__scroll">
 					<div class="content_container">
 						<div class="container__row">
-							<div class="col60">
-								<h1>International house в Минске</h1>
+							<div class="col101">
 								<div class="slider">
 									<div class="slider_img">
 										<a href='#' class="item">
-											<img src="prod/img/banners.png" alt="">
+											<img src="prod/img/banner-open.jpg" alt="">
 											<div class="text__block">
-												<div class="img__block">
-													<img src="prod/img/cambridge.png"alt="">
-													<img src="prod/img/celta.png"alt="">
-												</div>
-												<div class="title"><span>15 февраля 2016</span> начало набора во взрослые группы</div>
-												<div class="subtitle">*занятия с 9 марта <br> *утренние и вечерние группы</div>
+												<div class="title"><span>14 августа открытие</span><br> нового отделения в Домбровке, ул. Жиновича, 11</div>
 											</div>
 										</a>
 										<a href="#" class="item">
@@ -514,26 +715,24 @@
 									</div>
 								</div>
 							</div>
-							<div class="col40">
-								<div class="test__box big">
-									<div class="container">
-										<div class="content__box">Для зачисления в группу вам необходимо пройти предвари&shy;тельное тестирование</div>
-										<a href="" class="btn__enroll btn__type-3" data-test-open><span>Пройти тест</span></a>
-									</div>
-								</div>
-								<div class="test__box small">
-									<a href="">
-										<div class="container">
-											<div class="header__box">IELTS test</div>
-											<div class="content__box">Мы принимаем между&shy;народный экзамен IELTS</div>
-											<span class="triangle triangle__white"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 18.484 21.746"><use xlink:href="prod/img/svg.min.svg#triangle"></use></svg></span>
-										</div>
+						</div>
+						<div class="container__row">
+							<div class="col100 content-pad">
+								<div class="container-link">
+									<a href="#" class="container-link_page page1" style="background-image: url('prod/img/test_box_big1.jpg')">
+										<span>Для зачисления в группу необходимо пройти тестирование</span>
+									</a>
+									<a href="#" class="container-link_page page2" style="background-image: url('prod/img/test_box_big1.jpg')">
+										<span>Все цены и курсы можно найти в одном разделе</span>
+									</a>
+									<a href="#" class="container-link_page page3" style="background-image: url('prod/img/test_box_big1.jpg')">
+										<span>Принимаем международный экзамен IELTS</span>
 									</a>
 								</div>
 							</div>
 						</div>
 						<div class="container__row">
-							<div class="col100">
+							<div class="col100 content-pad">
 								<div class="stack_container">
 									<div class="left__column">
 										<div class="section"><img src="prod/img/section1.jpg" alt=""></div>
@@ -543,9 +742,9 @@
 									</div>
 									<div class="right__column">
 										<div class="title">Более 50&nbsp;лет&nbsp;обучаем английскому<span class="decorator__way decorator__blue"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 77 11"><use xlink:href="prod/img/svg.min.svg#zigzag"></use></svg></span>
-										<div class="all__centres"></div></div>
+										<!--<div class="all__centres"></div>-->
+										</div>
 										<div class="content__section">Единственная в Беларуси <a href="">междуна&shy;родная школа английского языка</a>. Мы являемся представительством мирового лидера в преподавании иностранных языков, который успеш&shy;но находится на мировом образовательном рынке с 1953 года.</div>
-										<p>Мы предлагаем своим студентам лучшие курсы изучения иностранного языка. Курсы английского языка в Минске имеют 8 уникальных уровней обучения. Вы можете изучать английский язык «с нуля» или после Лингвистического университета. </p>
 									</div>
 								</div>
 								<div class="center__block">
@@ -560,7 +759,7 @@
 							</div>
 						</div>
 						<div class="container__row">
-							<div class="col100">
+							<div class="col100 content-pad">
 								<div class="prevslide-block">
 									<div class="title-pb">Ближайшие наборы 2015-2016</div>
 									<ul class="slider-pb slider_img">
@@ -642,7 +841,7 @@
 							</div>
 						</div>
 						<div class="container__row row_last">
-							<div class="col100">
+							<div class="col100 content-pad">
 								<div class="map__container">
 									<div class="left-column">
 										<div class="section">
