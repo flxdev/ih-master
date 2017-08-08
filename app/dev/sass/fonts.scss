@@ -330,6 +330,45 @@
 	font-weight: normal;
 }
 
+@font-face {
+	font-family: "AgoraSansProLightItalic";
+	src: url("../fonts/AgoraSansProLightItalic.eot");
+	src: url("../fonts/AgoraSansProLightItalic.eot?#iefix")format("embedded-opentype"),
+	url("../fonts/AgoraSansProLightItalic.woff") format("woff"),
+	url("../fonts/AgoraSansProLightItalic.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: "AgoraSansProMediumItalic";
+	src: url("../fonts/AgoraSansProMediumItalic.eot");
+	src: url("../fonts/AgoraSansProMediumItalic.eot?#iefix")format("embedded-opentype"),
+	url("../fonts/AgoraSansProMediumItalic.woff") format("woff"),
+	url("../fonts/AgoraSansProMediumItalic.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: "AgoraSansProRegular";
+	src: url("../fonts/AgoraSansProRegular.eot");
+	src: url("../fonts/AgoraSansProRegular.eot?#iefix")format("embedded-opentype"),
+	url("../fonts/AgoraSansProRegular.woff") format("woff"),
+	url("../fonts/AgoraSansProRegular.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: "AgoraSansProUltraBlack";
+	src: url("../fonts/AgoraSansProUltraBlack.eot");
+	src: url("../fonts/AgoraSansProUltraBlack.eot?#iefix")format("embedded-opentype"),
+	url("../fonts/AgoraSansProUltraBlack.woff") format("woff"),
+	url("../fonts/AgoraSansProUltraBlack.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
 
 
 $HelveticaItalic: 'helveticaneuecyritalic', Arial, sans-serif;
@@ -352,18 +391,10 @@ $AgoraProMedium: 'pf_agora_slab_promedium', Arial, sans-serif;
 $AgoraProBlackItalic: 'pf_agora_slab_problack_italic', Arial, sans-serif;
 $AgoraProBoldItalic: 'pf_agora_slab_probold_italic', Arial, sans-serif;
 $AgoraProItalic: 'pf_agora_slab_proitalic', Arial, sans-serif;
-
-
 $AgoraProLightItalic: 'pf_agora_slab_prolight_italic', Arial, sans-serif;
 $AgoraProMdeiumItalic: 'pf_agora_slab_proMdIt', Arial, sans-serif;
 $AgoraPro: 'pf_agora_slab_proregular', Arial, sans-serif;
-$AgoraProThin: 'pf_agora_slab_prothin', Arial, sans-serif;
-$AgoraProUltraBlackIt: 'pf_agora_slab_proultraBlkIt', Arial, sans-serif;
 $AgoraProUltraBlack: 'pf_agora_slab_proultrablack', Arial, sans-serif;
-$AgoraProExtraThin: 'pf_agora_slab_proextrathin', Arial, sans-serif;
-$AgoraProExtraThinItalic: 'pf_agora_slab_proXThIt', Arial, sans-serif;
-
-
 
 
 $AgoraSansProBlack: 'AgoraSansProBlack', Arial, sans-serif;
@@ -372,6 +403,12 @@ $AgoraSansProMedium: 'AgoraSansProMedium', Arial, sans-serif;
 $AgoraSansProBlackItalic: 'AgoraSansProBlackItalic', Arial, sans-serif;
 $AgoraSansProBoldItalic: 'AgoraSansProBoldItalic', Arial, sans-serif;
 $AgoraSansProItalic: 'AgoraSansProItalic', Arial, sans-serif;
+$AgoraSansProLightItalic: 'AgoraSansProLightItalic', Arial, sans-serif;
+$AgoraSansProMediumItalic: 'AgoraSansProMediumItalic', Arial, sans-serif;
+$AgoraSansProRegular: 'AgoraSansProRegular', Arial, sans-serif;
+$AgoraSansProUltraBlack: 'AgoraSansProUltraBlack', Arial, sans-serif;
+
+
 
 html {
 	text-size-adjust: 100%;
@@ -391,7 +428,7 @@ body {
 .fancy-select {
 	.options {
 		li {
-			font-family: $AgoraPro;
+			font-family: $AgoraSansProRegular;
 			font-size: 14px;
 			&.selected {
 				font-family: $AgoraProMedium;
@@ -695,7 +732,7 @@ div[class*="col"] .title {
 
     }
     dt {
-        font: 1.25em/1.5 $AgoraProUltraBlack;
+        font: 1.25em/1.5 $AgoraSansProUltraBlack;
     }
     a {
         text-decoration: none;
@@ -819,7 +856,7 @@ blockquote {
 	}
 }
 .number {
-	font: 6.5797em/1 $AgoraProLightItalic;
+	font: 6.5797em/1 $AgoraSansProLightItalic;
 }
 .map__container {
 	.section {
@@ -830,7 +867,7 @@ blockquote {
 }
 .responsive__numbers {
 	li {
-		font-family: $AgoraProMdeiumItalic;
+		font-family: $AgoraSansProMediumItalic;
 		font-size: 1.25em; //20px / 16px
 		span {
 			font-family: $HelveticaRoman;
@@ -890,11 +927,11 @@ table {
 	&.statistics {
 		thead {
 			tr:first-child {
-				font-family: $AgoraProLightItalic;
+				font-family: $AgoraSansProLightItalic;
 				font-size: 0.875em; // 14 px / 16px
 			}
 			tr:last-child {
-				font-family: $AgoraPro;
+				font-family: $AgoraSansProRegular;
 				font-size: 0.875em; // 14 px / 16px
 			}
 		}
@@ -1096,7 +1133,7 @@ table {
 .slider__caption {
     .caption {
         .capt {
-            font-family: $AgoraProMdeiumItalic;
+            font-family: $AgoraSansProMediumItalic;
             font-size: 1.25em; // 20px / 16px
         }
     }
@@ -1152,19 +1189,19 @@ table {
 }
 .content__block .col50 {
     p {
-        font-family: $AgoraPro;
+        font-family: $AgoraSansProRegular;
         font-size: 1.25em; // 20px / 16px
     }
 }
 .phone__list {
     li {
-        font-family: $AgoraPro;
+        font-family: $AgoraSansProRegular;
         font-size: 1.25em; // 20px / 16px
     }
 }
 .work__mail {
     .mail {
-        font-family: $AgoraPro;
+        font-family: $AgoraSansProRegular;
     }
 }
 .accordion__head {
@@ -1233,7 +1270,7 @@ table {
             	font-size: 1em; // 20px / 20px
             	font-weight: normal;
 				b {
-					font-family: $AgoraProUltraBlack;
+					font-family: $AgoraSansProUltraBlack;
 				}
 			}
 			p {
@@ -1283,7 +1320,7 @@ table {
 			font-size: 1.5em; // 24px / 16px
 		}
 		.author {
-			font-family: $AgoraPro;
+			font-family: $AgoraSansProRegular;
 			font-size: 1.25em; // 20px / 16px
 		}
 	}
@@ -1429,7 +1466,7 @@ table {
 			}
 		}
 		.author {
-			font-family: $AgoraPro;
+			font-family: $AgoraSansProRegular;
 			font-size: 1.125em; //18px / 16px
 		}
 	}
@@ -1714,7 +1751,7 @@ div[class*="col"] .text__block {
 				font-size: 1.25em; // 20px / 16px
 			}
 			.author {
-				font-family: $AgoraPro;
+				font-family: $AgoraSansProRegular;
 				font-size: 1.125em; // 18px / 16px
 			}
 		}
