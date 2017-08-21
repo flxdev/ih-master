@@ -632,6 +632,9 @@ button[class*="btn__type"] {
 h1 {
 	font-family: $AgoraSansProBlack;
 }
+.h1 {
+	font-family: $AgoraSansProBlack;
+}
 .title-2 {
 	font-family: $AgoraSansProBold;
 	font-size: 1.25em; // 20px / 16px
@@ -705,6 +708,10 @@ button[class*="btn__type"] {
 	}
 }
 div[class*="col"] .title {
+	font: 2.375em/1.1579 $AgoraSansProBlack;
+}
+
+div[class*="col"] .title-news {
 	font: 2.375em/1.1579 $AgoraSansProBlack;
 }
 .content__block {
@@ -1589,6 +1596,9 @@ div[class*="col"] .text__block {
 	}
 	div[class*="col"] .text__block {
 		font-size: 80%;
+	}
+	.container__row .col100 h1.title-news {
+		font: 2.375em/1.1579 AgoraSansProBlack,Arial,sans-serif;
 	}
 }
 @media screen and (max-width: 1105px) {
