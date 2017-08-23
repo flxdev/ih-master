@@ -370,8 +370,9 @@ body {
 		position: relative;
 		.lang {
 			float: left;
-			margin-top: 1.49em; //23.84px / 16px;
-			margin-right: 2.8125em;
+			margin-top: 2.3em; //23.84px / 16px;
+			margin-right: 15px;
+			margin-left: 20px;
 			a {
 				color: $blue;
 				text-transform: uppercase;
@@ -563,7 +564,7 @@ body {
 		a{
 			font-size: 18px;
 			color: #003e7e;
-			padding: 0 17px;
+			padding: 0 10px;
 		}
 	}
 }
@@ -677,6 +678,14 @@ body {
 	top: 0;
 }
 
+.slider{
+	.slider_img{
+		.text__block{
+			width: 35%;
+		}
+	}
+}
+
 @keyframes topMenuIn {
 	0% {
 		transform: translate(0, -100%);
@@ -707,7 +716,7 @@ body {
 			}
 		}
 		.drop__phone {
-			margin-left: 13%;
+			margin-left: 10%;
 		}
 		.box-link-search-header{
 			margin-top: 32px;
@@ -743,7 +752,7 @@ body {
 			.btn__cart {
 				width: 100%;
 				.btn__enroll {
-					margin-right: 13.4%;
+					margin-right: 12%;
 					min-width: 13.75em; // 220px / 16px 
 				}
 			}
@@ -753,7 +762,7 @@ body {
 
 @media screen and (max-width: 1550px) {
 	.header .drop__phone {
-		margin-left: 8%;
+		margin-left: 7%;
 	}
 }
 
@@ -783,8 +792,8 @@ body {
 			padding-right: 2em; //32px / 16px
 			padding-top: 0.8125em; // 13px / 16px
 			.lang {
-				margin-right: 1.8em;
-				margin-top: 1.3em;
+				margin-right: 2px;
+				margin-top: 2.3em;
 				span {
 					width: 1.1875em; //19px / 16px
 					margin: 0 0.25em; //4px / 16px
@@ -892,7 +901,7 @@ body {
 			padding-right: 2.375em; // 38px / 16px
 			.lang {
 				//display: none;
-				margin-top: 0.7em;
+				margin-top: 1.47em;
 				span {
 					width: 1.85em;
 				}
@@ -925,6 +934,9 @@ body {
 	.header {
 		width: 66.8%;
 		margin-left: 31.9%;
+	}
+	.header .header__inner .lang{
+		margin-top: 1.56em;
 	}
 }
 .touch-device {
@@ -2494,6 +2506,10 @@ body {
 		    }
 		}
 	}
+
+	.header .box-link-search-header{
+		margin-left: 2%;
+	}
 }
 @media screen and (max-width: 1138px) {
 	.container__row {
@@ -2710,6 +2726,12 @@ body {
 	.header .header__inner .lang.en {
 		margin-top: 2.2em;
 		padding-left: 18px;
+	}
+
+	.header .header__inner .lang {
+		margin-top: 1.9em;
+		margin-left: 13px;
+		margin-right: 0px;
 	}
 }
 @media screen and (max-width: 374px) {
@@ -8727,7 +8749,8 @@ table {
 @media screen and (max-width: 1750px) {
 	.search__box {
 		.search__box-row {
-			margin-left: -31.7%;
+			//margin-left: -31.7%;
+			margin-left: 0;
 		}
 	}
 }
@@ -8744,7 +8767,7 @@ table {
 @media screen and (max-width: 1023px) {
 	.search__box {
 		.search__box-row {
-			margin-left: -16.7%;
+			margin-left: 0;
 		}
 	}
 	.resalt__box {
@@ -8761,14 +8784,14 @@ table {
 @media screen and (max-width: 900px) {
 	.search__box {
 		.search__box-row {
-			margin-left: -17.7%;
+			margin-left: 0;
 		}
 	}
 }
 @media screen and (max-width: 767px) {
 	.search__box {
 		.search__box-row {
-			margin-left: -26.4%;
+			margin-left: 0;
 		}
 	}
 }
@@ -10537,6 +10560,13 @@ table {
 		}
 	}
 }
+
+@media screen and (max-width: 780px) {
+	li[data-item="point-all"]{
+		display: none;
+	}
+}
+
 @media screen and (max-width: 767px) {
 	[data-test], .data-test {
 		[data-test-window], .data-test-window {
@@ -10683,10 +10713,25 @@ div[class*="col"] .text__block {
 	div[class*="col"] .text__block {
 		width: 80%;
 	}
+
+	.slider{
+		.slider_img{
+			.text__block{
+				width: 35%;
+			}
+		}
+	}
 }
 @media screen and (max-width: 767px) {
 	div[class*="col"] .text__block {
 		width: 60%;
+	}
+	.slider{
+		.slider_img{
+			.text__block{
+				width: 35%;
+			}
+		}
 	}
 	[data-test], .data-test {
 		.popup__inner {
@@ -11265,6 +11310,9 @@ div[class*="col"] .text__block {
 	.header .drop__phone .drop__phone-list ul a{
 		font-size: .9rem;
 	}
+	.header .drop__phone{
+		margin-top: 27px;
+	}
 }
 
 @media screen and (max-width: 1023px) {
@@ -11374,6 +11422,7 @@ div[class*="col"] .text__block {
 @media screen and (max-width: 479px){
 	.btn__cart-list-link li a{
 		font-size: 10px;
+		padding: 0 0 0 10px;
 	}
 	.btn__cart-list-link{
 		margin-top: 12px;
@@ -11393,9 +11442,6 @@ div[class*="col"] .text__block {
 	.container-link .container-link_page, .container-link .container-link_page span{
 		font-size: 9px;
 	}
-	.btn__cart-list-link li a{
-		padding: 0 10px;
-	}
 	.breadcrumbs__box .content__block{
 		padding: 0 15px;
 	}
@@ -11409,6 +11455,13 @@ div[class*="col"] .text__block {
 	.btn__type-3.btn-menu-fix span {
 		font-size: 7px;
 		padding: 0 0;
+	}
+}
+
+@media screen and (max-width: 380px){
+	.main__menu li>a {
+		padding: .8em 6px;
+		font-size: 1.18em;
 	}
 }
 
