@@ -161,11 +161,11 @@ $(document).ready(function () {
             area = btnSubm.parent().find('input'),
             popupCont = btnSubm.parents('.popup__menu');
 
-        btnSubm.on("click", function(){
+        btnSubm.on("click touchstart", function(){
             area.addClass('active');
             setTimeout(function(){
                 area.focus();
-            },200);
+            },300);
         });
         popupCont.on('mouseleave', function(){
             actionRemoveArea(area);
